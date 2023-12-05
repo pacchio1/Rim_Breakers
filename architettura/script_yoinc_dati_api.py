@@ -47,7 +47,7 @@ while mese <= 12:
         mese_txt=str(mese).zfill(2)
         giorno_txt=str(giorno).zfill(2)
         GetApi(str(anno),mese_txt,giorno_txt)
-        #codizione per ogni giorno
+        #condizione per ogni giorno
         print(str(anno),mese_txt,giorno_txt)
         giorno=giorno+1
         maxapi=maxapi-1
