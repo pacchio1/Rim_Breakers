@@ -56,10 +56,11 @@ while mese <= 12:
             nomefile = "architettura/checkpoint_yoinc.txt"
             stringa_data=str(anno) + " , " + mese_txt + " , " + giorno_txt
             ScriviSuFile(nomefile, stringa_data)
+            break
         if time_out==0:
             time_out=10
             timeout()
-            break
+
     #condizione per ogni mese
     mese=mese+1
     if maxapi == 0:

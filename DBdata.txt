@@ -1,4 +1,0 @@
-host="localhost:3306",
-user="root",
-password="3Polli/4",
-database="rimbrakers"
