@@ -1,0 +1,67 @@
+{
+    "get": "games",
+    "parameters": {
+        "date": "2015-09-10"
+    },
+    "errors": [],
+    "results": 1,
+    "response": [
+        {
+            "id": 170501,
+            "date": "2015-09-10T01:30:00+00:00",
+            "time": "01:30",
+            "timestamp": 1441848600,
+            "timezone": "UTC",
+            "stage": null,
+            "week": null,
+            "status": {
+                "long": "Game Finished",
+                "short": "FT",
+                "timer": null
+            },
+            "league": {
+                "id": 282,
+                "name": "Americas Championship",
+                "type": "cup",
+                "season": 2015,
+                "logo": "https:\/\/media-4.api-sports.io\/basketball\/leagues\/282.png"
+            },
+            "country": {
+                "id": 62,
+                "name": "World",
+                "code": " ",
+                "flag": "https:\/\/media-4.api-sports.io\/flags\/ .svg"
+            },
+            "teams": {
+                "home": {
+                    "id": 3022,
+                    "name": "Mexico",
+                    "logo": "https:\/\/media-4.api-sports.io\/basketball\/teams\/3022.png"
+                },
+                "away": {
+                    "id": 3052,
+                    "name": "Argentina",
+                    "logo": "https:\/\/media-4.api-sports.io\/basketball\/teams\/3052.png"
+                }
+            },
+            "scores": {
+                "home": {
+                    "quarter_1": 20,
+                    "quarter_2": 25,
+                    "quarter_3": 14,
+                    "quarter_4": 36,
+                    "over_time": null,
+                    "total": 95
+                },
+                "away": {
+                    "quarter_1": 26,
+                    "quarter_2": 16,
+                    "quarter_3": 30,
+                    "quarter_4": 11,
+                    "over_time": null,
+                    "total": 83
+                }
+            }
+        }
+    ]
+}
