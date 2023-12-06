@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Dic 06, 2023 alle 15:27
+-- Creato il: Dic 06, 2023 alle 19:57
 -- Versione del server: 10.4.28-MariaDB
 -- Versione PHP: 8.2.4
 
@@ -30,6 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `country` (
   `id_country` int(11) NOT NULL,
   `name` varchar(15) NOT NULL,
+  `type` varchar(15) NOT NULL,
   `code` varchar(4) NOT NULL,
   `flag` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -43,7 +44,11 @@ CREATE TABLE `country` (
 CREATE TABLE `games` (
   `ID_games` int(11) NOT NULL,
   `date` date NOT NULL,
-  `status` text NOT NULL
+  `status` text NOT NULL,
+  `ID_home` int(11) NOT NULL,
+  `score_home` text NOT NULL,
+  `ID_away` int(11) NOT NULL,
+  `score_away` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -96,8 +101,7 @@ CREATE TABLE `team` (
   `ID_team` int(11) NOT NULL,
   `name` varchar(15) NOT NULL,
   `logo` varchar(15) NOT NULL,
-  `teams` text NOT NULL,
-  `score` text NOT NULL
+  `score` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL CHECK (json_valid(`score`))
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------

@@ -4,7 +4,7 @@ import time
 
 giorni_dei_mesi = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
-with open("architettura/checkpoint_yoinc.txt", "r") as checkpoint_r:
+with open("resource/checkpoint_yoinc.txt", "r") as checkpoint_r:
     ck = checkpoint_r.readline().strip().split(" , ")
     anno = ck[0]
     m = int(ck[1])
@@ -53,7 +53,7 @@ while mese <= 12:
         maxapi=maxapi-1
         time_out=time_out-1
         if maxapi == 0:
-            nomefile = "architettura/checkpoint_yoinc.txt"
+            nomefile = "resource/checkpoint_yoinc.txt"
             stringa_data=str(anno) + " , " + mese_txt + " , " + giorno_txt
             ScriviSuFile(nomefile, stringa_data)
             break
@@ -64,7 +64,7 @@ while mese <= 12:
     #condizione per ogni mese
     mese=mese+1
     if maxapi == 0:
-        nomefile = "architettura/checkpoint_yoinc.txt"
+        nomefile = "resource/checkpoint_yoinc.txt"
         stringa_data=str(anno) + " , " + mese_txt + " , " + giorno_txt
         ScriviSuFile(nomefile, stringa_data)
         break
@@ -75,7 +75,7 @@ if mese > 12:
     anno=int(anno)+1
     mese_txt=str(mese).zfill(2)
     giorno_txt=str(giorno).zfill(2)
-nomefile = "architettura/checkpoint_yoinc.txt"
+nomefile = "resource/checkpoint_yoinc.txt"
 stringa_data=str(anno) + " , " + mese_txt + " , " + giorno_txt
 ScriviSuFile(nomefile, stringa_data)
 

@@ -1,0 +1,26 @@
+"""cursor = conn.cursor()
+    try:
+        cursor.execute(query)
+        conn.commit()
+        print(f"Executed query: {query}")
+    except Exception as e:
+        print(f"Error executing query: {query}")
+        print(f"Error details: {e}")
+    finally:
+        cursor.close()
+    file = open(conn, "a")
+    s = LeggiFile(conn)
+    s = s + query + ";\n"
+    file.write(s)
+    file.close()
+
+conn =  pymysql.connect(
+    host='localhost',
+    port=3306,
+    user='root',
+    database='rimbreakers',
+)
+conn ="architettura/listaQUERY.sql"
+
+conn = sqlite3.connect('db/rimbreakers_lite.db')
+"""
