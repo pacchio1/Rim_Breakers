@@ -5,6 +5,10 @@ def LeggiFile(nome ):
         stringa=file.read()
         file.close()
         return stringa
+def InsertIntoSql(query, conn):
+    cursor = conn.cursor()
+    cursor.execute(query)
+    return cursor.fetchall()
 DBdata=LeggiFile("DBdata.txt")
 DBdata.split(" , ")
 conn = mysql.connector.connect(
@@ -13,11 +17,6 @@ conn = mysql.connector.connect(
     password=DBdata[2],
     database=DBdata[3]
 )
-def InsertIntoSql(query, conn):
-    cursor = conn.cursor()
-    cursor.execute(query)
-    return cursor.fetchall()
-    
 giorni_dei_mesi = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
 with open("architettura/checkpoint_pulizia.txt", "r") as checkpoint_r:
@@ -34,8 +33,36 @@ while mese <= 12:
         giorno_txt=str(giorno).zfill(2)
         #condizione per ogni giorno
         nomefile = "games" + anno + "_" + mese_txt + "_" + giorno_txt + ".json"
-        data = LeggiFile(anno)
-        print(str(anno),mese_txt,giorno_txt)
+        
+        data = LeggiFile(nomefile)
+        print("letto il file del "+str(anno),mese_txt,giorno_txt)
+        
+        id_principale = data["id"]
+        data_principale = datetime.datetime.strptime(data["date"], "%Y-%m-%dT%H:%M:%S%z")
+        status= data["status"]
+        league_id =data["league"]["id"]
+        league_name = data["league"]["name"]
+        league_type = data["league"]["type"]
+        league_season = data["league"]["season"]
+        league_logo = data["league"]["logo"]
+        country = data["country"]
+        home_team_name = data["teams"]["home"]["name"]
+        away_team_name = data["teams"]["away"]["name"]
+        home_scores = data["scores"]["home"]
+        away_scores = data["scores"]["away"]
+        
+        #tab Games
+        query=f"INSERT INTO games SET id, date, status VALUE {id_principale}, {data_principale}, {status}"
+        InsertIntoSql(query,conn)
+        
+        query=f"INSERT INTO league SET id, name, type, season, logo VALUE {league_id}, {league_name}, {league_type}, {league_season}, {league_logo}"
+        InsertIntoSql(query,conn)
+        
+        query=f"INSERT INTO league SET id, name, type, season, logo VALUE {league_id}, {league_name}, {league_type}, {league_season}, {league_logo}"
+        InsertIntoSql(query,conn)
+        
+        
+        
         giorno=giorno+1
         maxapi=maxapi-1
         time_out=time_out-1
