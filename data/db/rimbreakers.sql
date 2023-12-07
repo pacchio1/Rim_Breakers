@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Dic 06, 2023 alle 19:57
+-- Creato il: Dic 07, 2023 alle 10:41
 -- Versione del server: 10.4.28-MariaDB
 -- Versione PHP: 8.2.4
 
@@ -72,8 +72,7 @@ CREATE TABLE `league` (
 --
 
 CREATE TABLE `season` (
-  `ID` int(11) NOT NULL,
-  `season` date NOT NULL
+  `season` varchar(9) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -100,8 +99,7 @@ CREATE TABLE `standings` (
 CREATE TABLE `team` (
   `ID_team` int(11) NOT NULL,
   `name` varchar(15) NOT NULL,
-  `logo` varchar(15) NOT NULL,
-  `score` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL CHECK (json_valid(`score`))
+  `logo` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -144,7 +142,7 @@ ALTER TABLE `league`
 -- Indici per le tabelle `season`
 --
 ALTER TABLE `season`
-  ADD PRIMARY KEY (`ID`);
+  ADD UNIQUE KEY `season` (`season`);
 
 --
 -- Indici per le tabelle `standings`
@@ -167,8 +165,7 @@ ALTER TABLE `team`
 -- Limiti per la tabella `standings`
 --
 ALTER TABLE `standings`
-  ADD CONSTRAINT `standings_ibfk_1` FOREIGN KEY (`ID_league`) REFERENCES `league` (`ID_league`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `standings_ibfk_2` FOREIGN KEY (`ID_season`) REFERENCES `season` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `standings_ibfk_1` FOREIGN KEY (`ID_league`) REFERENCES `league` (`ID_league`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
