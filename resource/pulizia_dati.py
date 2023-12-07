@@ -33,7 +33,7 @@ db_config = {
 conn = mysql.connector.connect(**db_config)
 
 giorni_dei_mesi = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
-maxapi=5
+maxapi=35
 with open("resource/checkpoint_pulizia.txt", "r") as checkpoint_r:
     ck = checkpoint_r.readline().strip().split(" , ")
     anno = ck[0]
@@ -107,10 +107,12 @@ while mese <= 12:
             InsertIntoSql(query,conn)
             query=f"INSERT INTO country (id_country, name, code, flag )values( {league_id}, '{country_name}', '{country_code}', '{country_flag}')"
             InsertIntoSql(query,conn)
-            print("\n"+s_score_home+"\n"+ s_score_away)
+            #print("\n"+s_score_home+"\n"+ s_score_away)
             query=f"INSERT INTO team ( id_team, name, logo, score )values( {teams_home_id}, '{teams_home_name}', '{teams_home_logo}')"
             InsertIntoSql(query,conn)
             query=f"INSERT INTO team ( id_team, name, logo )values( {teams_away_id}, '{teams_away_name}', '{teams_away_logo}')"
+            InsertIntoSql(query,conn)
+            query=f"INSERT INTO season (season )values('{league_season}')"
             InsertIntoSql(query,conn)
 
         giorno=giorno+1
