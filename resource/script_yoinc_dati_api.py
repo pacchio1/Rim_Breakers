@@ -39,7 +39,7 @@ def ScriviSuFile(nome, stringa):
         file.close()
 
 time_out=10
-maxapi=35
+maxapi=65
 giorno= d
 mese = m
 while mese <= 12:

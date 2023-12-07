@@ -1,6 +1,7 @@
 import datetime
 import json
 import mysql.connector
+import os
 
 def ScriviSuFile(nome, stringa):
     with open(nome, "w") as file:
@@ -31,7 +32,7 @@ db_config = {
     'database': 'rimbreakers',
 }
 conn = mysql.connector.connect(**db_config)
-
+leagues_to_follow=[197,120,194,202,2,40,45,52,242,143,142,117,104]
 giorni_dei_mesi = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 maxapi=35
 with open("resource/checkpoint_pulizia.txt", "r") as checkpoint_r:
@@ -52,7 +53,7 @@ while mese <= 12:
             data = LeggiFile(nomefile)
         except:
             print("file non trovato")
-            break
+            os.system("exit()")
         #print(data)
         data = json.loads(data)
         print("letto il file del "+str(anno),mese_txt,giorno_txt)
@@ -99,22 +100,21 @@ while mese <= 12:
             scores_away_total=scores_home["total"]
             s_score_away=str(scores_away_q1)+","+str(scores_away_q2)+","+str(scores_away_q3)+","+str(scores_away_q4)+","+str(scores_away_ot)+","+str(scores_away_total)
 
-            #tab Games
-            date_str = data_principale.strftime("%Y-%m-%d %H:%M:%S")
-            query = f"INSERT INTO games (id_games, date, status, id_home, score_home, id_away, score_away) VALUES ({id_principale}, STR_TO_DATE('{date_str}', '%Y-%m-%d %H:%i:%s'), '{status}', {teams_home_id}, '{s_score_home}',  {teams_away_id}, '{s_score_away}')"
-            InsertIntoSql(query,conn)
-            query=f"INSERT INTO league ( id_league, name, type, season, logo )values( {league_id}, '{league_name}', '{league_type}', '{league_season}', '{league_logo}')"
-            InsertIntoSql(query,conn)
-            query=f"INSERT INTO country (id_country, name, code, flag )values( {league_id}, '{country_name}', '{country_code}', '{country_flag}')"
-            InsertIntoSql(query,conn)
-            #print("\n"+s_score_home+"\n"+ s_score_away)
-            query=f"INSERT INTO team ( id_team, name, logo, score )values( {teams_home_id}, '{teams_home_name}', '{teams_home_logo}')"
-            InsertIntoSql(query,conn)
-            query=f"INSERT INTO team ( id_team, name, logo )values( {teams_away_id}, '{teams_away_name}', '{teams_away_logo}')"
-            InsertIntoSql(query,conn)
-            query=f"INSERT INTO season (season )values('{league_season}')"
-            InsertIntoSql(query,conn)
-
+            if league_id in leagues_to_follow:
+                date_str = data_principale.strftime("%Y-%m-%d %H:%M:%S")
+                query = f"INSERT INTO games (id_games, date, status, id_home, score_home, id_away, score_away) VALUES ({id_principale}, STR_TO_DATE('{date_str}', '%Y-%m-%d %H:%i:%s'), '{status}', {teams_home_id}, '{s_score_home}',  {teams_away_id}, '{s_score_away}')"
+                InsertIntoSql(query,conn)
+                query=f"INSERT INTO league ( id_league, name, type, season, logo )values( {league_id}, '{league_name}', '{league_type}', '{league_season}', '{league_logo}')"
+                InsertIntoSql(query,conn)
+                #print("\n"+s_score_home+"\n"+ s_score_away)
+                query=f"INSERT INTO team ( id_team, id_league, name, logo )values( {teams_home_id}, {league_id}, '{teams_home_name}', '{teams_home_logo}')"
+                InsertIntoSql(query,conn)
+                query=f"INSERT INTO team ( id_team, id_league, name, logo )values( {teams_away_id}, {league_id}, '{teams_away_name}', '{teams_away_logo}')"
+                InsertIntoSql(query,conn)
+                query=f"INSERT INTO season (season )values('{league_season}')"
+                InsertIntoSql(query,conn )
+                query=f"INSERT INTO country (id_country, id_league, name, code, flag )values( {country_id}, {league_id}, '{country_name}', '{country_code}', '{country_flag}')"
+                InsertIntoSql(query,conn)
         giorno=giorno+1
         maxapi=maxapi-1
         if maxapi == 0:
