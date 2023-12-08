@@ -19,7 +19,9 @@ headers = {
 
 def timeout():
     print("aspetta 60 sec ")
-    time.sleep(60)
+    time.sleep(30)
+    print("sono passati 30 sec ")
+    time.sleep(30)
 
 def GetApi(anno, mese, giorno):
     endpoint = "games?date=" + anno + "-" + mese + "-" + giorno
@@ -39,7 +41,7 @@ def ScriviSuFile(nome, stringa):
         file.close()
 
 time_out=10
-maxapi=65
+maxapi=100
 giorno= d
 mese = m
 while mese <= 12:
