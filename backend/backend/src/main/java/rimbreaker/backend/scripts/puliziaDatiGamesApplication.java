@@ -29,7 +29,7 @@ public class PuliziaDatiGamesApplication {
         dbConfig.put("host", "localhost");
         dbConfig.put("port", "3306");
         dbConfig.put("user", "root");
-        dbConfig.put("password", ""); // Set your MySQL password here
+        dbConfig.put("password", null);
         dbConfig.put("database", "rimbreakers");
 
         Connection conn = connectToDatabase(dbConfig);
