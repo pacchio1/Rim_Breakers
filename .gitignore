@@ -1,8 +1,10 @@
 /data/*.json
-/resource/checkpoint_pulizia.txt
-/resource/checkpoint_yoinc.txt
+
 .vscode
 
 .idea
 backend/backend/src/main/java/rimbreaker/backend/scripts/checkpoint_pulizia.txt
 backend/backend/src/main/java/rimbreaker/backend/scripts/checkpoint_pulizia.txt
+resource/checkpoint_pulizia.txt
+resource/checkpoint_pulizia.txt
+resource/checkpoint_yoinc.txt
