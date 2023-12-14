@@ -1,6 +1,6 @@
-package backend.pulizia_dati_games;
+package rimbreaker.backend.scripts;
 
-import org.springframework.boot.SpringApplication;
+/* import org.springframework.boot.SpringApplication; */
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.io.BufferedReader;
@@ -20,11 +20,10 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-
 @SpringBootApplication
-public class PuliziaDatiGamesApplication {
+public class puliziaDatiGamesApplication {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
         Map<String, String> dbConfig = new HashMap<>();
         dbConfig.put("host", "localhost");
         dbConfig.put("port", "3306");
@@ -34,10 +33,11 @@ public class PuliziaDatiGamesApplication {
 
         Connection conn = connectToDatabase(dbConfig);
 
-        int[] leaguesToFollow = {197, 120, 194, 202, 2, 40, 45, 52, 242, 143, 142, 117, 104};
+        int[] leaguesToFollow = { 197, 120, 194, 202, 2, 40, 45, 52, 242, 143, 142, 117, 104 };
         int maxApi = 35;
 
-        try (BufferedReader checkpointReader = new BufferedReader(new FileReader("checkpoint_pulizia.txt"))) {
+        try (BufferedReader checkpointReader = new BufferedReader(
+                new FileReader("backend/backend/src/main/java/rimbreaker/backend/scripts/checkpoint_pulizia.txt"))) {
             String[] ck = checkpointReader.readLine().strip().split(" , ");
             String anno = ck[0];
             int m = Integer.parseInt(ck[1]);
@@ -60,12 +60,11 @@ public class PuliziaDatiGamesApplication {
                             data.append(line);
                         }
 
-                        // Parse JSON manually
                         parseJsonAndInsertIntoDatabase(data.toString(), conn, leaguesToFollow);
                         System.out.println("Letto il file del " + anno + " " + meseTxt + " " + giornoTxt);
 
                     } catch (IOException e) {
-                        System.out.println("File non trovato");
+                        System.out.println("File non trovato" + e);
                         System.exit(1);
                     }
 
@@ -98,7 +97,8 @@ public class PuliziaDatiGamesApplication {
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            String url = "jdbc:mysql://" + dbConfig.get("host") + ":" + dbConfig.get("port") + "/" + dbConfig.get("database");
+            String url = "jdbc:mysql://" + dbConfig.get("host") + ":" + dbConfig.get("port") + "/"
+                    + dbConfig.get("database");
             conn = DriverManager.getConnection(url, dbConfig.get("user"), dbConfig.get("password"));
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
@@ -148,7 +148,11 @@ public class PuliziaDatiGamesApplication {
             String dateStr = formatDate(dateString);
             String query = "INSERT INTO games (id_games, date, status, id_home, score_home, id_away, score_away) " +
                     "VALUES (?, STR_TO_DATE(?, '%Y-%m-%d %H:%i:%s'), ?, ?, ?, ?, ?)";
-            insertIntoSql(query, conn, idPrincipale, dateStr, status, teamsHomeId, getScoreString(scoresHomeQ1, scoresHomeQ2, scoresHomeQ3, scoresHomeQ4, scoresHomeOT, scoresHomeTotal), teamsAwayId, getScoreString(scoresAwayQ1, scoresAwayQ2, scoresAwayQ3, scoresAwayQ4, scoresAwayOT, scoresAwayTotal));
+            insertIntoSql(query, conn, idPrincipale, dateStr, status, teamsHomeId,
+                    getScoreString(scoresHomeQ1, scoresHomeQ2, scoresHomeQ3, scoresHomeQ4, scoresHomeOT,
+                            scoresHomeTotal),
+                    teamsAwayId, getScoreString(scoresAwayQ1, scoresAwayQ2, scoresAwayQ3, scoresAwayQ4, scoresAwayOT,
+                            scoresAwayTotal));
 
             query = "INSERT INTO league (id_league, name, type, season, logo) VALUES (?, ?, ?, ?, ?)";
             insertIntoSql(query, conn, leagueId, leagueName, leagueType, leagueSeason, leagueLogo);
@@ -219,7 +223,7 @@ public class PuliziaDatiGamesApplication {
     }
 
     private static int getDaysInMonth(int month) {
-        int[] giorniDeiMesi = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+        int[] giorniDeiMesi = { 0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
         return giorniDeiMesi[month];
     }
 }

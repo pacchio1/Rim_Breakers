@@ -88,17 +88,17 @@ while mese <= 12:
                     scores_home_total=scores_home["total"]
                     s_score_home=str(scores_home_q1)+","+str(scores_home_q2)+","+str(scores_home_q3)+","+str(scores_home_q4)+","+str(scores_home_ot)+","+str(scores_home_total)
 
-                    scores_away_q1=scores_home["quarter_1"]
-                    scores_away_q2=scores_home["quarter_2"]
-                    scores_away_q3=scores_home["quarter_3"]
-                    scores_away_q4=scores_home["quarter_4"]
-                    scores_away_ot=scores_home["over_time"]
-                    scores_away_total=scores_home["total"]
+                    scores_away_q1=scores_away["quarter_1"]
+                    scores_away_q2=scores_away["quarter_2"]
+                    scores_away_q3=scores_away["quarter_3"]
+                    scores_away_q4=scores_away["quarter_4"]
+                    scores_away_ot=scores_away["over_time"]
+                    scores_away_total=scores_away["total"]
                     s_score_away=str(scores_away_q1)+","+str(scores_away_q2)+","+str(scores_away_q3)+","+str(scores_away_q4)+","+str(scores_away_ot)+","+str(scores_away_total)
 
                     if league_id in leagues_to_follow:
                         date_str = data_principale.strftime("%Y-%m-%d %H:%M:%S")
-                        query = f"INSERT INTO games (id_games, date, status, id_home, score_home, id_away, score_away) VALUES ({id_principale}, STR_TO_DATE('{date_str}', '%Y-%m-%d %H:%i:%s'), '{status}', {teams_home_id}, '{s_score_home}',  {teams_away_id}, '{s_score_away}')"
+                        query = f"INSERT INTO games (id_games, id_league, date, status, id_home, score_home, id_away, score_away) VALUES ({id_principale}, {league_id}, STR_TO_DATE('{date_str}', '%Y-%m-%d %H:%i:%s'), '{status}', {teams_home_id}, '{s_score_home}',  {teams_away_id}, '{s_score_away}')"
                         InsertIntoSql(query,conn)
                         query=f"INSERT INTO league ( id_league, name, type, season, logo )values( {league_id}, '{league_name}', '{league_type}', '{league_season}', '{league_logo}')"
                         InsertIntoSql(query,conn)
