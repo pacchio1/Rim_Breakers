@@ -2,7 +2,6 @@ package rimbreaker.backend.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
 import rimbreaker.backend.entity.Country;
 
 import java.util.List;
