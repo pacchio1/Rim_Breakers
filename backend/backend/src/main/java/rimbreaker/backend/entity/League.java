@@ -16,7 +16,7 @@ import lombok.Setter;
 public class League {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID_league")
+    @Column(name = "id_league")
     private Long id;
 
     @Column(name = "name")

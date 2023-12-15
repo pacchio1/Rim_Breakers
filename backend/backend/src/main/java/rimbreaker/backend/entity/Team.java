@@ -16,10 +16,10 @@ import lombok.Setter;
 public class Team {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID_team")
+    @Column(name = "id_team")
     private Long id;
 
-    @Column(name = "ID_league")
+    @Column(name = "id_league")
     private Long leagueId;
 
     @Column(name = "name")

@@ -15,11 +15,11 @@ import lombok.Setter;
 @NoArgsConstructor
 public class Standings {
     @Id
-    @Column(name = "ID_league")
+    @Column(name = "id_league")
     private Long leagueId;
 
     @Id
-    @Column(name = "ID_season")
+    @Column(name = "id_season")
     private Long seasonId;
 
     @Column(name = "played")

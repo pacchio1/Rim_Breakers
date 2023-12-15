@@ -19,7 +19,7 @@ public class Country {
     @Column(name = "id_country")
     private Long id;
 
-    @Column(name = "ID_league")
+    @Column(name = "id_league")
     private Long leagueId;
 
     @Column(name = "name")

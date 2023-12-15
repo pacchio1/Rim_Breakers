@@ -17,11 +17,11 @@ import lombok.Setter;
 public class Games {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID_games")
-    private Long id;
+    @Column(name = "id_games")
+    private Long id_games;
 
-    @Column(name = "ID_league")
-    private Long leagueId;
+    @Column(name = "id_league")
+    private Long id_league;
 
     @Column(name = "date")
     private Date date;
@@ -29,15 +29,15 @@ public class Games {
     @Column(name = "status")
     private String status;
 
-    @Column(name = "ID_home")
-    private Long homeId;
+    @Column(name = "id_home")
+    private Long id_home;
 
     @Column(name = "score_home")
-    private String scoreHome;
+    private String score_home;
 
-    @Column(name = "ID_away")
-    private Long awayId;
+    @Column(name = "id_away")
+    private Long id_away;
 
     @Column(name = "score_away")
-    private String scoreAway;
+    private String score_away;
 }
