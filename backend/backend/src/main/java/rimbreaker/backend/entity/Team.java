@@ -19,6 +19,8 @@ public class Team {
     @Column(name = "id_team")
     private Long id;
 
+    @ManyToOne
+    @JoinColumn(name = "id_league", nullable = false)
     @Column(name = "id_league")
     private Long leagueId;
 

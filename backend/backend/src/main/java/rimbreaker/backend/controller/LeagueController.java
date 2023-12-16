@@ -15,17 +15,17 @@ public class LeagueController {
 
     private final LeagueService leagueService;
 
-    @GetMapping("/league_name")
-    public ResponseEntity<?> getLeagueName() {
+    @GetMapping("/{name}")
+    public ResponseEntity<?> getLeagueName(String name) {
 
-        return leagueService.getLeagueName();
+        return leagueService.getLeagueName(name);
 
     }
 
-    @GetMapping("/league_logo")
-    public ResponseEntity<?> getLeagueLogo() {
+    @GetMapping("/{logo}")
+    public ResponseEntity<?> getLeagueLogo(String logo) {
 
-        return leagueService.getLeagueLogo();
+        return leagueService.getLeagueLogo(logo);
 
     }
 

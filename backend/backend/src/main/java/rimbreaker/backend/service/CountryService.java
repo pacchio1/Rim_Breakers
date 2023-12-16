@@ -12,14 +12,26 @@ public class CountryService {
 
     private final CountryRepository countryRepository;
 
-    public ResponseEntity<?> getFlag() {
+    public ResponseEntity<?> getFlag(String flag) {
 
-        return new ResponseEntity<>(countryRepository.getFlag(), HttpStatus.OK);
+        if (flag == null) {
+
+            return new ResponseEntity<>(countryRepository.getFlag(null), HttpStatus.BAD_REQUEST);
+
+        }
+
+        return new ResponseEntity<>(countryRepository.getFlag(flag), HttpStatus.OK);
     }
 
-    public ResponseEntity<?> getNameCountry() {
+    public ResponseEntity<?> getNameCountry(String name) {
 
-        return new ResponseEntity<>(countryRepository.getNameCountry(), HttpStatus.OK);
+        if (name == null) {
+
+            return new ResponseEntity<>(countryRepository.getNameCountry(null), HttpStatus.BAD_REQUEST);
+
+        }
+
+        return new ResponseEntity<>(countryRepository.getNameCountry(name), HttpStatus.OK);
     }
 
 }

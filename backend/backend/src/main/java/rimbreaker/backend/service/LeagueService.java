@@ -12,15 +12,15 @@ public class LeagueService {
 
     private final LeagueRepository leagueRepository;
 
-    public ResponseEntity<?> getLeagueName() {
+    public ResponseEntity<?> getLeagueName(String name) {
 
-        return new ResponseEntity<>(leagueRepository.getLeagueName(), HttpStatus.OK);
+        return new ResponseEntity<>(leagueRepository.getLeagueName(name), HttpStatus.OK);
 
     }
 
-    public ResponseEntity<?> getLeagueLogo() {
+    public ResponseEntity<?> getLeagueLogo(String logo) {
 
-        return new ResponseEntity<>(leagueRepository.getLeagueLogo(), HttpStatus.OK);
+        return new ResponseEntity<>(leagueRepository.getLeagueLogo(logo), HttpStatus.OK);
 
     }
 

@@ -19,6 +19,8 @@ public class Country {
     @Column(name = "id_country")
     private Long id;
 
+    @ManyToOne
+    @JoinColumn(name = "id_league", nullable = false)
     @Column(name = "id_league")
     private Long leagueId;
 
