@@ -15,7 +15,6 @@ def LeggiFile(nome ):
         return stringa
 
 def InsertIntoSql(query, conn):
-    #to do
     try:
         cursor = conn.cursor()
         cursor.execute(query)
