@@ -16,10 +16,14 @@ import lombok.Setter;
 public class Standings {
     @Id
     @Column(name = "id_league")
+    @ManyToOne
+    @JoinColumn(name = "id_league", nullable = false)
     private Long leagueId;
 
     @Id
     @Column(name = "id_season")
+    @ManyToOne
+    @JoinColumn(name = "season", nullable = false)
     private Long seasonId;
 
     @Column(name = "played")

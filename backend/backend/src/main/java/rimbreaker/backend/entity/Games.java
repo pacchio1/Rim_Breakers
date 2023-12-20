@@ -20,6 +20,8 @@ public class Games {
     @Column(name = "id_games")
     private Long id_games;
 
+    @ManyToOne
+    @JoinColumn(name = "id_league", nullable = false)
     @Column(name = "id_league")
     private Long id_league;
 

@@ -2,7 +2,6 @@ package rimbreaker.backend.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
 import rimbreaker.backend.entity.League;
 
 import java.util.List;
@@ -10,10 +9,10 @@ import java.util.List;
 public interface LeagueRepository extends JpaRepository<League, Integer> {
 
     @Query("SELECT l.name FROM League l")
-    List<String> getLeagueName();
+    List<String> getLeagueName(String name);
 
     @Query("SELECT l.logo FROM League l")
-    List<String> getLeagueLogo();
+    List<String> getLeagueLogo(String logo);
 
     League save(League league);
 }
