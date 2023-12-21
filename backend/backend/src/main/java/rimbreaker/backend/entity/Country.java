@@ -17,7 +17,7 @@ public class Country {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_country")
-    private Long id;
+    private Long id_country;
 
     @Column(name = "ID_league")
     private Long leagueId;

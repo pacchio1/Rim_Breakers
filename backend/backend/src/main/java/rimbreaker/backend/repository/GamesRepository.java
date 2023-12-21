@@ -23,7 +23,7 @@ public interface GamesRepository extends JpaRepository<Games, Integer> {
     @Query("SELECT score_away FROM Games g WHERE id_games = :id_games")
     String getScore_away(@Param("id_games") int id_games);
 
-    @Query("SELECT * FROM Games g WHERE date = :id_games")
+    @Query("SELECT * FROM Games g WHERE date = :date")
     List<Games> getGameByDate(@Param("date") Date date);
 
     Games save(Games games);

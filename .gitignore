@@ -1,8 +1,4 @@
 /data/*.json
-
 .vscode
 .idea
-
-/backend/backend/src/main/java/rimbreaker/backend/scripts/*.txt
-/resource/*.txt
-
+*.txt

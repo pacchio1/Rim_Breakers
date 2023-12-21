@@ -10,10 +10,10 @@ import rimbreaker.backend.entity.Team;
 
 public interface TeamRepository extends JpaRepository<Team, Integer> {
     @Query("SELECT Name FROM Team")
-    String getTeamName(@Param("idTeam") int id);
+    String getTeamName(@Param("idTeam") int id_games);
 
     @Query("SELECT logo FROM Team")
-    String getTeamLogo(@Param("idTeam") int id);
+    String getTeamLogo(@Param("idTeam") int id_games);
 
     Team save(Team team);
 }

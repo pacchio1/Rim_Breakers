@@ -21,6 +21,7 @@ public class GamesController {
 
         return gamesService.getDateGame(id_games);
 
+
     }
 
     @GetMapping("/status/{id_games}")
