@@ -9,10 +9,6 @@ import org.springframework.stereotype.Service;
 import rimbreaker.backend.repository.CountryRepository;
 
 @Service
-
-public class CountryService {
-    @Autowired
-    private CountryRepository countryRepository;
 @RequiredArgsConstructor
 public class CountryService {
 

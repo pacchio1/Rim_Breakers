@@ -16,18 +16,15 @@ import lombok.Setter;
 public class Team {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_team")
+    @Column(name = "ID_team")
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "id_league", nullable = false)
-    @Column(name = "id_league")
+    @Column(name = "ID_league")
     private Long leagueId;
 
     @Column(name = "name")
     private String name;
 
-    @Lob
-    @Column(name = "logo")
+    @Column(name = "logo", columnDefinition = "TEXT")
     private String logo;
 }

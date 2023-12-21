@@ -1,20 +1,18 @@
 package rimbreaker.backend.entity;
 
-import jakarta.persistence.*;
+import java.io.Serializable;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Entity
-@Table(name = "season")
 @Getter
 @Setter
 @EqualsAndHashCode
-@NoArgsConstructor
-public class Season {
-    @Id
-    @Column(name = "season")
+public class StandingsId implements Serializable {
+    private Long leagueId;
     private String season;
+    private Long teamId;
+
+
 }

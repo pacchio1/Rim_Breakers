@@ -9,32 +9,51 @@ import lombok.Setter;
 
 @Entity
 @Table(name = "standings")
+@IdClass(StandingsId.class)
 @Getter
 @Setter
 @EqualsAndHashCode
 @NoArgsConstructor
 public class Standings {
     @Id
-    @Column(name = "id_league")
-    @ManyToOne
-    @JoinColumn(name = "id_league", nullable = false)
+    @Column(name = "ID_league")
     private Long leagueId;
 
     @Id
-    @Column(name = "id_season")
-    @ManyToOne
-    @JoinColumn(name = "season", nullable = false)
-    private Long seasonId;
+    @Column(name = "season")
+    private String season;
+
+    @Id
+    @Column(name = "ID_team")
+    private Long teamId;
+
+    @Column(name = "position")
+    private int position;
+
+    @Column(name = "group_name")
+    private String groupName;
 
     @Column(name = "played")
-    private Long played;
+    private int played;
 
     @Column(name = "win")
-    private String win;
+    private int win;
+
+    @Column(name = "perc_win")
+    private float percWin;
 
     @Column(name = "lose")
-    private String lose;
+    private int lose;
 
-    @Column(name = "points")
-    private String points;
+    @Column(name = "perc_lose")
+    private float percLose;
+
+    @Column(name = "points_for")
+    private int pointsFor;
+
+    @Column(name = "points_against")
+    private int pointsAgainst;
+
+    @Column(name = "description", columnDefinition = "TEXT")
+    private String description;
 }

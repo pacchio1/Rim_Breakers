@@ -19,9 +19,7 @@ public class Country {
     @Column(name = "id_country")
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "id_league", nullable = false)
-    @Column(name = "id_league")
+    @Column(name = "ID_league")
     private Long leagueId;
 
     @Column(name = "name")
@@ -33,7 +31,6 @@ public class Country {
     @Column(name = "code")
     private String code;
 
-    @Lob
     @Column(name = "flag")
     private String flag;
 }

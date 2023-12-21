@@ -21,10 +21,12 @@ def LeggiFile(nome ):
         return stringa
 
 conn = http.client.HTTPSConnection("v1.basketball.api-sports.io")
+apikey = "0b54a917c3c10455f93a3a5c857ea313"
 headers = {
-    'item-rapidapi-host': "v1.basketball.api-sports.io",
-    'item-rapidapi-key': "0b54a917c3c10455f93a3a5c857ea313"
+    'x-rapidapi-host': "v1.basketball.api-sports.io",
+    'x-rapidapi-key': apikey
 }
+
 def InsertIntoSql(query, db):
     try:
         cursor = db.cursor()
@@ -43,11 +45,11 @@ db_config = {
 }
 db = mysql.connector.connect(**db_config)
 leagues_to_follow=[197,120,194,202,2,40,45,52,242,143,142,117,104]
-time_out=1
+time_out=10
 noma="data/standings.json"
 for lega in leagues_to_follow:
     time_out=time_out-1
-    endpoint = "standings?league="+str(lega)+"&season="+"2023"
+    endpoint = "standings?league="+str(lega)+"&season="+"2022-2023"
     conn.request("GET", "/" + endpoint, headers=headers)
     print("api chiamata")
     res = conn.getresponse()
@@ -66,9 +68,9 @@ for lega in leagues_to_follow:
                 group_name = item["group"]["name"]
                 team_id = item["team"]["id"]
                 played = item["games"]["played"]
-                win = item["games"]["win"]
+                win = item["games"]["win"]["total"]
                 percentage_won = item["games"]["win"]["percentage"]
-                lose = item["games"]["lose"]
+                lose = item["games"]["lose"]["total"]
                 percentage_lost = item["games"]["lose"]["percentage"]
                 points_for = item["points"]["for"]
                 points_against = item["points"]["against"]

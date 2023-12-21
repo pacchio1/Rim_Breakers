@@ -1,12 +1,13 @@
 package rimbreaker.backend.entity;
 
 import jakarta.persistence.*;
-import java.util.Date;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.util.Date;
 
 @Entity
 @Table(name = "games")
@@ -17,29 +18,27 @@ import lombok.Setter;
 public class Games {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_games")
-    private Long id_games;
+    @Column(name = "ID_games")
+    private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "id_league", nullable = false)
-    @Column(name = "id_league")
-    private Long id_league;
+    @Column(name = "ID_league")
+    private Long leagueId;
 
     @Column(name = "date")
     private Date date;
 
-    @Column(name = "status")
+    @Column(name = "status", columnDefinition = "TEXT")
     private String status;
 
-    @Column(name = "id_home")
-    private Long id_home;
+    @Column(name = "ID_home")
+    private Long homeId;
 
-    @Column(name = "score_home")
-    private String score_home;
+    @Column(name = "score_home", columnDefinition = "TEXT")
+    private String scoreHome;
 
-    @Column(name = "id_away")
-    private Long id_away;
+    @Column(name = "ID_away")
+    private Long awayId;
 
-    @Column(name = "score_away")
-    private String score_away;
+    @Column(name = "score_away", columnDefinition = "TEXT")
+    private String scoreAway;
 }
