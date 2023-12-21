@@ -14,11 +14,23 @@ public class LeagueService {
 
     public ResponseEntity<?> getLeagueName(String name) {
 
+        if (name == null) {
+
+            return new ResponseEntity<>("League's name not found!", HttpStatus.BAD_REQUEST);
+
+        }
+
         return new ResponseEntity<>(leagueRepository.getLeagueName(name), HttpStatus.OK);
 
     }
 
     public ResponseEntity<?> getLeagueLogo(String logo) {
+
+        if (logo == null) {
+
+            return new ResponseEntity<>("League's logo not found!", HttpStatus.BAD_REQUEST);
+
+        }
 
         return new ResponseEntity<>(leagueRepository.getLeagueLogo(logo), HttpStatus.OK);
 

@@ -1,7 +1,5 @@
 package rimbreaker.backend.service;
 
-
-import org.springframework.beans.factory.annotation.Autowired;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -10,6 +8,7 @@ import rimbreaker.backend.repository.CountryRepository;
 
 @Service
 @RequiredArgsConstructor
+
 public class CountryService {
 
     private final CountryRepository countryRepository;
@@ -18,7 +17,7 @@ public class CountryService {
 
         if (flag == null) {
 
-            return new ResponseEntity<>(countryRepository.getFlag(null), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>("Country's flag not found!", HttpStatus.BAD_REQUEST);
 
         }
 
@@ -29,7 +28,7 @@ public class CountryService {
 
         if (name == null) {
 
-            return new ResponseEntity<>(countryRepository.getNameCountry(null), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>("Country's name not found!" , HttpStatus.BAD_REQUEST);
 
         }
 
