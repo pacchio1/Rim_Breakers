@@ -13,12 +13,16 @@ public interface GamesRepository extends JpaRepository<Games, Integer> {
 
     @Query("SELECT date FROM Games g WHERE id_games = :id_games")
     Data getDateGame(@Param("id_games") int id_games);
+
     @Query("SELECT status FROM Games g WHERE id_games = :id_games")
     String getStatusGame(@Param("id_games") int id_games);
+
     @Query("SELECT score_home FROM Games g WHERE id_games = :id_games")
     String getScore_home(@Param("id_games") int id_games);
+
     @Query("SELECT score_away FROM Games g WHERE id_games = :id_games")
     String getScore_away(@Param("id_games") int id_games);
+
     @Query("SELECT * FROM Games g WHERE date = :id_games")
     List<Games> getGameByDate(@Param("date") Date date);
 
