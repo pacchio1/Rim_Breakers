@@ -15,15 +15,15 @@ public class CountryController {
 
     private final CountryService countryService;
 
-    @GetMapping("/flag/{id}")
-    public ResponseEntity<?> getFlag(String flag) {
-        return countryService.getFlag(flag);
+    @GetMapping("/flag")
+    public ResponseEntity<?> getFlag() {
+        return countryService.getFlag();
 
     }
 
-    @GetMapping("/name/{id}")
-    public ResponseEntity<?> getNameCountry(String name) {
-        return countryService.getNameCountry(name);
+    @GetMapping("/name")
+    public ResponseEntity<?> getNameCountry() {
+        return countryService.getNameCountry();
 
     }
 }

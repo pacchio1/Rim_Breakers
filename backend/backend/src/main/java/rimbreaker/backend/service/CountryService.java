@@ -13,24 +13,13 @@ public class CountryService {
 
     private final CountryRepository countryRepository;
 
-    public ResponseEntity<?> getFlag(String flag) {
+    public ResponseEntity<?> getFlag() {
 
-        if (flag == null) {
-            return new ResponseEntity<>("Country's flag not found!", HttpStatus.BAD_REQUEST);
-
-        }
-
-        return new ResponseEntity<>(countryRepository.getFlag(flag), HttpStatus.OK);
+        return new ResponseEntity<>(countryRepository.getFlag(), HttpStatus.OK);
     }
 
-    public ResponseEntity<?> getNameCountry(String name) {
+    public ResponseEntity<?> getNameCountry() {
 
-        if (name == null) {
-
-            return new ResponseEntity<>("Country's name not found!" , HttpStatus.BAD_REQUEST);
-
-        }
-
-        return new ResponseEntity<>(countryRepository.getNameCountry(name), HttpStatus.OK);
+        return new ResponseEntity<>(countryRepository.getNameCountry(), HttpStatus.OK);
     }
 }

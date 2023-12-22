@@ -26,3 +26,7 @@ services:
     environment:
       PMA_HOST: db
       MYSQL_ROOT_PASSWORD: root
+
+  ubuntu:
+    image: ubuntu:22.04
+

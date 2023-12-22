@@ -26,5 +26,4 @@ public interface GamesRepository extends JpaRepository<Games, Integer> {
     @Query("FROM Games g WHERE date = :date")
     List<Games> getGameByDate(@Param("date") Date date);
 
-    Games save(Games games);
 }
