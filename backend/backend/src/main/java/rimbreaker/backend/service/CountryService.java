@@ -16,7 +16,6 @@ public class CountryService {
     public ResponseEntity<?> getFlag(String flag) {
 
         if (flag == null) {
-
             return new ResponseEntity<>("Country's flag not found!", HttpStatus.BAD_REQUEST);
 
         }

@@ -13,5 +13,4 @@ public interface CountryRepository extends JpaRepository<Country, Integer> {
     @Query("SELECT name FROM Country")
     List<String> getNameCountry(String name);
 
-    Country save(Country country);
 }

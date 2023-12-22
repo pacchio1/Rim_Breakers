@@ -32,16 +32,16 @@ public class GamesController {
     }
 
     @GetMapping("/score_home/{id_games}")
-    public ResponseEntity<?> getScore_home(int id_games) {
+    public ResponseEntity<?> getScoreHome(int id_games) {
 
-        return gamesService.getScore_home(id_games);
+        return gamesService.getScoreHome(id_games);
 
     }
 
     @GetMapping("/score_away/{id_games}")
-    public ResponseEntity<?> getScore_away(int id_games) {
+    public ResponseEntity<?> getScoreAway(int id_games) {
 
-        return gamesService.getScore_away(id_games);
+        return gamesService.getScoreAway(id_games);
 
     }
 

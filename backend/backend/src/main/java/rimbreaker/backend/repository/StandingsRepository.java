@@ -10,7 +10,10 @@ import rimbreaker.backend.entity.Standings;
 import javax.xml.crypto.Data;
 
 public interface StandingsRepository extends JpaRepository<Standings, Integer> {
-        @Query("SELECT * FROM Standings s WHERE s.id_games = :idGames AND s.id_league = :idLeague AND s.id_team = :idTeam AND s.season = :season")
-        Standings getSeason(@Param("idGames") Long idGames, @Param("idLeague") Long idLeague, @Param("idTeam") Long idTeam, @Param("season") String season);
-    Standings save(Standings standings);
+    @Query("FROM Standings s WHERE s.idLeague = :idLeague AND s.teamId = :teamId AND s.season = :season")
+    Standings getSeason(@Param("idLeague") Long idLeague,
+                        @Param("teamId") Long teamId,
+                        @Param("season") String season);
+
+
 }

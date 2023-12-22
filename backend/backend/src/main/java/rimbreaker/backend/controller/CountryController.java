@@ -9,25 +9,22 @@ import lombok.RequiredArgsConstructor;
 import rimbreaker.backend.service.CountryService;
 
 @RestController
-@RequestMapping("country")
 @RequiredArgsConstructor
+@RequestMapping("/country")
 public class CountryController {
 
     private final CountryService countryService;
 
-    @GetMapping("/{flag}")
+    @GetMapping("/flag/{id}")
     public ResponseEntity<?> getFlag(String flag) {
-
         return countryService.getFlag(flag);
 
     }
 
-    @GetMapping("/{name}")
+    @GetMapping("/name/{id}")
     public ResponseEntity<?> getNameCountry(String name) {
-
         return countryService.getNameCountry(name);
 
     }
-
 }
 

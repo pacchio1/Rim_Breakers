@@ -14,5 +14,4 @@ public interface LeagueRepository extends JpaRepository<League, Integer> {
     @Query("SELECT l.logo FROM League l")
     List<String> getLeagueLogo(String logo);
 
-    League save(League league);
 }

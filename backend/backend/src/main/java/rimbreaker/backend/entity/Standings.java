@@ -17,7 +17,7 @@ import lombok.Setter;
 public class Standings {
     @Id
     @Column(name = "ID_league")
-    private Long leagueId;
+    private Long idLeague;
 
     @Id
     @Column(name = "season")

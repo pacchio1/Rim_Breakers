@@ -26,15 +26,15 @@ public class GamesService {
 
     }
 
-    public ResponseEntity<?> getScore_home(int id_games) {
+    public ResponseEntity<?> getScoreHome(int id_games) {
 
-        return new ResponseEntity<>(gamesRepository.getScore_home(id_games), HttpStatus.OK);
+        return new ResponseEntity<>(gamesRepository.getScoreHome(id_games), HttpStatus.OK);
 
     }
 
-    public ResponseEntity<?> getScore_away(int id_games) {
+    public ResponseEntity<?> getScoreAway(int id_games) {
 
-        return new ResponseEntity<>(gamesRepository.getScore_away(id_games), HttpStatus.OK);
+        return new ResponseEntity<>(gamesRepository.getScoreAway(id_games), HttpStatus.OK);
 
     }
 

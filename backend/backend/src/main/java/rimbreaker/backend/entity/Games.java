@@ -34,11 +34,11 @@ public class Games {
     private Long homeId;
 
     @Column(name = "score_home", columnDefinition = "TEXT")
-    private String scoreHome;
+    private String score_home;
 
     @Column(name = "ID_away")
     private Long awayId;
 
     @Column(name = "score_away", columnDefinition = "TEXT")
-    private String scoreAway;
+    private String score_away;
 }

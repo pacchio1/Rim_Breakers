@@ -7,7 +7,6 @@ import rimbreaker.backend.repository.StandingsRepository;
 @Service
 @RequiredArgsConstructor
 public class StandingsService {
-
     private final StandingsRepository standingsRepository;
 
 }

@@ -14,13 +14,13 @@ public class TeamService {
 
     public ResponseEntity<?> getTeamName(int id) {
 
-        return new ResponseEntity<>(teamRepository.getTeamName(id), HttpStatus.OK);
+        return new ResponseEntity<>(teamRepository.getTeamName((long) id), HttpStatus.OK);
 
     }
 
     public ResponseEntity<?> getTeamLogo(int id) {
 
-        return new ResponseEntity<>(teamRepository.getTeamLogo(id), HttpStatus.OK);
+        return new ResponseEntity<>(teamRepository.getTeamLogo((long) id), HttpStatus.OK);
 
     }
 }
