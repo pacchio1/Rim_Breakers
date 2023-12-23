@@ -12,28 +12,52 @@ public class LeagueService {
 
     private final LeagueRepository leagueRepository;
 
-    public ResponseEntity<?> getLeagueName(String name) {
+    public ResponseEntity<?> getLeague(Long id) {
 
-        if (name == null) {
+        try {
 
-            return new ResponseEntity<>("League's name not found!", HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(leagueRepository.getLeague(id), HttpStatus.OK);
+
+        }
+        catch(Exception e) {
+
+            return new ResponseEntity<>("League not found! : " + e.getMessage(), HttpStatus.BAD_REQUEST);
 
         }
 
-        return new ResponseEntity<>(leagueRepository.getLeagueName(name), HttpStatus.OK);
+    }
+
+    /*
+    public ResponseEntity<?> getLeagueName(String name) {
+
+        try {
+
+            return new ResponseEntity<>(leagueRepository.getLeagueName(name), HttpStatus.OK);
+
+        }
+        catch(Exception e) {
+
+            return new ResponseEntity<>("League's name not found! : " + e.getMessage(), HttpStatus.BAD_REQUEST);
+
+        }
 
     }
 
     public ResponseEntity<?> getLeagueLogo(String logo) {
 
-        if (logo == null) {
+        try {
 
-            return new ResponseEntity<>("League's logo not found!", HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(leagueRepository.getLeagueLogo(logo), HttpStatus.OK);
+
+        }
+        catch (Exception e) {
+
+            return new ResponseEntity<>("League's logo not found! : " + e.getMessage(), HttpStatus.BAD_REQUEST);
 
         }
 
-        return new ResponseEntity<>(leagueRepository.getLeagueLogo(logo), HttpStatus.OK);
-
     }
+    */
+
 
 }

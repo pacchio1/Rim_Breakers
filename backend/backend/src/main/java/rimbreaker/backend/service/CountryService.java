@@ -13,13 +13,53 @@ public class CountryService {
 
     private final CountryRepository countryRepository;
 
+    public ResponseEntity<?> getCountry(Long id) {
+
+        try {
+
+            return new ResponseEntity<>(countryRepository.getCountry(id), HttpStatus.OK);
+
+        }
+        catch (Exception e) {
+
+            return new ResponseEntity<>("Country not found! : " + e.getMessage(), HttpStatus.BAD_REQUEST);
+
+        }
+
+    }
+
+    /*
     public ResponseEntity<?> getFlag() {
 
-        return new ResponseEntity<>(countryRepository.getFlag(), HttpStatus.OK);
+        try {
+
+            return new ResponseEntity<>(countryRepository.getFlag(), HttpStatus.OK);
+
+        }
+        catch (Exception e) {
+
+            return new ResponseEntity<>("Country's Flag not found! : " + e.getMessage(), HttpStatus.BAD_REQUEST);
+
+        }
+
+
     }
 
     public ResponseEntity<?> getNameCountry() {
 
-        return new ResponseEntity<>(countryRepository.getNameCountry(), HttpStatus.OK);
+        try {
+
+            return new ResponseEntity<>(countryRepository.getNameCountry(), HttpStatus.OK);
+
+        }
+        catch (Exception e) {
+
+            return new ResponseEntity<>("Country's Name not found! : " + e.getMessage(), HttpStatus.BAD_REQUEST);
+
+        }
+
+
     }
+    */
+
 }

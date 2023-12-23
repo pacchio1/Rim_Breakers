@@ -8,14 +8,17 @@ import org.springframework.web.bind.annotation.RestController;
 import rimbreaker.backend.service.TeamService;
 
 @RestController
-@RequestMapping("team")
+@RequestMapping("/team")
 @RequiredArgsConstructor
 public class TeamController {
 
     private final TeamService teamService;
 
-    /*
-    @GetMapping("/teams")
-    public ResponseEntity<?> get*/
+    @GetMapping("/number")
+    public ResponseEntity<?> getTeam(Long id) {
+
+        return teamService.getTeam(id);
+
+    }
 
 }

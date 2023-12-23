@@ -12,15 +12,33 @@ public class TeamService {
 
     private final TeamRepository teamRepository;
 
-    public ResponseEntity<?> getTeamName(int id) {
+    public ResponseEntity<?> getTeam(Long id) {
 
-        return new ResponseEntity<>(teamRepository.getTeamName((long) id), HttpStatus.OK);
+        try {
+
+            return new ResponseEntity<>(teamRepository.getTeam(id), HttpStatus.OK);
+
+        }
+        catch(Exception e) {
+
+            return new ResponseEntity<>("Team not found! : " + e.getMessage(), HttpStatus.BAD_REQUEST);
+
+        }
 
     }
 
-    public ResponseEntity<?> getTeamLogo(int id) {
+    /*
+    public ResponseEntity<?> getTeamName(Long id) {
 
-        return new ResponseEntity<>(teamRepository.getTeamLogo((long) id), HttpStatus.OK);
+        return new ResponseEntity<>(teamRepository.getTeamName(id), HttpStatus.OK);
 
     }
+
+    public ResponseEntity<?> getTeamLogo(Long id) {
+
+        return new ResponseEntity<>(teamRepository.getTeamLogo(id), HttpStatus.OK);
+
+    }
+    */
+
 }

@@ -9,12 +9,20 @@ import lombok.RequiredArgsConstructor;
 import rimbreaker.backend.service.LeagueService;
 
 @RestController
-@RequestMapping("league")
+@RequestMapping("/league")
 @RequiredArgsConstructor
 public class LeagueController {
 
     private final LeagueService leagueService;
 
+    @GetMapping("/number")
+    public ResponseEntity<?> getLeague(Long id) {
+
+        return leagueService.getLeague(id);
+
+    }
+
+    /*
     @GetMapping("/{name}")
     public ResponseEntity<?> getLeagueName(String name) {
 
@@ -28,5 +36,6 @@ public class LeagueController {
         return leagueService.getLeagueLogo(logo);
 
     }
+    */
 
 }
