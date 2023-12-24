@@ -20,5 +20,17 @@ public class TeamController {
         return teamService.getTeam(id);
 
     }
+    @GetMapping("/all_by_id")
+    public ResponseEntity<?> getAllByID(Long id) {
+
+        return teamService.getAllByID(id);
+
+    }
+    @GetMapping("/all")
+    public ResponseEntity<?> getAll() {
+
+        return teamService.getAll();
+
+    }
 
 }

@@ -10,12 +10,10 @@ public interface LeagueRepository extends JpaRepository<League, Integer> {
 
     @Query("SELECT l.name, l.logo FROM League l WHERE l.id_league = :id")
     List<String> getLeague(Long id);
-
+    @Query("SELECT l.name, l.logo FROM League l")
+    List<String> getLeagueAll();
     /*
-    @Query("SELECT l.name FROM League l")
-    List<String> getLeagueName(String name);
-
-    @Query("SELECT l.logo FROM League l")
+    @Query("SELECT  FROM League l")
     List<String> getLeagueLogo(String logo);
     */
 

@@ -21,6 +21,12 @@ public class LeagueController {
         return leagueService.getLeague(id);
 
     }
+    @GetMapping("/all")
+    public ResponseEntity<?> getLeagueAll() {
+
+        return leagueService.getLeagueAll();
+
+    }
 
     /*
     @GetMapping("/{name}")

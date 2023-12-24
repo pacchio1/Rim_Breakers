@@ -21,6 +21,10 @@ public class CountryController {
         return countryService.getCountry(id);
 
     }
+    @GetMapping("/all")
+    public ResponseEntity<?> getFlagAndName(Long id) {
+     return countryService.getFlagAndName();
+    }
 
 
     /*

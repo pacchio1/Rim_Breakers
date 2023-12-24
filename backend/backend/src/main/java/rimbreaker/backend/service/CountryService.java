@@ -27,13 +27,11 @@ public class CountryService {
         }
 
     }
-
-    /*
-    public ResponseEntity<?> getFlag() {
+    public ResponseEntity<?> getFlagAndName() {
 
         try {
 
-            return new ResponseEntity<>(countryRepository.getFlag(), HttpStatus.OK);
+            return new ResponseEntity<>(countryRepository.getFlagAndName(), HttpStatus.OK);
 
         }
         catch (Exception e) {
@@ -44,6 +42,8 @@ public class CountryService {
 
 
     }
+    /*
+
 
     public ResponseEntity<?> getNameCountry() {
 

@@ -26,13 +26,11 @@ public class LeagueService {
         }
 
     }
-
-    /*
-    public ResponseEntity<?> getLeagueName(String name) {
+    public ResponseEntity<?> getLeagueAll() {
 
         try {
 
-            return new ResponseEntity<>(leagueRepository.getLeagueName(name), HttpStatus.OK);
+            return new ResponseEntity<>(leagueRepository.getLeagueAll(), HttpStatus.OK);
 
         }
         catch(Exception e) {
@@ -42,6 +40,8 @@ public class LeagueService {
         }
 
     }
+    /*
+
 
     public ResponseEntity<?> getLeagueLogo(String logo) {
 
