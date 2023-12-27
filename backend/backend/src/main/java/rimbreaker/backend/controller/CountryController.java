@@ -15,15 +15,20 @@ public class CountryController {
 
     private final CountryService countryService;
 
+    //ritorna paese attraverso id --> dettagli country
     @GetMapping("/number")
     public ResponseEntity<?> getCountry(Long id) {
 
         return countryService.getCountry(id);
 
     }
+
+    //ritorna tutta la tabella --> dashboard country
     @GetMapping("/all")
     public ResponseEntity<?> getFlagAndName(Long id) {
-     return countryService.getFlagAndName();
+
+        return countryService.getFlagAndName();
+
     }
 
 

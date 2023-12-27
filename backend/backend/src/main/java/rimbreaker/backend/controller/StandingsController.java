@@ -15,6 +15,8 @@ public class StandingsController {
 
     private final StandingsService standingsService;
 
+    //ritorna la stagione desiderata attraverso tre id diversi --> ricerca via filtri?
+    //NOTA: vedere di trovare miglior soluzione di ricerca o informare la sezione Front-End di aggiungere dei dropdown menu per gli id
     @GetMapping("/season")
     public ResponseEntity<?> getSeason(Long idLeague, Long teamId, String season) {
 

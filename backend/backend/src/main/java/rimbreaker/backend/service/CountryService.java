@@ -27,6 +27,7 @@ public class CountryService {
         }
 
     }
+
     public ResponseEntity<?> getFlagAndName() {
 
         try {
@@ -42,8 +43,8 @@ public class CountryService {
 
 
     }
-    /*
 
+    /*
 
     public ResponseEntity<?> getNameCountry() {
 
@@ -60,6 +61,7 @@ public class CountryService {
 
 
     }
+
     */
 
 }

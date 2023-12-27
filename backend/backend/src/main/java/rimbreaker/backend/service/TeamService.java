@@ -26,16 +26,19 @@ public class TeamService {
         }
 
     }
+
     public ResponseEntity<?> getAllByID(Long id) {
 
         return new ResponseEntity<>(teamRepository.getAllByID(id), HttpStatus.OK);
 
     }
+
     public ResponseEntity<?> getAll() {
 
         return new ResponseEntity<>(teamRepository.getAll(), HttpStatus.OK);
 
     }
+
     /*
 
 

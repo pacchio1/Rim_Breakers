@@ -21,7 +21,9 @@ import java.util.Objects;
 public class GamesService {
 
     private final GamesRepository gamesRepository;
+
     /*
+
     public ResponseEntity<?> getDateGame(int id_games) {
 
         return new ResponseEntity<>(gamesRepository.getDateGame(id_games), HttpStatus.OK);
@@ -48,23 +50,37 @@ public class GamesService {
 
 
     public  ResponseEntity<?> getNamesOfTeams(int id_games){
+
         return new ResponseEntity<>(gamesRepository.getNamesOfTeams(id_games), HttpStatus.OK);
+
     }
+
     */
+
     public ResponseEntity<?> getAllGamesWithTeams(int id_games) {
+
         return new ResponseEntity<>(gamesRepository.getAllGamesWithTeams(id_games), HttpStatus.OK);
+
     }
+
     public ResponseEntity<?> getGamesByDate(String date) {
+
         try {
+
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+
             Date parsedDate = dateFormat.parse(date);
 
             List<ResponseTeamsGame> games = gamesRepository.getGameByDate(new java.sql.Date(parsedDate.getTime()));
 
             return new ResponseEntity<>(games, HttpStatus.OK);
+
         } catch (ParseException e) {
+
             e.printStackTrace();
+
             return new ResponseEntity<>("Invalid date format. Please use 'yyyy-MM-dd'.", HttpStatus.BAD_REQUEST);
+
         }
     }
 }

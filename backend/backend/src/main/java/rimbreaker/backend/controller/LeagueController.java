@@ -15,12 +15,15 @@ public class LeagueController {
 
     private final LeagueService leagueService;
 
+    //ritorna nome e logo per id --> sezione dettagli league
     @GetMapping("/number")
     public ResponseEntity<?> getLeague(Long id) {
 
         return leagueService.getLeague(id);
 
     }
+
+    //ritorna tutta la tabella --> dashboard league
     @GetMapping("/all")
     public ResponseEntity<?> getLeagueAll() {
 
@@ -29,6 +32,7 @@ public class LeagueController {
     }
 
     /*
+
     @GetMapping("/{name}")
     public ResponseEntity<?> getLeagueName(String name) {
 
@@ -42,6 +46,7 @@ public class LeagueController {
         return leagueService.getLeagueLogo(logo);
 
     }
+
     */
 
 }

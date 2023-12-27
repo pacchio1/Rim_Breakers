@@ -12,6 +12,7 @@ import java.sql.Timestamp;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
+
 public class ResponseTeamsGame {
     private Long idGames;
     private Long leagueId;
