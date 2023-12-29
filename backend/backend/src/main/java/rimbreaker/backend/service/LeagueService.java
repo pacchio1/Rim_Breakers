@@ -41,24 +41,19 @@ public class LeagueService {
 
     }
 
-    /*
-
-
-    public ResponseEntity<?> getLeagueLogo(String logo) {
+    public ResponseEntity<?> getTeamLeague(Long id) {
 
         try {
 
-            return new ResponseEntity<>(leagueRepository.getLeagueLogo(logo), HttpStatus.OK);
+            return new ResponseEntity<>(leagueRepository.getTeamLeague(id), HttpStatus.OK);
 
         }
         catch (Exception e) {
 
-            return new ResponseEntity<>("League's logo not found! : " + e.getMessage(), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>("Team not found or not present! : " + e.getMessage(), HttpStatus.BAD_REQUEST);
 
         }
 
     }
-    */
-
 
 }

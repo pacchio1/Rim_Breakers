@@ -31,6 +31,13 @@ public class LeagueController {
 
     }
 
+    @GetMapping("/team_league")
+    public ResponseEntity<?> getTeamLeague(Long id) {
+
+        return leagueService.getTeamLeague(id);
+
+    }
+
     /*
 
     @GetMapping("/{name}")

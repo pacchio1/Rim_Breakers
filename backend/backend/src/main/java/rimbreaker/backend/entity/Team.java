@@ -20,7 +20,7 @@ public class Team {
     private Long id;
 
     @Column(name = "ID_league")
-    private Long leagueId;
+    private Long id_league;
 
     @Column(name = "name")
     private String name;
