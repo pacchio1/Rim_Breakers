@@ -35,18 +35,17 @@ public class TeamService {
 
     public ResponseEntity<?> getAll() {
 
-        return new ResponseEntity<>(teamRepository.getAll(), HttpStatus.OK);
+        try {
+
+            return new ResponseEntity<>(teamRepository.getAll(), HttpStatus.OK);
+
+        }
+        catch(Exception e) {
+
+            return new ResponseEntity<>("Something went wrong! : " + e.getMessage(), HttpStatus.BAD_REQUEST);
+
+        }
 
     }
-
-    /*
-
-
-    public ResponseEntity<?> getTeamLogo(Long id) {
-
-        return new ResponseEntity<>(teamRepository.getTeamLogo(id), HttpStatus.OK);
-
-    }
-    */
 
 }

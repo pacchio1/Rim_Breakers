@@ -21,7 +21,7 @@ public class StandingsService {
         }
         catch(Exception e) {
 
-            return new ResponseEntity<>("Standings not found! : " + e.getMessage(), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>("Season not found! : " + e.getMessage(), HttpStatus.BAD_REQUEST);
 
         }
         

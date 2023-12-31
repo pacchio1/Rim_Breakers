@@ -26,6 +26,7 @@ public class LeagueService {
         }
 
     }
+
     public ResponseEntity<?> getLeagueAll() {
 
         try {
@@ -35,7 +36,7 @@ public class LeagueService {
         }
         catch(Exception e) {
 
-            return new ResponseEntity<>("League's name not found! : " + e.getMessage(), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>("Something went wrong! : " + e.getMessage(), HttpStatus.BAD_REQUEST);
 
         }
 

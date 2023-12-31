@@ -4,17 +4,14 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import rimbreaker.backend.entity.Games;
 
 import rimbreaker.backend.payload.response.ResponseTeamsGame;
 import rimbreaker.backend.repository.GamesRepository;
 
-import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
-import java.util.Objects;
 
 @Service
 @RequiredArgsConstructor
@@ -59,7 +56,16 @@ public class GamesService {
 
     public ResponseEntity<?> getAllGamesWithTeams(int id_games) {
 
-        return new ResponseEntity<>(gamesRepository.getAllGamesWithTeams(id_games), HttpStatus.OK);
+        try {
+
+            return new ResponseEntity<>(gamesRepository.getAllGamesWithTeams(id_games), HttpStatus.OK);
+
+        }
+        catch(Exception e) {
+
+            return new ResponseEntity<>("No games found! : " + e.getMessage(), HttpStatus.BAD_REQUEST);
+
+        }
 
     }
 
