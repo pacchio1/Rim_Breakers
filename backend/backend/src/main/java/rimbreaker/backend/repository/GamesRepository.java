@@ -23,7 +23,7 @@ public interface GamesRepository extends JpaRepository<Games, Integer> {
     @Query("FROM Games g WHERE date = :date")
     List<Games> getGameByDate(@Param("date") Date date);
 */
-    @Query("SELECT new rimbreaker.backend.payload.response.ResponseTeamsGame(g.id_games, " +
+    @Query("SELECT new rimbreaker.backend.payload.response.ResponseGame(g.id_games, " +
             "g.leagueId, " +
             "g.date, " +
             "g.status, " +
@@ -37,7 +37,7 @@ public interface GamesRepository extends JpaRepository<Games, Integer> {
             "WHERE date = :date")
     List<ResponseGame> getGameByDate(@Param("date") Date date);
 
-    @Query("SELECT new rimbreaker.backend.payload.response.ResponseTeamsGame(" +
+    @Query("SELECT new rimbreaker.backend.payload.response.ResponseGame(" +
             "g.id_games, " +
             "g.leagueId, " +
             "g.date, " +
