@@ -127,6 +127,51 @@ CREATE TABLE `user` (
   `password` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `players`
+--
+
+CREATE TABLE `players` (
+  `ID_player` int(11) NOT NULL,
+  `name` varchar(35) NOT NULL,
+  `ID_country` int(11) NOT NULL,
+  `mesh_number` int(11) NOT NULL,
+  `age` int(11) NOT NULL,
+  `played_min` int(11) NOT NULL,
+  `point_scored` int(11) NOT NULL,
+  `assist` int(11) NOT NULL,
+  `ID_team` int(11) NOT NULL,
+  `shots` int(11) NOT NULL,
+  `shots_2` int(11) NOT NULL,
+  `shots_3` int(11) NOT NULL,
+  `free_trows` int(11) NOT NULL,
+  `ball_holding_time` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `players`
+--
+ALTER TABLE `players`
+  ADD PRIMARY KEY (`ID_player`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `players`
+--
+ALTER TABLE `players`
+  MODIFY `ID_player` int(11) NOT NULL AUTO_INCREMENT;
+COMMIT;
+
+
 --
 -- Indici per le tabelle scaricate
 --

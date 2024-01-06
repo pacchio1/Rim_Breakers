@@ -22,6 +22,9 @@ public class Team {
     @Column(name = "ID_league")
     private Long id_league;
 
+    @Column(name = "ID_country")
+    private  Long id_country;
+    
     @Column(name = "name")
     private String name;
 

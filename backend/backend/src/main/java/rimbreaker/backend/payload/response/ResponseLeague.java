@@ -9,7 +9,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class ResponseTeamLeague {
+public class ResponseLeague {
 
     private Long id_league;
     private String nameLeague;

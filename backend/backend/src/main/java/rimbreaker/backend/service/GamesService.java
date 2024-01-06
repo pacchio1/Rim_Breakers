@@ -5,7 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import rimbreaker.backend.payload.response.ResponseTeamsGame;
+import rimbreaker.backend.payload.response.ResponseGame;
 import rimbreaker.backend.repository.GamesRepository;
 
 import java.text.ParseException;
@@ -77,7 +77,7 @@ public class GamesService {
 
             Date parsedDate = dateFormat.parse(date);
 
-            List<ResponseTeamsGame> games = gamesRepository.getGameByDate(new java.sql.Date(parsedDate.getTime()));
+            List<ResponseGame> games = gamesRepository.getGameByDate(new java.sql.Date(parsedDate.getTime()));
 
             return new ResponseEntity<>(games, HttpStatus.OK);
 

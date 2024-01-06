@@ -4,12 +4,10 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import rimbreaker.backend.entity.Games;
-import rimbreaker.backend.payload.response.ResponseTeamsGame;
+import rimbreaker.backend.payload.response.ResponseGame;
 
 import java.sql.Date;
-import java.sql.Timestamp;
 import java.util.List;
-import java.util.Objects;
 
 public interface GamesRepository extends JpaRepository<Games, Integer> {
 /*
@@ -37,7 +35,7 @@ public interface GamesRepository extends JpaRepository<Games, Integer> {
             "JOIN Team th ON g.homeId = th.id " +
             "JOIN Team ta ON g.awayId = ta.id " +
             "WHERE date = :date")
-    List<ResponseTeamsGame> getGameByDate(@Param("date") Date date);
+    List<ResponseGame> getGameByDate(@Param("date") Date date);
 
     @Query("SELECT new rimbreaker.backend.payload.response.ResponseTeamsGame(" +
             "g.id_games, " +
@@ -52,7 +50,7 @@ public interface GamesRepository extends JpaRepository<Games, Integer> {
             "JOIN Team th ON g.homeId = th.id " +
             "JOIN Team ta ON g.awayId = ta.id " +
             "WHERE id_games = :id_games")
-    List<ResponseTeamsGame> getAllGamesWithTeams(@Param("id_games") int id_games);
+    List<ResponseGame> getAllGamesWithTeams(@Param("id_games") int id_games);
 
 
 

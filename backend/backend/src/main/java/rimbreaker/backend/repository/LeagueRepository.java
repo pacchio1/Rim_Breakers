@@ -4,7 +4,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import rimbreaker.backend.entity.League;
-import rimbreaker.backend.payload.response.ResponseTeamLeague;
+import rimbreaker.backend.payload.response.ResponseLeague;
 
 import java.util.List;
 
@@ -24,7 +24,7 @@ public interface LeagueRepository extends JpaRepository<League, Integer> {
             ") FROM League l " +
             "JOIN Team t ON t.id_league = l.id_league " +
             "WHERE l.id_league = :id")
-    List<ResponseTeamLeague> getTeamLeague(@Param("id") Long id);
+    List<ResponseLeague> getTeamLeague(@Param("id") Long id);
 
     /*
 
