@@ -102,9 +102,9 @@ while mese <= 12:
                         query=f"INSERT INTO league ( id_league, name, type, season, logo )values( {league_id}, '{league_name}', '{league_type}', '{league_season}', '{league_logo}')"
                         InsertIntoSql(query,conn)
                         #print("\n"+s_score_home+"\n"+ s_score_away)
-                        query=f"INSERT INTO team ( id_team, id_league, name, logo )values( {teams_home_id}, {league_id}, '{teams_home_name}', '{teams_home_logo}')"
+                        query=f"INSERT INTO team ( id_team, id_league, id_country, name, logo )values( {teams_home_id}, {league_id}, '{teams_home_name}', '{teams_home_logo}')"
                         InsertIntoSql(query,conn)
-                        query=f"INSERT INTO team ( id_team, id_league, name, logo )values( {teams_away_id}, {league_id}, '{teams_away_name}', '{teams_away_logo}')"
+                        query=f"INSERT INTO team ( id_team, id_league, name, logo )values( {teams_away_id}, {league_id}, {country_id}, '{teams_away_name}', '{teams_away_logo}')"
                         InsertIntoSql(query,conn)
                         query=f"INSERT INTO season (season )values('{league_season}')"
                         InsertIntoSql(query,conn )
