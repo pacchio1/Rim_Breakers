@@ -8,10 +8,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import rimbreaker.backend.service.GamesService;
 
-import java.sql.Timestamp;
-import java.text.ParseException;
-import java.util.Date;
-
 @RestController
 @RequestMapping("/games")
 @RequiredArgsConstructor

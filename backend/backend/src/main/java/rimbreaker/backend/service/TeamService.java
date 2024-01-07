@@ -29,7 +29,16 @@ public class TeamService {
 
     public ResponseEntity<?> getAllByID(Long id) {
 
-        return new ResponseEntity<>(teamRepository.getAllByID(id), HttpStatus.OK);
+        try {
+
+            return new ResponseEntity<>(teamRepository.getAllByID(id), HttpStatus.OK);
+
+        }
+        catch(Exception e) {
+
+            return new ResponseEntity<>("ID not found! : " + e.getMessage(), HttpStatus.BAD_REQUEST);
+
+        }
 
     }
 

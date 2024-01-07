@@ -1,36 +1,33 @@
 package rimbreaker.backend.entity;
 
 import jakarta.persistence.*;
-
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "country")
+@Table(name = "user")
 @Getter
 @Setter
 @EqualsAndHashCode
 @NoArgsConstructor
-public class Country {
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_country")
-    private Long id_country;
-
-    @Column(name = "ID_league")
-    private Long id_league;
+    @Column(name = "ID_utente")
+    private Long id_utente;
 
     @Column(name = "name")
     private String name;
 
-    @Column(name = "type")
-    private String type;
+    @Column(name = "surname")
+    private String surname;
 
-    @Column(name = "code")
-    private String code;
+    @Column(name = "email")
+    private String email;
 
-    @Column(name = "flag")
-    private String flag;
+    @Column(name = "password")
+    private String password;
+
 }
