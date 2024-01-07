@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Dic 21, 2023 alle 17:07
--- Versione del server: 10.4.28-MariaDB
--- Versione PHP: 8.2.4
+-- Generation Time: Jan 07, 2024 at 11:27 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `blog`
+-- Table structure for table `blog`
 --
 
 CREATE TABLE `blog` (
@@ -36,7 +36,7 @@ CREATE TABLE `blog` (
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `country`
+-- Table structure for table `country`
 --
 
 CREATE TABLE `country` (
@@ -51,7 +51,7 @@ CREATE TABLE `country` (
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `games`
+-- Table structure for table `games`
 --
 
 CREATE TABLE `games` (
@@ -68,7 +68,7 @@ CREATE TABLE `games` (
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `league`
+-- Table structure for table `league`
 --
 
 CREATE TABLE `league` (
@@ -81,7 +81,34 @@ CREATE TABLE `league` (
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `standings`
+-- Table structure for table `players`
+--
+
+CREATE TABLE `players` (
+  `ID_player` int(11) NOT NULL,
+  `season` varchar(9) NOT NULL,
+  `name` varchar(35) NOT NULL,
+  `surname` varchar(40) NOT NULL,
+  `weight` int(11) NOT NULL,
+  `height` int(11) NOT NULL,
+  `ID_country` int(11) NOT NULL,
+  `mesh_number` int(11) NOT NULL,
+  `age` int(11) NOT NULL,
+  `played_min` int(11) NOT NULL,
+  `point_scored` int(11) NOT NULL,
+  `assist` int(11) NOT NULL,
+  `ID_team` int(11) NOT NULL,
+  `shots` int(11) NOT NULL,
+  `shots_2` int(11) NOT NULL,
+  `shots_3` int(11) NOT NULL,
+  `free_trows` int(11) NOT NULL,
+  `ball_holding_time` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `standings`
 --
 
 CREATE TABLE `standings` (
@@ -103,12 +130,13 @@ CREATE TABLE `standings` (
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `team`
+-- Table structure for table `team`
 --
 
 CREATE TABLE `team` (
   `ID_team` int(11) NOT NULL,
   `ID_league` int(11) NOT NULL,
+  `ID_country` int(11) NOT NULL,
   `name` varchar(15) NOT NULL,
   `logo` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -116,7 +144,7 @@ CREATE TABLE `team` (
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
@@ -127,38 +155,57 @@ CREATE TABLE `user` (
   `password` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- --------------------------------------------------------
-
---
--- Table structure for table `players`
---
-
-CREATE TABLE `players` (
-  `ID_player` int(11) NOT NULL,
-  `name` varchar(35) NOT NULL,
-  `ID_country` int(11) NOT NULL,
-  `mesh_number` int(11) NOT NULL,
-  `age` int(11) NOT NULL,
-  `played_min` int(11) NOT NULL,
-  `point_scored` int(11) NOT NULL,
-  `assist` int(11) NOT NULL,
-  `ID_team` int(11) NOT NULL,
-  `shots` int(11) NOT NULL,
-  `shots_2` int(11) NOT NULL,
-  `shots_3` int(11) NOT NULL,
-  `free_trows` int(11) NOT NULL,
-  `ball_holding_time` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
 --
 -- Indexes for dumped tables
 --
 
 --
+-- Indexes for table `blog`
+--
+ALTER TABLE `blog`
+  ADD PRIMARY KEY (`ID_blog`);
+
+--
+-- Indexes for table `country`
+--
+ALTER TABLE `country`
+  ADD PRIMARY KEY (`id_country`);
+
+--
+-- Indexes for table `games`
+--
+ALTER TABLE `games`
+  ADD PRIMARY KEY (`ID_games`);
+
+--
+-- Indexes for table `league`
+--
+ALTER TABLE `league`
+  ADD PRIMARY KEY (`ID_league`);
+
+--
 -- Indexes for table `players`
 --
 ALTER TABLE `players`
-  ADD PRIMARY KEY (`ID_player`);
+  ADD PRIMARY KEY (`ID_player`,`season`,`name`,`surname`);
+
+--
+-- Indexes for table `standings`
+--
+ALTER TABLE `standings`
+  ADD PRIMARY KEY (`ID_league`,`season`,`ID_team`);
+
+--
+-- Indexes for table `team`
+--
+ALTER TABLE `team`
+  ADD PRIMARY KEY (`ID_team`);
+
+--
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`ID_utente`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -169,54 +216,6 @@ ALTER TABLE `players`
 --
 ALTER TABLE `players`
   MODIFY `ID_player` int(11) NOT NULL AUTO_INCREMENT;
-COMMIT;
-
-
---
--- Indici per le tabelle scaricate
---
-
---
--- Indici per le tabelle `blog`
---
-ALTER TABLE `blog`
-  ADD PRIMARY KEY (`ID_blog`);
-
---
--- Indici per le tabelle `country`
---
-ALTER TABLE `country`
-  ADD PRIMARY KEY (`id_country`);
-
---
--- Indici per le tabelle `games`
---
-ALTER TABLE `games`
-  ADD PRIMARY KEY (`ID_games`);
-
---
--- Indici per le tabelle `league`
---
-ALTER TABLE `league`
-  ADD PRIMARY KEY (`ID_league`);
-
---
--- Indici per le tabelle `standings`
---
-ALTER TABLE `standings`
-  ADD PRIMARY KEY (`ID_league`,`season`,`ID_team`);
-
---
--- Indici per le tabelle `team`
---
-ALTER TABLE `team`
-  ADD PRIMARY KEY (`ID_team`);
-
---
--- Indici per le tabelle `user`
---
-ALTER TABLE `user`
-  ADD PRIMARY KEY (`ID_utente`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
