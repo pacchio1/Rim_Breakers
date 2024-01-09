@@ -141,7 +141,7 @@ class _Boolean(_Type):
     """Boolean settings, can have the values 'false' or 'true'."""
 
     def _Validate(self, value):
-        if value not in {"true", "false"}:
+        if value != "true" and value != "false":
             raise ValueError("expected bool; got %r" % value)
 
     def ValidateMSVS(self, value):

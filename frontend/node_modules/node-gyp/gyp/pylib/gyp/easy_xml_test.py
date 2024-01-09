@@ -76,8 +76,6 @@ class TestSequenceFunctions(unittest.TestCase):
             '\'Debug|Win32\'" Label="Configuration">'
             "<ConfigurationType>Application</ConfigurationType>"
             "<CharacterSet>Unicode</CharacterSet>"
-            "<SpectreMitigation>SpectreLoadCF</SpectreMitigation>"
-            "<VCToolsVersion>14.36.32532</VCToolsVersion>"
             "</PropertyGroup>"
             "</Project>"
         )
@@ -101,8 +99,6 @@ class TestSequenceFunctions(unittest.TestCase):
                     },
                     ["ConfigurationType", "Application"],
                     ["CharacterSet", "Unicode"],
-                    ["SpectreMitigation", "SpectreLoadCF"],
-                    ["VCToolsVersion", "14.36.32532"],
                 ],
             ]
         )

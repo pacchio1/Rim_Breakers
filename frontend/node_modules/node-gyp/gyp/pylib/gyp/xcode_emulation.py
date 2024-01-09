@@ -685,7 +685,10 @@ class XcodeSettings:
             if platform_root:
                 cflags.append("-F" + platform_root + "/Developer/Library/Frameworks/")
 
-        framework_root = sdk_root if sdk_root else ""
+        if sdk_root:
+            framework_root = sdk_root
+        else:
+            framework_root = ""
         config = self.spec["configurations"][self.configname]
         framework_dirs = config.get("mac_framework_dirs", [])
         for directory in framework_dirs:
@@ -1245,7 +1248,10 @@ class XcodeSettings:
             l_flag = "-framework " + os.path.splitext(os.path.basename(library))[0]
         else:
             m = self.library_re.match(library)
-            l_flag = "-l" + m.group(1) if m else library
+            if m:
+                l_flag = "-l" + m.group(1)
+            else:
+                l_flag = library
 
         sdk_root = self._SdkPath(config_name)
         if not sdk_root:
@@ -1539,7 +1545,7 @@ def CLTVersion():
         except GypError:
             continue
 
-    regex = re.compile(r"Command Line Tools for Xcode\s+(?P<version>\S+)")
+    regex = re.compile(r'Command Line Tools for Xcode\s+(?P<version>\S+)')
     try:
         output = GetStdout(["/usr/sbin/softwareupdate", "--history"])
         return re.search(regex, output).groupdict()["version"]
