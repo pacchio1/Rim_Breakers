@@ -47,10 +47,10 @@ country = [4, 17, 18, 23, 45, 48, 55]
 class GiocatoreBasket:
     def __init__(self):
         self.season = str(season[random.randint(0, 3)])
-        self.name = fake.first_name()
+        self.name = fake.first_name_male()
         self.surname = fake.last_name()
         self.eta = random.randint(18, 40)
-        self.altezza = round(random.uniform(1.70, 2.20), 2)
+        self.altezza = round(random.uniform(170, 220))
         self.peso = round(random.uniform(60, 120), 2)
         self.ID_country = country[random.randint(0, 6)]
         self.mesh_number = random.randint(1, 50)
@@ -68,7 +68,7 @@ class GiocatoreBasket:
     def __str__(self):
         return f"Nome: {self.name}, Età: {self.eta}, Altezza: {self.altezza}m, Peso: {self.peso}kg, Posizione: {self.posizione}"
 
-num_players = 47
+num_players = 453
 players = [GiocatoreBasket() for _ in range(num_players)]
 
 try:
