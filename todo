@@ -1,4 +1,6 @@
 ---| DA FARE |---
 
-- aggiungere repository per User --> createAccount, loginAccount, saveAccountOnToDatabase, deleteAccount, updateUsername/Password
-- aggiungere controller e servizi appena confermate opzioni su repo di User
+- aggiungere entity "player"
+- aggiungere repository --> getPlayersByTeam, getPlayerByID
+- aggiungere servizi e controller appena confermate opzioni su repo
+- aggiungere eccezioni nella cartella exception (o eliminare la cartella, da vedere)
