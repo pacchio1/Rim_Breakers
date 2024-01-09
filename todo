@@ -1,6 +1,10 @@
 ---| DA FARE |---
 
-- aggiungere entity "player"
 - aggiungere repository --> getPlayersByTeam, getPlayerByID
 - aggiungere servizi e controller appena confermate opzioni su repo
 - aggiungere eccezioni nella cartella exception (o eliminare la cartella, da vedere)
+aggiungere parte preferiti
+quando si aggiunge user si deve mettere l' id in favorite.idUser
+scrivere documentazione
+e manuale utente
+
