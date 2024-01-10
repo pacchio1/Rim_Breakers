@@ -1,22 +1,45 @@
 /* You can add global styles to this file, and also import other style files */
 
-
 /* Global */
 
 .mt-navbar {
     margin-top: 80px;
 }
 
+.section-bg-dark {
+    background-color: #242424;
+}
+
+// check
+.text-dark-1 {
+    color: black;
+}
+
+.text-light-1 {
+    color: white;
+}
+
 /* Navbar */
 
 .navbar {
     height: 80px;
+}
+
+.navbar-bg {
     background-color: #1b1466;
 }
 
-#navbar-a, #navbar-a1, #navbar-a2, #navbar-a3, #navbar-a4, #navbar-a5 {
-    color: black;
+.navbar-bg-dark {
+    background-color: #FF8038;
 }
+
+.offcanvas-bg-dark {
+    background-color: #242424;
+}
+
+// #navbar-a, #navbar-a1, #navbar-a2, #navbar-a3, #navbar-a4, #navbar-a5 {
+//     color: rgb(216, 33, 33);
+// }
 
 .logo {
     width: 113px;
@@ -26,11 +49,18 @@
 .navbar-search {
     width: 168px;
     height: 34px;
-    background-color: white;
     border-radius: 20px;
     display: flex;
     align-items: center;
     padding: 15px;
+}
+
+.navbar-search-bg {
+    background-color: white;
+}
+
+.navbar-search-bg-dark {
+    background-color: black;
 }
 
 // .white-bg .navbar-search {
@@ -44,9 +74,9 @@
     background: transparent;
 }
 
-.bi {
-    color: white;
-}
+// .bi {
+//     color: white;
+// }
 
 // .white-bg .bi {
 //     color: #1b1466;
@@ -58,13 +88,20 @@
     // margin-top: 80px;
     width: 100vw;
     height: 250px;
-    background-color: #1b1466;
     color: white;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
+}
+
+.home-header-bg {
+    background-color: #1b1466;
+}
+
+.home-header-bg-dark {
+    background-color: #FF8038;
 }
     
 .div1 { 
@@ -105,9 +142,16 @@
     width: 321px;
     height: 214px;
     color: white;
-    background-color: #1b1466;
     border-radius: 0 0 30px 30px;
     transform: translateY(60px);
+}
+
+.home-card-title-bg {
+    background-color: #1b1466;
+}
+
+.home-card-title-bg-dark {
+    background-color: #FF8038;
 }
 
 .home-card-container {
@@ -121,6 +165,11 @@
     height: 164px;
     border-radius: 20px;
     background-color: #EDEDED;
+}
+
+.blog-card-a {
+    text-decoration: none;
+    color: #242424;
 }
 
 .blog-card-img {
@@ -137,9 +186,40 @@
     letter-spacing: -0.21px;
 }
 
-/* Blog */
+/* Blog Detail */
 
+.blog-detail-header {
+    width: 312px;
+    height: 104px;
+    border-radius: 20px;
+    overflow: hidden;
+    color: #1B1464;
+}
 
+.blog-detail-img {
+    width: 400px;
+    height: auto;
+    opacity: 0.2;
+}
+
+.c {
+    background: transparent;
+}
+
+/* Leagues */
+
+.league-list {
+    width: 338px;
+    height: 128px;
+    border-radius: 70px;
+    background-color: #1b1466;
+    color: white;
+}
+
+.league-logo {
+    width: 70px;
+    height: 50px;
+}
 
 /* Extra small devices (xs) - Phones (≥576px) */
 @media screen and (min-width: 576px) {}
@@ -155,8 +235,21 @@
         height: auto;
     }
 
+    .navbar-bg {
+        background-color: white;
+    }
+
     #navbar-a, #navbar-a1, #navbar-a2, #navbar-a3, #navbar-a4, #navbar-a5 {
         color: white;
+    }
+
+    // check
+    .text-light-1 {
+        color: black;
+    }
+
+    .offcanvas-bg-dark {
+        background-color: transparent;
     }
 
 }

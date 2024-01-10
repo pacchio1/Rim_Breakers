@@ -1,0 +1,10 @@
+<section class="mt-navbar">
+    
+    <div *ngFor="let league of leaguesData" class="d-flex justify-content-center pt-3">
+        <div class="league-list d-flex justify-content-center align-items-center ">
+            <img src="{{ league.urlImg }}" alt="" class="league-logo img-fluid">
+            <p class="ps-3 m-0">{{ league.nomeLega }}</p>
+        </div>
+    </div>
+
+</section>

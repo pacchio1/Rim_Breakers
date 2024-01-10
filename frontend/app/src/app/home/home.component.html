@@ -1,8 +1,8 @@
-<section class="home-header mt-navbar justify-content-start align-items-center">
+<section class="home-header mt-navbar justify-content-start align-items-center" [ngClass]="{ 'home-header-bg-dark': themeService.isDarkMode, 'home-header-bg': !themeService.isDarkMode }">
     
     <div class="div1">
         <h2 class="div1-h2">Tutto il <span class="text-warning">Basket Europeo</span> in un unico posto</h2>
-        <button class="btn btn-light">Scopri</button>
+        <button class="btn" [ngClass]="{ 'btn-warning': themeService.isDarkMode, 'btn-light': !themeService.isDarkMode }">Scopri</button>
     </div>
     <div class="div2">
         <img src="../../assets/imgX/basketball71.png" alt="" width="257px" height="260px">
@@ -10,18 +10,18 @@
 
 </section>
 
-<section class="home-description text-center my-5">
+<section class="home-description text-center py-5" [ngClass]="{ 'section-bg-dark text-light': themeService.isDarkMode }">
 
     <h2>Chi è B-Room?</h2>
-    <p class="p-2">L'esperienza analitica sul basketball che rompe le barriere e coinvolge la quarta dimensione. Un viaggio emozionante nel mondo della pallacanestro europea, progettato per te.</p>
+    <p class="p-2">L'esperienza analitica sul basketball che rompe le barriere e coinvolge la quarta dimensione. Un viaggio emozionante nel mondo della pallacanestro europea, <span class="fw-bold">progettato per te.</span></p>
 
 </section>
 
-<section class="d-flex justify-content-center">
+<section class="d-flex justify-content-center" [ngClass]="{ 'section-bg-dark text-light': themeService.isDarkMode }">
 
     <div class="row row-cols-1 home-card-container">
         <div class="col my-2 d-flex flex-wrap justify-content-center mt-2 mb-5 pe-0">
-            <div class="home-card-title position-absolute d-flex justify-content-center align-items-end">
+            <div class="home-card-title position-absolute d-flex justify-content-center align-items-end" [ngClass]="{ 'home-card-title-bg-dark': themeService.isDarkMode, 'home-card-title-bg': !themeService.isDarkMode }">
                 <h2 class="pb-2">Squadre</h2>
             </div>
             <div class="home-card position-relative">
@@ -30,7 +30,7 @@
         </div>
 
         <div class="col my-2 d-flex flex-wrap justify-content-center my-5 pe-0">
-            <div class="home-card-title position-absolute d-flex justify-content-center align-items-end">
+            <div class="home-card-title position-absolute d-flex justify-content-center align-items-end" [ngClass]="{ 'home-card-title-bg-dark': themeService.isDarkMode, 'home-card-title-bg': !themeService.isDarkMode }">
                 <h2 class="pb-2">Ultime Partite</h2>
             </div>
             <div class="home-card position-relative">
@@ -39,7 +39,7 @@
         </div>
 
         <div class="col my-2 d-flex flex-wrap justify-content-center my-5 pe-0">
-            <div class="home-card-title position-absolute d-flex justify-content-center align-items-end">
+            <div class="home-card-title position-absolute d-flex justify-content-center align-items-end" [ngClass]="{ 'home-card-title-bg-dark': themeService.isDarkMode, 'home-card-title-bg': !themeService.isDarkMode }">
                 <h2 class="pb-2">Campionati</h2>
             </div>
             <div class="home-card position-relative">
@@ -50,7 +50,7 @@
     
 </section>
 
-<section class="mt-5">
+<section class="pt-5" [ngClass]="{ 'section-bg-dark text-light': themeService.isDarkMode }">
 
     <h2 class="text-center">Blog</h2>
 

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
+import { ThemeService } from '../_service/dark-mode.service';
 
 @Component({
   selector: 'top-bar',
@@ -7,19 +8,12 @@ import { NavigationEnd, Router } from '@angular/router';
 })
 export class TopBarComponent {
 
-    // iconClass: string = 'white-bg';
+    constructor(public themeService: ThemeService) {}
 
-    constructor(private router: Router) {}
+    ngOnInit(): void {}
 
-    ngOnInit(): void {
-        // this.router.events.subscribe((event) => {
-        //     if (event instanceof NavigationEnd) {
-        //         // Cambia la classe dell'icona in base alla pagina corrente
-        //         if (event.url.includes('/home')) {
-        //             this.iconClass = 'blue-bg'; // Cambia la classe per la pagina Home
-        //         }
-        //     }
-        // });
+    toggleTheme(): void {
+      this.themeService.toggleTheme();
     }
 
 }
