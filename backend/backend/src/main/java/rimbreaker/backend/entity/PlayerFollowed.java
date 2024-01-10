@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "playerFollowed")
+@Table(name = "playerfollowed")
 @Getter
 @Setter
 @EqualsAndHashCode
