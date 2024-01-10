@@ -4,7 +4,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.jpa.repository.query.Procedure;
 import org.springframework.data.repository.query.Param;
-import rimbreaker.backend.entity.Favorite;
+
 import rimbreaker.backend.entity.User;
 
 import java.util.List;
@@ -12,7 +12,7 @@ import java.util.Optional;
 
 public interface UserRepository extends JpaRepository<User, Integer> {
 
-    User save(User User); // Salva un User nel database Create/Update
+    /*User save(User User); // Salva un User nel database Create/Update
 
     void deleteByEmail(String email); // Cancella un User per mail Delete
 
@@ -27,6 +27,6 @@ public interface UserRepository extends JpaRepository<User, Integer> {
     void save(Favorite favorite); // agiungi prefe
 
     Optional<User> findByEmail(String email);
-    //quando si aggiunge user si deve mettere l' id in favorite.idUser
+    //quando si aggiunge user si deve mettere l' id in favorite.idUser */
 
 }
