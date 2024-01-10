@@ -230,6 +230,31 @@ $primary-color: #1b1466;
     height: 107px;
 }
 
+/* Login */
+
+.logo {
+    width: 113px;
+    height: 127px;
+}
+
+.btn-match-input {
+    width: 100%;
+    background-color: $primary-color;
+    color: white;
+}
+
+.btn-google-access {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border: 1px solid #ccc; 
+}
+
+.google-logo {
+    width: 13px;
+}
+  
 /* Extra small devices (xs) - Phones (≥576px) */
 @media screen and (min-width: 576px) {}
   
