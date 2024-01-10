@@ -21,15 +21,16 @@ public class UserController {
         return ResponseEntity.ok("User created successfully");
     }
 
-    @GetMapping("/get")
+    @GetMapping("/get/{id}")
     public ResponseEntity<?> getUserById(@PathVariable Long id) {
         ResponseUser user = userService.getUserById(id);
-        return ResponseEntity.ok(id);//fixare response Entity <?>
+        return ResponseEntity.ok(user);
     }
 
     @GetMapping("/getByEmail")
-    public ResponseEntity<?> getUserByEmail(@RequestParam String email) {
+    public ResponseEntity<?> getUserByEmail(@RequestParam("email") String email) {
         ResponseUser user = userService.getUserByEmail(email);
         return ResponseEntity.ok(user);
     }
+
 }

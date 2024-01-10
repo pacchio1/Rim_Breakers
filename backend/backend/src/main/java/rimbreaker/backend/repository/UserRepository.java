@@ -20,11 +20,12 @@ public interface UserRepository extends JpaRepository<User, Integer> {
     @Query("INSERT INTO User (name, surname, email, password) VALUES (:name, :surname, :email, :password)")
     void newUser(@Param("name") String name, @Param("surname") String surname, @Param("email") String email, @Param("password") String password);
 
-    @Query("Select name, surname, email FROM User u WHERE u.idUser = :idUser")
+    @Query("SELECT new rimbreaker.backend.payload.response.ResponseUser(u.name, u.surname, u.email) FROM User u WHERE u.idUser = :idUser")
     ResponseUser all_by_id(@Param("idUser") Long idUser);
 
 
-    @Query("Select name, surname, email FROM User WHERE email = :email")
+
+    @Query("SELECT new rimbreaker.backend.payload.response.ResponseUser(u.name, u.surname, u.email) FROM User u WHERE email = :email")
     ResponseUser findByEmail(@Param("email") String email);
 
 

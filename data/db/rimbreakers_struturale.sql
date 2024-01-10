@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 07, 2024 at 11:27 PM
+-- Generation Time: Jan 10, 2024 at 07:35 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -81,6 +81,28 @@ CREATE TABLE `league` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `leaguefollowed`
+--
+
+CREATE TABLE `leaguefollowed` (
+  `ID_user` int(11) NOT NULL,
+  `ID_league` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `playerfollowed`
+--
+
+CREATE TABLE `playerfollowed` (
+  `ID_user` int(11) NOT NULL,
+  `ID_player` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `players`
 --
 
@@ -144,15 +166,26 @@ CREATE TABLE `team` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `teamfollowed`
+--
+
+CREATE TABLE `teamfollowed` (
+  `ID_user` int(11) NOT NULL,
+  `ID_team` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
-  `ID_utente` int(11) NOT NULL,
-  `name` int(11) NOT NULL,
-  `surname` int(11) NOT NULL,
-  `email` int(11) NOT NULL,
-  `password` int(11) NOT NULL
+  `ID_user` int(11) NOT NULL,
+  `name` varchar(11) NOT NULL,
+  `surname` varchar(11) NOT NULL,
+  `email` varchar(11) NOT NULL,
+  `password` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -205,7 +238,7 @@ ALTER TABLE `team`
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`ID_utente`);
+  ADD PRIMARY KEY (`ID_user`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -216,6 +249,12 @@ ALTER TABLE `user`
 --
 ALTER TABLE `players`
   MODIFY `ID_player` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `ID_user` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
