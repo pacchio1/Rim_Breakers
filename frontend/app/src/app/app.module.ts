@@ -11,6 +11,9 @@ import { BlogComponent } from './blog/blog.component';
 import { BlogCardComponent } from './blog-card/blog-card.component';
 import { LeaguesComponent } from './leagues/leagues.component';
 import { BlogDetailComponent } from './blog-detail/blog-detail.component';
+import { ProfileComponent } from './profile/profile.component';
+import { LoginComponent } from './login/login.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,12 +23,16 @@ import { BlogDetailComponent } from './blog-detail/blog-detail.component';
     BlogComponent,
     BlogDetailComponent,
     BlogCardComponent,
+    ProfileComponent,
+    LoginComponent,
     LeaguesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

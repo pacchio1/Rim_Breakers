@@ -5,7 +5,9 @@ import { ThemeService } from '../_service/dark-mode.service';
   selector: 'app-profile',
   templateUrl: './profile.component.html',
 })
+
 export class ProfileComponent {
+
   constructor(public themeService: ThemeService) {}
 
   ngOnInit(): void {}
@@ -13,4 +15,5 @@ export class ProfileComponent {
   toggleTheme(): void {
     this.themeService.toggleTheme();
   }
+  
 }

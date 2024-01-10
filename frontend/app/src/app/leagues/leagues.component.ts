@@ -36,6 +36,6 @@ export class LeaguesComponent implements OnInit {
         }]
 
         this.leaguesData = simulation;
-      }
+    }
 
 }
