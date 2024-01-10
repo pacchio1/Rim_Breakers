@@ -1,1 +1,168 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+/* Global */
+
+.mt-navbar {
+    margin-top: 80px;
+}
+
+/* Navbar */
+
+.navbar {
+    height: 80px;
+    background-color: #1b1466;
+}
+
+#navbar-a, #navbar-a1, #navbar-a2, #navbar-a3, #navbar-a4, #navbar-a5 {
+    color: black;
+}
+
+.logo {
+    width: 113px;
+    height: 127px;
+}
+
+.navbar-search {
+    width: 168px;
+    height: 34px;
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+}
+
+// .white-bg .navbar-search {
+//     background-color: #EDEDED;
+// }
+
+.navbar-input {
+    width: 140px;
+    outline: none;
+    border: none;
+    background: transparent;
+}
+
+.bi {
+    color: white;
+}
+
+// .white-bg .bi {
+//     color: #1b1466;
+// }
+
+/* Home */
+
+.home-header {
+    // margin-top: 80px;
+    width: 100vw;
+    height: 250px;
+    background-color: #1b1466;
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+    
+.div1 { 
+    width: 215px;
+    height: 190px;
+    grid-area: 1 / 1 / 2 / 3; 
+    padding-left: 20px;
+    z-index: 1;
+}
+
+.div1-h2 {
+    font-size: 30px;
+}
+
+.div2 { 
+    width: 257px;
+    height: 260px;
+    grid-area: 1 / 2 / 2 / 4; 
+}
+
+.home-description {
+    width: 100vw;
+    height: auto;
+}
+
+    /* Home card */
+
+.home-card {
+    width: 321px;
+    height: 214px;
+}
+
+.home-card-img {
+    border-radius: 30px;
+}
+
+.home-card-title {
+    width: 321px;
+    height: 214px;
+    color: white;
+    background-color: #1b1466;
+    border-radius: 0 0 30px 30px;
+    transform: translateY(60px);
+}
+
+.home-card-container {
+    width: 100vw;
+}
+
+/* Card Blog */
+
+.blog-card {
+    width: 324px;
+    height: 164px;
+    border-radius: 20px;
+    background-color: #EDEDED;
+}
+
+.blog-card-img {
+    width: 149px;
+    height: 164px;
+    border-radius: 20px;
+}
+
+.blog-card-body {
+    // font-size: 14px;
+    font-size: 14px;
+    font-style: normal;
+    line-height: 22px; 
+    letter-spacing: -0.21px;
+}
+
+/* Blog */
+
+
+
+/* Extra small devices (xs) - Phones (≥576px) */
+@media screen and (min-width: 576px) {}
+  
+/* Small devices (sm) - Tablets (≥768px) */
+@media screen and (min-width: 768px) {}
+
+/* Medium devices (md) - Desktops (≥992px) */
+@media screen and (min-width: 992px) {
+
+    .logo {
+        width: 70px;
+        height: auto;
+    }
+
+    #navbar-a, #navbar-a1, #navbar-a2, #navbar-a3, #navbar-a4, #navbar-a5 {
+        color: white;
+    }
+
+}
+
+/* Large devices (lg) - Desktops (≥1200px) */
+@media screen and (min-width: 1200px) {}
+
+/* Extra large devices (xl) - Large Desktops (≥1400px) */
+@media screen and (min-width: 1400px) {}

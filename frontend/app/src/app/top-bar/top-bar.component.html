@@ -1,0 +1,52 @@
+<nav class="navbar navbar-dark navbar-expand-lg fixed-top">
+    <div class="container-fluid">
+        <!-- <a class="navbar-brand" href="#">Offcanvas navbar</a> -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header justify-content-end">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body text-center">
+            <ul class="navbar-nav  justify-content-md-between align-items-md-center flex-grow-1">
+            <!-- <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Logo</h5> -->
+            <div class="d-flex justify-content-center">
+                <img src="../../assets/imgX/logo-broom.png" alt="" width="213px" height="230px" class="logo">
+            </div>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#" id="navbar-a">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#" id="navbar-a1">Squadre</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#" id="navbar-a2">Campionati</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#" id="navbar-a3">Partite</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#" routerLink="/blog" id="navbar-a4">Blog</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#" id="navbar-a5">Preferiti</a>
+            </li>
+        </ul>
+        </div>
+        </div>
+        <!-- <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">O</button>
+        </form> -->
+        <!-- <div class="d-flex c"> -->
+            <div class="flex-nowrap navbar-search">
+                <span class="" id="addon-wrapping">🔎</span>
+                <input type="text" class="navbar-input ps-2" placeholder="Search" aria-label="Username" aria-describedby="addon-wrapping">
+            </div>
+            <i class="bi bi-moon"></i>
+            <i class="bi bi-person-circle"></i>
+            <i class="bi bi-flag"></i>
+        <!-- </div> -->
+    </div>
+</nav>
