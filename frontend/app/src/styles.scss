@@ -2,6 +2,8 @@
 
 /* Global */
 
+$primary-color: #1b1466; 
+
 .mt-navbar {
     margin-top: 80px;
 }
@@ -26,7 +28,7 @@
 }
 
 .navbar-bg {
-    background-color: #1b1466;
+    background-color: $primary-color;
 }
 
 .navbar-bg-dark {
@@ -97,7 +99,7 @@
 }
 
 .home-header-bg {
-    background-color: #1b1466;
+    background-color: $primary-color;
 }
 
 .home-header-bg-dark {
@@ -147,7 +149,7 @@
 }
 
 .home-card-title-bg {
-    background-color: #1b1466;
+    background-color: $primary-color;
 }
 
 .home-card-title-bg-dark {
@@ -193,7 +195,7 @@
     height: 104px;
     border-radius: 20px;
     overflow: hidden;
-    color: #1B1464;
+    color: $primary-color;
 }
 
 .blog-detail-img {
@@ -212,13 +214,20 @@
     width: 338px;
     height: 128px;
     border-radius: 70px;
-    background-color: #1b1466;
+    background-color: $primary-color;
     color: white;
 }
 
 .league-logo {
     width: 70px;
     height: 50px;
+}
+
+/* Profile */
+
+.profile-pic {
+    width: 107px;
+    height: 107px;
 }
 
 /* Extra small devices (xs) - Phones (≥576px) */

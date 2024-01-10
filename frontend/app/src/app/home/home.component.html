@@ -1,84 +1,153 @@
-<section class="home-header mt-navbar justify-content-start align-items-center" [ngClass]="{ 'home-header-bg-dark': themeService.isDarkMode, 'home-header-bg': !themeService.isDarkMode }">
-    
-    <div class="div1">
-        <h2 class="div1-h2">Tutto il <span class="text-warning">Basket Europeo</span> in un unico posto</h2>
-        <button class="btn" [ngClass]="{ 'btn-warning': themeService.isDarkMode, 'btn-light': !themeService.isDarkMode }">Scopri</button>
-    </div>
-    <div class="div2">
-        <img src="../../assets/imgX/basketball71.png" alt="" width="257px" height="260px">
-    </div>
-
+<section
+  class="home-header mt-navbar justify-content-start align-items-center"
+  [ngClass]="{
+    'home-header-bg-dark': themeService.isDarkMode,
+    'home-header-bg': !themeService.isDarkMode
+  }"
+>
+  <div class="div1">
+    <h2 class="div1-h2">
+      Tutto il <span class="text-warning">Basket Europeo</span> in un unico
+      posto
+    </h2>
+    <button
+      class="btn"
+      [ngClass]="{
+        'btn-warning': themeService.isDarkMode,
+        'btn-light': !themeService.isDarkMode
+      }"
+    >
+      Scopri
+    </button>
+  </div>
+  <div class="div2">
+    <img
+      src="../../assets/imgX/basketball71.png"
+      alt=""
+      width="257px"
+      height="260px"
+    />
+  </div>
 </section>
 
-<section class="home-description text-center py-5" [ngClass]="{ 'section-bg-dark text-light': themeService.isDarkMode }">
-
-    <h2>Chi è B-Room?</h2>
-    <p class="p-2">L'esperienza analitica sul basketball che rompe le barriere e coinvolge la quarta dimensione. Un viaggio emozionante nel mondo della pallacanestro europea, <span class="fw-bold">progettato per te.</span></p>
-
+<section
+  class="home-description text-center py-5"
+  [ngClass]="{ 'section-bg-dark text-light': themeService.isDarkMode }"
+>
+  <h2>Chi è B-Room?</h2>
+  <p class="p-2">
+    L'esperienza analitica sul basketball che rompe le barriere e coinvolge la
+    quarta dimensione. Un viaggio emozionante nel mondo della pallacanestro
+    europea, <span class="fw-bold">progettato per te.</span>
+  </p>
 </section>
 
-<section class="d-flex justify-content-center" [ngClass]="{ 'section-bg-dark text-light': themeService.isDarkMode }">
-
-    <div class="row row-cols-1 home-card-container">
-        <div class="col my-2 d-flex flex-wrap justify-content-center mt-2 mb-5 pe-0">
-            <div class="home-card-title position-absolute d-flex justify-content-center align-items-end" [ngClass]="{ 'home-card-title-bg-dark': themeService.isDarkMode, 'home-card-title-bg': !themeService.isDarkMode }">
-                <h2 class="pb-2">Squadre</h2>
-            </div>
-            <div class="home-card position-relative">
-                <img class="img-fluid home-card-img" src="https://images.unsplash.com/flagged/photo-1580051706353-f037886dedac?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGdpb2NhdG9yaSUyMGJhc2tldHxlbnwwfHwwfHx8MA%3D%3D" alt="">
-            </div>
-        </div>
-
-        <div class="col my-2 d-flex flex-wrap justify-content-center my-5 pe-0">
-            <div class="home-card-title position-absolute d-flex justify-content-center align-items-end" [ngClass]="{ 'home-card-title-bg-dark': themeService.isDarkMode, 'home-card-title-bg': !themeService.isDarkMode }">
-                <h2 class="pb-2">Ultime Partite</h2>
-            </div>
-            <div class="home-card position-relative">
-                <img class="img-fluid home-card-img" src="https://images.unsplash.com/flagged/photo-1580051706353-f037886dedac?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGdpb2NhdG9yaSUyMGJhc2tldHxlbnwwfHwwfHx8MA%3D%3D" alt="">
-            </div>
-        </div>
-
-        <div class="col my-2 d-flex flex-wrap justify-content-center my-5 pe-0">
-            <div class="home-card-title position-absolute d-flex justify-content-center align-items-end" [ngClass]="{ 'home-card-title-bg-dark': themeService.isDarkMode, 'home-card-title-bg': !themeService.isDarkMode }">
-                <h2 class="pb-2">Campionati</h2>
-            </div>
-            <div class="home-card position-relative">
-                <img class="img-fluid home-card-img" src="https://images.unsplash.com/flagged/photo-1580051706353-f037886dedac?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGdpb2NhdG9yaSUyMGJhc2tldHxlbnwwfHwwfHx8MA%3D%3D" alt="">
-            </div>
-        </div>
+<section
+  class="d-flex justify-content-center"
+  [ngClass]="{ 'section-bg-dark text-light': themeService.isDarkMode }"
+>
+  <div class="row row-cols-1 home-card-container">
+    <div
+      class="col my-2 d-flex flex-wrap justify-content-center mt-2 mb-5 pe-0"
+    >
+      <div
+        class="home-card-title position-absolute d-flex justify-content-center align-items-end"
+        [ngClass]="{
+          'home-card-title-bg-dark': themeService.isDarkMode,
+          'home-card-title-bg': !themeService.isDarkMode
+        }"
+      >
+        <h2 class="pb-2">Squadre</h2>
+      </div>
+      <div class="home-card position-relative">
+        <img
+          class="img-fluid home-card-img"
+          src="https://images.unsplash.com/flagged/photo-1580051706353-f037886dedac?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGdpb2NhdG9yaSUyMGJhc2tldHxlbnwwfHwwfHx8MA%3D%3D"
+          alt=""
+        />
+      </div>
     </div>
-    
+
+    <div class="col my-2 d-flex flex-wrap justify-content-center my-5 pe-0">
+      <div
+        class="home-card-title position-absolute d-flex justify-content-center align-items-end"
+        [ngClass]="{
+          'home-card-title-bg-dark': themeService.isDarkMode,
+          'home-card-title-bg': !themeService.isDarkMode
+        }"
+      >
+        <h2 class="pb-2">Ultime Partite</h2>
+      </div>
+      <div class="home-card position-relative">
+        <img
+          class="img-fluid home-card-img"
+          src="https://images.unsplash.com/flagged/photo-1580051706353-f037886dedac?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGdpb2NhdG9yaSUyMGJhc2tldHxlbnwwfHwwfHx8MA%3D%3D"
+          alt=""
+        />
+      </div>
+    </div>
+
+    <div class="col my-2 d-flex flex-wrap justify-content-center my-5 pe-0">
+      <div
+        class="home-card-title position-absolute d-flex justify-content-center align-items-end"
+        [ngClass]="{
+          'home-card-title-bg-dark': themeService.isDarkMode,
+          'home-card-title-bg': !themeService.isDarkMode
+        }"
+      >
+        <h2 class="pb-2">Campionati</h2>
+      </div>
+      <div class="home-card position-relative">
+        <img
+          class="img-fluid home-card-img"
+          src="https://images.unsplash.com/flagged/photo-1580051706353-f037886dedac?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGdpb2NhdG9yaSUyMGJhc2tldHxlbnwwfHwwfHx8MA%3D%3D"
+          alt=""
+        />
+      </div>
+    </div>
+  </div>
 </section>
 
-<section class="pt-5" [ngClass]="{ 'section-bg-dark text-light': themeService.isDarkMode }">
+<section
+  class="pt-5"
+  [ngClass]="{ 'section-bg-dark text-light': themeService.isDarkMode }"
+>
+  <h2 class="text-center">Blog</h2>
 
-    <h2 class="text-center">Blog</h2>
+  <div class="d-flex justify-content-center">
+    <div class="row row-cols-1 row-cols-md-2 home-card-container">
+      <div class="col d-flex flex-wrap justify-content-center pe-0">
+        <blog-card
+          class="mt-5"
+          [imageUrl]="
+            'https://images.unsplash.com/flagged/photo-1580051706353-f037886dedac?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGdpb2NhdG9yaSUyMGJhc2tldHxlbnwwfHwwfHx8MA%3D%3D'
+          "
+          [topic]="'Riguardiamo I Migliori Giocatori della Stagione 2022'"
+          [date]="'20/01/2024'"
+        ></blog-card>
+      </div>
 
-    <div class="d-flex justify-content-center">
+      <div class="col d-flex flex-wrap justify-content-center pe-0">
+        <blog-card
+          class="mt-5"
+          [imageUrl]="
+            'https://images.unsplash.com/flagged/photo-1580051579393-2e94dd6f4789?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmFza2V0YmFsbCUyMHBsYXllcnN8ZW58MHx8MHx8fDA%3D'
+          "
+          [topic]="'La Partita da Non Perdere il Prossimo Fine Settimana'"
+          [date]="'13/01/2024'"
+        ></blog-card>
+      </div>
 
-        <div class="row row-cols-1 row-cols-md-2 home-card-container">
-            <div class="col d-flex flex-wrap justify-content-center pe-0">
-                <blog-card class="mt-5"
-                [imageUrl]="'https://images.unsplash.com/flagged/photo-1580051706353-f037886dedac?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGdpb2NhdG9yaSUyMGJhc2tldHxlbnwwfHwwfHx8MA%3D%3D'"
-                [topic]="'Riguardiamo I Migliori Giocatori della Stagione 2022'"
-                [date]="'20/01/2024'"></blog-card>
-            </div>
-
-            <div class="col d-flex flex-wrap justify-content-center pe-0">
-                <blog-card class="mt-5"
-                [imageUrl]="'https://images.unsplash.com/flagged/photo-1580051579393-2e94dd6f4789?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmFza2V0YmFsbCUyMHBsYXllcnN8ZW58MHx8MHx8fDA%3D'"
-                [topic]="'La Partita da Non Perdere il Prossimo Fine Settimana'"
-                [date]="'13/01/2024'"></blog-card>   
-            </div>
-
-            <div class="col d-flex flex-wrap justify-content-center pe-0">
-                <blog-card class="mt-5"
-                [imageUrl]="'https://images.unsplash.com/photo-1579487685737-e435a87b2518?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGJhc2tldGJhbGwlMjBwbGF5ZXJzfGVufDB8fDB8fHww'"
-                [topic]="'Dietro le Quinte con un Giocatore di Prima Categoria'"
-                [date]="'06/01/2024'"></blog-card>
-            </div>
-
-        </div>   
+      <div class="col d-flex flex-wrap justify-content-center pe-0">
+        <blog-card
+          class="mt-5"
+          [imageUrl]="
+            'https://images.unsplash.com/photo-1579487685737-e435a87b2518?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGJhc2tldGJhbGwlMjBwbGF5ZXJzfGVufDB8fDB8fHww'
+          "
+          [topic]="'Dietro le Quinte con un Giocatore di Prima Categoria'"
+          [date]="'06/01/2024'"
+        ></blog-card>
+      </div>
     </div>
-
+  </div>
 </section>
