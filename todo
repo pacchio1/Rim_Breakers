@@ -3,5 +3,6 @@
 - aggiungere eccezioni nella cartella exception (o eliminare la cartella, da vedere)
 - aggiungere parte preferiti
 
-- scrivere documentazione e manuale utente
-
+- scrivere documentazione(java docs) e manuale utente
+- creare mvc di blog
+-  endpoint per eseguire script
