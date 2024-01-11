@@ -403,7 +403,7 @@ json
 
 {
   "idPlayer": 501,
-  "season": "2024-2025",
+  "season": "2023-2024",
   "name": "Brian",
   "surname": "Moreno",
   "weight": 106,
