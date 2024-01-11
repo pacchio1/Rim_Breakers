@@ -232,11 +232,6 @@ $primary-color: #1b1466;
 
 /* Login */
 
-.logo {
-    width: 113px;
-    height: 127px;
-}
-
 .btn-match-input {
     width: 100%;
     background-color: $primary-color;
@@ -255,6 +250,23 @@ $primary-color: #1b1466;
     width: 13px;
 }
   
+/* Footer */
+
+footer {
+    background-color: $primary-color;
+    font-size: xx-small;
+}
+
+.footer-logo {
+    width: 42px;
+    height: 50px;
+}
+
+.social-logo {
+    width: 23.5px;
+    height: auto;
+}
+
 /* Extra small devices (xs) - Phones (≥576px) */
 @media screen and (min-width: 576px) {}
   

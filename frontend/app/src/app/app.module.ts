@@ -14,6 +14,7 @@ import { BlogDetailComponent } from './blog-detail/blog-detail.component';
 import { ProfileComponent } from './profile/profile.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FoooterComponent } from './foooter/foooter.component';
 
 @NgModule({
   declarations: [
@@ -25,16 +26,17 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BlogCardComponent,
     ProfileComponent,
     LoginComponent,
-    LeaguesComponent
+    LeaguesComponent,
+    FoooterComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

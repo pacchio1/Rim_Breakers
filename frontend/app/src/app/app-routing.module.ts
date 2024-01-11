@@ -6,6 +6,7 @@ import { LeaguesComponent } from './leagues/leagues.component';
 import { BlogDetailComponent } from './blog-detail/blog-detail.component';
 import { ProfileComponent } from './profile/profile.component';
 import { LoginComponent } from './login/login.component';
+import { FoooterComponent } from './foooter/foooter.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
