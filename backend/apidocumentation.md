@@ -1,5 +1,7 @@
-### Endpoints:
+### Endpoints
+
 ### 1. Get All Games by ID
+
 Endpoint: /games/all_by_id
 
     Method: GET
@@ -10,7 +12,7 @@ Example Request:
 
 http
 
-GET http://localhost:8080/games/all_by_id?id_games=188478
+GET <http://localhost:8080/games/all_by_id?id_games=188478>
 
 Example Response:
 
@@ -28,7 +30,9 @@ json
         "teamAway": "Trento"
     }
 ]
+
 ### 2. get All Games by Date
+
 Endpoint: /games/all_by_date
 
     Method: GET
@@ -39,7 +43,7 @@ Example Request:
 
 http
 
-GET http://localhost:8080/games/all_by_date?date=2023-11-09
+GET <http://localhost:8080/games/all_by_date?date=2023-11-09>
 
 Example Response:
 
@@ -60,6 +64,7 @@ json
 ]
 
 ### 3. Get All Countries
+
 Endpoint: /country/all
 
     Method: GET
@@ -68,7 +73,7 @@ Example Request:
 
 http
 
-GET http://localhost:8080/country/all
+GET <http://localhost:8080/country/all>
 
 Example Response:
 
@@ -81,6 +86,7 @@ json
 ]
 
 ### 4. Get All Leagues
+
 Endpoint: /league/all
 
     Method: GET
@@ -89,7 +95,7 @@ Example Request:
 
 http
 
-GET http://localhost:8080/league/all
+GET <http://localhost:8080/league/all>
 
 Example Response:
 
@@ -102,6 +108,7 @@ json
 ]
 
 ### 5. Get Standings for a Team in a Season
+
 Endpoint: /standings/season
 
     Method: GET
@@ -114,7 +121,7 @@ Example Request:
 
 http
 
-GET http://localhost:8080/standings/season?idLeague=2&teamId=10&season=2022-2023
+GET <http://localhost:8080/standings/season?idLeague=2&teamId=10&season=2022-2023>
 
 Example Response:
 
@@ -127,6 +134,7 @@ json
 }
 
 ### 6. Get Team Details by ID
+
  Endpoint: /team/all_by_id
 
     Method: GET
@@ -137,7 +145,7 @@ Example Request:
 
 http
 
-GET http://localhost:8080/team/all_by_id?id=10
+GET <http://localhost:8080/team/all_by_id?id=10>
 
 Example Response:
 
@@ -147,10 +155,11 @@ json
     "id": 10,
     "leagueId": 202,
     "name": "Dijon",
-    "logo": "https://media-4.api-sports.io/basketball/teams/10.png"
+    "logo": "<https://media-4.api-sports.io/basketball/teams/10.png>"
 }
 
 ### 7. Get All Teams
+
 Endpoint: /team/all
 
     Method: GET
@@ -159,7 +168,7 @@ Example Request:
 
 http
 
-GET http://localhost:8080/team/all
+GET <http://localhost:8080/team/all>
 
 Example Response:
 
@@ -176,7 +185,9 @@ json
 ]
 
 User Favorites
+
 ### 8. Get Favorite Players for a User
+
 Endpoint: /favorite/player
 
     Method: GET
@@ -187,7 +198,7 @@ Example Request:
 
 http
 
-GET http://localhost:8080/favorite/player?userId=1
+GET <http://localhost:8080/favorite/player?userId=1>
 
 Example Response:
 
@@ -201,6 +212,7 @@ json
 ]
 
 ### 9. Add Player to User Favorites
+
 Endpoint: /favorite/player
 
     Method: POST
@@ -212,9 +224,10 @@ Example Request:
 
 http
 
-POST http://localhost:8080/favorite/player?userId=1&playerId=44
+POST <http://localhost:8080/favorite/player?userId=1&playerId=44>
 
 ### 10. Add Team to User Favorites
+
 Endpoint: /favorite/team
 
     Method: POST
@@ -226,9 +239,10 @@ Example Request:
 
 http
 
-POST http://localhost:8080/favorite/team?userId=1&teamId=44
+POST <http://localhost:8080/favorite/team?userId=1&teamId=44>
 
 ### 11. Add League to User Favorites
+
 Endpoint: /favorite/league
 
     Method: POST
@@ -240,9 +254,10 @@ Example Request:
 
 http
 
-POST http://localhost:8080/favorite/league?userId=1&leagueId=44
+POST <http://localhost:8080/favorite/league?userId=1&leagueId=44>
 
 ### 12. Get Favorite Leagues for a User
+
 Endpoint: /favorite/league
 
     Method: GET
@@ -253,7 +268,7 @@ Example Request:
 
 http
 
-GET http://localhost:8080/favorite/league?userId=1
+GET <http://localhost:8080/favorite/league?userId=1>
 
 Example Response:
 
@@ -268,6 +283,7 @@ json
 ]
 
 ### 13. Get Favorite Teams for a User
+
 Endpoint: /favorite/team
 
     Method: GET
@@ -278,7 +294,7 @@ Example Request:
 
 http
 
-GET http://localhost:8080/favorite/team?userId=1
+GET <http://localhost:8080/favorite/team?userId=1>
 
 Example Response:
 
@@ -293,7 +309,9 @@ json
 ]
 
 User Management
+
 ### 14. Create User
+
 Endpoint: /user/create
 
     Method: POST
@@ -307,7 +325,7 @@ Example Request:
 
 http
 
-POST http://localhost:8080/user/create?name=mario&surname=rossi&email=marior@g.go&password=%23adsfhkj231231!
+POST <http://localhost:8080/user/create?name=mario&surname=rossi&email=marior@g.go&password=%23adsfhkj231231>!
 
 Example Response:
 
@@ -316,6 +334,7 @@ json
 User created successfully
 
 ### 15. Get User by ID
+
 Endpoint: /user/get/{id}
 
     Method: GET
@@ -326,7 +345,7 @@ Example Request:
 
 http
 
-GET http://localhost:8080/user/get/1
+GET <http://localhost:8080/user/get/1>
 
 Example Response:
 
@@ -335,10 +354,11 @@ json
 {
     "name": "mario",
     "surname": "rossi",
-    "email": "m.r@o.coom"
+    "email": "<m.r@o.coom>"
 }
 
 ### 16. Get User by Email
+
 Endpoint: /user/getByEmail
 
     Method: GET
@@ -349,7 +369,7 @@ Example Request:
 
 http
 
-GET http://localhost:8080/user/getByEmail?email=marior@g.go
+GET <http://localhost:8080/user/getByEmail?email=marior@g.go>
 
 Example Response:
 
@@ -358,11 +378,13 @@ json
 {
     "name": "mario",
     "surname": "rossi",
-    "email": "marior@g.go"
+    "email": "<marior@g.go>"
 }
 
 Player Details
+
 ### 17. Get Player Details by ID
+
 Endpoint: /player/number
 
     Method: GET
@@ -373,19 +395,35 @@ Example Request:
 
 http
 
-GET http://localhost:8080/player/number?id=501
+GET <http://localhost:8080/player/number?id=501>
 
 Example Response:
 
 json
 
 {
-    "idPlayer": 501,
-    "season": "2024-2025",
-    // ... (other player details)
+  "idPlayer": 501,
+  "season": "2024-2025",
+  "name": "Brian",
+  "surname": "Moreno",
+  "weight": 106,
+  "height": 206,
+  "idCountry": 48,
+  "meshNumber": 4,
+  "age": 23,
+  "playedMin": 41,
+  "pointScored": 1,
+  "assist": 0,
+  "idTeam": 718,
+  "shots": 18,
+  "shots2": 0,
+  "shots3": 1,
+  "freeThrows": 0,
+  "ballHoldingTime": 81
 }
 
 ### 18. Get All Players
+
 Endpoint: /player/all
 
     Method: GET
@@ -394,7 +432,7 @@ Example Request:
 
 http
 
-GET http://localhost:8080/player/all
+GET <http://localhost:8080/player/all>
 
 Example Response:
 
@@ -410,6 +448,7 @@ json
 ]
 
 ### 19. Get Players for a Team
+
 Endpoint: /player/team
 
     Method: GET
@@ -420,7 +459,7 @@ Example Request:
 
 http
 
-GET http://localhost:8080/player/team?id_team=718
+GET <http://localhost:8080/player/team?id_team=718>
 
 Example Response:
 
