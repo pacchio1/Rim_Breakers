@@ -40,16 +40,16 @@
 
 <section
   class="d-flex justify-content-center pb-3"
-  [ngClass]="{ 'section-bg-dark text-light': themeService.isDarkMode }"
+  [ngClass]="{'section-bg-dark': themeService.isDarkMode}"
 >
   <div class="row row-cols-1 home-card-container">
     <div
-      class="col my-2 d-flex flex-wrap justify-content-center mt-2 mb-5 pe-0"
+      class="col my-2 d-flex flex-wrap justify-content-center mt-2 mb-5 px-0"
     >
       <div
         class="home-card-title position-absolute d-flex justify-content-center align-items-end"
         [ngClass]="{
-          'home-card-title-bg-dark': themeService.isDarkMode,
+          'home-card-title-bg-dark text-dark': themeService.isDarkMode,
           'home-card-title-bg': !themeService.isDarkMode
         }"
       >
@@ -64,11 +64,11 @@
       </div>
     </div>
 
-    <div class="col my-2 d-flex flex-wrap justify-content-center my-5 pe-0">
+    <div class="col my-2 d-flex flex-wrap justify-content-center my-5 px-0">
       <div
         class="home-card-title position-absolute d-flex justify-content-center align-items-end"
         [ngClass]="{
-          'home-card-title-bg-dark': themeService.isDarkMode,
+          'home-card-title-bg-dark text-dark': themeService.isDarkMode,
           'home-card-title-bg': !themeService.isDarkMode
         }"
       >
@@ -83,11 +83,11 @@
       </div>
     </div>
 
-    <div class="col my-2 d-flex flex-wrap justify-content-center my-5 pe-0">
+    <div class="col my-2 d-flex flex-wrap justify-content-center my-5 px-0">
       <div
         class="home-card-title position-absolute d-flex justify-content-center align-items-end"
         [ngClass]="{
-          'home-card-title-bg-dark': themeService.isDarkMode,
+          'home-card-title-bg-dark text-dark': themeService.isDarkMode,
           'home-card-title-bg': !themeService.isDarkMode
         }"
       >
@@ -112,7 +112,7 @@
 
   <div class="d-flex justify-content-center">
     <div class="row row-cols-1 row-cols-md-2 home-card-container">
-      <div class="col d-flex flex-wrap justify-content-center pe-0">
+      <div class="col d-flex flex-wrap justify-content-center px-0">
         <blog-card
           class="mt-5"
           [imageUrl]="
@@ -123,7 +123,7 @@
         ></blog-card>
       </div>
 
-      <div class="col d-flex flex-wrap justify-content-center pe-0">
+      <div class="col d-flex flex-wrap justify-content-center px-0">
         <blog-card
           class="mt-5"
           [imageUrl]="
@@ -134,7 +134,7 @@
         ></blog-card>
       </div>
 
-      <div class="col d-flex flex-wrap justify-content-center pe-0">
+      <div class="col d-flex flex-wrap justify-content-center px-0">
         <blog-card
           class="mt-5"
           [imageUrl]="
