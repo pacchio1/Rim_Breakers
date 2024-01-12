@@ -39,7 +39,7 @@
 </section>
 
 <section
-  class="d-flex justify-content-center"
+  class="d-flex justify-content-center pb-3"
   [ngClass]="{ 'section-bg-dark text-light': themeService.isDarkMode }"
 >
   <div class="row row-cols-1 home-card-container">
@@ -105,8 +105,8 @@
 </section>
 
 <section
-  class="pt-5 rounded-bottom rounded-5"
-  [ngClass]="{ 'section-bg-dark text-light': themeService.isDarkMode }"
+  class="prova pt-5 pb-5 rounded-bottom-5"
+  [ngClass]="{ 'section-bg-dark text-light': themeService.isDarkMode, 'bg-white text-dark': !themeService.isDarkMode}"
 >
   <h2 class="text-center">Blog</h2>
 
