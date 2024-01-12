@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 
+
 /* Global */
 
 $primary-color: #1b1466; 
@@ -204,8 +205,27 @@ $primary-color: #1b1466;
     opacity: 0.2;
 }
 
+// .c {
+//     background: transparent;
+// }
+
+/* Contact */
+
+.contact-img {
+    width: 320px;
+    height: auto;
+    opacity: 0.1;
+}
+
+.contact-profile {
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+    background-color: red;
+}
+
 .c {
-    background: transparent;
+    width: 100vw;
 }
 
 /* Leagues */
@@ -271,7 +291,13 @@ footer {
 @media screen and (min-width: 576px) {}
   
 /* Small devices (sm) - Tablets (≥768px) */
-@media screen and (min-width: 768px) {}
+@media screen and (min-width: 768px) {
+
+    .contact-header {
+        width: 400px;
+    }
+
+}
 
 /* Medium devices (md) - Desktops (≥992px) */
 @media screen and (min-width: 992px) {
@@ -296,6 +322,10 @@ footer {
 
     .offcanvas-bg-dark {
         background-color: transparent;
+    }
+
+    .contact-header {
+        width: 600px;
     }
 
 }

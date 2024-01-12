@@ -1,10 +1,6 @@
 <section
   class="home-header mt-navbar justify-content-start align-items-center"
-  [ngClass]="{
-    'home-header-bg-dark': themeService.isDarkMode,
-    'home-header-bg': !themeService.isDarkMode
-  }"
->
+  [ngClass]="{'home-header-bg-dark': themeService.isDarkMode, 'home-header-bg': !themeService.isDarkMode}">
   <div class="div1">
     <h2 class="div1-h2">
       Tutto il <span class="text-warning"> basket Europeo</span> in un unico
@@ -109,7 +105,7 @@
 </section>
 
 <section
-  class="pt-5"
+  class="pt-5 rounded-bottom rounded-5"
   [ngClass]="{ 'section-bg-dark text-light': themeService.isDarkMode }"
 >
   <h2 class="text-center">Blog</h2>
@@ -151,3 +147,5 @@
     </div>
   </div>
 </section>
+
+<app-footer></app-footer>

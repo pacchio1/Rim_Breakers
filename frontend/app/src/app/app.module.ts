@@ -14,7 +14,8 @@ import { BlogDetailComponent } from './blog-detail/blog-detail.component';
 import { ProfileComponent } from './profile/profile.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { FoooterComponent } from './foooter/foooter.component';
+import { FooterComponent } from './footer/footer.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -26,8 +27,9 @@ import { FoooterComponent } from './foooter/foooter.component';
     BlogCardComponent,
     ProfileComponent,
     LoginComponent,
+    ContactComponent,
     LeaguesComponent,
-    FoooterComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
