@@ -11,8 +11,7 @@ dagli script e stato creato un file con l'obiettivo di acquisire dati sportivi d
 usando i precedenti file json (games and standings) abbiamo creato il seguente database:<br>
 ![DATABASE](img/1DBxapi.png)
 
-### todo: rimuovere in produzione
-#### Backend
-marco :  entity, repo, payload
-giorgio : controller, service
-entrambi: exeption, security se necessario
+## Java docs
+
+## Documentazione api
+![Documentazione Api](apidocumentation.md)

@@ -8,7 +8,7 @@ import lombok.Setter;
 
 
 @Entity
-@Table(name = "teamFollowed")
+@Table(name = "teamfollowed")
 @Getter
 @Setter
 @EqualsAndHashCode

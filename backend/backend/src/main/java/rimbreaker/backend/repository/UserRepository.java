@@ -1,32 +1,34 @@
 package rimbreaker.backend.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.jpa.repository.query.Procedure;
 import org.springframework.data.repository.query.Param;
 
+import org.springframework.transaction.annotation.Transactional;
 import rimbreaker.backend.entity.User;
+import rimbreaker.backend.payload.response.ResponseUser;
 
 import java.util.List;
 import java.util.Optional;
 
 public interface UserRepository extends JpaRepository<User, Integer> {
 
-    /*User save(User User); // Salva un User nel database Create/Update
+    @Modifying
+    @Transactional
+    @Query("INSERT INTO User (name, surname, email, password) VALUES (:name, :surname, :email, :password)")
+    void newUser(@Param("name") String name, @Param("surname") String surname, @Param("email") String email, @Param("password") String password);
 
-    void deleteByEmail(String email); // Cancella un User per mail Delete
+    @Query("SELECT new rimbreaker.backend.payload.response.ResponseUser(u.name, u.surname, u.email) FROM User u WHERE u.idUser = :idUser")
+    ResponseUser all_by_id(@Param("idUser") Long idUser);
 
-    List<User> findAll(); // Restituisce tutti gli utenti nel database
 
-    @Query("SELECT u FROM User u WHERE u.id_User = :IdUser")
-    Optional<User> findByIdUser(@Param("IdUser") int IdUser); // Trova un User per email
 
-    @Query() // query per lista (di cose salvate dal utente) di un User
-    List<Favorite> eventiUser (@Param("email") String email);
+    @Query("SELECT new rimbreaker.backend.payload.response.ResponseUser(u.name, u.surname, u.email) FROM User u WHERE email = :email")
+    ResponseUser findByEmail(@Param("email") String email);
 
-    void save(Favorite favorite); // agiungi prefe
 
-    Optional<User> findByEmail(String email);
-    //quando si aggiunge user si deve mettere l' id in favorite.idUser */
+
 
 }

@@ -68,7 +68,7 @@ class GiocatoreBasket:
     def __str__(self):
         return f"Nome: {self.name}, Età: {self.eta}, Altezza: {self.altezza}m, Peso: {self.peso}kg, Posizione: {self.posizione}"
 
-num_players = 2500
+num_players = 3000
 players = [GiocatoreBasket() for _ in range(num_players)]
 
 try:
