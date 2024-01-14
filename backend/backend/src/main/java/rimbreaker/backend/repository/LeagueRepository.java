@@ -17,6 +17,7 @@ public interface LeagueRepository extends JpaRepository<League, Integer> {
     List<String> getLeagueAll();
 
     @Query("SELECT new rimbreaker.backend.payload.response.ResponseLeague(" +
+            "t.id, " +
             "l.id_league, " +
             "l.name AS nameLeague, " +
             "t.name AS nameTeam, " +

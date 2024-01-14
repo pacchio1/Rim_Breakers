@@ -18,7 +18,9 @@ public class ResponseGame {
     private Long leagueId;
     private Timestamp date;
     private String status;
+    private Long homeId;
     private String scoreHome;
+    private Long awayId;
     private String scoreAway;
     private String teamHome;
     private String teamAway;

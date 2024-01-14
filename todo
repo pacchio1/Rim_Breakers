@@ -3,6 +3,9 @@
 - aggiungere eccezioni nella cartella exception (o eliminare la cartella, da vedere)
 - aggiungere parte preferiti
 
-- scrivere documentazione(java docs) e manuale utente
-- creare mvc di blog
+- aggiungere repository per User --> loginAccount
+- aggiungere controller e servizi appena confermate opzioni su repo di User
+
+- scrivere documentazione(java docs) [fatto] e manuale utente [da fare]
+- creare mvc di blog [fatto, aggiornare per robe future]
 -  endpoint per eseguire script

@@ -11,6 +11,7 @@ import lombok.Setter;
 @AllArgsConstructor
 public class ResponseLeague {
 
+    private Long id;
     private Long id_league;
     private String nameLeague;
     private String nameTeam;

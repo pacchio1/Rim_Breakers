@@ -27,7 +27,9 @@ public interface GamesRepository extends JpaRepository<Games, Integer> {
             "g.leagueId, " +
             "g.date, " +
             "g.status, " +
-            "g.score_home," +
+            "g.homeId, " +
+            "g.score_home, " +
+            "g.awayId, " +
             " g.score_away, " +
             "th.name AS teamHome, " +
             "ta.name AS teamAway" +
@@ -42,7 +44,9 @@ public interface GamesRepository extends JpaRepository<Games, Integer> {
             "g.leagueId, " +
             "g.date, " +
             "g.status, " +
+            "g.homeId, " +
             "g.score_home, " +
+            "g.awayId, " +
             "g.score_away, " +
             "th.name AS teamHome, " +
             "ta.name AS teamAway" +
