@@ -11,7 +11,8 @@ import { Router } from '@angular/router';
 
 export class LoginComponent {
 
-  loginData!: LoginUser;
+  // loginData!: LoginUser;
+  users: LoginUser[] = [];
 
   email: string = '';
   password: string = '';
@@ -32,8 +33,9 @@ export class LoginComponent {
       email: 'giulia@gmail.com',
       password: '1234'
     }
-    this.loginData = simulationLogin;
-    console.log(this.loginData.password)
+    // this.loginData = simulationLogin;
+    this.users = [simulationLogin];
+    // console.log(this.loginData.password)
   }
 
   onSubmit() {
@@ -42,14 +44,8 @@ export class LoginComponent {
   }
 
   checkCredentials() {
-    // Logica per verificare le credenziali
-    // Ad esempio, controlla se le credenziali esistono in un oggetto predefinito
-    const users = [
-      { email: 'giulia@gmail.com', password: '1234' },
-      // Aggiungi altri utenti se necessario
-    ];
 
-    const foundUser = users.find(user => user.email === this.email && user.password === this.password);
+    const foundUser = this.users.find(user => user.email === this.email && user.password === this.password);
 
     if (foundUser) {
       console.log('Credenziali corrette');
@@ -57,6 +53,7 @@ export class LoginComponent {
     } else {
       console.error('Credenziali errate');
     }
+    
   }
 
 }

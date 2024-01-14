@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { AppComponent } from './app.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { HomeComponent } from './home/home.component';
 import { BlogComponent } from './blog/blog.component';
@@ -13,9 +13,9 @@ import { LeaguesComponent } from './leagues/leagues.component';
 import { BlogDetailComponent } from './blog-detail/blog-detail.component';
 import { ProfileComponent } from './profile/profile.component';
 import { LoginComponent } from './login/login.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FooterComponent } from './footer/footer.component';
 import { ContactComponent } from './contact/contact.component';
+import { SinginComponent } from './singin/singin.profile';
 
 @NgModule({
   declarations: [
@@ -27,6 +27,7 @@ import { ContactComponent } from './contact/contact.component';
     BlogCardComponent,
     ProfileComponent,
     LoginComponent,
+    SinginComponent,
     ContactComponent,
     LeaguesComponent,
     FooterComponent,

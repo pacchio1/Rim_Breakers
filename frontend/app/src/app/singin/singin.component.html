@@ -1,0 +1,54 @@
+<section class="mt-navbar d-flex flex-column align-items-center">
+    <div class="logo mt-4">
+      <img src="../../assets/imgX/logo-broom.png" alt="" class="img-fluid" />
+    </div>
+    <h2 class="mt-3">Iscriviti</h2>
+    <p class="small">Per poter avere un account iscriviti subito!</p>
+  </section>
+  
+  <section class="mt-2 m-5">
+    <form (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label for="inputEmail" class="form-label">Email</label>
+        <input
+          type="email"
+          class="form-control rounded-4"
+          id="inputEmail"
+          placeholder="Scrivi la tua email"
+          [(ngModel)]="email" name="email"
+          pattern="^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$"
+          required/>
+      </div>
+  
+      <div class="mb-3">
+        <label for="inputPassword" class="form-label">Password</label>
+        <input
+          type="password"
+          class="form-control rounded-4"
+          id="inputPassword"
+          placeholder="*****"
+          [(ngModel)]="password" name="password"/>
+      </div>
+  
+      <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="rememberMe" />
+        <label class="form-check-label" for="rememberMe">Ricordami</label>
+        <a href="#" class="float-end">Password dimenticata</a>
+      </div>
+  
+      <button type="submit" class="btn btn-match-input rounded-4 mb-3">
+        Accedi
+      </button>
+      <button type="submit" class="btn btn-google-access rounded-4 mb-3" routerLink="/profile">
+        <img
+          src="../../assets/imgX/google-logo.png"
+          alt=""
+          class="google-logo img-fluid me-2"
+        />
+        Accedi con google
+      </button>
+    </form>
+    <div class="iscrizione text-center mt-3">
+      <p>Non hai un account? <a href="#">Iscriviti</a></p>
+    </div>
+  </section>
