@@ -15,7 +15,6 @@ import { ProfileComponent } from './profile/profile.component';
 import { LoginComponent } from './login/login.component';
 import { FooterComponent } from './footer/footer.component';
 import { ContactComponent } from './contact/contact.component';
-import { SinginComponent } from './singin/singin.profile';
 
 @NgModule({
   declarations: [
@@ -27,7 +26,6 @@ import { SinginComponent } from './singin/singin.profile';
     BlogCardComponent,
     ProfileComponent,
     LoginComponent,
-    SinginComponent,
     ContactComponent,
     LeaguesComponent,
     FooterComponent,

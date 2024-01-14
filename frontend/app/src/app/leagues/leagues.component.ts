@@ -25,17 +25,24 @@ export class LeaguesComponent implements OnInit {
     simulateAPIResponse(): void {
         // Assegnazione dei valori della risposta simulata
         const simulation: Leagues[] = [{
-            nomeLega: 'LNB',
-            urlImg: 'https://media-4.api-sports.io/basketball/leagues/2.png'
+            idLeague: 2,
+            nameLeague: 'LNB',
+            nameTeam: 'Le Portel',
+            logoTeam: 'https://media-4.api-sports.io/basketball/teams/11.png'
         }, {
-            nomeLega: 'BBL',
-            urlImg: 'https://media-4.api-sports.io/basketball/leagues/40.png'
+            idLeague: 2,
+            nameLeague: 'LNB',
+            nameTeam: 'Chalons-Reims',
+            logoTeam: 'https://media-4.api-sports.io/basketball/teams/12.png'
         }, {
-            nomeLega: 'Basket League',
-            urlImg: 'https://media-4.api-sports.io/basketball/leagues/45.png'
+            idLeague: 2,
+            nameLeague: 'LNB',
+            nameTeam: 'Levallois',
+            logoTeam: 'https://media-4.api-sports.io/basketball/teams/14.png'
         }]
 
         this.leaguesData = simulation;
+        
     }
 
 }

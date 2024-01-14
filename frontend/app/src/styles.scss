@@ -10,6 +10,10 @@ $primary-color-dark: #FF8038;
     margin-top: 80px;
 }
 
+.mt-navbar-text {
+    margin-top: 90px;
+}
+
 .section-bg-dark {
     background-color: #242424;
 }
@@ -236,17 +240,25 @@ $primary-color-dark: #FF8038;
 
 /* Leagues */
 
+.league-title {
+    width: 338px;
+    height: 98px;
+    background-color: $primary-color;
+    color: white;
+    border-radius: 20px;
+}
+
 .league-list {
     width: 338px;
-    height: 128px;
+    height: 53px;
     border-radius: 70px;
     background-color: $primary-color;
     color: white;
 }
 
 .league-logo {
-    width: 70px;
-    height: 50px;
+    width: 30px;
+    height: auto;
 }
 
 /* Profile */
@@ -336,13 +348,27 @@ footer {
         color: white;
     }
 
+    .offcanvas {
+        max-width: 60%;
+    }
+
     // check
     .text-light-1 {
         color: black;
     }
 
+    .navbar-search {
+        border: 1px solid black;
+    }
+
     .offcanvas-bg-dark {
         background-color: transparent;
+    }
+
+    /* Home */
+
+    .home-header {
+        height: 260px;
     }
 
     .contact-header {

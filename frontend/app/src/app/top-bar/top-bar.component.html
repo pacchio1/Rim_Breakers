@@ -39,7 +39,7 @@
         [ngClass]="{ 'offcanvas-bg-dark': themeService.isDarkMode }"
       >
         <ul
-          class="navbar-nav align-items-md-center flex-grow-1 flex-lg-grow-0"
+          class="navbar-nav justify-content-lg-between align-items-lg-center flex-grow-1"
         >
           <!-- <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Logo</h5> -->
           <ng-container *ngIf="!themeService.isDarkMode">
@@ -151,51 +151,53 @@
         <button class="btn btn-outline-success" type="submit">O</button>
         </form> -->
     <!-- <div class="d-flex c"> -->
-    <div
-      class="flex-nowrap navbar-search"
-      [ngClass]="{
-        'navbar-search-bg-dark': themeService.isDarkMode,
-        'navbar-search-bg': !themeService.isDarkMode
-      }"
-    >
-      <span class="" id="addon-wrapping">🔎</span>
-      <input
-        type="text"
-        class="navbar-input ps-2"
-        placeholder="Search"
-        aria-label="Username"
-        aria-describedby="addon-wrapping"
-      />
+    <div class="d-flex flex-row justify-content-between justify-content-md-evenly align-items-center flex-grow-1 px-3">
+      <div
+        class="flex-nowrap navbar-search"
+        [ngClass]="{
+          'navbar-search-bg-dark': themeService.isDarkMode,
+          'navbar-search-bg': !themeService.isDarkMode
+        }"
+      >
+        <span class="" id="addon-wrapping">🔎</span>
+        <input
+          type="text"
+          class="navbar-input ps-2"
+          placeholder="Search"
+          aria-label="Username"
+          aria-describedby="addon-wrapping"
+        />
+      </div>
+      <ng-container *ngIf="!themeService.isDarkMode">
+        <i
+          class="bi bi-moon"
+          (click)="toggleTheme()"
+          [ngClass]="{ 'text-light-1': !themeService.isDarkMode }"
+        ></i>
+      </ng-container>
+      <ng-container *ngIf="themeService.isDarkMode">
+        <i
+          class="bi bi-sun"
+          (click)="toggleTheme()"
+          [ngClass]="{ 'text-dark-1': themeService.isDarkMode }"
+        ></i>
+      </ng-container>
+      <i
+        class="bi bi-person-circle"
+        [ngClass]="{
+          'text-dark-1': themeService.isDarkMode,
+          'text-light-1': !themeService.isDarkMode
+        }"
+        routerLink="/login"
+      ></i>
+      <i
+        class="bi bi-flag"
+        [ngClass]="{
+          'text-dark-1': themeService.isDarkMode,
+          'text-light-1': !themeService.isDarkMode
+        }"
+      ></i>
     </div>
-    <ng-container *ngIf="!themeService.isDarkMode">
-      <i
-        class="bi bi-moon"
-        (click)="toggleTheme()"
-        [ngClass]="{ 'text-light-1': !themeService.isDarkMode }"
-      ></i>
-    </ng-container>
-    <ng-container *ngIf="themeService.isDarkMode">
-      <i
-        class="bi bi-sun"
-        (click)="toggleTheme()"
-        [ngClass]="{ 'text-dark-1': themeService.isDarkMode }"
-      ></i>
-    </ng-container>
-    <i
-      class="bi bi-person-circle"
-      [ngClass]="{
-        'text-dark-1': themeService.isDarkMode,
-        'text-light-1': !themeService.isDarkMode
-      }"
-      routerLink="/login"
-    ></i>
-    <i
-      class="bi bi-flag"
-      [ngClass]="{
-        'text-dark-1': themeService.isDarkMode,
-        'text-light-1': !themeService.isDarkMode
-      }"
-    ></i>
 
     <!-- </div> -->
   </div>

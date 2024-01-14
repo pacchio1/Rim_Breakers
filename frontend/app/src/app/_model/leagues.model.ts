@@ -1,4 +1,6 @@
 export type Leagues = {
-    nomeLega: string,
-	urlImg: string
+    idLeague: number,
+    nameLeague: string,
+    nameTeam: string,
+	logoTeam: string
 }
