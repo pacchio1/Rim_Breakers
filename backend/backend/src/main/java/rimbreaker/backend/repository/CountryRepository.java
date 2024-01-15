@@ -19,11 +19,4 @@ public interface CountryRepository extends JpaRepository<Country, Integer> {
             ") FROM Country c")
     List<ResponseCountry> getFlagAndName();
 
-    /*
-
-    @Query("SELECT  FROM Country")
-    List<String> getNameCountry();
-
-    */
-
 }

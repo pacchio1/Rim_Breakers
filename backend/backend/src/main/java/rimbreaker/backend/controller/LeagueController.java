@@ -1,6 +1,7 @@
 package rimbreaker.backend.controller;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,6 +12,7 @@ import rimbreaker.backend.service.LeagueService;
 @RestController
 @RequestMapping("/league")
 @RequiredArgsConstructor
+@CrossOrigin
 public class LeagueController {
 
     private final LeagueService leagueService;
@@ -38,22 +40,12 @@ public class LeagueController {
 
     }
 
-    /*
+    @GetMapping("/league_country")
+    public ResponseEntity<?> getLeagueByCountry(Long id) {
 
-    @GetMapping("/{name}")
-    public ResponseEntity<?> getLeagueName(String name) {
-
-        return leagueService.getLeagueName(name);
+        return leagueService.getLeagueByCountry(id);
 
     }
 
-    @GetMapping("/{logo}")
-    public ResponseEntity<?> getLeagueLogo(String logo) {
-
-        return leagueService.getLeagueLogo(logo);
-
-    }
-
-    */
 
 }

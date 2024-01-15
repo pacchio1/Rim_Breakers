@@ -1,11 +1,30 @@
 ---| DA FARE |---
 
-- aggiungere eccezioni nella cartella exception (o eliminare la cartella, da vedere)
-- aggiungere parte preferiti
+- aggiungere parte preferiti [fatto]
 
-- aggiungere repository per User --> loginAccount
-- aggiungere controller e servizi appena confermate opzioni su repo di User
+- aggiungere repository per User --> loginAccount [da vedere]
+- aggiungere controller e servizi appena confermate opzioni su repo di User [da vedere]
 
-- scrivere documentazione(java docs) [fatto] e manuale utente [da fare]
+- scrivere documentazione(java docs) [fatto]
+- fare manuale utente [da fare]
 - creare mvc di blog [fatto, aggiornare per robe future]
--  endpoint per eseguire script
+- endpoint per eseguire script [da fare]
+
+- league by country [X]
+- league -> object instead of String [X]
+
+- games by country [X]
+- games by league [X]
+- games by team [X]
+- tutte con un limit by 6 [X]
+
+- blog by country [] ?
+- blog by league [] ?
+- blog by team [] ?
+
+- player by game []
+
+- games by league [] (filtro per data)
+- country by league [] ?????
+
+- standings by team []

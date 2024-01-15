@@ -1,14 +1,14 @@
 package rimbreaker.backend.payload.response;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.sql.Timestamp;
 
-@Data
-@Builder
+/*@Data
+@Builder*/
+
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 

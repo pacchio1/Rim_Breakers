@@ -13,6 +13,7 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/favorite")
+@CrossOrigin
 public class FavoriteController {
 
     private final FavoriteService favoriteService;

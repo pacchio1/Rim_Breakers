@@ -2,15 +2,13 @@ package rimbreaker.backend.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import rimbreaker.backend.service.GamesService;
 
 @RestController
 @RequestMapping("/games")
 @RequiredArgsConstructor
+@CrossOrigin
 public class GamesController {
 
     private final GamesService gamesService;
@@ -71,5 +69,25 @@ public class GamesController {
 
     }
 
+    @GetMapping("/games_country")
+    public ResponseEntity<?> getGamesByCountry(Long id) {
+
+        return gamesService.getGamesByCountry(id);
+
+    }
+
+    @GetMapping("/games_team")
+    public ResponseEntity<?> getGamesByTeam(String name) {
+
+        return gamesService.getGamesByTeam(name);
+
+    }
+
+    @GetMapping("/games_league")
+    public ResponseEntity<?> getGamesByLeague(String name) {
+
+        return gamesService.getGamesByLeague(name);
+
+    }
 
 }

@@ -9,12 +9,13 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class ResponsePlayer {
+public class ResponseLeagueCountry {
 
-    private Long id;
-    private Long idPlayer;
-    private String season;
-    private String name;
-    private String surname;
+    private Long id_country;
+    private Long id_league;
+    private String flag;
+    private String nameCountry;
+    private String logo;
+    private String nameLeague;
 
 }

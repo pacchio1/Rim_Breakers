@@ -9,15 +9,13 @@ import rimbreaker.backend.service.UserService;
 @RestController
 @RequestMapping("/user")
 @AllArgsConstructor
+@CrossOrigin
 public class UserController {
 
     private final UserService userService;
 
     @PostMapping("/create")
-    public ResponseEntity<?> createUser(@RequestParam String name,
-                                        @RequestParam String surname,
-                                        @RequestParam String email,
-                                        @RequestParam String password) {
+    public ResponseEntity<?> createUser(String name, String surname, String email, String password) {
 
         userService.createUser(name, surname, email, password);
 
@@ -35,7 +33,7 @@ public class UserController {
     }
 
     @GetMapping("/getEmail")
-    public ResponseEntity<?> getUserByEmail(@RequestParam("email") String email) {
+    public ResponseEntity<?> getUserByEmail(String email) {
 
         ResponseUser user = userService.getUserByEmail(email);
 

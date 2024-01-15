@@ -89,4 +89,50 @@ public class GamesService {
 
         }
     }
+
+    public ResponseEntity<?> getGamesByCountry(Long id) {
+
+        try {
+
+            return new ResponseEntity<>(gamesRepository.getGamesByCountry(id), HttpStatus.OK);
+
+        }
+        catch(Exception e) {
+
+            return new ResponseEntity<>("Games not found in that country! : " + e.getMessage(), HttpStatus.BAD_REQUEST);
+
+        }
+
+    }
+
+    public ResponseEntity<?> getGamesByTeam(String name) {
+
+        try {
+
+            return new ResponseEntity<>(gamesRepository.getGamesByTeam(name), HttpStatus.OK);
+
+        }
+        catch (Exception e) {
+
+            return new ResponseEntity<>("Game not found with that team! : " + e.getMessage(), HttpStatus.BAD_REQUEST);
+
+        }
+
+    }
+
+    public ResponseEntity<?> getGamesByLeague(String name) {
+
+        try {
+
+            return new ResponseEntity<>(gamesRepository.getGamesByLeague(name), HttpStatus.OK);
+
+        }
+        catch (Exception e) {
+
+            return new ResponseEntity<>("Game not found in that league! : " + e.getMessage(), HttpStatus.BAD_REQUEST);
+
+        }
+
+    }
+
 }
