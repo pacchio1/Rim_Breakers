@@ -9,7 +9,7 @@ import rimbreaker.backend.service.UserService;
 @RestController
 @RequestMapping("/user")
 @AllArgsConstructor
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:8080")
 public class UserController {
 
     private final UserService userService;

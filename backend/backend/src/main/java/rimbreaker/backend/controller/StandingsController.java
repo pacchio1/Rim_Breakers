@@ -11,7 +11,7 @@ import rimbreaker.backend.service.StandingsService;
 @RestController
 @RequestMapping("/standings")
 @RequiredArgsConstructor
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:8080")
 public class StandingsController {
 
     private final StandingsService standingsService;

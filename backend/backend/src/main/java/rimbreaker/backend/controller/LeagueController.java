@@ -12,7 +12,7 @@ import rimbreaker.backend.service.LeagueService;
 @RestController
 @RequestMapping("/league")
 @RequiredArgsConstructor
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:8080")
 public class LeagueController {
 
     private final LeagueService leagueService;

@@ -12,7 +12,7 @@ import rimbreaker.backend.service.CountryService;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/country")
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:8080")
 public class CountryController {
 
     private final CountryService countryService;

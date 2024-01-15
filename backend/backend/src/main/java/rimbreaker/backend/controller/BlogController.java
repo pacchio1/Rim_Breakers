@@ -11,7 +11,7 @@ import rimbreaker.backend.service.BlogService;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/blog")
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:8080")
 public class BlogController {
 
     private final BlogService blogService;

@@ -8,7 +8,7 @@ import rimbreaker.backend.service.GamesService;
 @RestController
 @RequestMapping("/games")
 @RequiredArgsConstructor
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:8080")
 public class GamesController {
 
     private final GamesService gamesService;
