@@ -18,4 +18,6 @@ export class HomeComponent {
         this.themeService.toggleTheme();
     }
 
+    prova() {}
+
 }
