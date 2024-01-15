@@ -13,7 +13,7 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/favorite")
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:8080")
 public class FavoriteController {
 
     private final FavoriteService favoriteService;

@@ -11,7 +11,7 @@ import rimbreaker.backend.service.TeamService;
 @RestController
 @RequestMapping("/team")
 @RequiredArgsConstructor
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:8080")
 public class TeamController {
 
     private final TeamService teamService;
