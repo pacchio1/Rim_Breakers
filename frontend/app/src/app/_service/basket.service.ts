@@ -9,8 +9,7 @@ export class BasketService {
 
     constructor(private apiService: ApiService) {}
 
-    getSunsetDetail() {
+    getCountry() {
         return this.apiService.searchMatch()
     }
-
 }

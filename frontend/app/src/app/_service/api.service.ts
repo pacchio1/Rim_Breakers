@@ -18,10 +18,8 @@ export class ApiService {
      * @returns richiesta Api 
      */
     searchMatch() {
-        return this.http.get('http://localhost:8080/player/all').pipe(map((response: any) => {
-            return response.results 
+        return this.http.get('http://localhost:8080/country/all').pipe(map((response: any) => {
+            return response;
         }))
     }
-
-
 }

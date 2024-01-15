@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import { ThemeService } from "../_service/dark-mode.service";
+import { BasketService } from "../_service/basket.service";
 
 @Component ({
     selector: 'app-home',
@@ -8,14 +9,23 @@ import { ThemeService } from "../_service/dark-mode.service";
 
 export class HomeComponent {
 
+    playerDetails: [] = []; 
     isDarkMode: boolean = false;
 
-    constructor(public themeService: ThemeService) {}
+    constructor(public themeService: ThemeService, private basketService: BasketService) {}
 
-    ngOnInit(): void {}
+    ngOnInit(): void {
+        this.printPlayers(); 
+    }
+
+    printPlayers() {
+        this.basketService.getCountry().subscribe((response: any) => {
+            this.playerDetails = response;
+            console.log(this.playerDetails);
+        })
+    }
 
     toggleTheme(): void {
         this.themeService.toggleTheme();
     }
-
 }
