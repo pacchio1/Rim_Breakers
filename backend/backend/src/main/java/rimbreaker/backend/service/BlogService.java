@@ -57,4 +57,49 @@ public class BlogService {
 
     }
 
+    public ResponseEntity<?> getPostByCountry(Long id) {
+
+        try {
+
+            return new ResponseEntity<>(blogRepository.getPostByCountry(id), HttpStatus.OK);
+
+        }
+        catch(Exception e) {
+
+            return new ResponseEntity<>("No post found with this country! : " + e.getMessage(), HttpStatus.BAD_REQUEST);
+
+        }
+
+    }
+
+    public ResponseEntity<?> getPostByLeague(Long id) {
+
+        try {
+
+            return new ResponseEntity<>(blogRepository.getPostByLeague(id), HttpStatus.OK);
+
+        }
+        catch(Exception e) {
+
+            return new ResponseEntity<>("No post found with or about this league! : " + e.getMessage(), HttpStatus.BAD_REQUEST);
+
+        }
+
+    }
+
+    public ResponseEntity<?> getPostByTeam(Long id) {
+
+        try {
+
+            return new ResponseEntity<>(blogRepository.getPostByTeam(id), HttpStatus.OK);
+
+        }
+        catch(Exception e) {
+
+            return new ResponseEntity<>("No post found with or about this team! : " + e.getMessage(), HttpStatus.BAD_REQUEST);
+
+        }
+
+    }
+
 }

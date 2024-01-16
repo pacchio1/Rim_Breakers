@@ -1,10 +1,19 @@
 ---| FATTO | ---
+
 - aggiungere parte preferiti [fatto]
 - aggiungere repository per User --> loginAccount [X]
 - league by country [X]
 - league -> object instead of String [X]
+- games by country [X]
+- games by league [X]
+- games by team [X]
+- tutte con un limit by 6 [X]
+- blog by country [X]
+- blog by league [X]
+- blog by team [X]
 
 ---| FATTO da rivedere/continuare | ---
+
 - aggiungere controller e servizi appena confermate opzioni su repo di User [da vedere]
 - scrivere documentazione(java docs) [fatto] ma da mettere in readme
 - creare mvc di blog [fatto, aggiornare per robe future]
@@ -12,22 +21,11 @@
 ---| DA FARE |---
 
 - fare manuale utente [da fare]
+
 - endpoint per eseguire script [da fare]
-
-
-
-- games by country [X]
-- games by league [X]
-- games by team [X]
-- tutte con un limit by 6 [X]
-
-- blog by country [] ?
-- blog by league [] ?
-- blog by team [] ?
 
 - player by game []
 
-- games by league [] (filtro per data)
-- country by league [] ?????
+- country by league []
 
 - standings by team []

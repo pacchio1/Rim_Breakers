@@ -30,7 +30,10 @@ SET time_zone = "+00:00";
 CREATE TABLE `blog` (
   `ID_blog` int(11) NOT NULL,
   `ID_user` int(11) NOT NULL,
-  `testo` longtext DEFAULT NULL
+  `ID_country` int(11) NOT NULL,
+  `ID_league` int(11) NOT NULL,
+  `ID_team` int(11) NOT NULL,
+  `text` longtext DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------

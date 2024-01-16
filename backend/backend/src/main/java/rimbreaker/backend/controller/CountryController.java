@@ -33,21 +33,5 @@ public class CountryController {
 
     }
 
-
-    /*
-    @GetMapping("/flag")
-    public ResponseEntity<?> getFlag() {
-
-        return countryService.getFlag();
-
-    }
-
-    @GetMapping("/name")
-    public ResponseEntity<?> getNameCountry() {
-
-        return countryService.getNameCountry();
-
-    }
-    */
 }
 

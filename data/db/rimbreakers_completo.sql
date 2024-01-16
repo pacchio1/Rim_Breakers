@@ -24,14 +24,25 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `blog`
+-- Struttura della tabella `blog`
 --
 
 CREATE TABLE `blog` (
   `ID_blog` int(11) NOT NULL,
   `ID_user` int(11) NOT NULL,
+  `ID_country` int(11) NOT NULL,
+  `ID_league` int(11) NOT NULL,
+  `ID_team` int(11) NOT NULL,
   `text` longtext DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dump dei dati per la tabella `blog`
+--
+
+INSERT INTO `blog` (`ID_blog`, `ID_user`, `ID_country`, `ID_league`, `ID_team`, `text`) VALUES
+(1, 1, 23, 242, 689, 'test1'),
+(2, 2, 18, 45, 605, 'test2');
 
 -- --------------------------------------------------------
 

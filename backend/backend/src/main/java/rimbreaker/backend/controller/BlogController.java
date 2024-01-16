@@ -37,4 +37,25 @@ public class BlogController {
 
     }
 
+    @GetMapping("/post_country")
+    public ResponseEntity<?> getPostByCountry(Long id) {
+
+        return blogService.getPostByCountry(id);
+
+    }
+
+    @GetMapping("/post_league")
+    public ResponseEntity<?> getPostByLeague(Long id) {
+
+        return blogService.getPostByLeague(id);
+
+    }
+
+    @GetMapping("/post_team")
+    public ResponseEntity<?> getPostByTeam(Long id) {
+
+        return blogService.getPostByTeam(id);
+
+    }
+
 }

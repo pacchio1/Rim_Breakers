@@ -22,6 +22,15 @@ public class Blog {
     @Column(name = "ID_user")
     private Long id_user;
 
+    @Column(name = "ID_country")
+    private Long id_country;
+
+    @Column(name = "ID_league")
+    private Long id_league;
+
+    @Column(name = "ID_team")
+    private Long id_team;
+
     @Column(name = "text")
     private String text;
 
