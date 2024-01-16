@@ -9,8 +9,8 @@ export class BasketService {
 
     constructor(private apiService: ApiService) {}
 
-    getSunsetDetail() {
-        return this.apiService.searchMatch()
+    getPlayer() {
+        return this.apiService.searchPlayer()
     }
 
 }
