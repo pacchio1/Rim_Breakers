@@ -4,6 +4,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import rimbreaker.backend.payload.response.ResponseUser;
 import rimbreaker.backend.repository.UserRepository;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 @Service
 @RequiredArgsConstructor
@@ -12,6 +14,30 @@ public class UserService {
     private final UserRepository userRepository;
 
     public void createUser(String name, String surname, String email, String password) {
+
+
+        try {
+            // Create MessageDigest instance for MD5
+            MessageDigest md = MessageDigest.getInstance("MD5");
+
+            // Update the message digest with the input data
+            md.update(password.getBytes());
+
+            // Get the MD5 hash
+            byte[] md5Hash = md.digest();
+
+            // Convert the byte array to a hexadecimal string
+            StringBuilder hexStringBuilder = new StringBuilder();
+            for (byte b : md5Hash) {
+                hexStringBuilder.append(String.format("%02x", b));
+            }
+            // Print the MD5 hash
+            password= hexStringBuilder.toString();
+
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+
 
         userRepository.newUser(name, surname, email, password);
 
@@ -44,6 +70,31 @@ public class UserService {
     public void deleteUser(Long idUser) {
 
         userRepository.deleteUser(idUser);
+
+    }
+    public void login(String email, String password) {
+        try {
+            // Create MessageDigest instance for MD5
+            MessageDigest md = MessageDigest.getInstance("MD5");
+
+            // Update the message digest with the input data
+            md.update(password.getBytes());
+
+            // Get the MD5 hash
+            byte[] md5Hash = md.digest();
+
+            // Convert the byte array to a hexadecimal string
+            StringBuilder hexStringBuilder = new StringBuilder();
+            for (byte b : md5Hash) {
+                hexStringBuilder.append(String.format("%02x", b));
+            }
+            // Print the MD5 hash
+            password= hexStringBuilder.toString();
+
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+        userRepository.login(email, password);
 
     }
 
