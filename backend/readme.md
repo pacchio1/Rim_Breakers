@@ -5,13 +5,16 @@ per ricreare il database abbiamo usato uno script che è progettato per ottenere
 
 ## Pulizia
 dagli script e stato creato un file con l'obiettivo di acquisire dati sportivi da file JSON, elaborarli e successivamente inserirli in un database MySQL locale. L'idea di base è fornire una soluzione pratica per l'aggiornamento di risultati e statistiche sportive su un portale web dedicato.
-### TODO: file per standings
+
 
 ## Creazione DB
 usando i precedenti file json (games and standings) abbiamo creato il seguente database:<br>
-![DATABASE](img/1DBxapi.png)
+![DATABASE](../img/1DBxapi.png)
+poi ci servira una parte di utentistica
+![DATABASE](../img/2DBxapi.png)
 
 ## Java docs
+![java docs](java_docs.md)
 
 ## Documentazione api
 ![Documentazione Api](apidocumentation.md)
