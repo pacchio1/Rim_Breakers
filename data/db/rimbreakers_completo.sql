@@ -70,7 +70,7 @@ INSERT INTO `country` (`id_country`, `ID_league`, `name`, `type`, `code`, `flag`
 (23, 52, 'Italy', '', 'IT', 'https://media-4.api-sports.io/flags/it.svg'),
 (45, 117, 'Spain', '', 'ES', 'https://media-4.api-sports.io/flags/es.svg'),
 (48, 104, 'Turkey', '', 'TR', 'https://media-4.api-sports.io/flags/tr.svg'),
-(55, 202, 'Europe', '', 'EU ', 'https://media-4.api-sports.io/flags/ .svg');
+(55, 202, 'Europe', '', 'EU ', 'https://media-4.api-sports.io/flags/eu.svg');
 
 -- --------------------------------------------------------
 

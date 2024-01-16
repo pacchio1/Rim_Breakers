@@ -71,5 +71,6 @@ public class Player {
 
     @Column(name = "nationality", nullable = false)
     private String nationality;
+
 }
 

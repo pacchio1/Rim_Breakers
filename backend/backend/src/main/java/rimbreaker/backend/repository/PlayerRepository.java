@@ -4,7 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import rimbreaker.backend.entity.Player;
-import rimbreaker.backend.payload.response.ResponsePlayer;
 
 import java.util.List;
 
