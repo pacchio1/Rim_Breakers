@@ -1,17 +1,20 @@
----| DA FARE |---
-
+---| FATTO | ---
 - aggiungere parte preferiti [fatto]
-
-- aggiungere repository per User --> loginAccount [da vedere]
-- aggiungere controller e servizi appena confermate opzioni su repo di User [da vedere]
-
-- scrivere documentazione(java docs) [fatto]
-- fare manuale utente [da fare]
-- creare mvc di blog [fatto, aggiornare per robe future]
-- endpoint per eseguire script [da fare]
-
+- aggiungere repository per User --> loginAccount [X]
 - league by country [X]
 - league -> object instead of String [X]
+
+---| FATTO da rivedere/continuare | ---
+- aggiungere controller e servizi appena confermate opzioni su repo di User [da vedere]
+- scrivere documentazione(java docs) [fatto] ma da mettere in readme
+- creare mvc di blog [fatto, aggiornare per robe future]
+
+---| DA FARE |---
+
+- fare manuale utente [da fare]
+- endpoint per eseguire script [da fare]
+
+
 
 - games by country [X]
 - games by league [X]
