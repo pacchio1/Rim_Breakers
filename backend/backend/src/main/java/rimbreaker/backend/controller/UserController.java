@@ -6,10 +6,10 @@ import org.springframework.web.bind.annotation.*;
 import rimbreaker.backend.payload.response.ResponseUser;
 import rimbreaker.backend.service.UserService;
 
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/user")
 @AllArgsConstructor
-@CrossOrigin(origins = "http://localhost:8080")
 public class UserController {
 
     private final UserService userService;

@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import rimbreaker.backend.service.TeamService;
 
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/team")
 @RequiredArgsConstructor
-@CrossOrigin(origins = "http://localhost:8080")
 public class TeamController {
 
     private final TeamService teamService;

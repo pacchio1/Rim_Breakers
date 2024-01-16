@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.RestController;
 import lombok.RequiredArgsConstructor;
 import rimbreaker.backend.service.LeagueService;
 
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/league")
 @RequiredArgsConstructor
-@CrossOrigin(origins = "http://localhost:8080")
 public class LeagueController {
 
     private final LeagueService leagueService;

@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import rimbreaker.backend.service.StandingsService;
 
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/standings")
 @RequiredArgsConstructor
-@CrossOrigin(origins = "http://localhost:8080")
 public class StandingsController {
 
     private final StandingsService standingsService;

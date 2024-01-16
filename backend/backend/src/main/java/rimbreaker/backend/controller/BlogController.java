@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import rimbreaker.backend.service.BlogService;
 
+@CrossOrigin(origins = "*")
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/blog")
-@CrossOrigin(origins = "http://localhost:8080")
 public class BlogController {
 
     private final BlogService blogService;
