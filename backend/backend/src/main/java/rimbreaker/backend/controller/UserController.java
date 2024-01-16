@@ -1,5 +1,6 @@
 package rimbreaker.backend.controller;
 
+import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import rimbreaker.backend.payload.response.ResponseUser;
@@ -7,30 +8,66 @@ import rimbreaker.backend.service.UserService;
 
 @RestController
 @RequestMapping("/user")
+@AllArgsConstructor
+@CrossOrigin
 public class UserController {
 
     private final UserService userService;
 
-    public UserController(UserService userService) {
-        this.userService = userService;
-    }
-
     @PostMapping("/create")
-    public ResponseEntity<?> createUser(@RequestParam String name, @RequestParam String surname, @RequestParam String email, @RequestParam String password) {
+    public ResponseEntity<?> createUser(String name, String surname, String email, String password) {
+
         userService.createUser(name, surname, email, password);
+
         return ResponseEntity.ok("User created successfully");
+
     }
 
-    @GetMapping("/get/{id}")
-    public ResponseEntity<?> getUserById(@PathVariable Long id) {
-        ResponseUser user = userService.getUserById(id);
+    @GetMapping("/get")
+    public ResponseEntity<?> getUserById(Long idUser) {
+
+        ResponseUser user = userService.getUserById(idUser);
+
         return ResponseEntity.ok(user);
+
     }
 
-    @GetMapping("/getByEmail")
-    public ResponseEntity<?> getUserByEmail(@RequestParam("email") String email) {
+    @GetMapping("/getEmail")
+    public ResponseEntity<?> getUserByEmail(String email) {
+
         ResponseUser user = userService.getUserByEmail(email);
+
         return ResponseEntity.ok(user);
+
     }
+
+    @PostMapping("/updateEmail")
+    public ResponseEntity<?> updateEmail(String email, Long idUser) {
+
+        userService.updateEmail(email, idUser);
+
+        return ResponseEntity.ok("Email updated!");
+
+    }
+
+    @PostMapping("/updatePassword")
+    public ResponseEntity<?> updatePassword(String password, Long idUser) {
+
+        userService.updatePassword(password, idUser);
+
+        return ResponseEntity.ok("Password updated!");
+
+    }
+
+    @PostMapping("/delete")
+    public ResponseEntity<?> deleteUser(Long idUser) {
+
+        userService.deleteUser(idUser);
+
+        return ResponseEntity.ok("User successfully deleted!");
+
+    }
+
+
 
 }

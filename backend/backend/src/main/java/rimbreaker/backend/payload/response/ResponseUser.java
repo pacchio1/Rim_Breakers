@@ -11,6 +11,7 @@ import lombok.Setter;
 @AllArgsConstructor
 public class ResponseUser {
 
+    private Long idUser;
     private String name;
     private String surname;
     private String email;

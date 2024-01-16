@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `blog` (
   `ID_blog` int(11) NOT NULL,
   `ID_user` int(11) NOT NULL,
-  `testo` longtext DEFAULT NULL
+  `text` longtext DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -59,7 +59,7 @@ INSERT INTO `country` (`id_country`, `ID_league`, `name`, `type`, `code`, `flag`
 (23, 52, 'Italy', '', 'IT', 'https://media-4.api-sports.io/flags/it.svg'),
 (45, 117, 'Spain', '', 'ES', 'https://media-4.api-sports.io/flags/es.svg'),
 (48, 104, 'Turkey', '', 'TR', 'https://media-4.api-sports.io/flags/tr.svg'),
-(55, 202, 'Europe', '', ' ', 'https://media-4.api-sports.io/flags/ .svg');
+(55, 202, 'Europe', '', 'EU ', 'https://media-4.api-sports.io/flags/ .svg');
 
 -- --------------------------------------------------------
 
@@ -6277,9 +6277,9 @@ INSERT INTO `teamfollowed` (`ID_user`, `ID_team`) VALUES
 
 CREATE TABLE `user` (
   `ID_user` int(11) NOT NULL,
-  `name` varchar(11) NOT NULL,
-  `surname` varchar(11) NOT NULL,
-  `email` varchar(11) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `surname` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
   `password` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 

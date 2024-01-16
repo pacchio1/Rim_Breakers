@@ -34,11 +34,4 @@ public interface TeamRepository extends JpaRepository<Team, Long> {
             "JOIN Country c ON c.id_league = t.id_league")
     List<ResponseTeam> getAll();
 
-    /*
-
-    @Query("SELECT  FROM Team t WHERE t.id = :id")
-    String getTeamLogo(@Param("id") Long id);
-
-    */
-
 }

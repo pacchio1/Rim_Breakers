@@ -9,12 +9,11 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class ResponsePlayer {
+public class ResponseBlog {
 
-    private Long id;
-    private Long idPlayer;
-    private String season;
+    private Long id_post;
     private String name;
     private String surname;
+    private String text;
 
 }

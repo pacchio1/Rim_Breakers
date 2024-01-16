@@ -57,4 +57,19 @@ public class LeagueService {
 
     }
 
+    public ResponseEntity<?> getLeagueByCountry(Long id) {
+
+        try {
+
+            return new ResponseEntity<>(leagueRepository.getLeagueByCountry(id), HttpStatus.OK);
+
+        }
+        catch (Exception e) {
+
+            return new ResponseEntity<>("Team not found or not present! : " + e.getMessage(), HttpStatus.BAD_REQUEST);
+
+        }
+
+    }
+
 }
