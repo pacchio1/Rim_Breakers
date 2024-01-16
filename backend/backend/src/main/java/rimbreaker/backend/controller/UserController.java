@@ -67,6 +67,15 @@ public class UserController {
         return ResponseEntity.ok("User successfully deleted!");
 
     }
+    @PostMapping("/login")
+    public ResponseEntity<?> login(String email, String password) {
+
+        userService.login(email,password);
+
+        return ResponseEntity.ok("login completed user:"+ email );
+
+    }
+
 
 
 
