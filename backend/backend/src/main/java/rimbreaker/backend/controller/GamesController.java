@@ -5,10 +5,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import rimbreaker.backend.service.GamesService;
 
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/games")
 @RequiredArgsConstructor
-@CrossOrigin(origins = "http://localhost:8080")
 public class GamesController {
 
     private final GamesService gamesService;

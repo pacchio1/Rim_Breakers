@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.RestController;
 import lombok.RequiredArgsConstructor;
 import rimbreaker.backend.service.PlayerService;
 
+@CrossOrigin(origins = "*")
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/player")
-@CrossOrigin(origins = "*")
 public class PlayerController {
 
         private final PlayerService playerService;

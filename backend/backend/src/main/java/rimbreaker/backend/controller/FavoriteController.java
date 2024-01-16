@@ -10,10 +10,10 @@ import rimbreaker.backend.entity.LeagueFollowed;
 
 import java.util.List;
 
+@CrossOrigin(origins = "*")
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/favorite")
-@CrossOrigin(origins = "http://localhost:8080")
 public class FavoriteController {
 
     private final FavoriteService favoriteService;

@@ -68,5 +68,8 @@ public class Player {
 
     @Column(name = "ball_holding_time", nullable = false)
     private int ballHoldingTime;
+
+    @Column(name = "nationality", nullable = false)
+    private int nationality;
 }
 

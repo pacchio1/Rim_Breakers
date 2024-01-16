@@ -13,16 +13,10 @@ public interface PlayerRepository extends JpaRepository<Player, Long> {
     @Query("SELECT p FROM Player p WHERE p.idPlayer = :id")
     Player getPlayerById(@Param("id") Long id);
 
-    @Query("SELECT new rimbreaker.backend.payload.response.ResponsePlayer(" +
-            "t.id, " +
-            "p.idPlayer, " +
-            "p.season, " +
-            "p.name, " +
-            "p.surname" +
-            ") FROM Player p " +
+    @Query("SELECT p FROM Player p " +
             "JOIN Team t ON t.id = p.idTeam " +
             "WHERE p.idTeam = :id_team")
-    List<ResponsePlayer> getPlayersByTeam(@Param("id_team") Long id_team);
+    List<Player> getPlayersByTeam(@Param("id_team") Long id_team);
 
     @Query("SELECT p FROM Player p")
     List<Player> getAllPlayers();

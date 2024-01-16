@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.RestController;
 import lombok.RequiredArgsConstructor;
 import rimbreaker.backend.service.CountryService;
 
+@CrossOrigin(origins = "*")
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/country")
-@CrossOrigin(origins = "http://localhost:8080")
 public class CountryController {
 
     private final CountryService countryService;
