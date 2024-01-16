@@ -70,6 +70,6 @@ public class Player {
     private int ballHoldingTime;
 
     @Column(name = "nationality", nullable = false)
-    private int nationality;
+    private String nationality;
 }
 
