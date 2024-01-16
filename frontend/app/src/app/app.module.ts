@@ -15,6 +15,9 @@ import { ProfileComponent } from './profile/profile.component';
 import { LoginComponent } from './login/login.component';
 import { FooterComponent } from './footer/footer.component';
 import { ContactComponent } from './contact/contact.component';
+import { PlayerDetailComponent } from './player-detail/player-detail.component';
+import { TeamComponent } from './team/team.component';
+import { PlayerCardComponent } from './player-card/player-card.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +31,9 @@ import { ContactComponent } from './contact/contact.component';
     LoginComponent,
     ContactComponent,
     LeaguesComponent,
+    TeamComponent,
+    PlayerCardComponent,
+    PlayerDetailComponent,
     FooterComponent,
   ],
   imports: [

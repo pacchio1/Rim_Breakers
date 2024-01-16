@@ -1,0 +1,8 @@
+<div *ngFor="let player of players">
+    <div *ngIf="player.nationality == 'af'">
+        <p>{{ player.name }}</p>
+    </div>
+    <div *ngIf="player.nationality == 'us-s'">
+        <p>{{ player.surname }}</p>
+    </div>
+</div>

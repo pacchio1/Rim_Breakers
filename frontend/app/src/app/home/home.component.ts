@@ -15,19 +15,19 @@ export class HomeComponent {
     constructor(public themeService: ThemeService, private basketService: BasketService) {}
 
     ngOnInit(): void {
-        this.printPlayer();
+        // this.printPlayer();
     }
 
     toggleTheme(): void {
         this.themeService.toggleTheme();
     }
 
-    printPlayer() {
-        this.basketService.getPlayer().subscribe((response: any) => {
-            this.players = response
-            console.log(this.players);
+    // printPlayer() {
+    //     this.basketService.getPlayer().subscribe((response: any) => {
+    //         this.players = response
+    //         console.log(this.players);
             
-        })
-    }
+    //     })
+    // }
 
 }

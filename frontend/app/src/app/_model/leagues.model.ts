@@ -1,6 +1,7 @@
 export type Leagues = {
-    idLeague: number,
-    nameLeague: string,
-    nameTeam: string,
-	logoTeam: string
+    id: number;
+    id_league: number;
+    nameLeague: string;
+    nameTeam: string;
+    logoTeam: string;
 }
