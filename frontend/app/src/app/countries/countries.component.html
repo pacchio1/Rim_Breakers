@@ -1,0 +1,17 @@
+<section class="mt-navbar-text container d-flex justify-content-center">
+    
+    <div class="league-title d-flex justify-content-center align-items-center">
+        <h2>Nazioni</h2>
+    </div>
+
+</section>
+<section class="mt-3 container">
+    
+    <div *ngFor="let country of countries" class="d-flex justify-content-center pt-3">
+        <div class="league-list d-flex justify-content-start align-items-center ps-5">
+            <img src="{{ country.flag }}" alt="" class="league-logo">
+            <p class="ps-3 m-0">{{ country.name }}</p>
+        </div>
+    </div>
+
+</section>

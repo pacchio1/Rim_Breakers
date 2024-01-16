@@ -4,6 +4,7 @@ import { map } from 'rxjs';
 import { PlayerDetail } from '../_model/player.model';
 import { Leagues } from '../_model/leagues.model';
 import { Team } from '../_model/team.model';
+import { Countries } from '../_model/countries.model';
 
 // import { SunsetResults } from '../model/sunset.model';
 
@@ -62,5 +63,27 @@ export class ApiService {
         }))
     }
 
+    /**
+     * API RICERCA PLAYER
+     * 
+     * @param idPlayer
+     * @returns richiesta Api 
+     */
+    searchAllCountry() {
+        return this.http.get('http://localhost:8080/country/all').pipe(map((response: any) => {
+            return response as Countries[]
+        }))
+    }
 
+    /**
+     * API RICERCA PLAYER
+     * 
+     * @param idCountry
+     * @returns richiesta Api 
+     */
+    searchLeaguesByCountry(idCountry: number) {
+        return this.http.get('http://localhost:8080/league/league_country?id=' + idCountry).pipe(map((response: any) => {
+            return response as Leagues[]
+        }))
+    }
 }
