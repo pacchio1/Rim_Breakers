@@ -16,5 +16,6 @@ public class ResponsePlayer {
     private String season;
     private String name;
     private String surname;
+    private String nationality;
 
 }
