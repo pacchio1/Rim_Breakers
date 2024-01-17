@@ -1,3 +1,38 @@
-<div class="mt-navbar">
-    <h2>{{ singlePlayer.name }} {{ singlePlayer.surname }}</h2>
+<div class="mt-navbar-text ps-2 container">
+    <div class="row row-cols-2">
+        <div class="col">
+            <h2 class="text-primary-emphasis">{{ singlePlayer.name }} {{ singlePlayer.surname }}</h2>
+            <h5 class="text-primary-emphasis">INFO</h5>
+            <p class="mb-0">LEGA: {{ playerLeague }}</p>
+            <p class="mb-0" *ngIf="playerTeam">TEAM: {{ playerTeam.name }}</p>
+        </div>
+        <div class="col d-flex justify-content-center">
+            <img class="player-img" src="" alt="">
+        </div>
+    </div>
+</div>
+
+<div class="player-info mt-2 p-3" *ngIf="playerTeam">
+    <h3>STATISTICHE</h3>
+    <p>{{ singlePlayer.name }} {{ singlePlayer.surname }} nella stagione {{ singlePlayer.season }} ha segnato {{ singlePlayer.pointScored }} punti, giocando un minutaggio pari a {{ singlePlayer.playedMin }} min</p>
+    <p>Il numero {{ singlePlayer.meshNumber }} del {{ playerTeam.name }} ha tentato {{ singlePlayer.shots2 }} tiri da 2 e {{ singlePlayer.shots3 }} tiri da 3 e ottenendo {{ singlePlayer.assist }} assist</p>
+    <h3>INFO PERSONALI</h3>
+    <ul>
+        <li>Età: {{ singlePlayer.age }}</li>
+        <li>Altezza: {{ singlePlayer.height }} m</li>
+        <li>Peso: {{ singlePlayer.weight }} Kg</li>
+        <li>Nazionalità: {{ singlePlayer.nationality }}</li>
+    </ul>
+</div>
+
+<div>
+    <h2 class="pt-4 ps-3 text-primary-emphasis">Prossime partite</h2>
+</div>
+
+<div>
+    <h2 class="pt-4 ps-3 text-primary-emphasis">Compagni di squadra</h2>
+
+    <div class="d-flex player-card-container pt-2">
+        <player-card [players]="playerTeammates" class="d-flex flex-row"></player-card>
+    </div>
 </div>

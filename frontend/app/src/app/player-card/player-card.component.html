@@ -1,8 +1,4 @@
-<div *ngFor="let player of players">
-    <div *ngIf="player.nationality == 'af'">
-        <p>{{ player.name }}</p>
-    </div>
-    <div *ngIf="player.nationality == 'us-s'">
-        <p>{{ player.surname }}</p>
-    </div>
+<div *ngFor="let player of players" class="px-2 d-flex flex-column align-items-center">
+    <div class="player-card-img"></div>
+    <p class="player-card-name text-center">{{ player.name }} {{ player.surname }}</p>
 </div>

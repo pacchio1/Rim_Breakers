@@ -15,6 +15,18 @@ export class ApiService {
     constructor(private http: HttpClient) {}
 
     /**
+     * API RICERCA LEAGUE
+     * 
+     * @param idLeague
+     * @returns richiesta Api 
+     */
+    searchLeague(idLeague: number) {
+        return this.http.get('http://localhost:8080/league/number?id=' + idLeague).pipe(map((response: any) => {
+            return response
+        }))
+    }
+
+    /**
      * API RICERCA LEAGUES
      * 
      * @param idLeague

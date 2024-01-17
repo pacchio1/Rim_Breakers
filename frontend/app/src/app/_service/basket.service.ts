@@ -10,6 +10,16 @@ export class BasketService {
     constructor(private apiService: ApiService) {}
 
     /**
+     * API RICERCA LEAGUE
+     * 
+     * @param idLeague
+     * @returns richiesta Api 
+     */
+    getLeague(idLeague: number) {
+        return this.apiService.searchLeague(idLeague)
+    }
+
+    /**
      * API RICERCA LEAGUES
      * 
      * @param idLeague

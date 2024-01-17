@@ -261,6 +261,59 @@ $primary-color-dark: #FF8038;
     height: auto;
 }
 
+/* PlayerDetail */
+
+.player-info {
+    width: 301px;
+    height: auto;
+    background-color: #1b1466;
+    color: white;
+    border-radius: 0 20px 20px 0;
+}
+
+.player-img {
+    width: 145px;
+    height: 150px;
+    background-color: #FF8038;
+}
+
+.player-card-container {
+    overflow-x: auto;
+    scrollbar-width: thin; /* Per Firefox */
+    scrollbar-color: transparent transparent; /* Per Firefox */
+}
+
+/* Stile barra di scorrimento per browser basati su WebKit (Chrome, Safari) */
+.player-card-container::-webkit-scrollbar {
+    height: 12px;
+}
+
+.player-card-container::-webkit-scrollbar-thumb {
+    background-color: transparent;
+}
+
+.player-card-container::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+/* PlayerCard */
+
+.player-card-img {
+    width: 67px;
+    height: 83px;
+    border-radius: 20px;
+    background-color: red;
+}
+
+.player-card-name {
+    width: 90px;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px; /* 200% */
+    letter-spacing: -0.15px;
+}
+
 /* Profile */
 
 .profile-pic {
