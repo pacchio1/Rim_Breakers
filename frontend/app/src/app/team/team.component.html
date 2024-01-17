@@ -1,11 +1,19 @@
-<div class="mt-navbar">
-    <h2>{{ team.name }}</h2>
+<div class="container mt-navbar-text d-flex justify-content-center">
+    <div class="team-detail-header mt-3 d-flex align-items-center justify-content-center position-relative">
+        <h2 class="position-absolute text-center text-light z-2">{{ team.name }}</h2>
+        <div class="team-detail-img-overlay z-1"></div>
+        <img class="team-detail-img" src="https://images.unsplash.com/flagged/photo-1580051706353-f037886dedac?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGdpb2NhdG9yaSUyMGJhc2tldHxlbnwwfHwwfHx8MA%3D%3D" alt="">
+    </div>
+</div>
+
+<div>
+    <h2 class="pt-4 ps-3 text-primary-emphasis">Coppe</h2>
 </div>
 
 <div>
     <h2 class="pt-4 ps-3 text-primary-emphasis">Compagni di squadra</h2>
 
     <div class="d-flex player-card-container pt-2">
-        <player-card [players]="teamPlayers" class="d-flex flex-row"></player-card>
+        <player-card [players]="teamPlayers" class="d-flex flex-row" (cardClick)="passIdPlayer($event)"></player-card>
     </div>
 </div>

@@ -18,9 +18,19 @@ export class BasketService {
     getLeague(idLeague: number) {
         return this.apiService.searchLeague(idLeague)
     }
+    
+    /**
+     * API RICERCA STANDING LEAGUE
+     * 
+     * @param idLeague
+     * @returns richiesta Api 
+     */
+    getTeamsLeagueStandings(idLeague: number) {
+        return this.apiService.searchTeamsLeagueStandings(idLeague)
+    }
 
     /**
-     * API RICERCA LEAGUES
+     * API RICERCA TEAM LEAGUES
      * 
      * @param idLeague
      * @returns richiesta Api 
@@ -50,7 +60,7 @@ export class BasketService {
     }
     
     /**
-     * API RICERCA TEAM
+     * API RICERCA TEAM PLAYERS
      * 
      * @param idTeam
      * @returns richiesta Api 

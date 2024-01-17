@@ -5,6 +5,8 @@ import { PlayerDetail } from '../_model/player.model';
 import { LeagueByCountry, Leagues } from '../_model/leagues.model';
 import { Team } from '../_model/team.model';
 import { Countries } from '../_model/countries.model';
+import { League } from '../_model/league.model';
+import { SeasonStanding } from '../_model/seasonStanding.model';
 
 // import { SunsetResults } from '../model/sunset.model';
 
@@ -23,12 +25,24 @@ export class ApiService {
      */
     searchLeague(idLeague: number) {
         return this.http.get('http://localhost:8080/league/number?id=' + idLeague).pipe(map((response: any) => {
-            return response
+            return response as League
         }))
     }
 
     /**
-     * API RICERCA LEAGUES
+     * API RICERCA STANDING LEAGUES
+     * 
+     * @param idLeague
+     * @returns richiesta Api 
+     */
+    searchTeamsLeagueStandings(idLeague: number) {
+        return this.http.get('http://localhost:8080/standings/all_by_league?idLeague=' + idLeague + '&season=2022-2023').pipe(map((response: any) => {
+            return response as SeasonStanding[]
+        }))
+    }
+
+    /**
+     * API RICERCA TEAM LEAGUES
      * 
      * @param idLeague
      * @returns richiesta Api 
@@ -64,7 +78,7 @@ export class ApiService {
     }
     
     /**
-     * API RICERCA TEAM
+     * API RICERCA TEAM PLAYER
      * 
      * @param idTeam 
      * @returns richiesta Api 
@@ -100,7 +114,7 @@ export class ApiService {
     }
 
     /**
-     * API RICERCA PLAYER
+     * API RICERCA LEGUES BY COUNTRY
      * 
      * @param idCountry
      * @returns richiesta Api 

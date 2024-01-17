@@ -2,6 +2,9 @@ import { Component, OnInit } from "@angular/core";
 import { ThemeService } from "../_service/dark-mode.service";
 import { Leagues } from "../_model/leagues.model";
 import { ActivatedRoute, Router } from "@angular/router";
+import { SeasonStanding } from "../_model/seasonStanding.model";
+import { BasketService } from "../_service/basket.service";
+import { League } from "../_model/league.model";
 
 @Component ({
     selector: 'app-leagues',
@@ -11,24 +14,61 @@ import { ActivatedRoute, Router } from "@angular/router";
 export class LeaguesComponent implements OnInit {
 
     isDarkMode: boolean = false;
-    leaguesData: Leagues[] = [];
+    componentSelected: string = 'A'
 
-    constructor(public themeService: ThemeService, private activatedRoute: ActivatedRoute, private router: Router) {}
+    leaguesData: any[] = [];
+    league!: League;
+
+    constructor(public themeService: ThemeService, private basketService: BasketService, private activatedRoute: ActivatedRoute, private router: Router) {}
 
     ngOnInit(): void {
         // this.simulateAPIResponse();
+        // this.activatedRoute.data.subscribe(({league}) => {
+        //     console.log('x',league)
+        //     this.leaguesData = league
+        //     this.leaguesData.sort((a, b) => a.position - b.position);
+        //     this.leaguesData.forEach((leagueObj: any) => {
+        //         console.log(leagueObj.teamId)
+        //         this.basketService.getTeam(leagueObj.teamId).subscribe((teamInfo: any) => {
+        //             console.log(teamName);
+        //             leagueObj.teamName = teamInfo.name;
+        //             console.log(teamInfo.name)
+        //             leagueObj.teamLogo = teamInfo.logo;
+        //             console.log(leagueObj)
+        //         })
+        //     })
+        // });
+
         this.activatedRoute.data.subscribe(({league}) => {
-            console.log(league)
             this.leaguesData = league
+            console.log(this.leaguesData)
         });
+
+        this.printTeamLeague();
+
     }
 
-    toggleTheme(): void {
-        this.themeService.toggleTheme();
+    printTeamLeague() {
+        const id = this.activatedRoute.snapshot.paramMap.get('id')
+        if(id)
+            this.basketService.getLeague(parseInt(id)).subscribe((response: any) => {
+                console.log(response);
+                this.league = response;
+                console.log(this.league.name);
+                
+            })
     }
 
     passIdTeam(idTeam: number) {
         this.router.navigate(['/team', idTeam])
+    }
+
+    showComponent(component: string) {
+        this.componentSelected = component;
+    }
+
+    toggleTheme(): void {
+        this.themeService.toggleTheme();
     }
 
     // simulateAPIResponse(): void {

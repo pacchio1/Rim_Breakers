@@ -91,7 +91,7 @@ $primary-color-dark: #FF8038;
 
 /* Home */
 
-.prova {
+.footer-index {
     position: relative;
     z-index: 1;
 }
@@ -268,6 +268,33 @@ $primary-color-dark: #FF8038;
     height: auto;
 }
 
+/* Team */
+
+.team-detail-header {
+    width: 312px;
+    height: 104px;
+    border-radius: 20px;
+    overflow: hidden;
+    color: $primary-color;
+}
+
+.team-detail-img {
+    width: 338px;
+    height: 87px;
+    border-radius: 20px;
+    // opacity: 0.2;
+}
+
+.team-detail-img-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 255, 0.5), rgba(0, 0, 255, 0.5));
+    z-index: 1; /* Assicura che l'overlay sia sopra l'immagine */
+  }
+
 /* PlayerDetail */
 
 .player-info {
@@ -433,6 +460,13 @@ footer {
 
     .contact-header {
         width: 600px;
+    }
+
+    /* Player */
+
+    .player-info {
+        width: 780px;
+        height: 443px;
     }
 
 }

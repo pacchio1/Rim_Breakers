@@ -31,6 +31,10 @@ export class TeamComponent implements OnInit {
         this.themeService.toggleTheme();
     }
 
+    passIdPlayer(idPlayer: number) {
+        this.router.navigate(['/player', idPlayer])
+    }
+
     // passIdTeam(idTeam: number) {
     //     this.router.navigate(['/team', idTeam])
     // }

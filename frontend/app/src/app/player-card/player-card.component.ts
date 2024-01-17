@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input, Output, EventEmitter } from "@angular/core";
 import { ThemeService } from "../_service/dark-mode.service";
 import { PlayerDetail } from "../_model/player.model";
 
@@ -10,6 +10,7 @@ import { PlayerDetail } from "../_model/player.model";
 export class PlayerCardComponent {
 
     @Input() players: PlayerDetail[] = [];
+    @Output() cardClick: EventEmitter<number> = new EventEmitter<number>();
 
     constructor(public themeService: ThemeService) {}
 
@@ -17,5 +18,9 @@ export class PlayerCardComponent {
 
     toggleTheme(): void {
         this.themeService.toggleTheme();
+    }
+
+    handleCardClick(playerId: number) {
+        this.cardClick.emit(playerId);
     }
 }

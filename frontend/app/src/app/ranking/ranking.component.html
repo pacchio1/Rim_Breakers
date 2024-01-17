@@ -1,0 +1,7 @@
+<div *ngFor="let leagueObj of teamsStandingData" class="m-3">
+    <div class="league-list d-flex justify-content-start align-items-center ps-5" (click)="passIdTeam(leagueObj.teamId)">
+        <img src="{{ leagueObj.teamLogo }}" alt="" class="league-logo">
+        <p *ngIf="leagueObj.teamName" class="ps-3 m-0">{{ leagueObj.teamName }}</p>
+        <p *ngIf="!leagueObj.teamName" class="ps-3 m-0 text-warning">NOME NON DISPONIBILE</p>
+    </div>
+</div>

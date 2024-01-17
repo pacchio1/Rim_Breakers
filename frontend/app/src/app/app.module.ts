@@ -19,6 +19,7 @@ import { PlayerDetailComponent } from './player-detail/player-detail.component';
 import { TeamComponent } from './team/team.component';
 import { PlayerCardComponent } from './player-card/player-card.component';
 import { CountriesComponent } from './countries/countries.component';
+import { RankingComponent } from './ranking/ranking.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { CountriesComponent } from './countries/countries.component';
     LoginComponent,
     ContactComponent,
     LeaguesComponent,
+    RankingComponent,
     TeamComponent,
     PlayerCardComponent,
     PlayerDetailComponent,
