@@ -3,5 +3,9 @@
 </div>
 
 <div>
-    <player-card [players]="teamPlayers"></player-card>
+    <h2 class="pt-4 ps-3 text-primary-emphasis">Compagni di squadra</h2>
+
+    <div class="d-flex player-card-container pt-2">
+        <player-card [players]="teamPlayers" class="d-flex flex-row"></player-card>
+    </div>
 </div>

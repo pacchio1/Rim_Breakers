@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs';
 import { PlayerDetail } from '../_model/player.model';
-import { Leagues } from '../_model/leagues.model';
+import { LeagueByCountry, Leagues } from '../_model/leagues.model';
 import { Team } from '../_model/team.model';
 import { Countries } from '../_model/countries.model';
 
@@ -36,6 +36,18 @@ export class ApiService {
     searchTeamsLeague(idLeague: number) {
         return this.http.get('http://localhost:8080/league/team_league?id=' + idLeague).pipe(map((response: any) => {
             return response as Leagues[]
+        }))
+    }
+
+    /**
+     * API RICERCA LEAGUES PER COUNTRY
+     * 
+     * @param idLeague
+     * @returns richiesta Api 
+     */
+    searchTeamsLeagueByCountry(idLeague: number) {
+        return this.http.get('http://localhost:8080/league/league_country?id=' + idLeague).pipe(map((response: any) => {
+            return response as LeagueByCountry
         }))
     }
 
@@ -76,7 +88,7 @@ export class ApiService {
     }
 
     /**
-     * API RICERCA PLAYER
+     * API RICERCA COUNTRY
      * 
      * @param idPlayer
      * @returns richiesta Api 

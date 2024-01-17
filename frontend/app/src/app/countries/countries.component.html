@@ -5,13 +5,17 @@
     </div>
 
 </section>
+
 <section class="mt-3 container">
     
-    <div *ngFor="let country of countries" class="d-flex justify-content-center pt-3">
-        <div class="league-list d-flex justify-content-start align-items-center ps-5">
+    <div *ngFor="let country of leaguesByCountry2" class="dropdown d-flex justify-content-center pt-3">
+        <button class="league-list d-flex justify-content-start align-items-center ps-5 dropdown-toggle" (click)="toggleDropdown()" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             <img src="{{ country.flag }}" alt="" class="league-logo">
-            <p class="ps-3 m-0">{{ country.name }}</p>
-        </div>
+            <p class="ps-3 m-0">{{ country.name }}</p>        
+        </button>
+        <ul class="dropdown-menu" *ngFor="let league of country.leagues">
+            <li class="dropdown-item text-light" (click)="passIdLeague(league.id_league)">{{ league.nameLeague }}</li>
+        </ul>
     </div>
 
 </section>

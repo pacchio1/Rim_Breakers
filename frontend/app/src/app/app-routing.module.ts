@@ -3,6 +3,8 @@ import { ActivatedRouteSnapshot, RouterModule, RouterStateSnapshot, Routes } fro
 
 import { HomeComponent } from './home/home.component';
 import { BlogComponent } from './blog/blog.component';
+import { CountriesComponent } from './countries/countries.component';
+import { TeamComponent } from './team/team.component';
 import { LeaguesComponent } from './leagues/leagues.component';
 import { BlogDetailComponent } from './blog-detail/blog-detail.component';
 import { ProfileComponent } from './profile/profile.component';
@@ -11,8 +13,6 @@ import { ContactComponent } from './contact/contact.component';
 import { PlayerDetailComponent } from './player-detail/player-detail.component';
 
 import { BasketService } from './_service/basket.service';
-import { TeamComponent } from './team/team.component';
-import { CountriesComponent } from './countries/countries.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },

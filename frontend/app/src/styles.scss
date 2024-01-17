@@ -1,6 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
 
-
 /* Global */
 
 $primary-color: #1b1466;
@@ -236,6 +235,14 @@ $primary-color-dark: #FF8038;
 
 .c {
     width: 100vw;
+}
+
+/* Country */
+
+.dropdown-menu {
+    width: 300px;
+    border-radius: 20px;
+    background-color: #2f23b1;
 }
 
 /* Leagues */

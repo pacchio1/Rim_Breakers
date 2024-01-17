@@ -30,6 +30,16 @@ export class BasketService {
     }
 
     /**
+     * API RICERCA LEAGUES PER COUNTRY
+     * 
+     * @param idLeague
+     * @returns richiesta Api 
+     */
+    getTeamsLeagueByCountry(idLeague: number) {
+        return this.apiService.searchTeamsLeagueByCountry(idLeague)
+    }
+
+    /**
      * API RICERCA TEAM
      * 
      * @param idTeam
@@ -60,7 +70,7 @@ export class BasketService {
     }
 
     /**
-     * API RICERCA PLAYER
+     * API RICERCA COUNTRY
      * 
      * 
      * @returns richiesta Api 
