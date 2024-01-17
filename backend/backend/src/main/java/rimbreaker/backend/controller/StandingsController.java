@@ -23,10 +23,10 @@ public class StandingsController {
         return standingsService.getSeason(idLeague, teamId, season);
 
     }
-    @GetMapping("/all_by_team")
-    public ResponseEntity<?> getSeason( Long teamId, String season) {
+    @GetMapping("/all_by_league")
+    public ResponseEntity<?> getSeason( Long idLeague, String season) {
 
-        return standingsService.all_by_team(teamId, season);
+        return standingsService.all_by_league(idLeague, season);
 
     }
 

@@ -13,7 +13,7 @@ public interface StandingsRepository extends JpaRepository<Standings, Integer> {
                         @Param("teamId") Long teamId,
                         @Param("season") String season);
 
-    @Query("FROM Standings s WHERE s.teamId = :teamId AND s.season = :season")
-    List<Standings> all_by_team(@Param("teamId") Long teamId,
-                               @Param("season") String season);
+    @Query("FROM Standings s WHERE s.idLeague = :idLeague AND s.season = :season")
+    List<Standings> all_by_league(@Param("idLeague") Long idLeague,
+                                  @Param("season") String season);
 }

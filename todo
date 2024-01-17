@@ -18,6 +18,10 @@ getByEmail aggiungere id user
 forse *aggiungiere 1 colonna con codici (da aspettare) in player
 all_by_id games aggiungere id squadra away e home
 team_league aggiungere id team
+- country by league [] p http://localhost:8080/league/country_by_league
+country -> aggiungere id country
+league-> aggiungere filtro delle lege
+aggiungere filtro lega singola aggiungere id sia ad all ed all_by_id
 
 ---| FATTO da rivedere/continuare | ---
 - aggiungere controller e servizi appena confermate opzioni su repo di User [da vedere]
@@ -25,20 +29,11 @@ team_league aggiungere id team
 - creare mvc di blog [fatto, aggiornare per robe future]
 
 ---| DA FARE |---
-
 - fare manuale utente [da fare]
 - endpoint per eseguire script [da fare]
-
 - games by league [] (filtro per data)
-- country by league [] p
 
 
-
-
-
-country -> aggiungere id country
-league-> aggiungere filtro delle lege
-aggiungere filtro lega singola aggiungere id sia ad all ed all_by_id
 
 
 
