@@ -71,5 +71,20 @@ public class LeagueService {
         }
 
     }
+    public ResponseEntity<?> country_by_league() {
+
+        try {
+
+            return new ResponseEntity<>(leagueRepository.country_by_league(), HttpStatus.OK);
+
+        }
+        catch (Exception e) {
+
+            return new ResponseEntity<>("not found! : " + e.getMessage(), HttpStatus.BAD_REQUEST);
+
+        }
+
+    }
+
 
 }

@@ -46,6 +46,12 @@ public class LeagueController {
         return leagueService.getLeagueByCountry(id);
 
     }
+    @GetMapping("/country_by_league")
+    public ResponseEntity<?> country_by_league() {
+
+        return leagueService.country_by_league();
+
+    }
 
 
 }

@@ -26,5 +26,19 @@ public class StandingsService {
         }
         
     }
+    public ResponseEntity<?> all_by_team(Long teamId, String season) {
+
+        try {
+
+            return new ResponseEntity<>(standingsRepository.all_by_team(teamId, season), HttpStatus.OK);
+
+        }
+        catch(Exception e) {
+
+            return new ResponseEntity<>("Season not found! : " + e.getMessage(), HttpStatus.BAD_REQUEST);
+
+        }
+
+    }
 
 }
