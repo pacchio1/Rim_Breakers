@@ -18,6 +18,7 @@ import { ContactComponent } from './contact/contact.component';
 import { PlayerDetailComponent } from './player-detail/player-detail.component';
 import { TeamComponent } from './team/team.component';
 import { PlayerCardComponent } from './player-card/player-card.component';
+import { CountriesComponent } from './countries/countries.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { PlayerCardComponent } from './player-card/player-card.component';
     TeamComponent,
     PlayerCardComponent,
     PlayerDetailComponent,
+    CountriesComponent,
     FooterComponent,
   ],
   imports: [

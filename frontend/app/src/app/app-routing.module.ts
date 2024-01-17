@@ -12,6 +12,7 @@ import { PlayerDetailComponent } from './player-detail/player-detail.component';
 
 import { BasketService } from './_service/basket.service';
 import { TeamComponent } from './team/team.component';
+import { CountriesComponent } from './countries/countries.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -41,6 +42,14 @@ const routes: Routes = [
         return inject(BasketService).getSinglePlayer(parseInt(route.paramMap.get('id')!))
       }
     } },
+  { path: 'countries',
+    component: CountriesComponent,
+    resolve: {
+      allCountries: () => {
+        return inject(BasketService).getAllCountries()
+      }, 
+    }
+  },
   { path: 'profile', component: ProfileComponent },
   { path: 'login', component: LoginComponent },
   { path: 'contact', component: ContactComponent },

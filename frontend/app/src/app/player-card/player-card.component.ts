@@ -18,6 +18,4 @@ export class PlayerCardComponent {
     toggleTheme(): void {
         this.themeService.toggleTheme();
     }
-  
-    
 }
