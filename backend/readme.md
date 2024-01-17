@@ -10,8 +10,10 @@ dagli script e stato creato un file con l'obiettivo di acquisire dati sportivi d
 
 ## Creazione DB
 
-usando i precedenti file json (games and standings) abbiamo creato il seguente database:<br>
+usando i precedenti file json (games and standings) abbiamo creato il seguente database:
+
 ![DATABASE](../img/1DBxapi.png)
+
 poi ci servira una parte di utentistica
 ![DATABASE](../img/2DBxapi.png)
 
@@ -22,4 +24,5 @@ poi ci servira una parte di utentistica
 ## Documentazione api
 
 ![Documentazione Api](apidocumentation2.md)
+
 ![Documentazione Api json importanti](apidocumentation.md)

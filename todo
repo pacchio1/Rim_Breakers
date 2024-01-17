@@ -15,12 +15,12 @@ creare response
 - blog by team [] ?
 - player by game [] p
 getByEmail aggiungere id user
-forse *aggiungiere 1 colonna con codici (da aspettare) in player
+forse *aggiungere 1 colonna con codici (da aspettare) in player
 all_by_id games aggiungere id squadra away e home
 team_league aggiungere id team
 - country by league [] p http://localhost:8080/league/country_by_league
 country -> aggiungere id country
-league-> aggiungere filtro delle lege
+league-> aggiungere filtro delle leghe
 aggiungere filtro lega singola aggiungere id sia ad all ed all_by_id
 
 ---| FATTO da rivedere/continuare | ---

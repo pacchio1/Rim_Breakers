@@ -1,6 +1,6 @@
-### Endpoints
+# Endpoints
 
-### 1. Get All Games by ID
+## 1. Get All Games by ID
 
 Endpoint: /games/all_by_id
 
@@ -31,7 +31,7 @@ json
     }
 ]
 
-### 2. get All Games by Date
+## 2. get All Games by Date
 
 Endpoint: /games/all_by_date
 
@@ -63,7 +63,7 @@ json
     // ... (other game entries)
 ]
 
-### 3. Get All Countries
+## 3. Get All Countries
 
 Endpoint: /country/all
 
@@ -85,7 +85,7 @@ json
     // ... (other country entries)
 ]
 
-### 4. Get All Leagues
+## 4. Get All Leagues
 
 Endpoint: /league/all
 
@@ -107,7 +107,7 @@ json
     // ... (other league entries)
 ]
 
-### 5. Get Standings for a Team in a Season
+## 5. Get Standings for a Team in a Season
 
 Endpoint: /standings/season
 
@@ -133,7 +133,7 @@ json
     // ... (other standings details)
 }
 
-### 6. Get Team Details by ID
+## 6. Get Team Details by ID
 
  Endpoint: /team/all_by_id
 
@@ -158,7 +158,7 @@ json
     "logo": "<https://media-4.api-sports.io/basketball/teams/10.png>"
 }
 
-### 7. Get All Teams
+## 7. Get All Teams
 
 Endpoint: /team/all
 
@@ -186,7 +186,7 @@ json
 
 User Favorites
 
-### 8. Get Favorite Players for a User
+## 8. Get Favorite Players for a User
 
 Endpoint: /favorite/player
 
@@ -211,7 +211,7 @@ json
     }
 ]
 
-### 9. Add Player to User Favorites
+## 9. Add Player to User Favorites
 
 Endpoint: /favorite/player
 
@@ -226,7 +226,7 @@ http
 
 POST <http://localhost:8080/favorite/player?userId=1&playerId=44>
 
-### 10. Add Team to User Favorites
+## 10. Add Team to User Favorites
 
 Endpoint: /favorite/team
 
@@ -241,7 +241,7 @@ http
 
 POST <http://localhost:8080/favorite/team?userId=1&teamId=44>
 
-### 11. Add League to User Favorites
+## 11. Add League to User Favorites
 
 Endpoint: /favorite/league
 
@@ -256,7 +256,7 @@ http
 
 POST <http://localhost:8080/favorite/league?userId=1&leagueId=44>
 
-### 12. Get Favorite Leagues for a User
+## 12. Get Favorite Leagues for a User
 
 Endpoint: /favorite/league
 
@@ -282,7 +282,7 @@ json
     // ... (other league entries)
 ]
 
-### 13. Get Favorite Teams for a User
+## 13. Get Favorite Teams for a User
 
 Endpoint: /favorite/team
 
@@ -310,7 +310,7 @@ json
 
 User Management
 
-### 14. Create User
+## 14. Create User
 
 Endpoint: /user/create
 
@@ -333,7 +333,7 @@ json
 
 User created successfully
 
-### 15. Get User by ID
+## 15. Get User by ID
 
 Endpoint: /user/get/{id}
 
@@ -357,7 +357,7 @@ json
     "email": "<m.r@o.coom>"
 }
 
-### 16. Get User by Email
+## 16. Get User by Email
 
 Endpoint: /user/getByEmail
 
@@ -383,7 +383,7 @@ json
 
 Player Details
 
-### 17. Get Player Details by ID
+## 17. Get Player Details by ID
 
 Endpoint: /player/number
 
@@ -422,7 +422,7 @@ json
   "ballHoldingTime": 81
 }
 
-### 18. Get All Players
+## 18. Get All Players
 
 Endpoint: /player/all
 
@@ -447,7 +447,7 @@ json
     // ... (other player entries)
 ]
 
-### 19. Get Players for a Team
+## 19. Get Players for a Team
 
 Endpoint: /player/team
 

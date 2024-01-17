@@ -1,3 +1,5 @@
+# Documentazione endpoint api
+
 ## Request Mapping
 
 ### /blog
@@ -8,7 +10,6 @@ Endpoint: Get Post by ID
     Method: GET
     Parameter: Long id_post
     Calls the getPostById method of the injected BlogService to retrieve a blog post by its ID.
-    http:
     json:
 
 Endpoint: Get All Posts
