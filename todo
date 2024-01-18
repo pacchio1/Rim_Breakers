@@ -1,7 +1,7 @@
----| FATTO (completato)| ---
+---| FATTO | ---
 
 - aggiungere parte preferiti [X]
-- aggiungere repository per User --> loginAccount [X]
+- aggiungere repository per User --> createAccount, loginAccount, updateEmail/Password, deleteAccount, saveAccount [X]
 - league by country [X]
 - league -> object instead of String [X]
 - standings by team [X]
@@ -26,17 +26,14 @@
 - scrivere documentazione(java docs) [X]
 - creare mvc di blog [X]
 - games by league [X] (filtro per data)
+- aggiungere controller e servizi appena confermate opzioni su repo di User [X]
+
 ---| DA RIVEDERE / CONTINUARE | ---
 
-- aggiungere controller e servizi appena confermate opzioni su repo di User [X]
-- aggiungere username per migliore sicurezza?
+
 
 ---| DA FARE |---
+
 - fare manuale utente [da fare]
 - endpoint per eseguire script [da fare]
 - mettere in readme []
-
-
-
-
-
