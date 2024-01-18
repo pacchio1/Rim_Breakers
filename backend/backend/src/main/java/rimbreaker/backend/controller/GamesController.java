@@ -89,6 +89,6 @@ public class GamesController {
         return gamesService.getGamesByLeague(name);
 
     }
-    //@GetMapping(/"games_byleague")
+    //@GetMapping(/"games_by_league")
 
 }

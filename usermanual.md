@@ -4,6 +4,8 @@
 
 Benvenuti al Manuale Utente del Portale di Risultati Sportivi. Questo documento fornisce informazioni dettagliate su come utilizzare la piattaforma per accedere a risultati sportivi e statistiche in modo efficace.
 
+---
+
 ## Contenuti
 
 ### Descrizione del Progetto
@@ -30,6 +32,8 @@ Benvenuti al Manuale Utente del Portale di Risultati Sportivi. Questo documento 
 
         Fasi di pianificazione e sviluppo.
         Milestone e scadenze importanti.
+
+---
 
 ## Utilizzo del Portale
 
