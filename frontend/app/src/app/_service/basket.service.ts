@@ -115,8 +115,7 @@ export class BasketService {
      * @param
      * @returns richiesta Api 
      */
-    getUserLogin(email: string) {
-        console.log(email);
-        return this.apiService.searchUserLogin(email);
+    getUserLogin(email: string, password: string) {
+        return this.apiService.searchUserLogin(email, password);
     }
 }
