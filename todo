@@ -25,19 +25,16 @@
 - aggiungere filtro lega singola aggiungere id sia ad all ed all_by_id [X]
 - scrivere documentazione(java docs) [X]
 - creare mvc di blog [X]
-
+- games by league [X] (filtro per data)
 ---| DA RIVEDERE / CONTINUARE | ---
 
 - aggiungere controller e servizi appena confermate opzioni su repo di User [X]
-- mettere in readme [da vedere]
+- aggiungere username per migliore sicurezza?
 
 ---| DA FARE |---
-
-- aggiungere username per migliore sicurezza?
 - fare manuale utente [da fare]
 - endpoint per eseguire script [da fare]
-- games by league [] (filtro per data)
-
+- mettere in readme []
 
 
 
