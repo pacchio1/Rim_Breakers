@@ -13,6 +13,7 @@ import { ContactComponent } from './contact/contact.component';
 import { PlayerDetailComponent } from './player-detail/player-detail.component';
 
 import { BasketService } from './_service/basket.service';
+import { SigninComponent } from './signin/signin.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -52,6 +53,7 @@ const routes: Routes = [
   },
   { path: 'profile', component: ProfileComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'signin', component: SigninComponent },
   { path: 'contact', component: ContactComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
 ];

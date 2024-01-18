@@ -1,0 +1,1420 @@
+http://localhost:8080/games/all_by_id?id_games=188478
+
+[
+    {
+        "idGames": 188478,
+        "leagueId": 194,
+        "date": "2023-01-11T08:00:00.000+00:00",
+        "status": "FT",
+        "scoreHome": "23,22,21,18,None,84",
+        "scoreAway": "16,22,17,16,None,71",
+        "teamHome": "Promitheas",
+        "teamAway": "Trento"
+    }
+]
+
+-------
+
+http://localhost:8080/games/all_by_date?date=2023-11-09
+[
+    {
+        "idGames": 356216,
+        "leagueId": 120,
+        "date": "2023-11-09T08:00:00.000+00:00",
+        "status": "AOT",
+        "scoreHome": "13,25,13,23,12,86",
+        "scoreAway": "14,12,20,28,8,82",
+        "teamHome": "Anadolu Efes",
+        "teamAway": "Zalgiris Kaunas"
+    },
+    {
+        "idGames": 356217,
+        "leagueId": 120,
+        "date": "2023-11-09T08:00:00.000+00:00",
+        "status": "FT",
+        "scoreHome": "17,29,25,22,None,93",
+        "scoreAway": "19,25,19,27,None,90",
+        "teamHome": "Maccabi Tel Avi",
+        "teamAway": "Bayern"
+    },
+    {
+        "idGames": 356218,
+        "leagueId": 120,
+        "date": "2023-11-09T08:00:00.000+00:00",
+        "status": "FT",
+        "scoreHome": "26,9,25,14,None,74",
+        "scoreAway": "20,30,17,8,None,75",
+        "teamHome": "Olympiacos",
+        "teamAway": "Baskonia"
+    },
+    {
+        "idGames": 356219,
+        "leagueId": 120,
+        "date": "2023-11-09T08:00:00.000+00:00",
+        "status": "FT",
+        "scoreHome": "23,21,20,19,None,83",
+        "scoreAway": "12,19,8,13,None,52",
+        "teamHome": "Olimpia Milano",
+        "teamAway": "Valencia"
+    },
+    {
+        "idGames": 356220,
+        "leagueId": 120,
+        "date": "2023-11-09T08:00:00.000+00:00",
+        "status": "FT",
+        "scoreHome": "23,24,16,22,None,85",
+        "scoreAway": "27,29,13,15,None,84",
+        "teamHome": "Partizan",
+        "teamAway": "Fenerbahce"
+    },
+    {
+        "idGames": 356221,
+        "leagueId": 120,
+        "date": "2023-11-09T08:00:00.000+00:00",
+        "status": "FT",
+        "scoreHome": "26,27,15,32,None,100",
+        "scoreAway": "27,10,14,23,None,74",
+        "teamHome": "Real Madrid",
+        "teamAway": "Virtus Bologna"
+    }
+]
+-------------------------
+http://localhost:8080/country/all
+[
+    "https://media-4.api-sports.io/flags/fr.svg,France",
+    "https://media-4.api-sports.io/flags/de.svg,Germany",
+    "https://media-4.api-sports.io/flags/gr.svg,Greece",
+    "https://media-4.api-sports.io/flags/it.svg,Italy",
+    "https://media-4.api-sports.io/flags/es.svg,Spain",
+    "https://media-4.api-sports.io/flags/tr.svg,Turkey",
+    "https://media-4.api-sports.io/flags/eu.svg,Europe"
+]
+----------------------
+http://localhost:8080/league/all
+[
+    "LNB,https://media-4.api-sports.io/basketball/leagues/2.png",
+    "BBL,https://media-4.api-sports.io/basketball/leagues/40.png",
+    "Basket League,https://media-4.api-sports.io/basketball/leagues/45.png",
+    "Lega A,https://media-4.api-sports.io/basketball/leagues/52.png",
+    "Super Ligi,https://media-4.api-sports.io/basketball/leagues/104.png",
+    "ACB,https://media-4.api-sports.io/basketball/leagues/117.png",
+    "Euroleague,https://media-4.api-sports.io/basketball/leagues/120.png",
+    "Italian Cup,https://media-4.api-sports.io/basketball/leagues/143.png",
+    "Eurocup,https://media-4.api-sports.io/basketball/leagues/194.png",
+    "EuroBasket,https://media-4.api-sports.io/basketball/leagues/197.png",
+    "Champions Leagu,https://media-4.api-sports.io/basketball/leagues/202.png",
+    "Serie A2,https://media-4.api-sports.io/basketball/leagues/242.png"
+]
+---------------------------
+http://localhost:8080/standings/season?idLeague=2&teamId=10&season=2022-2023
+{
+    "idLeague": 2,
+    "season": "2022-2023",
+    "teamId": 10,
+    "position": 4,
+    "groupName": "Regular Season",
+    "played": 33,
+    "win": 21,
+    "percWin": 0.636,
+    "lose": 12,
+    "percLose": 0.364,
+    "pointsFor": 2868,
+    "pointsAgainst": 2772,
+    "description": "Promotion - LNB (Play Offs: Quarter-finals)"
+}
+-----------------------------
+http://localhost:8080/team/all_by_id?id=10
+{
+    "id": 10,
+    "leagueId": 202,
+    "name": "Dijon",
+    "logo": "https://media-4.api-sports.io/basketball/teams/10.png"
+}
+----------------------------
+http://localhost:8080/team/all
+[
+    {
+        "id": 10,
+        "leagueId": 202,
+        "name": "Dijon",
+        "logo": "https://media-4.api-sports.io/basketball/teams/10.png"
+    },
+    {
+        "id": 11,
+        "leagueId": 2,
+        "name": "Le Portel",
+        "logo": "https://media-4.api-sports.io/basketball/teams/11.png"
+    },
+    {
+        "id": 12,
+        "leagueId": 2,
+        "name": "Chalons-Reims",
+        "logo": "https://media-4.api-sports.io/basketball/teams/12.png"
+    },
+    {
+        "id": 14,
+        "leagueId": 2,
+        "name": "Levallois",
+        "logo": "https://media-4.api-sports.io/basketball/teams/14.png"
+    },
+    {
+        "id": 15,
+        "leagueId": 2,
+        "name": "Orleans",
+        "logo": "https://media-4.api-sports.io/basketball/teams/15.png"
+    },
+    {
+        "id": 16,
+        "leagueId": 2,
+        "name": "Monaco",
+        "logo": "https://media-4.api-sports.io/basketball/teams/16.png"
+    },
+    {
+        "id": 17,
+        "leagueId": 2,
+        "name": "Gravelines-Dunk",
+        "logo": "https://media-4.api-sports.io/basketball/teams/17.png"
+    },
+    {
+        "id": 18,
+        "leagueId": 2,
+        "name": "Cholet",
+        "logo": "https://media-4.api-sports.io/basketball/teams/18.png"
+    },
+    {
+        "id": 19,
+        "leagueId": 2,
+        "name": "Roanne",
+        "logo": "https://media-4.api-sports.io/basketball/teams/19.png"
+    },
+    {
+        "id": 20,
+        "leagueId": 2,
+        "name": "Chalon/Saone",
+        "logo": "https://media-4.api-sports.io/basketball/teams/20.png"
+    },
+    {
+        "id": 21,
+        "leagueId": 2,
+        "name": "Nanterre",
+        "logo": "https://media-4.api-sports.io/basketball/teams/21.png"
+    },
+    {
+        "id": 23,
+        "leagueId": 2,
+        "name": "Le Mans",
+        "logo": "https://media-4.api-sports.io/basketball/teams/23.png"
+    },
+    {
+        "id": 24,
+        "leagueId": 2,
+        "name": "JL Bourg",
+        "logo": "https://media-4.api-sports.io/basketball/teams/24.png"
+    },
+    {
+        "id": 25,
+        "leagueId": 202,
+        "name": "Strasbourg",
+        "logo": "https://media-4.api-sports.io/basketball/teams/25.png"
+    },
+    {
+        "id": 26,
+        "leagueId": 120,
+        "name": "Lyon-Villeurban",
+        "logo": "https://media-4.api-sports.io/basketball/teams/26.png"
+    },
+    {
+        "id": 27,
+        "leagueId": 2,
+        "name": "Limoges",
+        "logo": "https://media-4.api-sports.io/basketball/teams/27.png"
+    },
+    {
+        "id": 95,
+        "leagueId": 2,
+        "name": "Ada Blois",
+        "logo": "https://media-4.api-sports.io/basketball/teams/95.png"
+    },
+    {
+        "id": 100,
+        "leagueId": 2,
+        "name": "Nancy",
+        "logo": "https://media-4.api-sports.io/basketball/teams/100.png"
+    },
+    {
+        "id": 106,
+        "leagueId": 2,
+        "name": "Saint Quentin",
+        "logo": "https://media-4.api-sports.io/basketball/teams/106.png"
+    },
+    {
+        "id": 108,
+        "leagueId": 2,
+        "name": "Paris",
+        "logo": "https://media-4.api-sports.io/basketball/teams/108.png"
+    },
+    {
+        "id": 110,
+        "leagueId": 2,
+        "name": "Fos-sur-Mer",
+        "logo": "https://media-4.api-sports.io/basketball/teams/110.png"
+    },
+    {
+        "id": 279,
+        "leagueId": 197,
+        "name": "Croatia",
+        "logo": "https://media-4.api-sports.io/basketball/teams/279.png"
+    },
+    {
+        "id": 300,
+        "leagueId": 202,
+        "name": "Antwerp Giants",
+        "logo": "https://media-4.api-sports.io/basketball/teams/300.png"
+    },
+    {
+        "id": 308,
+        "leagueId": 202,
+        "name": "Oostende",
+        "logo": "https://media-4.api-sports.io/basketball/teams/308.png"
+    },
+    {
+        "id": 448,
+        "leagueId": 202,
+        "name": "Opava",
+        "logo": "https://media-4.api-sports.io/basketball/teams/448.png"
+    },
+    {
+        "id": 464,
+        "leagueId": 202,
+        "name": "Bakken Bears",
+        "logo": "https://media-4.api-sports.io/basketball/teams/464.png"
+    },
+    {
+        "id": 480,
+        "leagueId": 202,
+        "name": "BC Kalev/Cramo",
+        "logo": "https://media-4.api-sports.io/basketball/teams/480.png"
+    },
+    {
+        "id": 489,
+        "leagueId": 202,
+        "name": "Karhu Basket",
+        "logo": "https://media-4.api-sports.io/basketball/teams/489.png"
+    },
+    {
+        "id": 519,
+        "leagueId": 120,
+        "name": "Alba Berlin",
+        "logo": "https://media-4.api-sports.io/basketball/teams/519.png"
+    },
+    {
+        "id": 520,
+        "leagueId": 40,
+        "name": "Bamberg",
+        "logo": "https://media-4.api-sports.io/basketball/teams/520.png"
+    },
+    {
+        "id": 521,
+        "leagueId": 40,
+        "name": "Basketball Brau",
+        "logo": "https://media-4.api-sports.io/basketball/teams/521.png"
+    },
+    {
+        "id": 522,
+        "leagueId": 40,
+        "name": "Bayern",
+        "logo": "https://media-4.api-sports.io/basketball/teams/522.png"
+    },
+    {
+        "id": 523,
+        "leagueId": 40,
+        "name": "Bayreuth",
+        "logo": "https://media-4.api-sports.io/basketball/teams/523.png"
+    },
+    {
+        "id": 524,
+        "leagueId": 40,
+        "name": "Bonn",
+        "logo": "https://media-4.api-sports.io/basketball/teams/524.png"
+    },
+    {
+        "id": 525,
+        "leagueId": 40,
+        "name": "Crailsheim Merl",
+        "logo": "https://media-4.api-sports.io/basketball/teams/525.png"
+    },
+    {
+        "id": 526,
+        "leagueId": 40,
+        "name": "Frankfurt",
+        "logo": "https://media-4.api-sports.io/basketball/teams/526.png"
+    },
+    {
+        "id": 527,
+        "leagueId": 40,
+        "name": "Giessen",
+        "logo": "https://media-4.api-sports.io/basketball/teams/527.png"
+    },
+    {
+        "id": 528,
+        "leagueId": 40,
+        "name": "Gottingen",
+        "logo": "https://media-4.api-sports.io/basketball/teams/528.png"
+    },
+    {
+        "id": 529,
+        "leagueId": 40,
+        "name": "Hamburg",
+        "logo": "https://media-4.api-sports.io/basketball/teams/529.png"
+    },
+    {
+        "id": 530,
+        "leagueId": 40,
+        "name": "Ludwigsburg",
+        "logo": "https://media-4.api-sports.io/basketball/teams/530.png"
+    },
+    {
+        "id": 532,
+        "leagueId": 40,
+        "name": "Oldenburg",
+        "logo": "https://media-4.api-sports.io/basketball/teams/532.png"
+    },
+    {
+        "id": 533,
+        "leagueId": 40,
+        "name": "Ulm",
+        "logo": "https://media-4.api-sports.io/basketball/teams/533.png"
+    },
+    {
+        "id": 534,
+        "leagueId": 40,
+        "name": "Vechta",
+        "logo": "https://media-4.api-sports.io/basketball/teams/534.png"
+    },
+    {
+        "id": 535,
+        "leagueId": 40,
+        "name": "s.Oliver Wurzbu",
+        "logo": "https://media-4.api-sports.io/basketball/teams/535.png"
+    },
+    {
+        "id": 550,
+        "leagueId": 40,
+        "name": "Chemnitz",
+        "logo": "https://media-4.api-sports.io/basketball/teams/550.png"
+    },
+    {
+        "id": 552,
+        "leagueId": 40,
+        "name": "Heidelberg",
+        "logo": "https://media-4.api-sports.io/basketball/teams/552.png"
+    },
+    {
+        "id": 561,
+        "leagueId": 40,
+        "name": "Rostock",
+        "logo": "https://media-4.api-sports.io/basketball/teams/561.png"
+    },
+    {
+        "id": 564,
+        "leagueId": 40,
+        "name": "Tubingen",
+        "logo": "https://media-4.api-sports.io/basketball/teams/564.png"
+    },
+    {
+        "id": 590,
+        "leagueId": 45,
+        "name": "AS Karditsas",
+        "logo": "https://media-4.api-sports.io/basketball/teams/590.png"
+    },
+    {
+        "id": 594,
+        "leagueId": 45,
+        "name": "Apollon Patras",
+        "logo": "https://media-4.api-sports.io/basketball/teams/594.png"
+    },
+    {
+        "id": 605,
+        "leagueId": 45,
+        "name": "AEK Athens",
+        "logo": "https://media-4.api-sports.io/basketball/teams/605.png"
+    },
+    {
+        "id": 606,
+        "leagueId": 45,
+        "name": "Aris",
+        "logo": "https://media-4.api-sports.io/basketball/teams/606.png"
+    },
+    {
+        "id": 608,
+        "leagueId": 45,
+        "name": "Ionikos",
+        "logo": "https://media-4.api-sports.io/basketball/teams/608.png"
+    },
+    {
+        "id": 609,
+        "leagueId": 45,
+        "name": "Iraklis",
+        "logo": "https://media-4.api-sports.io/basketball/teams/609.png"
+    },
+    {
+        "id": 610,
+        "leagueId": 45,
+        "name": "Kolossos Rhodes",
+        "logo": "https://media-4.api-sports.io/basketball/teams/610.png"
+    },
+    {
+        "id": 611,
+        "leagueId": 45,
+        "name": "Larisa",
+        "logo": "https://media-4.api-sports.io/basketball/teams/611.png"
+    },
+    {
+        "id": 612,
+        "leagueId": 202,
+        "name": "Lavrio",
+        "logo": "https://media-4.api-sports.io/basketball/teams/612.png"
+    },
+    {
+        "id": 613,
+        "leagueId": 202,
+        "name": "PAOK",
+        "logo": "https://media-4.api-sports.io/basketball/teams/613.png"
+    },
+    {
+        "id": 614,
+        "leagueId": 120,
+        "name": "Panathinaikos",
+        "logo": "https://media-4.api-sports.io/basketball/teams/614.png"
+    },
+    {
+        "id": 616,
+        "leagueId": 45,
+        "name": "Peristeri",
+        "logo": "https://media-4.api-sports.io/basketball/teams/616.png"
+    },
+    {
+        "id": 617,
+        "leagueId": 45,
+        "name": "Promitheas",
+        "logo": "https://media-4.api-sports.io/basketball/teams/617.png"
+    },
+    {
+        "id": 631,
+        "leagueId": 202,
+        "name": "Szombathely",
+        "logo": "https://media-4.api-sports.io/basketball/teams/631.png"
+    },
+    {
+        "id": 680,
+        "leagueId": 202,
+        "name": "Hapoel Holon",
+        "logo": "https://media-4.api-sports.io/basketball/teams/680.png"
+    },
+    {
+        "id": 682,
+        "leagueId": 194,
+        "name": "Hapoel Tel-Aviv",
+        "logo": "https://media-4.api-sports.io/basketball/teams/682.png"
+    },
+    {
+        "id": 687,
+        "leagueId": 120,
+        "name": "Maccabi Tel Avi",
+        "logo": "https://media-4.api-sports.io/basketball/teams/687.png"
+    },
+    {
+        "id": 688,
+        "leagueId": 202,
+        "name": "Nes Ziona",
+        "logo": "https://media-4.api-sports.io/basketball/teams/688.png"
+    },
+    {
+        "id": 689,
+        "leagueId": 242,
+        "name": "Agrigento",
+        "logo": "https://media-4.api-sports.io/basketball/teams/689.png"
+    },
+    {
+        "id": 690,
+        "leagueId": 52,
+        "name": "Basket Napoli",
+        "logo": "https://media-4.api-sports.io/basketball/teams/690.png"
+    },
+    {
+        "id": 691,
+        "leagueId": 242,
+        "name": "Basket Torino",
+        "logo": "https://media-4.api-sports.io/basketball/teams/691.png"
+    },
+    {
+        "id": 693,
+        "leagueId": 242,
+        "name": "Biella",
+        "logo": "https://media-4.api-sports.io/basketball/teams/693.png"
+    },
+    {
+        "id": 696,
+        "leagueId": 242,
+        "name": "Latina",
+        "logo": "https://media-4.api-sports.io/basketball/teams/696.png"
+    },
+    {
+        "id": 698,
+        "leagueId": 242,
+        "name": "NPC Rieti",
+        "logo": "https://media-4.api-sports.io/basketball/teams/698.png"
+    },
+    {
+        "id": 699,
+        "leagueId": 242,
+        "name": "Scafati",
+        "logo": "https://media-4.api-sports.io/basketball/teams/699.png"
+    },
+    {
+        "id": 700,
+        "leagueId": 52,
+        "name": "Tortona",
+        "logo": "https://media-4.api-sports.io/basketball/teams/700.png"
+    },
+    {
+        "id": 701,
+        "leagueId": 242,
+        "name": "Trapani",
+        "logo": "https://media-4.api-sports.io/basketball/teams/701.png"
+    },
+    {
+        "id": 702,
+        "leagueId": 242,
+        "name": "Treviglio",
+        "logo": "https://media-4.api-sports.io/basketball/teams/702.png"
+    },
+    {
+        "id": 703,
+        "leagueId": 242,
+        "name": "Assigeco Piacen",
+        "logo": "https://media-4.api-sports.io/basketball/teams/703.png"
+    },
+    {
+        "id": 705,
+        "leagueId": 242,
+        "name": "Ferrara",
+        "logo": "https://media-4.api-sports.io/basketball/teams/705.png"
+    },
+    {
+        "id": 706,
+        "leagueId": 242,
+        "name": "Forli",
+        "logo": "https://media-4.api-sports.io/basketball/teams/706.png"
+    },
+    {
+        "id": 708,
+        "leagueId": 242,
+        "name": "Mantova",
+        "logo": "https://media-4.api-sports.io/basketball/teams/708.png"
+    },
+    {
+        "id": 709,
+        "leagueId": 242,
+        "name": "Orzinuovi",
+        "logo": "https://media-4.api-sports.io/basketball/teams/709.png"
+    },
+    {
+        "id": 711,
+        "leagueId": 242,
+        "name": "Ravenna",
+        "logo": "https://media-4.api-sports.io/basketball/teams/711.png"
+    },
+    {
+        "id": 713,
+        "leagueId": 242,
+        "name": "San Severo",
+        "logo": "https://media-4.api-sports.io/basketball/teams/713.png"
+    },
+    {
+        "id": 714,
+        "leagueId": 242,
+        "name": "Udine",
+        "logo": "https://media-4.api-sports.io/basketball/teams/714.png"
+    },
+    {
+        "id": 715,
+        "leagueId": 242,
+        "name": "Urania Milano",
+        "logo": "https://media-4.api-sports.io/basketball/teams/715.png"
+    },
+    {
+        "id": 716,
+        "leagueId": 242,
+        "name": "Verona",
+        "logo": "https://media-4.api-sports.io/basketball/teams/716.png"
+    },
+    {
+        "id": 717,
+        "leagueId": 52,
+        "name": "Brescia",
+        "logo": "https://media-4.api-sports.io/basketball/teams/717.png"
+    },
+    {
+        "id": 718,
+        "leagueId": 52,
+        "name": "Brindisi",
+        "logo": "https://media-4.api-sports.io/basketball/teams/718.png"
+    },
+    {
+        "id": 719,
+        "leagueId": 242,
+        "name": "Cantu",
+        "logo": "https://media-4.api-sports.io/basketball/teams/719.png"
+    },
+    {
+        "id": 720,
+        "leagueId": 52,
+        "name": "Cremona",
+        "logo": "https://media-4.api-sports.io/basketball/teams/720.png"
+    },
+    {
+        "id": 721,
+        "leagueId": 52,
+        "name": "Fortitudo Bolog",
+        "logo": "https://media-4.api-sports.io/basketball/teams/721.png"
+    },
+    {
+        "id": 722,
+        "leagueId": 52,
+        "name": "Olimpia Milano",
+        "logo": "https://media-4.api-sports.io/basketball/teams/722.png"
+    },
+    {
+        "id": 723,
+        "leagueId": 52,
+        "name": "Pesaro",
+        "logo": "https://media-4.api-sports.io/basketball/teams/723.png"
+    },
+    {
+        "id": 724,
+        "leagueId": 242,
+        "name": "Pistoia",
+        "logo": "https://media-4.api-sports.io/basketball/teams/724.png"
+    },
+    {
+        "id": 725,
+        "leagueId": 52,
+        "name": "Reggiana",
+        "logo": "https://media-4.api-sports.io/basketball/teams/725.png"
+    },
+    {
+        "id": 726,
+        "leagueId": 52,
+        "name": "Sassari",
+        "logo": "https://media-4.api-sports.io/basketball/teams/726.png"
+    },
+    {
+        "id": 727,
+        "leagueId": 52,
+        "name": "Trento",
+        "logo": "https://media-4.api-sports.io/basketball/teams/727.png"
+    },
+    {
+        "id": 728,
+        "leagueId": 202,
+        "name": "Treviso",
+        "logo": "https://media-4.api-sports.io/basketball/teams/728.png"
+    },
+    {
+        "id": 729,
+        "leagueId": 52,
+        "name": "Trieste",
+        "logo": "https://media-4.api-sports.io/basketball/teams/729.png"
+    },
+    {
+        "id": 730,
+        "leagueId": 52,
+        "name": "Varese",
+        "logo": "https://media-4.api-sports.io/basketball/teams/730.png"
+    },
+    {
+        "id": 731,
+        "leagueId": 52,
+        "name": "Venezia",
+        "logo": "https://media-4.api-sports.io/basketball/teams/731.png"
+    },
+    {
+        "id": 732,
+        "leagueId": 52,
+        "name": "Virtus Bologna",
+        "logo": "https://media-4.api-sports.io/basketball/teams/732.png"
+    },
+    {
+        "id": 783,
+        "leagueId": 202,
+        "name": "Peja",
+        "logo": "https://media-4.api-sports.io/basketball/teams/783.png"
+    },
+    {
+        "id": 790,
+        "leagueId": 194,
+        "name": "Lietkabelis",
+        "logo": "https://media-4.api-sports.io/basketball/teams/790.png"
+    },
+    {
+        "id": 794,
+        "leagueId": 202,
+        "name": "Rytas",
+        "logo": "https://media-4.api-sports.io/basketball/teams/794.png"
+    },
+    {
+        "id": 796,
+        "leagueId": 120,
+        "name": "Zalgiris Kaunas",
+        "logo": "https://media-4.api-sports.io/basketball/teams/796.png"
+    },
+    {
+        "id": 846,
+        "leagueId": 202,
+        "name": "Den Bosch",
+        "logo": "https://media-4.api-sports.io/basketball/teams/846.png"
+    },
+    {
+        "id": 910,
+        "leagueId": 202,
+        "name": "Legia",
+        "logo": "https://media-4.api-sports.io/basketball/teams/910.png"
+    },
+    {
+        "id": 914,
+        "leagueId": 194,
+        "name": "Slask Wroclaw",
+        "logo": "https://media-4.api-sports.io/basketball/teams/914.png"
+    },
+    {
+        "id": 916,
+        "leagueId": 202,
+        "name": "Szczecin",
+        "logo": "https://media-4.api-sports.io/basketball/teams/916.png"
+    },
+    {
+        "id": 933,
+        "leagueId": 202,
+        "name": "Benfica",
+        "logo": "https://media-4.api-sports.io/basketball/teams/933.png"
+    },
+    {
+        "id": 975,
+        "leagueId": 202,
+        "name": "CSM Oradea",
+        "logo": "https://media-4.api-sports.io/basketball/teams/975.png"
+    },
+    {
+        "id": 1022,
+        "leagueId": 120,
+        "name": "CSKA Moscow",
+        "logo": "https://media-4.api-sports.io/basketball/teams/1022.png"
+    },
+    {
+        "id": 1025,
+        "leagueId": 194,
+        "name": "Lokomotiv Kuban",
+        "logo": "https://media-4.api-sports.io/basketball/teams/1025.png"
+    },
+    {
+        "id": 1030,
+        "leagueId": 120,
+        "name": "Unics Kazan",
+        "logo": "https://media-4.api-sports.io/basketball/teams/1030.png"
+    },
+    {
+        "id": 1031,
+        "leagueId": 120,
+        "name": "Zenit Petersbur",
+        "logo": "https://media-4.api-sports.io/basketball/teams/1031.png"
+    },
+    {
+        "id": 1065,
+        "leagueId": 120,
+        "name": "Crvena zvezda m",
+        "logo": "https://media-4.api-sports.io/basketball/teams/1065.png"
+    },
+    {
+        "id": 1066,
+        "leagueId": 202,
+        "name": "FMP Beograd",
+        "logo": "https://media-4.api-sports.io/basketball/teams/1066.png"
+    },
+    {
+        "id": 1068,
+        "leagueId": 194,
+        "name": "Partizan",
+        "logo": "https://media-4.api-sports.io/basketball/teams/1068.png"
+    },
+    {
+        "id": 1073,
+        "leagueId": 202,
+        "name": "Levice",
+        "logo": "https://media-4.api-sports.io/basketball/teams/1073.png"
+    },
+    {
+        "id": 1120,
+        "leagueId": 117,
+        "name": "Breogan",
+        "logo": "https://media-4.api-sports.io/basketball/teams/1120.png"
+    },
+    {
+        "id": 1125,
+        "leagueId": 117,
+        "name": "Granada",
+        "logo": "https://media-4.api-sports.io/basketball/teams/1125.png"
+    },
+    {
+        "id": 1132,
+        "leagueId": 117,
+        "name": "Palencia",
+        "logo": "https://media-4.api-sports.io/basketball/teams/1132.png"
+    },
+    {
+        "id": 1139,
+        "leagueId": 117,
+        "name": "Basquet Girona",
+        "logo": "https://media-4.api-sports.io/basketball/teams/1139.png"
+    },
+    {
+        "id": 1204,
+        "leagueId": 202,
+        "name": "Norrkoping",
+        "logo": "https://media-4.api-sports.io/basketball/teams/1204.png"
+    },
+    {
+        "id": 1230,
+        "leagueId": 202,
+        "name": "Fribourg Olympi",
+        "logo": "https://media-4.api-sports.io/basketball/teams/1230.png"
+    },
+    {
+        "id": 1262,
+        "leagueId": 104,
+        "name": "Afyon Belediye",
+        "logo": "https://media-4.api-sports.io/basketball/teams/1262.png"
+    },
+    {
+        "id": 1263,
+        "leagueId": 120,
+        "name": "Anadolu Efes",
+        "logo": "https://media-4.api-sports.io/basketball/teams/1263.png"
+    },
+    {
+        "id": 1264,
+        "leagueId": 104,
+        "name": "Bahcesehir Kol.",
+        "logo": "https://media-4.api-sports.io/basketball/teams/1264.png"
+    },
+    {
+        "id": 1266,
+        "leagueId": 202,
+        "name": "Besiktas",
+        "logo": "https://media-4.api-sports.io/basketball/teams/1266.png"
+    },
+    {
+        "id": 1267,
+        "leagueId": 104,
+        "name": "Bursaspor",
+        "logo": "https://media-4.api-sports.io/basketball/teams/1267.png"
+    },
+    {
+        "id": 1268,
+        "leagueId": 104,
+        "name": "Buyukcekmece",
+        "logo": "https://media-4.api-sports.io/basketball/teams/1268.png"
+    },
+    {
+        "id": 1269,
+        "leagueId": 104,
+        "name": "Darussafaka",
+        "logo": "https://media-4.api-sports.io/basketball/teams/1269.png"
+    },
+    {
+        "id": 1270,
+        "leagueId": 104,
+        "name": "Fenerbahce",
+        "logo": "https://media-4.api-sports.io/basketball/teams/1270.png"
+    },
+    {
+        "id": 1271,
+        "leagueId": 104,
+        "name": "Galatasaray",
+        "logo": "https://media-4.api-sports.io/basketball/teams/1271.png"
+    },
+    {
+        "id": 1272,
+        "leagueId": 104,
+        "name": "Gaziantep",
+        "logo": "https://media-4.api-sports.io/basketball/teams/1272.png"
+    },
+    {
+        "id": 1274,
+        "leagueId": 104,
+        "name": "Pinar Karsiyaka",
+        "logo": "https://media-4.api-sports.io/basketball/teams/1274.png"
+    },
+    {
+        "id": 1276,
+        "leagueId": 104,
+        "name": "Tofas",
+        "logo": "https://media-4.api-sports.io/basketball/teams/1276.png"
+    },
+    {
+        "id": 1277,
+        "leagueId": 104,
+        "name": "Turk Telekom",
+        "logo": "https://media-4.api-sports.io/basketball/teams/1277.png"
+    },
+    {
+        "id": 1302,
+        "leagueId": 104,
+        "name": "Konyaspor",
+        "logo": "https://media-4.api-sports.io/basketball/teams/1302.png"
+    },
+    {
+        "id": 1304,
+        "leagueId": 104,
+        "name": "Manisa",
+        "logo": "https://media-4.api-sports.io/basketball/teams/1304.png"
+    },
+    {
+        "id": 1305,
+        "leagueId": 104,
+        "name": "Merkezefendi",
+        "logo": "https://media-4.api-sports.io/basketball/teams/1305.png"
+    },
+    {
+        "id": 1317,
+        "leagueId": 202,
+        "name": "Prometey",
+        "logo": "https://media-4.api-sports.io/basketball/teams/1317.png"
+    },
+    {
+        "id": 1329,
+        "leagueId": 194,
+        "name": "London Lions",
+        "logo": "https://media-4.api-sports.io/basketball/teams/1329.png"
+    },
+    {
+        "id": 1389,
+        "leagueId": 202,
+        "name": "AEK Larnaca",
+        "logo": "https://media-4.api-sports.io/basketball/teams/1389.png"
+    },
+    {
+        "id": 1529,
+        "leagueId": 45,
+        "name": "Maroussi",
+        "logo": "https://media-4.api-sports.io/basketball/teams/1529.png"
+    },
+    {
+        "id": 1542,
+        "leagueId": 120,
+        "name": "Olympiacos",
+        "logo": "https://media-4.api-sports.io/basketball/teams/1542.png"
+    },
+    {
+        "id": 1572,
+        "leagueId": 242,
+        "name": "Bakery Piacenza",
+        "logo": "https://media-4.api-sports.io/basketball/teams/1572.png"
+    },
+    {
+        "id": 1573,
+        "leagueId": 242,
+        "name": "Baltur Cento",
+        "logo": "https://media-4.api-sports.io/basketball/teams/1573.png"
+    },
+    {
+        "id": 1615,
+        "leagueId": 194,
+        "name": "Buducnost",
+        "logo": "https://media-4.api-sports.io/basketball/teams/1615.png"
+    },
+    {
+        "id": 1616,
+        "leagueId": 202,
+        "name": "Mornar Bar",
+        "logo": "https://media-4.api-sports.io/basketball/teams/1616.png"
+    },
+    {
+        "id": 1663,
+        "leagueId": 202,
+        "name": "VEF Riga",
+        "logo": "https://media-4.api-sports.io/basketball/teams/1663.png"
+    },
+    {
+        "id": 1695,
+        "leagueId": 117,
+        "name": "Bilbao",
+        "logo": "https://media-4.api-sports.io/basketball/teams/1695.png"
+    },
+    {
+        "id": 1697,
+        "leagueId": 117,
+        "name": "Real Betis",
+        "logo": "https://media-4.api-sports.io/basketball/teams/1697.png"
+    },
+    {
+        "id": 1698,
+        "leagueId": 117,
+        "name": "Manresa",
+        "logo": "https://media-4.api-sports.io/basketball/teams/1698.png"
+    },
+    {
+        "id": 1699,
+        "leagueId": 202,
+        "name": "San Pablo Burgo",
+        "logo": "https://media-4.api-sports.io/basketball/teams/1699.png"
+    },
+    {
+        "id": 1792,
+        "leagueId": 202,
+        "name": "Hapoel Jerusale",
+        "logo": "https://media-4.api-sports.io/basketball/teams/1792.png"
+    },
+    {
+        "id": 1800,
+        "leagueId": 194,
+        "name": "Cedevita Olimpi",
+        "logo": "https://media-4.api-sports.io/basketball/teams/1800.png"
+    },
+    {
+        "id": 2263,
+        "leagueId": 40,
+        "name": "Syntainics MBC",
+        "logo": "https://media-4.api-sports.io/basketball/teams/2263.png"
+    },
+    {
+        "id": 2264,
+        "leagueId": 104,
+        "name": "Petkim Spor",
+        "logo": "https://media-4.api-sports.io/basketball/teams/2264.png"
+    },
+    {
+        "id": 2315,
+        "leagueId": 202,
+        "name": "Jonava",
+        "logo": "https://media-4.api-sports.io/basketball/teams/2315.png"
+    },
+    {
+        "id": 2329,
+        "leagueId": 117,
+        "name": "Barcelona",
+        "logo": "https://media-4.api-sports.io/basketball/teams/2329.png"
+    },
+    {
+        "id": 2330,
+        "leagueId": 117,
+        "name": "Basket Zaragoza",
+        "logo": "https://media-4.api-sports.io/basketball/teams/2330.png"
+    },
+    {
+        "id": 2331,
+        "leagueId": 120,
+        "name": "Baskonia",
+        "logo": "https://media-4.api-sports.io/basketball/teams/2331.png"
+    },
+    {
+        "id": 2332,
+        "leagueId": 117,
+        "name": "Fuenlabrada",
+        "logo": "https://media-4.api-sports.io/basketball/teams/2332.png"
+    },
+    {
+        "id": 2333,
+        "leagueId": 117,
+        "name": "Gran Canaria",
+        "logo": "https://media-4.api-sports.io/basketball/teams/2333.png"
+    },
+    {
+        "id": 2334,
+        "leagueId": 117,
+        "name": "Joventut Badalo",
+        "logo": "https://media-4.api-sports.io/basketball/teams/2334.png"
+    },
+    {
+        "id": 2335,
+        "leagueId": 117,
+        "name": "MoraBanc Andorr",
+        "logo": "https://media-4.api-sports.io/basketball/teams/2335.png"
+    },
+    {
+        "id": 2336,
+        "leagueId": 117,
+        "name": "Murcia",
+        "logo": "https://media-4.api-sports.io/basketball/teams/2336.png"
+    },
+    {
+        "id": 2337,
+        "leagueId": 117,
+        "name": "Obradoiro CAB",
+        "logo": "https://media-4.api-sports.io/basketball/teams/2337.png"
+    },
+    {
+        "id": 2338,
+        "leagueId": 120,
+        "name": "Real Madrid",
+        "logo": "https://media-4.api-sports.io/basketball/teams/2338.png"
+    },
+    {
+        "id": 2339,
+        "leagueId": 202,
+        "name": "Tenerife",
+        "logo": "https://media-4.api-sports.io/basketball/teams/2339.png"
+    },
+    {
+        "id": 2340,
+        "leagueId": 117,
+        "name": "Unicaja",
+        "logo": "https://media-4.api-sports.io/basketball/teams/2340.png"
+    },
+    {
+        "id": 2341,
+        "leagueId": 194,
+        "name": "Valencia",
+        "logo": "https://media-4.api-sports.io/basketball/teams/2341.png"
+    },
+    {
+        "id": 2556,
+        "leagueId": 202,
+        "name": "Igokea",
+        "logo": "https://media-4.api-sports.io/basketball/teams/2556.png"
+    },
+    {
+        "id": 3007,
+        "leagueId": 2,
+        "name": "Pau-Orthez",
+        "logo": "https://media-4.api-sports.io/basketball/teams/3007.png"
+    },
+    {
+        "id": 3009,
+        "leagueId": 104,
+        "name": "Samsunspor",
+        "logo": "https://media-4.api-sports.io/basketball/teams/3009.png"
+    },
+    {
+        "id": 3024,
+        "leagueId": 197,
+        "name": "Poland",
+        "logo": "https://media-4.api-sports.io/basketball/teams/3024.png"
+    },
+    {
+        "id": 3129,
+        "leagueId": 197,
+        "name": "Albania",
+        "logo": "https://media-4.api-sports.io/basketball/teams/3129.png"
+    },
+    {
+        "id": 3131,
+        "leagueId": 197,
+        "name": "Austria",
+        "logo": "https://media-4.api-sports.io/basketball/teams/3131.png"
+    },
+    {
+        "id": 3135,
+        "leagueId": 197,
+        "name": "Bulgaria",
+        "logo": "https://media-4.api-sports.io/basketball/teams/3135.png"
+    },
+    {
+        "id": 3136,
+        "leagueId": 197,
+        "name": "Cyprus",
+        "logo": "https://media-4.api-sports.io/basketball/teams/3136.png"
+    },
+    {
+        "id": 3137,
+        "leagueId": 197,
+        "name": "Denmark",
+        "logo": "https://media-4.api-sports.io/basketball/teams/3137.png"
+    },
+    {
+        "id": 3144,
+        "leagueId": 197,
+        "name": "Kosovo",
+        "logo": "https://media-4.api-sports.io/basketball/teams/3144.png"
+    },
+    {
+        "id": 3146,
+        "leagueId": 197,
+        "name": "Luxembourg",
+        "logo": "https://media-4.api-sports.io/basketball/teams/3146.png"
+    },
+    {
+        "id": 3149,
+        "leagueId": 197,
+        "name": "North Macedonia",
+        "logo": "https://media-4.api-sports.io/basketball/teams/3149.png"
+    },
+    {
+        "id": 3150,
+        "leagueId": 197,
+        "name": "Portugal",
+        "logo": "https://media-4.api-sports.io/basketball/teams/3150.png"
+    },
+    {
+        "id": 3151,
+        "leagueId": 197,
+        "name": "Romania",
+        "logo": "https://media-4.api-sports.io/basketball/teams/3151.png"
+    },
+    {
+        "id": 3152,
+        "leagueId": 197,
+        "name": "Slovakia",
+        "logo": "https://media-4.api-sports.io/basketball/teams/3152.png"
+    },
+    {
+        "id": 3154,
+        "leagueId": 197,
+        "name": "Switzerland",
+        "logo": "https://media-4.api-sports.io/basketball/teams/3154.png"
+    },
+    {
+        "id": 3419,
+        "leagueId": 202,
+        "name": "Cluj-Napoca",
+        "logo": "https://media-4.api-sports.io/basketball/teams/3419.png"
+    },
+    {
+        "id": 3425,
+        "leagueId": 104,
+        "name": "Yalovaspor",
+        "logo": "https://media-4.api-sports.io/basketball/teams/3425.png"
+    },
+    {
+        "id": 3764,
+        "leagueId": 242,
+        "name": "Chieti Basket",
+        "logo": "https://media-4.api-sports.io/basketball/teams/3764.png"
+    },
+    {
+        "id": 3765,
+        "leagueId": 242,
+        "name": "Chiusi",
+        "logo": "https://media-4.api-sports.io/basketball/teams/3765.png"
+    },
+    {
+        "id": 3766,
+        "leagueId": 242,
+        "name": "Eurobasket Roma",
+        "logo": "https://media-4.api-sports.io/basketball/teams/3766.png"
+    },
+    {
+        "id": 3767,
+        "leagueId": 242,
+        "name": "Fabriano",
+        "logo": "https://media-4.api-sports.io/basketball/teams/3767.png"
+    },
+    {
+        "id": 3768,
+        "leagueId": 242,
+        "name": "Monferrato",
+        "logo": "https://media-4.api-sports.io/basketball/teams/3768.png"
+    },
+    {
+        "id": 3769,
+        "leagueId": 242,
+        "name": "Pallacanestro N",
+        "logo": "https://media-4.api-sports.io/basketball/teams/3769.png"
+    },
+    {
+        "id": 3770,
+        "leagueId": 242,
+        "name": "Stella Azzurra",
+        "logo": "https://media-4.api-sports.io/basketball/teams/3770.png"
+    },
+    {
+        "id": 4769,
+        "leagueId": 197,
+        "name": "Ireland",
+        "logo": "https://media-4.api-sports.io/basketball/teams/4769.png"
+    },
+    {
+        "id": 4773,
+        "leagueId": 197,
+        "name": "Norway",
+        "logo": "https://media-4.api-sports.io/basketball/teams/4773.png"
+    },
+    {
+        "id": 5007,
+        "leagueId": 242,
+        "name": "Cividale",
+        "logo": "https://media-4.api-sports.io/basketball/teams/5007.png"
+    },
+    {
+        "id": 5008,
+        "leagueId": 242,
+        "name": "JuVi Cremona",
+        "logo": "https://media-4.api-sports.io/basketball/teams/5008.png"
+    },
+    {
+        "id": 5009,
+        "leagueId": 242,
+        "name": "Rimini",
+        "logo": "https://media-4.api-sports.io/basketball/teams/5009.png"
+    },
+    {
+        "id": 5235,
+        "leagueId": 2,
+        "name": "Boulogne-Levall",
+        "logo": "https://media-4.api-sports.io/basketball/teams/5235.png"
+    },
+    {
+        "id": 5238,
+        "leagueId": 202,
+        "name": "TSU",
+        "logo": "https://media-4.api-sports.io/basketball/teams/5238.png"
+    },
+    {
+        "id": 5561,
+        "leagueId": 194,
+        "name": "BC Wolves",
+        "logo": "https://media-4.api-sports.io/basketball/teams/5561.png"
+    },
+    {
+        "id": 5633,
+        "leagueId": 202,
+        "name": "Caledonia Gladi",
+        "logo": "https://media-4.api-sports.io/basketball/teams/5633.png"
+    },
+    {
+        "id": 5920,
+        "leagueId": 104,
+        "name": "Çağdaş Bodrum S",
+        "logo": "https://media-4.api-sports.io/basketball/teams/5920.png"
+    },
+    {
+        "id": 5923,
+        "leagueId": 40,
+        "name": "Wurzburg",
+        "logo": "https://media-4.api-sports.io/basketball/teams/5923.png"
+    },
+    {
+        "id": 5981,
+        "leagueId": 242,
+        "name": "Cento",
+        "logo": "https://media-4.api-sports.io/basketball/teams/5981.png"
+    },
+    {
+        "id": 6043,
+        "leagueId": 242,
+        "name": "Luiss Roma",
+        "logo": "https://media-4.api-sports.io/basketball/teams/6043.png"
+    },
+    {
+        "id": 6044,
+        "leagueId": 242,
+        "name": "Vigevano",
+        "logo": "https://media-4.api-sports.io/basketball/teams/6044.png"
+    },
+    {
+        "id": 6158,
+        "leagueId": 242,
+        "name": "Sebastiani Riet",
+        "logo": "https://media-4.api-sports.io/basketball/teams/6158.png"
+    }
+]
