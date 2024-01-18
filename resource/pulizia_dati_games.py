@@ -33,7 +33,7 @@ db_config = {
 conn = mysql.connector.connect(**db_config)
 leagues_to_follow=[197,120,194,202,2,40,45,52,242,143,142,117,104]
 giorni_dei_mesi = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
-maxapi=35
+maxapi=100
 with open("resource/checkpoint_pulizia.txt", "r") as checkpoint_r:
     ck = checkpoint_r.readline().strip().split(" , ")
     anno = ck[0]
