@@ -28,6 +28,7 @@ export class PlayerDetailComponent implements OnInit {
         });
         
         this.printPlayerTeam();
+        this.printPlayerTeammates()
 
     }
 
@@ -46,7 +47,7 @@ export class PlayerDetailComponent implements OnInit {
     printLeague() {
         this.basketService.getLeague(this.playerTeam.id_league).subscribe((response: League) => {
             this.league = response
-            console.log('vv', this.league)
+            console.log('printLeague', this.league)
         })
     }
 
@@ -54,7 +55,7 @@ export class PlayerDetailComponent implements OnInit {
         this.basketService.getLeague(this.playerTeam.id_league).subscribe((response: any) => {
             this.playerLeague = response[1]
             console.log(this.playerLeague)
-            this.printPlayerTeammates()
+            // this.printPlayerTeammates()
         })
     }
 
@@ -64,7 +65,7 @@ export class PlayerDetailComponent implements OnInit {
             this.playerTeammates = this.playerTeammates.filter(player => {
                 return player.idPlayer !== this.singlePlayer.idPlayer
             })
-            console.log(this.playerTeammates)
+            console.log('printPlayerTeammates',this.playerTeammates)
         })
     }
 
