@@ -72,6 +72,7 @@ public class UserService {
         userRepository.deleteUser(idUser);
 
     }
+
     public void login(String email, String password) {
         try {
             // Create MessageDigest instance for MD5

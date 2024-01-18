@@ -81,6 +81,7 @@ public interface GamesRepository extends JpaRepository<Games, Integer> {
             "JOIN Country c ON c.id_league = g.leagueId " +
             "WHERE c.id_country = :id_country " +
             "ORDER BY g.id_games " +
+            "DESC " +
             "LIMIT 6")
     List<ResponseGameCountry> getGamesByCountry(@Param("id_country") Long id);
 
@@ -103,6 +104,7 @@ public interface GamesRepository extends JpaRepository<Games, Integer> {
             "WHERE th.name = :name " +
             "OR ta.name = :name " +
             "ORDER BY g.id_games " +
+            "DESC " +
             "LIMIT 6")
     List<ResponseGameTeam> getGamesByTeam(@Param("name") String name);
 
@@ -126,6 +128,7 @@ public interface GamesRepository extends JpaRepository<Games, Integer> {
             "JOIN League l ON l.id_league = g.leagueId " +
             "WHERE l.name = :name " +
             "ORDER BY g.id_games " +
+            "DESC " +
             "LIMIT 6")
     List<ResponseGameLeague> getGamesByLeague(@Param("name") String name);
 
