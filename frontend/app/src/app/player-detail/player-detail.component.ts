@@ -24,11 +24,14 @@ export class PlayerDetailComponent implements OnInit {
         // this.printSinglePlayer()
         this.activatedRoute.data.subscribe(({playerDetail}) => {
             console.log(playerDetail)
-            this.singlePlayer = playerDetail            
+            this.singlePlayer = playerDetail  
+            console.log('singlePlayer', this.singlePlayer)    
+            this.printPlayerTeammates()      
         });
+
+        console.log('PROVA', this.singlePlayer.idTeam)
         
         this.printPlayerTeam();
-        this.printPlayerTeammates()
 
     }
 
@@ -36,8 +39,8 @@ export class PlayerDetailComponent implements OnInit {
         // if(this.singlePlayer && this.singlePlayer.idTeam) {
         this.basketService.getTeam(this.singlePlayer.idTeam).subscribe((response: Team) => {
             this.playerTeam = response;
-            console.log('v', this.playerTeam)
-            this.printPlayerLeague();
+            console.log('playerTeam', this.playerTeam)
+            // this.printPlayerLeague();
             this.printLeague();
         })
         
@@ -47,17 +50,17 @@ export class PlayerDetailComponent implements OnInit {
     printLeague() {
         this.basketService.getLeague(this.playerTeam.id_league).subscribe((response: League) => {
             this.league = response
-            console.log('printLeague', this.league)
+            console.log('league', this.league)
         })
     }
 
-    printPlayerLeague() {
-        this.basketService.getLeague(this.playerTeam.id_league).subscribe((response: any) => {
-            this.playerLeague = response[1]
-            console.log(this.playerLeague)
-            // this.printPlayerTeammates()
-        })
-    }
+    // printPlayerLeague() {
+    //     this.basketService.getLeague(this.playerTeam.id_league).subscribe((response: any) => {
+    //         this.playerLeague = response[1]
+    //         console.log('playerLeague', this.playerLeague)
+    //         this.printPlayerTeammates()
+    //     })
+    // }
 
     printPlayerTeammates() {
         this.basketService.getTeamPlayers(this.singlePlayer.idTeam).subscribe((response: PlayerDetail[]) => {

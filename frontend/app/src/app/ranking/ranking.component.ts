@@ -20,15 +20,15 @@ export class RankingComponent {
     ngOnInit(): void {
 
         const teamId = this.teamsData.length > 0 ? this.teamsData[0].id_league : null;
-        console.log('x',this.teamsData);
+        // console.log('teamsData',this.teamsData);
         
         if(teamId) {
             this.basketService.getTeamsLeagueStandings(teamId).subscribe((response: any) => {
                 this.teamsStandingData = response
                 this.teamsStandingData.sort((a, b) => a.standings.position - b.standings.position);
-                console.log(this.teamsStandingData)
+                // console.log('teamsStandingData', this.teamsStandingData)
                 this.teamsStandingData.forEach((leagueObj: any) => {
-                    console.log(leagueObj)
+                    console.log('leagueObj', leagueObj)
                     this.basketService.getTeam(leagueObj.standings.teamId).subscribe((teamInfo: any) => {
                         leagueObj.teamLogo = teamInfo.logo;
                     })

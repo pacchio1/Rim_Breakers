@@ -12,7 +12,8 @@
     </div>
 </div>
 
-<div class="player-info mt-2 p-3 p-lg-4 d-lg-flex flex-column justify-content-center" *ngIf="playerTeam">
+<div class="container-fluid d-flex row row-cols-1 row-cols-lg-2">
+<div class="player-info mt-2 p-3 p-lg-4 col d-lg-flex flex-column justify-content-center" *ngIf="playerTeam">
     <h3>STATISTICHE</h3>
     <p>{{ singlePlayer.name }} {{ singlePlayer.surname }} nella stagione {{ singlePlayer.season }} ha segnato {{ singlePlayer.pointScored }} punti, giocando un minutaggio pari a {{ singlePlayer.playedMin }} min</p>
     <p>Il numero {{ singlePlayer.meshNumber }} del {{ playerTeam.name }} ha tentato {{ singlePlayer.shots2 }} tiri da 2 e {{ singlePlayer.shots3 }} tiri da 3 e ottenendo {{ singlePlayer.assist }} assist</p>
@@ -25,8 +26,9 @@
     </ul>
 </div>
 
-<div>
-    <h2 class="pt-4 ps-3 text-primary-emphasis">Prossime partite</h2>
+<div class="col p-0">
+    <h2 class="pt-4 ps-3 text-primary-emphasis">Ultime partite</h2>
+</div>
 </div>
 
 <div>
