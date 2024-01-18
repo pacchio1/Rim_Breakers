@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { Countries, CountriesWithLeagues } from "../_model/countries.model";
+import { CountriesWithLeagues } from "../_model/countries.model";
 import { ThemeService } from "../_service/dark-mode.service";
 import { ActivatedRoute, Router } from "@angular/router";
 import { LeagueByCountry, Leagues } from "../_model/leagues.model";
