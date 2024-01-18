@@ -6,7 +6,9 @@ import { LeagueByCountry, Leagues } from '../_model/leagues.model';
 import { Team } from '../_model/team.model';
 import { Countries } from '../_model/countries.model';
 import { League } from '../_model/league.model';
-import { SeasonStanding } from '../_model/seasonStanding.model';
+import { SeasonStanding, SeasonStandingAll } from '../_model/seasonStanding.model';
+import { LoginUser } from '../_model/login.model';
+
 
 // import { SunsetResults } from '../model/sunset.model';
 
@@ -37,7 +39,7 @@ export class ApiService {
      */
     searchTeamsLeagueStandings(idLeague: number) {
         return this.http.get('http://localhost:8080/standings/all_by_league?idLeague=' + idLeague + '&season=2022-2023').pipe(map((response: any) => {
-            return response as SeasonStanding[]
+            return response as SeasonStandingAll[]
         }))
     }
 
