@@ -1,17 +1,14 @@
 package rimbreaker.backend.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Entity
 @Table(name = "blog")
 @Getter
 @Setter
+@EqualsAndHashCode
 @NoArgsConstructor
-@AllArgsConstructor
 public class Blog {
 
     @Id

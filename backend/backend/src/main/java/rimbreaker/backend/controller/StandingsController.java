@@ -24,7 +24,7 @@ public class StandingsController {
 
     }
     @GetMapping("/all_by_league")
-    public ResponseEntity<?> getSeason( Long idLeague, String season) {
+    public ResponseEntity<?> getSeason(Long idLeague, String season) {
 
         return standingsService.all_by_league(idLeague, season);
 

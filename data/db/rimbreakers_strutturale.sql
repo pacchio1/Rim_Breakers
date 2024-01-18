@@ -127,7 +127,8 @@ CREATE TABLE `players` (
   `shots_2` int(11) NOT NULL,
   `shots_3` int(11) NOT NULL,
   `free_trows` int(11) NOT NULL,
-  `ball_holding_time` int(11) NOT NULL
+  `ball_holding_time` int(11) NOT NULL,
+  `nationality` varchar(5) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
