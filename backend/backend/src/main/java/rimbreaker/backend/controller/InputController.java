@@ -1,2 +1,4 @@
-package rimbreaker.backend.controller;public class InputController {
+package rimbreaker.backend.controller;
+
+public class InputController {
 }
