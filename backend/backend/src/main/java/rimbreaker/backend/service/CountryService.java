@@ -43,24 +43,4 @@ public class CountryService {
 
     }
 
-    /*
-
-    public ResponseEntity<?> getNameCountry() {
-
-        try {
-
-            return new ResponseEntity<>(countryRepository.getNameCountry(), HttpStatus.OK);
-
-        }
-        catch (Exception e) {
-
-            return new ResponseEntity<>("Country's Name not found! : " + e.getMessage(), HttpStatus.BAD_REQUEST);
-
-        }
-
-
-    }
-
-    */
-
 }

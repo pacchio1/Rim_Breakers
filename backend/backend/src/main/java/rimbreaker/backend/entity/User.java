@@ -7,7 +7,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.validator.constraints.Length;
-import org.hibernate.validator.constraints.NotBlank;
+import jakarta.validation.constraints.NotBlank;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
@@ -44,6 +44,7 @@ public class User {
     private String password;
 
     public User(String name, String surname, String email, String password) {
+        
         this.name = name;
         this.surname = surname;
         this.email = email;
@@ -51,7 +52,9 @@ public class User {
     }
 
     private String encodePassword(String password) {
+
         try {
+
             // Genera un salt casuale
             SecureRandom random = new SecureRandom();
             byte[] salt = new byte[16];
@@ -70,17 +73,24 @@ public class User {
             return bytesToHex(hashedPassword);
 
         } catch (NoSuchAlgorithmException e) {
+
             // Gestione dell'eccezione (potrebbe essere opportuno loggare l'errore)
             throw new RuntimeException("Errore durante l'hash della password.", e);
+
         }
     }
 
     // Metodo per convertire un array di byte in formato esadecimale
     private String bytesToHex(byte[] bytes) {
+
         StringBuilder result = new StringBuilder();
+
         for (byte b : bytes) {
+
             result.append(String.format("%02x", b));
+
         }
+
         return result.toString();
     }
 

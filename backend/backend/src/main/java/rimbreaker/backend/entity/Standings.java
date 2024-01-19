@@ -15,6 +15,7 @@ import lombok.Setter;
 @EqualsAndHashCode
 @NoArgsConstructor
 public class Standings {
+
     @Id
     @Column(name = "ID_league")
     private Long idLeague;
@@ -56,4 +57,5 @@ public class Standings {
 
     @Column(name = "description", columnDefinition = "TEXT")
     private String description;
+    
 }

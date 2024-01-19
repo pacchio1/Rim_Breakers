@@ -15,11 +15,14 @@ import lombok.Setter;
 @NoArgsConstructor
 
 public class TeamFollowed {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID_user")
     private Long idUser;
+    
     @Column(name = "ID_team")
     private Long idTeam;
+
 }
 

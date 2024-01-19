@@ -39,12 +39,13 @@ public interface LeagueRepository extends JpaRepository<League, Integer> {
             "JOIN Country c ON c.id_league = l.id_league " +
             "WHERE c.id_country = :id_country")
     List<ResponseLeagueCountry> getLeagueByCountry(@Param("id_country") Long id);
+
     @Query("SELECT new rimbreaker.backend.payload.response.ResponseCountryLeague(" +
             "c.name AS name_country, " +
             "l.name AS name_league, " +
             "c.flag, " +
             "l.logo" +
             ") FROM League l JOIN Country c on l.id_league = c.id_league")
-    List<ResponseCountryLeague> country_by_league();
+    List<ResponseCountryLeague> getCountryByLeague();
 
 }

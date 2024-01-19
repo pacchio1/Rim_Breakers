@@ -14,29 +14,29 @@ import rimbreaker.backend.service.PlayerService;
 @RequestMapping("/player")
 public class PlayerController {
 
-        private final PlayerService playerService;
+    private final PlayerService playerService;
 
-        // Returns player details by ID
-        @GetMapping("/number")
-        public ResponseEntity<?> getPlayerById(Long id) {
+    // Returns player details by ID
+    @GetMapping("/number")
+    public ResponseEntity<?> getPlayerById(Long id) {
 
-            return playerService.getPlayerById(id);
+        return playerService.getPlayerById(id);
 
-        }
+    }
 
-        // Returns all players
-        @GetMapping("/all")
-        public ResponseEntity<?> getAllPlayers() {
+    // Returns all players
+    @GetMapping("/all")
+    public ResponseEntity<?> getAllPlayers() {
 
-            return playerService.getAllPlayers();
+        return playerService.getAllPlayers();
 
-        }
+    }
 
-        @GetMapping("/team")
-        public ResponseEntity<?> getPlayersByTeam(Long id_team) {
+    @GetMapping("/team")
+    public ResponseEntity<?> getPlayersByTeam(Long id_team) {
 
-            return playerService.getPlayersByTeam(id_team);
+        return playerService.getPlayersByTeam(id_team);
 
-        }
+    }
 
 }

@@ -71,11 +71,12 @@ public class LeagueService {
         }
 
     }
-    public ResponseEntity<?> country_by_league() {
+    
+    public ResponseEntity<?> getCountryByLeague() {
 
         try {
 
-            return new ResponseEntity<>(leagueRepository.country_by_league(), HttpStatus.OK);
+            return new ResponseEntity<>(leagueRepository.getCountryByLeague(), HttpStatus.OK);
 
         }
         catch (Exception e) {

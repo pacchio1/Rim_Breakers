@@ -14,6 +14,7 @@ import lombok.Setter;
 @EqualsAndHashCode
 @NoArgsConstructor
 public class Country {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_country")
@@ -33,4 +34,5 @@ public class Country {
 
     @Column(name = "flag")
     private String flag;
+    
 }

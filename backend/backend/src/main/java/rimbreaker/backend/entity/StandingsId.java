@@ -10,7 +10,9 @@ import lombok.Setter;
 @Setter
 @EqualsAndHashCode
 public class StandingsId implements Serializable {
+
     private Long idLeague;
     private String season;
     private Long teamId;
+    
 }

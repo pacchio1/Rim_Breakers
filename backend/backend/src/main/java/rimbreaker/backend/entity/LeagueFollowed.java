@@ -13,6 +13,7 @@ import lombok.Setter;
 @EqualsAndHashCode
 @NoArgsConstructor
 public class LeagueFollowed {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID_user")
@@ -20,4 +21,5 @@ public class LeagueFollowed {
 
     @Column(name = "id_league")
     private Long idLeague;
+    
 }

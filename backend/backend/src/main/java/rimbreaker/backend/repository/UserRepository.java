@@ -3,14 +3,12 @@ package rimbreaker.backend.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.jpa.repository.query.Procedure;
 import org.springframework.data.repository.query.Param;
 
 import org.springframework.transaction.annotation.Transactional;
 import rimbreaker.backend.entity.User;
 import rimbreaker.backend.payload.response.ResponseUser;
 
-import java.util.List;
 import java.util.Optional;
 
 public interface UserRepository extends JpaRepository<User, Integer> {
@@ -29,14 +27,12 @@ public interface UserRepository extends JpaRepository<User, Integer> {
     @Modifying
     @Transactional
     @Query("UPDATE User SET email = :email WHERE idUser = :idUser")
-    void updateEmail(@Param("email") String email,
-                     @Param("idUser") Long idUser);
+    void updateEmail(@Param("email") String email, @Param("idUser") Long idUser);
 
     @Modifying
     @Transactional
     @Query("UPDATE User SET password = :password WHERE idUser = :idUser")
-    void updatePassword(@Param("password") String password,
-                        @Param("idUser") Long idUser);
+    void updatePassword(@Param("password") String password, @Param("idUser") Long idUser);
 
     @Modifying
     @Transactional

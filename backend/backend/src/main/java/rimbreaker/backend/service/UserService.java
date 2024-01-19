@@ -17,8 +17,8 @@ public class UserService {
 
     public void createUser(String name, String surname, String email, String password) {
 
-
         try {
+
             // Create MessageDigest instance for MD5
             MessageDigest md = MessageDigest.getInstance("MD5");
 
@@ -37,9 +37,10 @@ public class UserService {
             password= hexStringBuilder.toString();
 
         } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        }
 
+            e.printStackTrace();
+
+        }
 
         userRepository.newUser(name, surname, email, password);
 

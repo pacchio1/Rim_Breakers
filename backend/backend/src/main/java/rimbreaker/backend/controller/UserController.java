@@ -70,6 +70,7 @@ public class UserController {
         return ResponseEntity.ok("User successfully deleted!");
 
     }
+    
     @PostMapping("/login")
     public ResponseEntity<?> login(String email, String password) {
 
@@ -78,8 +79,5 @@ public class UserController {
         return ResponseEntity.ok("{ user : " + user + "}, {email : " + email + "}");
 
     }
-
-
-
 
 }

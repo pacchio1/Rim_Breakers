@@ -13,6 +13,7 @@ import lombok.Setter;
 @EqualsAndHashCode
 @NoArgsConstructor
 public class Player {
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID_player")

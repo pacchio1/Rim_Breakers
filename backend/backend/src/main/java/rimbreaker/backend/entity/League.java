@@ -14,6 +14,7 @@ import lombok.Setter;
 @EqualsAndHashCode
 @NoArgsConstructor
 public class League {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_league")
@@ -28,4 +29,5 @@ public class League {
     @Lob
     @Column(name = "logo")
     private String logo;
+    
 }

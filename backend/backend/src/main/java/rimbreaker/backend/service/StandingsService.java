@@ -26,11 +26,11 @@ public class StandingsService {
         }
         
     }
-    public ResponseEntity<?> all_by_league(Long idLeague, String season) {
+    public ResponseEntity<?> getSeasonByLeague(Long idLeague, String season) {
 
         try {
 
-            return new ResponseEntity<>(standingsRepository.all_by_league(idLeague, season), HttpStatus.OK);
+            return new ResponseEntity<>(standingsRepository.getSeasonByLeague(idLeague, season), HttpStatus.OK);
 
         }
         catch(Exception e) {

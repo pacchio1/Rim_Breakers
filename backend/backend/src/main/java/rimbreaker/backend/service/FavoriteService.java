@@ -48,4 +48,5 @@ public class FavoriteService {
     public List<LeagueFollowed> getAllFavoriteLeaguesByUserId(Long userId) {
         return favoriteLeagueRepository.getAllFavoritesByUserId(userId);
     }
+    
 }

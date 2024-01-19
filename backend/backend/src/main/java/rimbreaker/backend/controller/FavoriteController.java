@@ -59,4 +59,5 @@ public class FavoriteController {
         List<LeagueFollowed> favoriteLeagues = favoriteService.getAllFavoriteLeaguesByUserId(userId);
         return ResponseEntity.ok(favoriteLeagues);
     }
+    
 }

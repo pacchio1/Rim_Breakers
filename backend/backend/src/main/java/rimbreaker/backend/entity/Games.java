@@ -16,6 +16,7 @@ import java.util.Date;
 @EqualsAndHashCode
 @NoArgsConstructor
 public class Games {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID_games")
@@ -41,4 +42,5 @@ public class Games {
 
     @Column(name = "score_away", columnDefinition = "TEXT")
     private String score_away;
+    
 }

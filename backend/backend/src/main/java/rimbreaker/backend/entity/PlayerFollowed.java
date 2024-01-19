@@ -23,4 +23,5 @@ public class PlayerFollowed {
 
     @Column(name = "ID_player")
     private Long idPlayer;
+    
 }
