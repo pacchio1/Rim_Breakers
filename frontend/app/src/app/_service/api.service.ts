@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs';
 import { PlayerDetail } from '../_model/player.model';
@@ -6,8 +6,7 @@ import { LeagueByCountry, Leagues } from '../_model/leagues.model';
 import { Team } from '../_model/team.model';
 import { Countries } from '../_model/countries.model';
 import { League } from '../_model/league.model';
-import { SeasonStanding, SeasonStandingAll } from '../_model/seasonStanding.model';
-import { LoginUser } from '../_model/login.model';
+import { SeasonStandingAll } from '../_model/seasonStanding.model';
 
 
 // import { SunsetResults } from '../model/sunset.model';
@@ -134,19 +133,19 @@ export class ApiService {
      * @returns richiesta Api 
      */
     searchNewUser(nome: string, cognome: string, email: string, password: string) {        
-        const data = {
+        const body = {
             name: nome,
             surname: cognome,
             email: email,
             password: password,
-          };
-        return this.http.post('http://localhost:8080/user/create', data);
+        };
+        return this.http.post('http://localhost:8080/user/create?name='+nome+'&surname='+cognome+'&email='+email+'&password='+password, body);
     }
 
     /**
      * API ACCESSO UTENTE
      * 
-     * @param
+     * @param email @param password
      * @returns richiesta Api 
      */
     searchUserLogin(email: string, password: string) {
