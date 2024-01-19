@@ -73,9 +73,9 @@ public class UserController {
     @PostMapping("/login")
     public ResponseEntity<?> login(String email, String password) {
 
-        Optional<User> user =userService.login(email,password);
+        Optional<User> user = userService.login(email,password);
 
-        return ResponseEntity.ok("{ user : "+user+"},{email : "+email+"}");
+        return ResponseEntity.ok("{ user : " + user + "}, {email : " + email + "}");
 
     }
 
