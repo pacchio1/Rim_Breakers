@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ThemeService } from '../_service/dark-mode.service';
 import { BasketService } from '../_service/basket.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,7 @@ export class LoginComponent {
   email: string = '';
   password: string = '';
 
-  constructor(public themeService: ThemeService, private basketService: BasketService) {}
+  constructor(public themeService: ThemeService, private basketService: BasketService, private router: Router) {}
 
   toggleTheme(): void {
     this.themeService.toggleTheme();
