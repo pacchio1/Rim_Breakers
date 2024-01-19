@@ -3,8 +3,11 @@ package rimbreaker.backend.controller;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import rimbreaker.backend.entity.User;
 import rimbreaker.backend.payload.response.ResponseUser;
 import rimbreaker.backend.service.UserService;
+
+import java.util.Optional;
 
 @CrossOrigin(origins = "*")
 @RestController
@@ -70,9 +73,9 @@ public class UserController {
     @PostMapping("/login")
     public ResponseEntity<?> login(String email, String password) {
 
-        userService.login(email,password);
+        Optional<User> user =userService.login(email,password);
 
-        return ResponseEntity.ok("login completed user:"+ email );
+        return ResponseEntity.ok("{ user : "+user+"},{email : "+email+"}");
 
     }
 
