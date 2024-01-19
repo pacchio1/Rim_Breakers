@@ -27,6 +27,7 @@
 - creare mvc di blog [X]
 - games by league [X] (filtro per data)
 - aggiungere controller e servizi appena confermate opzioni su repo di User [X]
+- endpoint per eseguire script [X]
 
 ---| DA RIVEDERE / CONTINUARE | ---
 
@@ -35,5 +36,4 @@
 ---| DA FARE |---
 
 - fare manuale utente [da fare]
-- endpoint per eseguire script [da fare]
 - mettere in readme []
