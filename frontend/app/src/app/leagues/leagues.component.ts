@@ -15,6 +15,7 @@ export class LeaguesComponent implements OnInit {
 
     isDarkMode: boolean = false;
     componentSelected: string = 'A'
+    storedValue: string | null = '';
 
     leaguesData: any[] = [];
     league!: League;
@@ -41,10 +42,11 @@ export class LeaguesComponent implements OnInit {
 
         this.activatedRoute.data.subscribe(({league}) => {
             this.leaguesData = league
-            console.log(this.leaguesData)
+            console.log('leaguesData', this.leaguesData)
         });
 
         this.printTeamLeague();
+        this.checkComponent();
 
     }
 
@@ -54,7 +56,7 @@ export class LeaguesComponent implements OnInit {
             this.basketService.getLeague(parseInt(id)).subscribe((response: any) => {
                 console.log(response);
                 this.league = response;
-                console.log(this.league.name);
+                console.log('name', this.league.name);
                 
             })
     }
@@ -65,7 +67,21 @@ export class LeaguesComponent implements OnInit {
 
     showComponent(component: string) {
         this.componentSelected = component;
+        localStorage.setItem('selectedComponent', this.componentSelected)
     }
+
+    checkComponent() {
+        this.storedValue = localStorage.getItem('selectedComponent')
+        if(this.storedValue === 'A') {
+            this.showComponent('A')
+        } else if(this.storedValue === 'B') {
+            this.showComponent('B')
+        } else if(this.storedValue === 'C') {
+            this.showComponent('C')
+        } else if(this.storedValue === 'D') {
+            this.showComponent('D')
+        }
+    }   
 
     toggleTheme(): void {
         this.themeService.toggleTheme();

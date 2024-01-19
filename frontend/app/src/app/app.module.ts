@@ -21,6 +21,9 @@ import { PlayerCardComponent } from './player-card/player-card.component';
 import { CountriesComponent } from './countries/countries.component';
 import { RankingComponent } from './ranking/ranking.component';
 import { SigninComponent } from './signin/signin.component';
+import { ScorerComponent } from './scorer/scorer.component';
+import { AssistComponent } from './assist/assist.component';
+import { LeagueMatchComponent } from './league-match/league-match.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +38,9 @@ import { SigninComponent } from './signin/signin.component';
     ContactComponent,
     LeaguesComponent,
     RankingComponent,
+    ScorerComponent,
+    AssistComponent,
+    LeagueMatchComponent,
     TeamComponent,
     PlayerCardComponent,
     PlayerDetailComponent,

@@ -1,0 +1,12 @@
+<div *ngFor="let games of processedMatches">
+    <div class="d-flex flex-row">
+        <p>{{ games.teamHome }}</p>
+        <img src="{{ games.logoHome }}" alt="" class="league-logo">
+        <p *ngIf="games.scoreHomeFinal !== null" class="px-3">{{ games.scoreHomeFinal }}</p>
+        <p *ngIf="games.scoreHomeFinal == null" class="px-3">NONE</p>
+        <p *ngIf="games.scoreAwayFinal !== null" class="px-3">{{ games.scoreAwayFinal }}</p>
+        <p *ngIf="games.scoreAwayFinal == null" class="px-3">NONE</p>
+        <img src="{{ games.logoAway }}" alt="" class="league-logo">
+        <p>{{ games.teamAway }}</p>
+    </div>
+</div>

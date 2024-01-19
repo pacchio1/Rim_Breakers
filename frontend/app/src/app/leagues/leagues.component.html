@@ -10,20 +10,20 @@
     <button (click)="showComponent('A')">Classifica</button>
     <button (click)="showComponent('B')">Marcatori</button>
     <button (click)="showComponent('C')">Assist</button>
-    <button (click)="showComponent('D')">Partite</button>
+    <button (click)="showComponent('D')">Risultati</button>
 </div>
 
 <div *ngIf="componentSelected === 'A'" class="container footer-index pt-3 pb-5 rounded-bottom-5 bg-white">
     <app-ranking [teamsData]="leaguesData"></app-ranking>
 </div>
 <div *ngIf="componentSelected === 'B'">
-    <p>B</p>
+    <app-scorer [teamsData]="leaguesData"></app-scorer>
 </div>
 <div *ngIf="componentSelected === 'C'">
-    <p>C</p>
+    <app-assist [teamsData]="leaguesData"></app-assist>
 </div>
 <div *ngIf="componentSelected === 'D'">
-    <p>D</p>
+    <app-league-match [leagueName]="league.name"></app-league-match>
 </div>
 
 <!-- <section class="container footer-index pt-3 pb-5 rounded-bottom-5 bg-white">  

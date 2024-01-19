@@ -1,12 +1,15 @@
 export type Match = {
-    idGames: number;
-    leagueId: number;
+    id_games: number;
+    id_league: number;
+    nameLeague: string;
     date: string;
     status: string;
+    logoHome: string;
+    teamHome:  string;
+    logoAway: string;
+    teamAway: string;
     homeId: number;
     scoreHome: string;
     awayId: number;
     scoreAway: string;
-    teamHome:  string;
-    teamAway: string;
 }

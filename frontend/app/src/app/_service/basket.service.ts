@@ -90,13 +90,23 @@ export class BasketService {
     }
 
     /**
-     * API RICERCA PLAYER
+     * API RICERCA LEGUES BY COUNTRY
      * 
      * @param idCountry
      * @returns richiesta Api 
      */
     getLeaguesByCountry(idCountry: number) {
         return this.apiService.searchLeaguesByCountry(idCountry); 
+    }
+    
+    /**
+     * API RICERCA GAMES BY LEAGUE
+     * 
+     * @param leagueName
+     * @returns richiesta Api 
+     */
+    getGamesByLeague(leagueName: string) {
+        return this.apiService.searchGamesByLeague(leagueName); 
     }
 
     /**
