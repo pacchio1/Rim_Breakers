@@ -2,10 +2,12 @@ package rimbreaker.backend.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import rimbreaker.backend.entity.User;
 import rimbreaker.backend.payload.response.ResponseUser;
 import rimbreaker.backend.repository.UserRepository;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -73,7 +75,7 @@ public class UserService {
 
     }
 
-    public void login(String email, String password) {
+    public Optional<User> login(String email, String password) {
         try {
             // Create MessageDigest instance for MD5
             MessageDigest md = MessageDigest.getInstance("MD5");
@@ -95,7 +97,7 @@ public class UserService {
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         }
-        userRepository.login(email, password);
+        return userRepository.login(email, password);
 
     }
 
