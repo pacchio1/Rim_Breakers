@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Gen 18, 2024 alle 14:04
--- Versione del server: 10.4.28-MariaDB
--- Versione PHP: 8.2.4
+-- Generation Time: Jan 20, 2024 at 01:58 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,30 +24,19 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `blog`
+-- Table structure for table `blog`
 --
 
 CREATE TABLE `blog` (
   `ID_blog` int(11) NOT NULL,
   `ID_user` int(11) NOT NULL,
-  `ID_country` int(11) NOT NULL,
-  `ID_league` int(11) NOT NULL,
-  `ID_team` int(11) NOT NULL,
-  `text` longtext DEFAULT NULL
+  `testo` longtext DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dump dei dati per la tabella `blog`
---
-
-INSERT INTO `blog` (`ID_blog`, `ID_user`, `ID_country`, `ID_league`, `ID_team`, `text`) VALUES
-(1, 1, 23, 242, 689, 'test1'),
-(2, 2, 18, 45, 605, 'test2');
 
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `country`
+-- Table structure for table `country`
 --
 
 CREATE TABLE `country` (
@@ -60,7 +49,7 @@ CREATE TABLE `country` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dump dei dati per la tabella `country`
+-- Dumping data for table `country`
 --
 
 INSERT INTO `country` (`id_country`, `ID_league`, `name`, `type`, `code`, `flag`) VALUES
@@ -70,12 +59,12 @@ INSERT INTO `country` (`id_country`, `ID_league`, `name`, `type`, `code`, `flag`
 (23, 52, 'Italy', '', 'IT', 'https://media-4.api-sports.io/flags/it.svg'),
 (45, 117, 'Spain', '', 'ES', 'https://media-4.api-sports.io/flags/es.svg'),
 (48, 104, 'Turkey', '', 'TR', 'https://media-4.api-sports.io/flags/tr.svg'),
-(55, 202, 'Europe', '', 'EU ', 'https://media-4.api-sports.io/flags/eu.svg');
+(55, 202, 'Europe', '', ' ', 'https://media-4.api-sports.io/flags/ .svg');
 
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `games`
+-- Table structure for table `games`
 --
 
 CREATE TABLE `games` (
@@ -90,7 +79,7 @@ CREATE TABLE `games` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dump dei dati per la tabella `games`
+-- Dumping data for table `games`
 --
 
 INSERT INTO `games` (`ID_games`, `ID_league`, `date`, `status`, `ID_home`, `score_home`, `ID_away`, `score_away`) VALUES
@@ -2206,9 +2195,11 @@ INSERT INTO `games` (`ID_games`, `ID_league`, `date`, `status`, `ID_home`, `scor
 (356282, 120, '2023-12-14', 'FT', 2331, '15,28,17,21,None,81', 732, '24,18,21,28,None,91'),
 (356283, 120, '2023-12-14', 'FT', 2338, '19,23,21,25,None,88', 522, '23,14,20,16,None,73'),
 (356285, 120, '2023-12-14', 'FT', 1065, '25,26,20,14,None,85', 519, '22,20,11,18,None,71'),
-(356297, 120, '2023-12-21', 'NS', 687, 'None,None,None,None,None,None', 1065, 'None,None,None,None,None,None'),
-(356298, 120, '2023-12-21', 'NS', 2341, 'None,None,None,None,None,None', 732, 'None,None,None,None,None,None'),
-(356299, 120, '2023-12-21', 'NS', 2338, 'None,None,None,None,None,None', 1068, 'None,None,None,None,None,None'),
+(356351, 120, '2024-01-18', 'FT', 1263, '18,24,30,26,None,98', 2329, '13,26,21,14,None,74'),
+(356352, 120, '2024-01-18', 'FT', 1065, '30,22,10,28,None,90', 2331, '20,23,26,22,None,91'),
+(356353, 120, '2024-01-18', 'FT', 519, '19,11,21,14,None,65', 522, '19,24,23,16,None,82'),
+(356354, 120, '2024-01-18', 'FT', 1542, '26,16,27,20,None,89', 687, '18,18,21,15,None,72'),
+(356355, 120, '2024-01-18', 'FT', 732, '19,8,18,28,None,73', 26, '10,22,22,9,None,63'),
 (358167, 52, '2023-10-01', 'FT', 717, '26,21,15,19,None,81', 723, '20,21,22,16,None,79'),
 (358168, 52, '2023-10-01', 'FT', 726, '19,21,22,28,None,90', 690, '27,28,31,25,None,111'),
 (358169, 52, '2023-10-01', 'FT', 699, '15,21,19,20,None,75', 732, '25,23,13,20,None,81'),
@@ -2337,9 +2328,9 @@ INSERT INTO `games` (`ID_games`, `ID_league`, `date`, `status`, `ID_home`, `scor
 (359232, 242, '2023-11-18', 'FT', 5007, '10,13,19,23,None,65', 721, '15,17,19,18,None,69'),
 (359233, 242, '2023-11-17', 'FT', 715, '12,16,22,20,None,70', 691, '11,12,19,23,None,65'),
 (359234, 242, '2023-11-19', 'FT', 6158, '21,25,21,13,None,80', 6044, '16,23,18,14,None,71'),
-(359236, 242, '2023-11-19', 'FT', 5009, '23,12,12,15,None,62', 729, '23,19,24,15,None,81'),
-(359237, 242, '2023-11-19', 'FT', 709, '13,9,12,22,None,56', 5981, '13,18,15,21,None,67');
+(359236, 242, '2023-11-19', 'FT', 5009, '23,12,12,15,None,62', 729, '23,19,24,15,None,81');
 INSERT INTO `games` (`ID_games`, `ID_league`, `date`, `status`, `ID_home`, `score_home`, `ID_away`, `score_away`) VALUES
+(359237, 242, '2023-11-19', 'FT', 709, '13,9,12,22,None,56', 5981, '13,18,15,21,None,67'),
 (359238, 242, '2023-11-19', 'FT', 696, '28,25,20,17,None,90', 702, '25,19,24,24,None,92'),
 (359239, 242, '2023-11-19', 'AOT', 706, '17,18,18,23,11,87', 714, '22,19,19,16,8,84'),
 (359240, 242, '2023-11-19', 'AOT', 3765, '18,26,20,18,15,97', 703, '24,19,17,22,10,92'),
@@ -2723,7 +2714,7 @@ INSERT INTO `games` (`ID_games`, `ID_league`, `date`, `status`, `ID_home`, `scor
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `league`
+-- Table structure for table `league`
 --
 
 CREATE TABLE `league` (
@@ -2734,7 +2725,7 @@ CREATE TABLE `league` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dump dei dati per la tabella `league`
+-- Dumping data for table `league`
 --
 
 INSERT INTO `league` (`ID_league`, `name`, `type`, `logo`) VALUES
@@ -2754,7 +2745,7 @@ INSERT INTO `league` (`ID_league`, `name`, `type`, `logo`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `leaguefollowed`
+-- Table structure for table `leaguefollowed`
 --
 
 CREATE TABLE `leaguefollowed` (
@@ -2763,7 +2754,7 @@ CREATE TABLE `leaguefollowed` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dump dei dati per la tabella `leaguefollowed`
+-- Dumping data for table `leaguefollowed`
 --
 
 INSERT INTO `leaguefollowed` (`ID_user`, `ID_league`) VALUES
@@ -2773,7 +2764,7 @@ INSERT INTO `leaguefollowed` (`ID_user`, `ID_league`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `playerfollowed`
+-- Table structure for table `playerfollowed`
 --
 
 CREATE TABLE `playerfollowed` (
@@ -2782,7 +2773,7 @@ CREATE TABLE `playerfollowed` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dump dei dati per la tabella `playerfollowed`
+-- Dumping data for table `playerfollowed`
 --
 
 INSERT INTO `playerfollowed` (`ID_user`, `ID_player`) VALUES
@@ -2792,7 +2783,7 @@ INSERT INTO `playerfollowed` (`ID_user`, `ID_player`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `players`
+-- Table structure for table `players`
 --
 
 CREATE TABLE `players` (
@@ -2818,7 +2809,7 @@ CREATE TABLE `players` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dump dei dati per la tabella `players`
+-- Dumping data for table `players`
 --
 
 INSERT INTO `players` (`ID_player`, `season`, `name`, `surname`, `weight`, `height`, `ID_country`, `mesh_number`, `age`, `played_min`, `point_scored`, `assist`, `ID_team`, `shots`, `shots_2`, `shots_3`, `free_trows`, `ball_holding_time`, `nationality`) VALUES
@@ -5831,7 +5822,7 @@ INSERT INTO `players` (`ID_player`, `season`, `name`, `surname`, `weight`, `heig
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `standings`
+-- Table structure for table `standings`
 --
 
 CREATE TABLE `standings` (
@@ -5851,7 +5842,7 @@ CREATE TABLE `standings` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dump dei dati per la tabella `standings`
+-- Dumping data for table `standings`
 --
 
 INSERT INTO `standings` (`ID_league`, `season`, `position`, `group_name`, `ID_team`, `played`, `win`, `perc_win`, `lose`, `perc_lose`, `points_for`, `points_against`, `description`) VALUES
@@ -6050,7 +6041,7 @@ INSERT INTO `standings` (`ID_league`, `season`, `position`, `group_name`, `ID_te
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `team`
+-- Table structure for table `team`
 --
 
 CREATE TABLE `team` (
@@ -6062,7 +6053,7 @@ CREATE TABLE `team` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dump dei dati per la tabella `team`
+-- Dumping data for table `team`
 --
 
 INSERT INTO `team` (`ID_team`, `ID_league`, `ID_country`, `name`, `logo`) VALUES
@@ -6265,7 +6256,7 @@ INSERT INTO `team` (`ID_team`, `ID_league`, `ID_country`, `name`, `logo`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `teamfollowed`
+-- Table structure for table `teamfollowed`
 --
 
 CREATE TABLE `teamfollowed` (
@@ -6274,7 +6265,7 @@ CREATE TABLE `teamfollowed` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dump dei dati per la tabella `teamfollowed`
+-- Dumping data for table `teamfollowed`
 --
 
 INSERT INTO `teamfollowed` (`ID_user`, `ID_team`) VALUES
@@ -6284,92 +6275,91 @@ INSERT INTO `teamfollowed` (`ID_user`, `ID_team`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
   `ID_user` int(11) NOT NULL,
-  `name` varchar(50) NOT NULL,
-  `surname` varchar(50) NOT NULL,
-  `email` varchar(50) NOT NULL,
-  `password` text NOT NULL
+  `name` varchar(11) NOT NULL,
+  `surname` varchar(11) NOT NULL,
+  `email` varchar(90) NOT NULL,
+  `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dump dei dati per la tabella `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`ID_user`, `name`, `surname`, `email`, `password`) VALUES
-(1, 'test', 'icolo', 'o@o.coom', 'ciaociao1234'),
-(2, 'mario', 'rossi', 'marior@g.go', '#adsfhkj231231!');
+(3, 'mark', 'past', 'mark.pas@gm.com', 'd6ffafea824fb6aa81283f690b524a58');
 
 --
--- Indici per le tabelle scaricate
+-- Indexes for dumped tables
 --
 
 --
--- Indici per le tabelle `blog`
+-- Indexes for table `blog`
 --
 ALTER TABLE `blog`
   ADD PRIMARY KEY (`ID_blog`);
 
 --
--- Indici per le tabelle `country`
+-- Indexes for table `country`
 --
 ALTER TABLE `country`
   ADD PRIMARY KEY (`id_country`);
 
 --
--- Indici per le tabelle `games`
+-- Indexes for table `games`
 --
 ALTER TABLE `games`
   ADD PRIMARY KEY (`ID_games`);
 
 --
--- Indici per le tabelle `league`
+-- Indexes for table `league`
 --
 ALTER TABLE `league`
   ADD PRIMARY KEY (`ID_league`);
 
 --
--- Indici per le tabelle `players`
+-- Indexes for table `players`
 --
 ALTER TABLE `players`
   ADD PRIMARY KEY (`ID_player`,`season`,`name`,`surname`);
 
 --
--- Indici per le tabelle `standings`
+-- Indexes for table `standings`
 --
 ALTER TABLE `standings`
   ADD PRIMARY KEY (`ID_league`,`season`,`ID_team`);
 
 --
--- Indici per le tabelle `team`
+-- Indexes for table `team`
 --
 ALTER TABLE `team`
   ADD PRIMARY KEY (`ID_team`);
 
 --
--- Indici per le tabelle `user`
+-- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`ID_user`);
 
 --
--- AUTO_INCREMENT per le tabelle scaricate
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT per la tabella `players`
+-- AUTO_INCREMENT for table `players`
 --
 ALTER TABLE `players`
   MODIFY `ID_player` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9001;
 
 --
--- AUTO_INCREMENT per la tabella `user`
+-- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `ID_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `ID_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
