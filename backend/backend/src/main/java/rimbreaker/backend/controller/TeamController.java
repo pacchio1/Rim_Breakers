@@ -25,7 +25,7 @@ public class TeamController {
     }
 
     //ritorna tutte le info specificate per id --> ricerca più specifica attraverso league?
-    @GetMapping("/all_by_id")
+    @GetMapping("/all_by_idleague")
     public ResponseEntity<?> getAllByID(Long id) {
 
         return teamService.getAllByID(id);
