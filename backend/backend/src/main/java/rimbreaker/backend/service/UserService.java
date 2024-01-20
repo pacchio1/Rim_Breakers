@@ -77,7 +77,6 @@ public class UserService {
     }
 
     public Optional<User> login(String email, String password) {
-
         try {
 
             // Create MessageDigest instance for MD5

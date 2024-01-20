@@ -49,7 +49,7 @@ time_out=10
 noma="data/standings.json"
 for lega in leagues_to_follow:
     time_out=time_out-1
-    endpoint = "standings?league="+str(lega)+"&season="+"2022-2023"
+    endpoint = "standings?league="+str(lega)+"&season="+"2023"
     conn.request("GET", "/" + endpoint, headers=headers)
     print("api chiamata")
     res = conn.getresponse()

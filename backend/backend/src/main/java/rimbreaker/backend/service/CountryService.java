@@ -8,7 +8,6 @@ import rimbreaker.backend.repository.CountryRepository;
 
 @Service
 @RequiredArgsConstructor
-
 public class CountryService {
 
     private final CountryRepository countryRepository;

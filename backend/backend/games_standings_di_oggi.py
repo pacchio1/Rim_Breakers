@@ -1,6 +1,6 @@
 import http.client
 import os
-from datetime import date, time, datetime
+from datetime import date, time, datetime, timedelta
 import json
 import mysql.connector
 import os
@@ -12,8 +12,10 @@ headers = {
     'x-rapidapi-host': "v1.basketball.api-sports.io",
     'x-rapidapi-key': apikey
 }
-oggi=date.today().strftime("%Y,%m,%d").split(",")
-endpoint = "games?date=" + oggi[0] + "-" + oggi[1] + "-" + oggi[2]
+oggi=date.today()
+ieri = oggi - timedelta(days=1)
+ieri = ieri.strftime("%Y,%m,%d").split(",")
+endpoint = "games?date=" + ieri[0] + "-" + ieri[1] + "-" + ieri[2]
 conn.request("GET", "/" + endpoint, headers=headers)
 res = conn.getresponse()
 data = res.read()
@@ -27,7 +29,8 @@ def InsertIntoSql(query, conn):
         cursor.close()
         print("inserito un campo")
     except Exception as e:
-        print(f"Error inserting data: {e}, \n {query}")
+        #print(f"Error inserting data: {e}, \n {query}")
+        0
 
 db_config = {
     'host': 'localhost',
@@ -78,13 +81,20 @@ for x in data["response"]:
             date_str = data_principale.strftime("%Y-%m-%d %H:%M:%S")
             query = f"INSERT INTO games (id_games, id_league, date, status, id_home, score_home, id_away, score_away) VALUES ({id_principale}, {league_id}, STR_TO_DATE('{date_str}', '%Y-%m-%d %H:%i:%s'), '{status}', {teams_home_id}, '{s_score_home}',  {teams_away_id}, '{s_score_away}')"
             InsertIntoSql(query,conn)
+            print (" games updated "+ str(id_principale))
             query=f"INSERT INTO league ( id_league, name, type, season, logo )values( {league_id}, '{league_name}', '{league_type}', '{league_season}', '{league_logo}')"
             InsertIntoSql(query,conn)
+            print(" league updated "+ league_name)
             query=f"INSERT INTO team ( id_team, id_league, name, logo )values( {teams_home_id}, {league_id}, '{teams_home_name}', '{teams_home_logo}')"
             InsertIntoSql(query,conn)
+            print(" team updated " + teams_home_name)
             query=f"INSERT INTO team ( id_team, id_league, name, logo )values( {teams_away_id}, {league_id}, '{teams_away_name}', '{teams_away_logo}')"
             InsertIntoSql(query,conn)
+            print(" team updated "+ teams_away_name)
             query=f"INSERT INTO season (season )values('{league_season}')"
             InsertIntoSql(query,conn )
+            #print(" season updated \n")
             query=f"INSERT INTO country (id_country, id_league, name, code, flag )values( {country_id}, {league_id}, '{country_name}', '{country_code}', '{country_flag}')"
             InsertIntoSql(query,conn)
+            print(" country updated "+ country_name)
+
