@@ -10,28 +10,28 @@ import java.util.List;
 
 public interface TeamRepository extends JpaRepository<Team, Long> {
 
-        @Query("SELECT t.name, t.logo FROM Team t WHERE t.id = :id")
-        String getTeam(@Param("id") Long id);
+    @Query("SELECT t.name, t.logo FROM Team t WHERE t.id = :id")
+    String getTeam(@Param("id") Long id);
 
-        @Query("SELECT new rimbreaker.backend.payload.response.ResponseTeam(" +
-                        "t.id, " +
-                        "t.id_league, " +
-                        "c.id_country, " +
-                        "t.name, " +
-                        "t.logo" +
-                        ") FROM Team t " +
-                        "JOIN Country c ON c.id_league = t.id_league " +
-                        "WHERE t.id_league = :id_league")
-        List<ResponseTeam> getAllByID(@Param("id_league") Long id);
+    @Query("SELECT new rimbreaker.backend.payload.response.ResponseTeam(" +
+            "t.id, " +
+            "t.id_league, " +
+            "c.id_country, " +
+            "t.name, " +
+            "t.logo" +
+            ") FROM Team t " +
+            "JOIN Country c ON c.id_league = t.id_league " +
+            "WHERE t.id = :id")
+    ResponseTeam getAllByID(@Param("id") Long id);
 
-        @Query("SELECT new rimbreaker.backend.payload.response.ResponseTeam(" +
-                        "t.id, " +
-                        "t.id_league, " +
-                        "c.id_country, " +
-                        "t.name, " +
-                        "t.logo" +
-                        ") FROM Team t " +
-                        "JOIN Country c ON c.id_league = t.id_league")
-        List<ResponseTeam> getAll();
+    @Query("SELECT new rimbreaker.backend.payload.response.ResponseTeam(" +
+            "t.id, " +
+            "t.id_league, " +
+            "c.id_country, " +
+            "t.name, " +
+            "t.logo" +
+            ") FROM Team t " +
+            "JOIN Country c ON c.id_league = t.id_league")
+    List<ResponseTeam> getAll();
 
 }
