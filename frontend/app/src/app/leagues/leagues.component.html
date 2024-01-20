@@ -1,17 +1,18 @@
 <section class="mt-navbar-text container d-flex justify-content-center">
 
-    <div class="league-title d-flex justify-content-center align-items-center">
+    <div class="league-title d-flex justify-content-center align-items-center mt-3">
         <h2 *ngIf="league">{{ league.name }}</h2>
     </div>
 
 </section>
 
 <div class="d-flex flex-row justify-content-center mt-3">
-    <button (click)="showComponent('A')">Classifica</button>
-    <button (click)="showComponent('B')">Marcatori</button>
-    <button (click)="showComponent('C')">Assist</button>
-    <button (click)="showComponent('D')">Risultati</button>
+    <button class="tab p-2 me-1 rounded-3" [class.active]="selectedButton === 'A'" (click)="showComponent('A')">Classifica</button>
+    <button class="tab p-2 me-1 rounded-3" [class.active]="selectedButton === 'B'" (click)="showComponent('B')">Marcatori</button>
+    <button class="tab p-2 me-1 rounded-3" [class.active]="selectedButton === 'C'" (click)="showComponent('C')">Assist</button>
+    <button class="tab p-2 me-1 rounded-3" [class.active]="selectedButton === 'D'" (click)="showComponent('D')">Risultati</button>
 </div>
+
 
 <div *ngIf="componentSelected === 'A'" class="container footer-index pt-3 pb-5 rounded-bottom-5 bg-white">
     <app-ranking [teamsData]="leaguesData"></app-ranking>

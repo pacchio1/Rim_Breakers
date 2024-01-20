@@ -1,12 +1,27 @@
-<div *ngFor="let games of processedMatches">
-    <div class="d-flex flex-row">
-        <p>{{ games.teamHome }}</p>
-        <img src="{{ games.logoHome }}" alt="" class="league-logo">
-        <p *ngIf="games.scoreHomeFinal !== null" class="px-3">{{ games.scoreHomeFinal }}</p>
-        <p *ngIf="games.scoreHomeFinal == null" class="px-3">NONE</p>
-        <p *ngIf="games.scoreAwayFinal !== null" class="px-3">{{ games.scoreAwayFinal }}</p>
-        <p *ngIf="games.scoreAwayFinal == null" class="px-3">NONE</p>
-        <img src="{{ games.logoAway }}" alt="" class="league-logo">
-        <p>{{ games.teamAway }}</p>
+<div *ngFor="let games of processedMatches" class="m-1 d-flex">
+    <div class="league-list d-flex align-items-center px-3">
+        <div>
+            <img src="{{ games.logoHome }}" alt="" class="league-logo">
+            <p>{{ games.teamHome }}</p>
+        </div>
+        
+        <div *ngIf="games.scoreHomeFinal !== null" class="bg-white mx-2 score">
+            <p class="px-3 text-warning">{{ games.scoreHomeFinal }}</p>
+        </div>
+        <div *ngIf="games.scoreHomeFinal == null" class="bg-black">
+            <p class="px-3">NONE</p>
+        </div>
+        
+        <div *ngIf="games.scoreAwayFinal !== null" class="bg-white mx-2 score">
+            <p class="px-3 text-warning">{{ games.scoreAwayFinal }}</p>
+        </div>
+        <div *ngIf="games.scoreAwayFinal == null">
+            <p class="px-3">NONE</p>
+        </div>
+
+        <div>
+            <img src="{{ games.logoAway }}" alt="" class="league-logo">
+            <p>{{ games.teamAway }}</p>
+        </div>
     </div>
 </div>

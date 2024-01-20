@@ -14,6 +14,7 @@ export class LeaguesComponent implements OnInit {
     isDarkMode: boolean = false;
     componentSelected: string = 'A'
     storedValue: string | null = '';
+    selectedButton: string = 'A';
 
     leaguesData: any[] = [];
     league!: League;
@@ -65,6 +66,7 @@ export class LeaguesComponent implements OnInit {
 
     showComponent(component: string) {
         this.componentSelected = component;
+        this.selectedButton = component;
         localStorage.setItem('selectedComponent', this.componentSelected)
     }
 
