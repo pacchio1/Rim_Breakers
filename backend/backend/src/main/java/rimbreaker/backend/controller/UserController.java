@@ -22,10 +22,11 @@ public class UserController {
 
     @PostMapping("/create")
     public ResponseEntity<?> createUser(String name, String surname, String email, String password) {
-
-        userService.createUser(name, surname, email, password);
-
-        return ResponseEntity.ok("User created successfully");
+            userService.createUser(name, surname, email, password);
+            return ResponseEntity.ok(Map.of(
+                    "message", "success",
+                    "email", email
+            ));
 
     }
 

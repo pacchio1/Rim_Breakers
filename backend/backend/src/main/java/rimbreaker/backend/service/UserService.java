@@ -15,7 +15,7 @@ public class UserService {
 
     private final UserRepository userRepository;
 
-    public void createUser(String name, String surname, String email, String password) {
+    public User createUser(String name, String surname, String email, String password) {
 
         try {
 
@@ -44,6 +44,7 @@ public class UserService {
 
         userRepository.newUser(name, surname, email, password);
 
+        return null;
     }
 
     public ResponseUser getUserById(Long idUser) {
