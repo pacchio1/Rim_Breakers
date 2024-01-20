@@ -1,12 +1,14 @@
 package rimbreaker.backend.controller;
 
 import lombok.AllArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import rimbreaker.backend.entity.User;
 import rimbreaker.backend.payload.response.ResponseUser;
 import rimbreaker.backend.service.UserService;
 
+import java.util.Map;
 import java.util.Optional;
 
 @CrossOrigin(origins = "*")
@@ -71,12 +73,23 @@ public class UserController {
 
     }
     @PostMapping("/login")
-    public ResponseEntity<?> login(String email, String password) {
+    public ResponseEntity<?> login(@RequestParam String email, @RequestParam String password) {
+        Optional<User> user = userService.login(email, password);
+        if (user.isPresent()) {
+            // Login riuscito
+            return ResponseEntity.ok(Map.of(
+                    "email", email,
+                    "message", "success"
 
-        Optional<User> user =userService.login(email,password);
+            ));
+        } else {
+            // Login fallito
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(Map.of(
+                    "email", email,
+                    "message", "failure"
 
-        return ResponseEntity.ok("{ user : "+user+"},{email : "+email+"}");
-
+            ));
+        }
     }
 
 
