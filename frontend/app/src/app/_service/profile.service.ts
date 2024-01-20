@@ -45,7 +45,17 @@ export class ProfileService {
      * @param
      * @returns richiesta Api 
      */
-    getNewPassword(email: string, password: string) {
-        return this.apiService.updateUserPassword(email, password);
+    getNewPassword(password: string, idUser: number) {
+        return this.apiService.updateUserPassword(password, idUser);
+    }
+
+    /**
+     * API ELIMINA ACCOUNT
+     * 
+     * @param
+     * @returns richiesta Api 
+     */
+    getDeleteUser(idUser: number) {
+        return this.apiService.deleteUser(idUser);
     }
 }

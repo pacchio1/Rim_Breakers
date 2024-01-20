@@ -4,6 +4,7 @@ import { Profile } from '../_model/profile.model';
 import { ProfileService } from '../_service/profile.service';
 import { Router } from '@angular/router';
 import { LocalStorageService } from '../_service/localStorage.service';
+import { response } from 'express';
 
 @Component({
   selector: 'app-profile',
@@ -21,17 +22,18 @@ export class ProfileComponent implements OnInit {
   constructor(public themeService: ThemeService, private profileService: ProfileService, private router: Router, private localStorageService: LocalStorageService) {}
 
   ngOnInit(): void {
-    this.emailAccount = localStorage.getItem('emailAccount'); 
+    this.emailAccount = localStorage.getItem('emailAccount');
 
     if (this.emailAccount !== null) {
-      this.profileService.getUserByEmail(this.emailAccount).subscribe(
-        (response: Profile) => {
+      this.profileService.getUserByEmail(this.emailAccount).subscribe({
+        next: (response: Profile) => {
           this.profile = response;
+          console.log(this.profile?.idUser)
         },
-        (error: any) => {
+        error: (error: any) => {
           console.error('Error fetching user profile:', error);
         }
-      );
+      });
     }
   }
 
@@ -54,15 +56,37 @@ export class ProfileComponent implements OnInit {
   }
 
   userDelete() {
-    
+    console.log(this.profile?.idUser);
+  
+    if (this.profile?.idUser !== undefined) {
+      this.profileService.getDeleteUser(this.profile?.idUser).subscribe(
+        (response: any) => {
+          console.log('User deleted successfully:', response);
+          // localStorage.removeItem('emailAccount');
+          // this.localStorageService.triggerStorageChange();
+          // this.router.navigateByUrl('/home');
+        },
+        (error: any) => {
+          console.error('Error deleting user:', error);
+        }
+      );
+    }
   }
-
+  
   onSubmit() {
     if(this.newPassword === this.confirmPassword) {
       if (this.emailAccount !== null) {
-        this.profileService.getNewPassword(this.emailAccount, this.confirmPassword); 
-        alert('Password modificata'); 
-        this.router.navigateByUrl('/home');
+        if(this.profile?.idUser !== undefined) {
+          this.profileService.getNewPassword(this.confirmPassword, this.profile?.idUser).subscribe((response: any) => {
+            console.log('Password updated succesfully:', response);
+          }, 
+          (error: any) => {
+            console.error('Error updating password:', error);
+          }
+          )
+          alert('Password modificata'); 
+          this.router.navigateByUrl('/home');
+        }
       }
     }
   }

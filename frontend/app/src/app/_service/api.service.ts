@@ -186,14 +186,24 @@ export class ApiService {
      * @param password @param idUser
      * @returns richiesta Api 
      */
-    updateUserPassword(email: string, password: string) {
-        return this.http.get('http://localhost:8080/user/getEmail?email=' + email).pipe(
-            switchMap((response: any) => {
-            const idUser = response.idUser;
-            const body = { password, idUser };
+    updateUserPassword(password: string, idUser: number) {
+        const body = { 
+            password: password, 
+            idUser: idUser
+        };
+        return this.http.post('http://localhost:8080/user/updatePassword?password='+body.password+'&id='+body.idUser, body);
+    }
 
-            return this.http.post('http://localhost:8080/user/updatePassword?password='+body.password+'&id='+body.idUser, body);
-            })
-        );
+    /**
+     * API ELIMINA ACCOUNT
+     * 
+     * @param idUser
+     * @returns richiesta Api 
+     */
+    deleteUser(idUser: number) {
+        const body = {
+            idUser: idUser
+        };
+        return this.http.post('http://localhost:8080/user/delete?id='+body.idUser, body);
     }
 }
