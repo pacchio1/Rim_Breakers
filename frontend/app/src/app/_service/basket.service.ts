@@ -108,24 +108,4 @@ export class BasketService {
     getGamesByLeague(leagueName: string) {
         return this.apiService.searchGamesByLeague(leagueName); 
     }
-
-    /**
-     * API REGISTRAZIONE UTENTE
-     * 
-     * @param nome @param cognome @param email @param password
-     * @returns richiesta Api 
-     */
-    getNewUser(nome: string, cognome: string, email: string, password: string) {
-        return this.apiService.searchNewUser(nome, cognome, email, password); 
-    }
-
-    /**
-     * API ACCESSO UTENTE
-     * 
-     * @param
-     * @returns richiesta Api 
-     */
-    getUserLogin(email: string, password: string) {
-        return this.apiService.searchUserLogin(email, password);
-    }
 }

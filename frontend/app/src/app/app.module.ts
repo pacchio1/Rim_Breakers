@@ -47,6 +47,7 @@ import { LeagueMatchComponent } from './league-match/league-match.component';
     CountriesComponent,
     FooterComponent,
     SigninComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

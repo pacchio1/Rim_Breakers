@@ -1,34 +1,38 @@
-import { Component } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
 import { ThemeService } from '../_service/dark-mode.service';
+import { LocalStorageService } from '../_service/localStorage.service';
 
 @Component({
   selector: 'top-bar',
   templateUrl: './top-bar.component.html'
 })
-export class TopBarComponent {
 
-    storedValue: string | null = ''
-    parsedValue: boolean = false;
+export class TopBarComponent implements OnInit {
+  storedValue: string | null = '';
+  parsedValue: boolean = false;
+  loggedIn: boolean = false;
 
-    constructor(public themeService: ThemeService) {}
+  constructor(public themeService: ThemeService, private localStorageService: LocalStorageService) {}
 
-    ngOnInit(): void {
+  ngOnInit(): void {
+    this.themeService.themeSettled();
 
-      // this.storedValue = localStorage.getItem('darkMode')
-      // console.log(this.storedValue)
-      // if(this.storedValue)
-      //   this.parsedValue = JSON.parse(this.storedValue);
-      // console.log(this.parsedValue)
-
-      // if(this.parsedValue)
-      //   this.themeService.isDarkMode = this.parsedValue;
-      //   console.log(this.themeService.isDarkMode)
-      this.themeService.themeSettled()
+    if (localStorage.getItem('emailAccount')) {
+      this.setLoggedInState();
     }
 
-    toggleTheme(): void {
-      this.themeService.toggleTheme();
-    }
+    // Sottoscrivi all'observable per i cambiamenti nel localStorage
+    this.localStorageService.getStorageChangeObservable().subscribe(() => {
+      this.setLoggedInState();
+    });
+  }
 
+  setLoggedInState(): void {
+    this.loggedIn = localStorage.getItem('emailAccount') !== null;
+    console.log(this.loggedIn);
+  }
+
+  toggleTheme(): void {
+    this.themeService.toggleTheme();
+  }
 }

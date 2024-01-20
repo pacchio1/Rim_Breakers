@@ -1,16 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map } from 'rxjs';
+import { map, switchMap } from 'rxjs';
 import { PlayerDetail } from '../_model/player.model';
 import { LeagueByCountry, Leagues } from '../_model/leagues.model';
 import { Team } from '../_model/team.model';
 import { Countries } from '../_model/countries.model';
 import { League } from '../_model/league.model';
-import { SeasonStanding, SeasonStandingAll } from '../_model/seasonStanding.model';
-import { LoginUser } from '../_model/login.model';
-import { Match } from '../_model/match.model';
-
-
+import { SeasonStandingAll } from '../_model/seasonStanding.model';
+import { Profile } from '../_model/profile.model';
 
 // import { SunsetResults } from '../model/sunset.model';
 
@@ -147,14 +144,14 @@ export class ApiService {
      * @param nome @param cognome @param email @param password
      * @returns richiesta Api 
      */
-    searchNewUser(nome: string, cognome: string, email: string, password: string) {        
+    createNewUser(nome: string, cognome: string, email: string, password: string) {        
         const body = {
             name: nome,
             surname: cognome,
             email: email,
             password: password,
         };
-        return this.http.post('http://localhost:8080/user/create?name='+nome+'&surname='+cognome+'&email='+email+'&password='+password, body);
+        return this.http.post('http://localhost:8080/user/create?name='+body.name+'&surname='+body.surname+'&email='+body.email+'&password='+body.password, body);
     }
 
     /**
@@ -163,11 +160,40 @@ export class ApiService {
      * @param email @param password
      * @returns richiesta Api 
      */
-    searchUserLogin(email: string, password: string) {
+    userLogin(email: string, password: string) {
         const body = { 
             email: email, 
             password: password 
         };
-        return this.http.post('http://localhost:8080/user/login?email='+email+'&password='+password, body);
+        return this.http.post('http://localhost:8080/user/login?email='+body.email+'&password='+body.password, body);
     }
+    
+    /**
+     * API RICERCA UTENTE TRAMITE EMAIL
+     * 
+     * @param email
+     * @returns richiesta Api 
+     */
+    searchUserByEmail(email: string) {
+        return this.http.get('http://localhost:8080/user/getEmail?email='+email).pipe(map((response: any) => {
+            return response as Profile
+        }))
+    }
+
+    /**
+     * API MODIFICA PASSWORD
+     * 
+     * @param password @param idUser
+     * @returns richiesta Api 
+     */
+    updateUserPassword(email: string, password: string) {
+        return this.http.get('http://localhost:8080/user/getEmail?email=' + email).pipe(
+            switchMap((response: any) => {
+            const idUser = response.idUser;
+            const body = { password, idUser };
+
+            return this.http.post('http://localhost:8080/user/updatePassword?password='+body.password+'&id='+body.idUser, body);
+            })
+        );
+    }
 }

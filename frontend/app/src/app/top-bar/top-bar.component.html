@@ -196,7 +196,7 @@
           'text-dark-1': themeService.isDarkMode,
           'text-light-1': !themeService.isDarkMode
         }"
-        routerLink="/login"
+        [routerLink]="loggedIn ? '/profile' : '/login'"
       ></i>
       <i
         class="bi bi-flag"

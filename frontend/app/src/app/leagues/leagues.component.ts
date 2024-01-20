@@ -1,8 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { ThemeService } from "../_service/dark-mode.service";
-import { Leagues } from "../_model/leagues.model";
 import { ActivatedRoute, Router } from "@angular/router";
-import { SeasonStanding } from "../_model/seasonStanding.model";
 import { BasketService } from "../_service/basket.service";
 import { League } from "../_model/league.model";
 
