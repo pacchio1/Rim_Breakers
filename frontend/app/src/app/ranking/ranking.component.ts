@@ -14,7 +14,7 @@ export class RankingComponent {
     @Input() teamsData: Leagues[] = [];
     @Input() leagueName: string = '';
 
-    teamsStandingData: SeasonStandingAllUpdate[] = [];
+    teamsStandingData: SeasonStandingAll[] = [];
     groups: any = {};
     result: any = {};
     groupedTeams: any[] = [];
@@ -53,7 +53,7 @@ export class RankingComponent {
                       const teamInfo = {
                         teamName: team.teamName,
                         position: team.standings.position,
-                        teamLogo: this.teamLogoX,
+                        teamLogo: team.logo
                         // Aggiungi altri campi se necessario
                       };
                   
@@ -92,12 +92,12 @@ export class RankingComponent {
                     this.teamsStandingData = response
                     this.teamsStandingData.sort((a, b) => a.standings.position - b.standings.position);
                     // console.log('teamsStandingData', this.teamsStandingData)
-                    this.teamsStandingData.forEach((leagueObj: any) => {
-                        console.log('leagueObj', leagueObj)
-                        this.basketService.getTeam(leagueObj.standings.teamId).subscribe((teamInfo: any) => {
-                            leagueObj.teamLogo = teamInfo.logo;
-                        })
-                    })
+                    // this.teamsStandingData.forEach((leagueObj: any) => {
+                    //     console.log('leagueObj', leagueObj)
+                    //     this.basketService.getTeam(leagueObj.standings.teamId).subscribe((teamInfo: any) => {
+                    //         leagueObj.teamLogo = teamInfo.logo;
+                    //     })
+                    // })
                 })
             }
 
