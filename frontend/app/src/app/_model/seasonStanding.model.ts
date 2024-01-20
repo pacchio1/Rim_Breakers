@@ -17,6 +17,7 @@ export type SeasonStanding = {
 export type SeasonStandingAll = {
     standings: SeasonStanding;
     teamName: string;
+    logo: string;
 } 
 
 export type SeasonStandingAllUpdate = {

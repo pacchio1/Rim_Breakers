@@ -30,6 +30,16 @@ export class BasketService {
     }
 
     /**
+     * API RICERCA STANDING LEAGUE
+     * 
+     * @param idLeague
+     * @returns richiesta Api 
+     */
+    getTeamsLeagueStandingsEcception(idLeague: number) {
+        return this.apiService.searchTeamsLeagueStandingsEcception(idLeague)
+    }
+
+    /**
      * API RICERCA TEAM LEAGUES
      * 
      * @param idLeague

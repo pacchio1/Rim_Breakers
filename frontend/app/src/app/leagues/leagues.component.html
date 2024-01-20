@@ -15,7 +15,7 @@
 
 
 <div *ngIf="componentSelected === 'A'" class="container footer-index pt-3 pb-5 rounded-bottom-5 bg-white">
-    <app-ranking [teamsData]="leaguesData"></app-ranking>
+    <app-ranking *ngIf="league" [teamsData]="leaguesData" [leagueName]="league.name"></app-ranking>
 </div>
 <div *ngIf="componentSelected === 'B'">
     <app-scorer [teamsData]="leaguesData"></app-scorer>
