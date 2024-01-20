@@ -52,7 +52,7 @@ export class LeaguesComponent implements OnInit {
         const id = this.activatedRoute.snapshot.paramMap.get('id')
         if(id)
             this.basketService.getLeague(parseInt(id)).subscribe((response: any) => {
-                console.log(response);
+                console.log('getLeague', response);
                 this.league = response;
                 console.log('name', this.league.name);
                 

@@ -18,6 +18,9 @@ import { Profile } from '../_model/profile.model';
 export class ApiService {
     constructor(private http: HttpClient) {}
 
+    localBaseUrl: string = 'http://localhost:8080/'
+    onlineBaseUrl: string = 'http://rimbreakers.ddns.net:8080/'
+
     /**
      * API RICERCA LEAGUE
      * 
@@ -25,7 +28,7 @@ export class ApiService {
      * @returns richiesta Api 
      */
     searchLeague(idLeague: number) {
-        return this.http.get('http://localhost:8080/league/number?id=' + idLeague).pipe(map((response: any) => {
+        return this.http.get(this.onlineBaseUrl + 'league/number?id=' + idLeague).pipe(map((response: any) => {
             return response as League
         }))
     }
@@ -37,7 +40,19 @@ export class ApiService {
      * @returns richiesta Api 
      */
     searchTeamsLeagueStandings(idLeague: number) {
-        return this.http.get('http://localhost:8080/standings/all_by_league?idLeague=' + idLeague + '&season=2022-2023').pipe(map((response: any) => {
+        return this.http.get(this.onlineBaseUrl + 'standings/all_by_league?idLeague=' + idLeague + '&season=2022-2023').pipe(map((response: any) => {
+            return response as SeasonStandingAll[]
+        }))
+    }
+
+    /**
+     * API RICERCA STANDING LEAGUES 
+     * 
+     * @param idLeague
+     * @returns richiesta Api 
+     */
+    searchTeamsLeagueStandingsEcception(idLeague: number) {
+        return this.http.get(this.onlineBaseUrl + 'standings/all_by_league?idLeague=' + idLeague + '&season=2023').pipe(map((response: any) => {
             return response as SeasonStandingAll[]
         }))
     }
@@ -49,7 +64,7 @@ export class ApiService {
      * @returns richiesta Api 
      */
     searchTeamsLeague(idLeague: number) {
-        return this.http.get('http://localhost:8080/league/team_league?id=' + idLeague).pipe(map((response: any) => {
+        return this.http.get(this.onlineBaseUrl + 'league/team_league?id=' + idLeague).pipe(map((response: any) => {
             return response as Leagues[]
         }))
     }
@@ -61,7 +76,7 @@ export class ApiService {
      * @returns richiesta Api 
      */
     searchTeamsLeagueByCountry(idLeague: number) {
-        return this.http.get('http://localhost:8080/league/league_country?id=' + idLeague).pipe(map((response: any) => {
+        return this.http.get(this.onlineBaseUrl + 'league/league_country?id=' + idLeague).pipe(map((response: any) => {
             return response as LeagueByCountry
         }))
     }
@@ -73,7 +88,7 @@ export class ApiService {
      * @returns richiesta Api 
      */
     searchTeam(idTeam: number) {
-        return this.http.get('http://localhost:8080/team/all_by_id?id=' + idTeam).pipe(map((response: any) => {
+        return this.http.get(this.onlineBaseUrl + 'team/all_by_id?id=' + idTeam).pipe(map((response: any) => {
             return response as Team
         }))
     }
@@ -85,7 +100,7 @@ export class ApiService {
      * @returns richiesta Api 
      */
     searchTeamPlayers(idTeam: number) {
-        return this.http.get('http://localhost:8080/player/team?id_team=' + idTeam).pipe(map((response: any) => {
+        return this.http.get(this.onlineBaseUrl + 'player/team?id_team=' + idTeam).pipe(map((response: any) => {
             return response as PlayerDetail[]
         }))
     }
@@ -97,7 +112,7 @@ export class ApiService {
      * @returns richiesta Api 
      */
     searchSinglePlayer(idPlayer: number) {
-        return this.http.get('http://localhost:8080/player/number?id=' + idPlayer).pipe(map((response: any) => {
+        return this.http.get(this.onlineBaseUrl + 'player/number?id=' + idPlayer).pipe(map((response: any) => {
             return response as PlayerDetail
         }))
     }
@@ -109,7 +124,7 @@ export class ApiService {
      * @returns richiesta Api 
      */
     searchAllCountry() {
-        return this.http.get('http://localhost:8080/country/all').pipe(map((response: any) => {
+        return this.http.get(this.onlineBaseUrl + 'country/all').pipe(map((response: any) => {
             return response as Countries[]
         }))
     }
@@ -121,7 +136,7 @@ export class ApiService {
      * @returns richiesta Api 
      */
     searchLeaguesByCountry(idCountry: number) {
-        return this.http.get('http://localhost:8080/league/league_country?id=' + idCountry).pipe(map((response: any) => {
+        return this.http.get(this.onlineBaseUrl + 'league/league_country?id=' + idCountry).pipe(map((response: any) => {
             return response as Leagues[]
         }))
     }
@@ -133,7 +148,7 @@ export class ApiService {
      * @returns richiesta Api 
      */
     searchGamesByLeague(leagueName: string) {
-        return this.http.get('http://localhost:8080/games/games_league?name=' + leagueName).pipe(map((response: any) => {
+        return this.http.get(this.onlineBaseUrl + 'games/games_league?name=' + leagueName).pipe(map((response: any) => {
             return response as any[]
         }))
     }
@@ -151,7 +166,7 @@ export class ApiService {
             email: email,
             password: password,
         };
-        return this.http.post('http://localhost:8080/user/create?name='+body.name+'&surname='+body.surname+'&email='+body.email+'&password='+body.password, body);
+        return this.http.post(this.onlineBaseUrl + 'user/create?name='+body.name+'&surname='+body.surname+'&email='+body.email+'&password='+body.password, body);
     }
 
     /**
@@ -165,7 +180,7 @@ export class ApiService {
             email: email, 
             password: password 
         };
-        return this.http.post('http://localhost:8080/user/login?email='+body.email+'&password='+body.password, body);
+        return this.http.post(this.onlineBaseUrl + 'user/login?email='+body.email+'&password='+body.password, body);
     }
     
     /**
@@ -175,7 +190,7 @@ export class ApiService {
      * @returns richiesta Api 
      */
     searchUserByEmail(email: string) {
-        return this.http.get('http://localhost:8080/user/getEmail?email='+email).pipe(map((response: any) => {
+        return this.http.get(this.onlineBaseUrl + 'user/getEmail?email='+email).pipe(map((response: any) => {
             return response as Profile
         }))
     }
@@ -187,12 +202,12 @@ export class ApiService {
      * @returns richiesta Api 
      */
     updateUserPassword(email: string, password: string) {
-        return this.http.get('http://localhost:8080/user/getEmail?email=' + email).pipe(
+        return this.http.get(this.onlineBaseUrl + 'user/getEmail?email=' + email).pipe(
             switchMap((response: any) => {
             const idUser = response.idUser;
             const body = { password, idUser };
 
-            return this.http.post('http://localhost:8080/user/updatePassword?password='+body.password+'&id='+body.idUser, body);
+            return this.http.post(this.onlineBaseUrl + 'user/updatePassword?password='+body.password+'&id='+body.idUser, body);
             })
         );
     }

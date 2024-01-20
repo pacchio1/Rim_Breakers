@@ -1,3 +1,13 @@
+<ng-container *ngIf="leagueName === 'Champions Leagu'">
+    <div *ngFor="let group of groupedTeams">
+        <h2>{{ group.groupName }}</h2>
+        <div *ngFor="let team of group.teams">
+          <img [src]="team.teamLogo" alt="{{ team.teamName }} Logo">
+          <p>{{ team.teamName }} - Position: {{ team.position }}</p>
+          <!-- Aggiungi altri campi secondo necessità -->
+        </div>
+      </div>
+</ng-container>
 <div class="league-list d-flex justify-content-start align-items-center ps-3">
     <p class="m-0">Posiz.</p>
     <p class="ps-1 m-0 border-start">Logo</p>
