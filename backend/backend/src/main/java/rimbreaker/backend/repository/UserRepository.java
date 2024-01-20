@@ -21,8 +21,8 @@ public interface UserRepository extends JpaRepository<User, Integer> {
     @Query("SELECT new rimbreaker.backend.payload.response.ResponseUser(u.idUser, u.name, u.surname, u.email) FROM User u WHERE u.idUser = :idUser")
     ResponseUser all_by_id(@Param("idUser") Long idUser);
 
-    @Query("SELECT new rimbreaker.backend.payload.response.ResponseUser(u.idUser, u.name, u.surname, u.email) FROM User u WHERE email = :email")
-    ResponseUser findByEmail(@Param("email") String email);
+    @Query("FROM User u WHERE email = :email")
+    User findByEmail(@Param("email") String email);
 
     @Modifying
     @Transactional
