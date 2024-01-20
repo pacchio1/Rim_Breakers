@@ -80,14 +80,14 @@ public class UserController {
         if (user.isPresent()) {
             // Login riuscito
             return ResponseEntity.ok(Map.of(
-                    "email", email,
-                    "message", "success"
+                    "message", "success",
+                    "email", email
             ));
         } else {
             // Login fallito
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(Map.of(
-                    "email", email,
-                    "message", "failure"
+                    "message", "failure",
+                    "email", email
             ));
         }
     }
