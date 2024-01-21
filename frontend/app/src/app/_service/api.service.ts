@@ -34,6 +34,18 @@ export class ApiService {
     }
 
     /**
+     * API RICERCA ALL LEAGUE
+     * 
+     * @param idLeague
+     * @returns richiesta Api 
+     */
+    searchAllLeague() {
+        return this.http.get(this.localBaseUrl + 'league/all').pipe(map((response: any) => {
+            return response as League[]
+        }))
+    }
+
+    /**
      * API RICERCA STANDING LEAGUES
      * 
      * @param idLeague

@@ -1,0 +1,9 @@
+<div class="mt-navbar-text">
+    <div *ngFor="let league of leagues" class="my-2">
+        <h2>{{ league.name }}</h2>
+        <div *ngFor="let game of getProcessedMatchesByLeague(league.name)">
+          {{ game.teamHome }} vs {{ game.teamAway }} - {{ game.scoreHomeFinal }}-{{ game.scoreAwayFinal }}
+        </div>
+      </div>
+</div>
+  
