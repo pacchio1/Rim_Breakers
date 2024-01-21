@@ -14,7 +14,7 @@ public interface StandingsRepository extends JpaRepository<Standings, Integer> {
                         @Param("teamId") Long teamId,
                         @Param("season") String season);
 
-    @Query("SELECT new rimbreaker.backend.payload.response.ResponseStandingsTeam(s, t.name) " +
+    @Query("SELECT new rimbreaker.backend.payload.response.ResponseStandingsTeam(s, t.name, t.logo) " +
             "FROM Standings s " +
             "JOIN Team t ON s.teamId = t.id " +
             "WHERE s.idLeague = :idLeague AND s.season = :season")
