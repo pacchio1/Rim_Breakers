@@ -1,6 +1,5 @@
 import { Component, Input } from "@angular/core";
 import { BasketService } from "../_service/basket.service";
-import { Match } from "../_model/match.model";
 
 @Component ({
     selector: 'app-league-match',
@@ -61,5 +60,4 @@ export class LeagueMatchComponent {
         
         return processedGame;
     }
-
 }

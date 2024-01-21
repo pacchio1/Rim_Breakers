@@ -1,27 +1,34 @@
-<div *ngFor="let games of processedMatches" class="m-1 d-flex">
-    <div class="league-list d-flex align-items-center px-3">
-        <div>
+<div *ngFor="let games of processedMatches" class="my-3 container d-flex justify-content-center">
+    <div class="row results-list align-items-center px-3">
+        <div class="col-3 d-flex flex-column align-items-center">
             <img src="{{ games.logoHome }}" alt="" class="league-logo">
-            <p>{{ games.teamHome }}</p>
+            <p class="m-0 text-center">{{ games.teamHome }}</p>
         </div>
-        
-        <div *ngIf="games.scoreHomeFinal !== null" class="bg-white mx-2 score">
-            <p class="px-3 text-warning">{{ games.scoreHomeFinal }}</p>
-        </div>
-        <div *ngIf="games.scoreHomeFinal == null" class="bg-black">
-            <p class="px-3">NONE</p>
-        </div>
-        
-        <div *ngIf="games.scoreAwayFinal !== null" class="bg-white mx-2 score">
-            <p class="px-3 text-warning">{{ games.scoreAwayFinal }}</p>
-        </div>
-        <div *ngIf="games.scoreAwayFinal == null">
-            <p class="px-3">NONE</p>
+        <div class="col-2 d-flex flex-column align-items-center justify-content-center text-center">
+            <div *ngIf="games.scoreHomeFinal !== null" [ngStyle]="{'background-color': games.scoreHomeFinal > games.scoreAwayFinal ? '#73c973' : '#de5e5e'}" class="score d-flex flex-column align-items-center justify-content-center">
+                <p class="m-0 text-white">{{ games.scoreHomeFinal }}</p>
+            </div>
+            <div *ngIf="games.scoreHomeFinal == null" class="bg-white score d-flex flex-column align-items-center justify-content-center">
+                <p class="text-black m-0">X</p>
+            </div>
         </div>
 
-        <div>
+        <div class="col-2 d-flex flex-column align-items-center justify-content-center text-center">
+            <p class="m-0">VS</p>
+        </div>
+
+        <div class="col-2 d-flex flex-column align-items-center justify-content-center text-center">
+            <div *ngIf="games.scoreAwayFinal !== null" [ngStyle]="{'background-color': games.scoreAwayFinal > games.scoreHomeFinal ? '#73c973' : '#de5e5e'}" class="score d-flex flex-column align-items-center justify-content-center">
+                <p class="m-0 text-white">{{ games.scoreAwayFinal }}</p>
+            </div>
+            <div *ngIf="games.scoreAwayFinal == null" class="bg-white score d-flex flex-column align-items-center justify-content-center">
+                <p class="text-black m-0">X</p>
+            </div>
+        </div>
+
+        <div class="col-3 d-flex flex-column align-items-center">
             <img src="{{ games.logoAway }}" alt="" class="league-logo">
-            <p>{{ games.teamAway }}</p>
+            <p class="m-0">{{ games.teamAway }}</p>
         </div>
     </div>
 </div>
