@@ -24,6 +24,8 @@ public class ResponseGame {
     private String scoreAway;
     private String teamHome;
     private String teamAway;
+    private String logoHome;
+    private String logoAway;
 
 }
 

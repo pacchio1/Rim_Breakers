@@ -52,12 +52,15 @@ public interface GamesRepository extends JpaRepository<Games, Integer> {
             "g.awayId, " +
             "g.score_away AS scoreAway, " +
             "th.name AS teamHome, " +
-            "ta.name AS teamAway" +
+            "ta.name AS teamAway, " +
+            "th.logo AS logoHome, " +
+            "ta.logo AS logoAway "+
             ") FROM Games g " +
             "JOIN Team th ON g.homeId = th.id " +
             "JOIN Team ta ON g.awayId = ta.id " +
             "WHERE g.id_games = :id_games")
     List<ResponseGame> getAllGamesWithTeams(@Param("id_games") int id_games);
+    //aggiungere loghi
 
     @Query("SELECT new rimbreaker.backend.payload.response.ResponseGameCountry(" +
             "c.id_country, " +
