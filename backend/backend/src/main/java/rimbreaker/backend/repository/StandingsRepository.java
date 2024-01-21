@@ -19,6 +19,6 @@ public interface StandingsRepository extends JpaRepository<Standings, Integer> {
             "JOIN Team t ON s.teamId = t.id " +
             "WHERE s.idLeague = :idLeague AND s.season = :season")
     List<ResponseStandingsTeam> getSeasonByLeague(@Param("idLeague") Long idLeague,
-                                              @Param("season") String season);
+                                                  @Param("season") String season);
 
 }

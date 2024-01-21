@@ -15,23 +15,23 @@ public interface TeamRepository extends JpaRepository<Team, Long> {
 
     @Query("SELECT new rimbreaker.backend.payload.response.ResponseTeam(" +
             "t.id, " +
-            "t.id_league, " +
-            "c.id_country, " +
+            "l.id_league, " +
+            "t.id_country, " +
             "t.name, " +
             "t.logo" +
             ") FROM Team t " +
-            "JOIN Country c ON c.id_league = t.id_league " +
+            "JOIN League l ON l.id_league = t.id_league " +
             "WHERE t.id = :id")
     ResponseTeam getAllByID(@Param("id") Long id);
 
     @Query("SELECT new rimbreaker.backend.payload.response.ResponseTeam(" +
             "t.id, " +
-            "t.id_league, " +
-            "c.id_country, " +
+            "l.id_league, " +
+            "t.id_country, " +
             "t.name, " +
             "t.logo" +
             ") FROM Team t " +
-            "JOIN Country c ON c.id_league = t.id_league")
+            "JOIN League l ON l.id_league = t.id_league")
     List<ResponseTeam> getAll();
 
 }
