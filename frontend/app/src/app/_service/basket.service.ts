@@ -128,4 +128,14 @@ export class BasketService {
     getGamesByLeague(leagueName: string) {
         return this.apiService.searchGamesByLeague(leagueName); 
     }
+    
+    /**
+     * API RICERCA GAMES
+     * 
+     * @param leagueName
+     * @returns richiesta Api 
+     */
+    getGame(idLeague: number) {
+        return this.apiService.searchGame(idLeague); 
+    }
 }

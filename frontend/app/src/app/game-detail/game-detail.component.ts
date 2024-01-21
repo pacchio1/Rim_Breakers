@@ -1,41 +1,29 @@
 import { Component, OnInit } from "@angular/core";
 import { BasketService } from "../_service/basket.service";
-import { ActivatedRoute, Router } from "@angular/router";
-import { League } from "../_model/league.model";
+import { ActivatedRoute } from "@angular/router";
+import { Match } from "../_model/match.model";
+import { DatePipe } from "@angular/common";
+import { faker } from '@faker-js/faker';
 
 @Component ({
-    selector: 'app-games',
-    templateUrl: './games.component.html'
+    selector: 'app-game-detail',
+    templateUrl: './game-detail.component.html',
+    providers: [DatePipe]
 })
 
-export class GamesComponent implements OnInit {
+export class GameDetailComponent implements OnInit {
 
-    leagues: any[] = [];
-    leagues2: any[] = [];
+    matchData: any[] = [];
     processedMatches: any[] = [];
 
-    constructor(private basketService: BasketService, private activatedRoute: ActivatedRoute, private router: Router) {}
+    constructor(private basketService: BasketService, private activatedRoute: ActivatedRoute, private datePipe: DatePipe) {}
 
     ngOnInit(): void {
-        this.activatedRoute.data.subscribe(({allLeagues}) => {
-            this.leagues = allLeagues;
-            console.log('gamesByLeague', this.leagues)
-            this.leagues.forEach(league => {
-                this.basketService.getGamesByLeague(league.name).subscribe((response: any) => {
-                    const processedLeagueMatches = response.map((game: any) => this.processGame(game));
-                    this.processedMatches.push(...processedLeagueMatches);
-                    console.log('processedMatches', this.processedMatches);
-                })
-            });
-        });
-    }
-
-    getProcessedMatchesByLeague(leagueName: string): any[] {
-        return this.processedMatches.filter(game => game.nameLeague === leagueName);
-    }
-
-    passIdGames(idGames: number) {
-        this.router.navigate(['/game', idGames])
+        this.activatedRoute.data.subscribe(({matchDetail}) => {
+            console.log('matchDetail', matchDetail)
+            this.matchData = matchDetail      
+            this.processedMatches = this.matchData.map(game => this.processGame(game));
+        });   
     }
 
     private processGame(game: any): any {
@@ -65,9 +53,15 @@ export class GamesComponent implements OnInit {
             scoreHome: scoreHomeArray,
         };
 
-        console.log(processedGame);
+        processedGame.date = this.datePipe.transform(processedGame.date, 'dd/MM/yyyy') || '';
+
+        console.log('processedGame', processedGame);
         
         return processedGame;
+    }
+
+    printStat() {
+        
     }
 
 }

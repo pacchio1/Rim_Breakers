@@ -25,6 +25,7 @@ import { ScorerComponent } from './scorer/scorer.component';
 import { AssistComponent } from './assist/assist.component';
 import { LeagueMatchComponent } from './league-match/league-match.component';
 import { GamesComponent } from './games/games.component';
+import { GameDetailComponent } from './game-detail/game-detail.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { GamesComponent } from './games/games.component';
     PlayerDetailComponent,
     CountriesComponent,
     GamesComponent,
+    GameDetailComponent,
     FooterComponent,
     SigninComponent,
     ProfileComponent

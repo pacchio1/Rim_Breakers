@@ -8,6 +8,7 @@ import { Countries } from '../_model/countries.model';
 import { League } from '../_model/league.model';
 import { SeasonStandingAll } from '../_model/seasonStanding.model';
 import { Profile } from '../_model/profile.model';
+import { Match } from '../_model/match.model';
 
 // import { SunsetResults } from '../model/sunset.model';
 
@@ -161,6 +162,18 @@ export class ApiService {
      */
     searchGamesByLeague(leagueName: string) {
         return this.http.get(this.localBaseUrl + 'games/games_league?name=' + leagueName).pipe(map((response: any) => {
+            return response as any[]
+        }))
+    }
+    
+    /**
+     * API RICERCA GAME
+     * 
+     * @param idCountry
+     * @returns richiesta Api 
+     */
+    searchGame(idLeague: number) {
+        return this.http.get(this.localBaseUrl + 'games/all_by_id?id_games=' + idLeague).pipe(map((response: any) => {
             return response as any[]
         }))
     }

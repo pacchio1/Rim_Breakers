@@ -4,6 +4,35 @@
     width: 100px;
 }
 
+.prova-img {
+    width: 50vw;
+    height: 300px;
+    // background-color: #FF8038;
+    
+}
+
+.x {
+    width: 100%;
+    height: 100%;
+    transform: translateX(-60px);
+}
+
+.team-name-2 {
+    color: #ffffff;
+    // color: #e5e1e1;
+    // font-size: 5px;
+    // text-align: center;
+    // font-family: Inter;
+    font-size: 96px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.result-game {
+    transform: translateY(-45px);
+}
+
 /* Global */
 
 $primary-color: #1b1466;

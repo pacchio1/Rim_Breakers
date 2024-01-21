@@ -1,0 +1,55 @@
+<div *ngFor="let match of processedMatches" class="mt-navbar">
+    <div class="container mt-4 p-0">
+        <div class="d-flex align-items-center justify-content-center bg-light">
+            <div class="position-absolute overflow-hidden">
+                <div class="row text-center team-name-2 align-items-end">
+                    <p class="m-0">{{ match.teamHome }}</p>
+                </div>
+                <div class="row text-center team-name-2">
+                    <p class="m-0">{{ match.teamAway }}</p>
+                </div>
+            </div>
+            <div class="row position-relative">
+                <div class="col prova-img p-0">
+                    <img src="../../assets/imgX/logo-broom.png" alt="" class="x">
+                </div>
+                <div class="col prova-img p-0"></div>
+            </div>
+        </div>
+        
+        <div class="container result-game">
+            <div class="row row-cols-2">
+                <div class="col d-flex justify-content-end p-0">
+                    <div class="">
+                        <h4>{{ match.scoreHomeFinal }}</h4>
+                    </div>
+                </div>
+                <div class="col d-flex">
+                    <div class="">
+                        <h4>{{ match.scoreAwayFinal }}</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col text-center">
+                    {{ match.date }}
+                </div>
+            </div>
+            <div class="row row-cols-3">
+                <div class="col-5 text-center">
+                    <div class="">
+                        <h4>{{ match.teamHome }}</h4>
+                    </div>
+                </div>
+                <div class="col-2 text-center">
+                    <p>VS</p>
+                </div>
+                <div class="col-5 text-center">
+                    <div class="">
+                        <h4>{{ match.teamAway }}</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

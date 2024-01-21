@@ -1,5 +1,6 @@
 import { Component, Input } from "@angular/core";
 import { BasketService } from "../_service/basket.service";
+import { Router } from "@angular/router";
 
 @Component ({
     selector: 'app-league-match',
@@ -13,7 +14,7 @@ export class LeagueMatchComponent {
     gamesByLeague: any[] = [];
     processedMatches: any[] = [];
 
-    constructor(private basketService: BasketService) {}
+    constructor(private basketService: BasketService, private router: Router) {}
 
     ngOnInit(): void {
         if(this.leagueName !== '') {
@@ -27,6 +28,10 @@ export class LeagueMatchComponent {
                 // });
             })
         }
+    }
+
+    passIdGames(idGames: number) {
+        this.router.navigate(['/game', idGames])
     }
 
     private processGame(game: any): any {
