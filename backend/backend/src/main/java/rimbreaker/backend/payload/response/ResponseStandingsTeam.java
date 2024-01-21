@@ -14,5 +14,6 @@ public class ResponseStandingsTeam {
 
     private Standings standings;
     private String teamName;
+    private String logo;
 
 }
