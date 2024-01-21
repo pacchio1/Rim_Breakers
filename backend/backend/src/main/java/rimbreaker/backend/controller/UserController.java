@@ -52,8 +52,9 @@ public class UserController {
     public ResponseEntity<?> updateEmail(String email, Long idUser) {
 
         userService.updateEmail(email, idUser);
-
-        return ResponseEntity.ok("Email updated!");
+        return ResponseEntity.ok(Map.of(
+                "message", "Email updated!"
+        ));
 
     }
 
@@ -62,8 +63,9 @@ public class UserController {
 
         userService.updatePassword(password, idUser);
 
-        return ResponseEntity.ok("Password updated!");
-
+        return ResponseEntity.ok(Map.of(
+                "message", "Password updated!"
+        ));
     }
 
     @PostMapping("/delete")
@@ -71,7 +73,9 @@ public class UserController {
 
         userService.deleteUser(idUser);
 
-        return ResponseEntity.ok("User successfully deleted!");
+        return ResponseEntity.ok(Map.of(
+                "message", "User successfully deleted!"
+        ));
 
     }
 
