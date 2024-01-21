@@ -20,6 +20,16 @@ export class BasketService {
     }
     
     /**
+     * API RICERCA ALL LEAGUE
+     * 
+     * 
+     * @returns richiesta Api 
+     */
+    getAllLeague() {
+        return this.apiService.searchAllLeague()
+    }
+    
+    /**
      * API RICERCA STANDING LEAGUE
      * 
      * @param idLeague

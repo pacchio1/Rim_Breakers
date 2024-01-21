@@ -1,32 +1,37 @@
-import { Component, Input } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { BasketService } from "../_service/basket.service";
+import { ActivatedRoute } from "@angular/router";
+import { League } from "../_model/league.model";
 
 @Component ({
-    selector: 'app-league-match',
-    templateUrl: './league-match.component.html'
+    selector: 'app-games',
+    templateUrl: './games.component.html'
 })
 
-export class LeagueMatchComponent {
+export class GamesComponent implements OnInit {
 
-    @Input() leagueName: string = '';
-
-    gamesByLeague: any[] = [];
+    leagues: any[] = [];
+    leagues2: any[] = [];
     processedMatches: any[] = [];
 
-    constructor(private basketService: BasketService) {}
+    constructor(private basketService: BasketService, private activatedRoute: ActivatedRoute) {}
 
     ngOnInit(): void {
-        if(this.leagueName !== '') {
-            this.basketService.getGamesByLeague(this.leagueName).subscribe((response: any[]) => {
-                console.log('gamesByLeague', response);
-                this.gamesByLeague = response
-                this.processedMatches = this.gamesByLeague.map(game => this.processGame(game));
-                // this.processedMatches.forEach(game => {
-                //     console.log('Score Home Final:', game.scoreHomeFinal);
-                //     console.log('Score Away Final:', game.scoreAwayFinal);
-                // });
-            })
-        }
+        this.activatedRoute.data.subscribe(({allLeagues}) => {
+            this.leagues = allLeagues;
+            console.log('gamesByLeague', this.leagues)
+            this.leagues.forEach(league => {
+                this.basketService.getGamesByLeague(league.name).subscribe((response: any) => {
+                    const processedLeagueMatches = response.map((game: any) => this.processGame(game));
+                    this.processedMatches.push(...processedLeagueMatches);
+                    console.log('processedMatches', this.processedMatches);
+                })
+            });
+        });
+    }
+
+    getProcessedMatchesByLeague(leagueName: string): any[] {
+        return this.processedMatches.filter(game => game.nameLeague === leagueName);
     }
 
     private processGame(game: any): any {
@@ -60,4 +65,5 @@ export class LeagueMatchComponent {
         
         return processedGame;
     }
+
 }

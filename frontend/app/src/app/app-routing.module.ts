@@ -14,6 +14,7 @@ import { PlayerDetailComponent } from './player-detail/player-detail.component';
 
 import { BasketService } from './_service/basket.service';
 import { SigninComponent } from './signin/signin.component';
+import { GamesComponent } from './games/games.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -48,6 +49,14 @@ const routes: Routes = [
     resolve: {
       allCountries: () => {
         return inject(BasketService).getAllCountries()
+      }, 
+    }
+  },
+  { path: 'games',
+    component: GamesComponent,
+    resolve: {
+      allLeagues: () => {
+        return inject(BasketService).getAllLeague()
       }, 
     }
   },
