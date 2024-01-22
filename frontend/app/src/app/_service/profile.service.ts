@@ -58,4 +58,34 @@ export class ProfileService {
     getDeleteUser(idUser: number) {
         return this.apiService.deleteUser(idUser);
     }
+
+    /**
+     * API LEGA PREFERITA
+     * 
+     * @param
+     * @returns richiesta Api 
+     */
+    getFavouriteLeague(idUser: number, idLeague: number) {
+        return this.apiService.searchFavouriteLeague(idUser, idLeague);
+    }
+
+    /**
+     * API LEGA PREFERITA
+     * 
+     * @param
+     * @returns richiesta Api 
+     */
+    getFavouriteTeam(idUser: number, idTeam: number) {
+        return this.apiService.searchFavouriteTeam(idUser, idTeam);
+    }
+
+    /**
+     * API LEGA PREFERITA
+     * 
+     * @param
+     * @returns richiesta Api 
+     */
+    getFavouritePlayer(idUser: number, idPlayer: number) {
+        return this.apiService.searchFavouriteTeam(idUser, idPlayer);
+    }
 }

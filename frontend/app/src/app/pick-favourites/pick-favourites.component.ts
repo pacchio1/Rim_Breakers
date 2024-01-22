@@ -5,29 +5,32 @@ import { ActivatedRoute } from "@angular/router";
 import { Leagues } from "../_model/leagues.model";
 import { League } from "../_model/league.model";
 import { PlayerDetail } from "../_model/player.model";
+import { ProfileService } from "../_service/profile.service";
 
 interface DropdownState {
-    teams: boolean;
-    players: boolean;
-    [key: string]: boolean; // Aggiungi questa riga
+  teams: boolean;
+  players: boolean;
+  [key: string]: boolean;
 }
-  
+
 @Component({
   selector: 'app-pick-favourites',
   templateUrl: './pick-favourites.component.html',
 })
-
 export class PickFavouritesComponent implements OnInit {
 
-  banditLeagues = [120, 143, 194, 197, 242]; 
+  banditLeagues = [120, 143, 194, 197, 242];
   filteredLeagues: League[] = [];
   selectedLeagueTeams: Leagues[] = [];
   selectedTeamPlayers: { [key: number]: PlayerDetail[] } = {};
   dropdownState: { [key: number]: DropdownState } = {};
   currentOpenLeague: number | null = null;
   currentOpenTeam: number | null = null;
+  favouriteLeagues: { [key: number]: boolean } = {};
+  favouriteTeams: { [key: number]: boolean } = {};
+  favouritePlayers: { [key: number]: boolean } = {};
 
-  constructor(public themeService: ThemeService, private basketService: BasketService, private activatedRoute: ActivatedRoute) {}
+  constructor(public themeService: ThemeService, private basketService: BasketService, private activatedRoute: ActivatedRoute, private profileService: ProfileService) {}
 
   ngOnInit(): void {
     this.activatedRoute.data.subscribe(({allLeagues}) => {
@@ -38,11 +41,11 @@ export class PickFavouritesComponent implements OnInit {
   onLeagueClick(idLeague: number): void {
     // Chiudi la sezione dei team se è già aperta
     if (this.currentOpenLeague === idLeague) {
-        Object.keys(this.dropdownState).forEach(key => {
-            this.dropdownState[+key] = { teams: false, players: false };
-        });
-        this.currentOpenLeague = null;
-        this.currentOpenTeam = null;
+      Object.keys(this.dropdownState).forEach(key => {
+        this.dropdownState[+key] = { teams: false, players: false };
+      });
+      this.currentOpenLeague = null;
+      this.currentOpenTeam = null;
     } else {
       // Chiudi tutti i dropdown dei team e dei giocatori
       Object.keys(this.dropdownState).forEach(key => {
@@ -62,7 +65,9 @@ export class PickFavouritesComponent implements OnInit {
     }
   }
 
-  onTeamClick(idTeam: number) {
+  onTeamClick(idTeam: number, event: Event) {
+    event.stopPropagation();
+
     // Chiudi la sezione dei team se è già aperta
     if (this.currentOpenTeam === idTeam) {
       this.currentOpenTeam = null;
@@ -83,13 +88,36 @@ export class PickFavouritesComponent implements OnInit {
       }
     }
   }
-  
+
+  favouriteLeague(idUser: number, idLeague: number) {
+    this.favouriteLeagues[idLeague] = !this.favouriteLeagues[idLeague];
+    if(this.favouriteLeagues[idLeague]) {
+      this.profileService.getFavouriteLeague(idUser, idLeague);
+      console.log(idLeague);
+    }
+  }
+
+  favouriteTeam(idUser: number, idTeam: number) {
+    this.favouriteTeams[idTeam] = !this.favouriteTeams[idTeam];
+    if(this.favouriteTeams[idTeam]) {
+      this.profileService.getFavouriteTeam(idUser, idTeam); 
+      console.log(idTeam);
+    }
+  }
+
+  favouritePlayer(idUser: number, idPlayer: number) {
+    this.favouritePlayers[idPlayer] = !this.favouritePlayers[idPlayer];
+    if(this.favouritePlayers[idPlayer]) {
+      this.profileService.getFavouritePlayer(idUser, idPlayer); 
+      console.log(idPlayer);
+    }
+  }
+
   toggleDropdown(id: number): void {
-    // Cambia lo stato del dropdown in base alla lea, team o giocatori
+    // Cambia lo stato del dropdown in base alla lega, team o giocatori
     this.dropdownState[id] = { teams: !this.dropdownState[id]?.teams, players: !this.dropdownState[id]?.players } as DropdownState;
   }
-  
-  
+
   isDropdownOpen(id: number, type: string): boolean {
     // Controlla lo stato del dropdown in base alla lega, team o giocatori
     return this.dropdownState[id]?.[type] || false;
