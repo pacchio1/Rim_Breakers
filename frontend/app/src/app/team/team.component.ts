@@ -21,6 +21,8 @@ export class TeamComponent implements OnInit {
     filteredStandings: SeasonStandingAll[] = []
     championsCheck: Leagues[] = []
     targetTeam: any
+    lastMatches: [] = []
+    processedMatches: any[] = []
 
     constructor(public themeService: ThemeService, private basketService: BasketService, private activatedRoute: ActivatedRoute, private router: Router) {}
 
@@ -35,6 +37,7 @@ export class TeamComponent implements OnInit {
         console.log(this.team.id_league, this.team.name)
         this.printStandingTeam(this.team.id_league, this.team.name)
         this.checkCup(this.team.name)
+        this.printLastmatch(this.team.name)
 
     }
 
@@ -60,6 +63,14 @@ export class TeamComponent implements OnInit {
         })
     }
 
+    printLastmatch(name: string) {
+        this.basketService.getGamesByTeam(name).subscribe((response: any) => {
+            this.lastMatches = response
+            this.processedMatches = this.lastMatches.map(game => this.processGame(game));
+            console.log('lastGame', this.processedMatches[0])
+        })
+    }
+
     toggleTheme(): void {
         this.themeService.toggleTheme();
     }
@@ -67,9 +78,45 @@ export class TeamComponent implements OnInit {
     passIdPlayer(idPlayer: number) {
         this.router.navigate(['/player', idPlayer])
     }
+    
+    passIdGames(idGames: number) {
+        this.router.navigate(['/game', idGames])
+    }
 
     // passIdTeam(idTeam: number) {
     //     this.router.navigate(['/team', idTeam])
     // }
+
+    private processGame(game: any): any {
+        function parseScore(scoreString: string): (number | null)[] {
+            return scoreString.split(',').map(value => (value === 'None' ? null : parseInt(value, 10)));
+        }
+
+        const scoreAwayArray = parseScore(game.scoreAway);
+        const scoreHomeArray = parseScore(game.scoreHome);
+
+        const processedGame = {
+            ...game,
+            firstQuarterAway: scoreAwayArray[0],
+            secondQuarterAway: scoreAwayArray[1],
+            thirdQuarterAway: scoreAwayArray[2],
+            fourthQuarterAway: scoreAwayArray[3],
+            fifthQuarterAway: scoreAwayArray[4],
+            scoreAwayFinal: scoreAwayArray[5],
+            scoreAway: scoreAwayArray,
+            
+            firstQuarterHome: scoreHomeArray[0],
+            secondQuarterHome: scoreHomeArray[1],
+            thirdQuarterHome: scoreHomeArray[2],
+            fourthQuarterHome: scoreHomeArray[3],
+            fifthQuarterHome: scoreHomeArray[4],
+            scoreHomeFinal: scoreHomeArray[5],
+            scoreHome: scoreHomeArray,
+        };
+
+        console.log(processedGame);
+        
+        return processedGame;
+    }
 
 }
