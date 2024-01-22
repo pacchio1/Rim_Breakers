@@ -14,7 +14,10 @@
             <p class="ps-3 m-0">{{ country.name }}</p>        
         </button>
         <ul class="dropdown-menu" *ngFor="let league of country.leagues">
-            <li class="dropdown-item text-light" (click)="passIdLeague(league.id_league)">{{ league.nameLeague }}</li>
+            <li class="dropdown-item text-light d-flex flex-row align-items-center" (click)="passIdLeague(league.id_league)">
+                <img src="{{ league.logo }}" alt="" class="country-logo ps-3">
+                <p class="m-0 ps-2">{{ league.nameLeague }}</p>
+            </li>
         </ul>
     </div>
 

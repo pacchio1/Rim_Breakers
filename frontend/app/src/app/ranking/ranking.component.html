@@ -4,12 +4,11 @@
         <div *ngFor="let team of group.teams" class="league-list d-flex justify-content-start align-items-center px-3 m-1">
           <img [src]="team.teamLogo" alt="{{ team.teamName }} Logo" class="league-logo">
           <p class="m-0 px-1">{{ team.teamName }} - Position: {{ team.position }}</p>
-          <!-- Aggiungi altri campi secondo necessità -->
         </div>
       </div>
 </ng-container>
 <ng-template #otherContent>
-    <div class="league-list d-flex justify-content-start align-items-center ps-3">
+    <!-- <div class="league-list d-flex justify-content-start align-items-center ps-3">
         <p class="m-0">Posiz.</p>
         <p class="ps-1 m-0 border-start">Logo</p>
         <p class="ps-2 m-0 name border-start">Name</p>
@@ -21,7 +20,6 @@
             <p class="m-0 px-2 border-start">S</p>
         </div>
     </div>
-    
     <div *ngFor="let leagueObj of teamsStandingData" class="m-1 d-flex justify-content-center">
         <div class="league-list d-flex justify-content-start align-items-center px-3" (click)="passIdTeam(leagueObj.standings.teamId)">
             <p class="m-0 px-1">{{ leagueObj.standings.position }}^</p>
@@ -34,6 +32,49 @@
                 <p class="m-0 px-1">{{ leagueObj.standings.played }}</p>
                 <p class="m-0 px-1">{{ leagueObj.standings.win }}</p>
                 <p class="m-0 px-1">{{ leagueObj.standings.lose }}</p>
+            </div>
+        </div>
+    </div> -->
+    <div class="container d-flex justify-content-center">
+
+        <div class="tag-list row align-items-center">
+            <div class="name-tag ps-5">
+                <p class="m-0">Squadra</p>
+            </div>
+            <div class="pt-tag text-center p-0">
+                <p class="m-0">Pt.C</p>
+            </div>
+            <div class="pt-tag text-center p-0">
+                <p class="m-0">Pt.C</p>         
+            </div>
+            <div class="match-tag text-center p-0">
+                <p class="m-0">G</p>
+            </div>
+            <div class="match-tag text-center p-0">
+                <p class="m-0">V</p>
+            </div>
+            <div class="match-tag text-center p-0">
+                <p class="m-0">S</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container d-flex flex-wrap justify-content-center">
+        <div class="row">
+            <div *ngFor="let leagueObj of teamsStandingData" class="m-1 d-flex justify-content-center col-12">
+                <div class="league-list d-flex justify-content-start align-items-center px-3" (click)="passIdTeam(leagueObj.standings.teamId)">
+                    <p class="m-0 px-1">{{ leagueObj.standings.position }}^</p>
+                    <img src="{{ leagueObj.logo }}" alt="" class="league-logo">
+                    <p *ngIf="leagueObj.teamName" class="ps-3 m-0 name">{{ leagueObj.teamName }}</p>
+                    <p *ngIf="!leagueObj.teamName" class="ps-3 m-0 text-warning">NOME NON DISPONIBILE</p>
+                    <div class="d-flex ms-2">
+                        <p class="m-0 px-1">{{ leagueObj.standings.pointsAgainst }}</p>
+                        <p class="m-0 px-1">{{ leagueObj.standings.pointsFor }}</p>
+                        <p class="m-0 px-1">{{ leagueObj.standings.played }}</p>
+                        <p class="m-0 px-1">{{ leagueObj.standings.win }}</p>
+                        <p class="m-0 px-1">{{ leagueObj.standings.lose }}</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

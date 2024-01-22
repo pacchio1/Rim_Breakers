@@ -1,12 +1,30 @@
 <div class="mt-navbar-text">
     <div *ngFor="let league of leagues">
         <ng-container *ngIf="desiredLeagueIds.includes(league.id_league)">
-            <h2>{{ league.name }}</h2>
-            <ul>
-            <li *ngFor="let team of teamsByLeague[league.id_league]">
-                {{ team.nameTeam }}
-            </li>
-            </ul>
+            <div class="d-flex flex-row my-5 align-items-center ms-3">
+                <img src="{{ league.logo }}" alt="" class="team-logo">
+                <h2 class="ps-3 text-primary-emphasis m-0">{{ league.name }}</h2>
+            </div>
+            <!-- <ul *ngFor="let team of teamsByLeague[league.id_league]">
+                <li>
+                    {{ team.nameTeam }}
+                </li>
+                <li>
+                    <img src="{{ team.logoTeam }}" alt="">
+                </li>
+            </ul> -->
+            <div class="container" >
+                <div class="row row-cols-1 row-cols-lg-2">
+                    <ng-container *ngFor="let team of teamsByLeague[league.id_league]">
+                        <div class=" d-flex flex-row justify-content-start align-items-center league-list m-2 ps-2" (click)="passIdTeam(team.id)">
+                            <img src="{{ team.logoTeam }}" alt="" class="league-logo ms-4">
+                        <!-- </div>
+                        <div class="col"> -->
+                            <p class="m-0 ps-3 flex-grow-1">{{ team.nameTeam }}</p>
+                        </div>
+                    </ng-container>
+                </div>
+            </div>
         </ng-container>
     </div>
 </div>

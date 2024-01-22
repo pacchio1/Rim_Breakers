@@ -7,28 +7,45 @@
 </div>
 
 <div class="container">
-    <div *ngIf="targetTeam">
-        <p>La squadra {{ targetTeam.teamName }} nella stagione {{ targetTeam.standings.season }} si è posizionata {{ targetTeam.standings.position }}</p>
-        <p>In questa stagione ha accumulato un totale di {{ targetTeam.standings.win }} vittorie e {{ targetTeam.standings.lose }} sconfitte su {{ targetTeam.standings.played }} partite giocate</p>
-        <h2>Statistiche</h2>
-        <ul>
-            <li>Punti fatti: {{ targetTeam.standings.pointsFor }}</li>
-            <li>Punti subiti: {{ targetTeam.standings.pointsAgainst }}</li>
-            <li>Percentuale vittore: {{ targetTeam.standings.percWin }}</li>
-            <li>Percentuale sconfitte: {{ targetTeam.standings.percLose }}</li>
-        </ul>
-    </div>
-    
-    <div>
-        <h2 class="pt-4 ps-3 text-primary-emphasis">Coppe</h2>
-        <p *ngIf="qualified"><i class="bi bi-trophy-fill"></i>Attualmente Champions League</p>
-        <p *ngIf="qualified === false"><i class="bi bi-trophy-fill"></i>Non militante in Champions League</p>
+    <div class="row row-cols-1 row-cols-lg-2">
+        <div class="col mt-lg-5">
+            <div *ngIf="targetTeam">
+                <p>La squadra {{ targetTeam.teamName }} nella stagione {{ targetTeam.standings.season }} si è posizionata {{ targetTeam.standings.position }}</p>
+                <p>In questa stagione ha accumulato un totale di {{ targetTeam.standings.win }} vittorie e {{ targetTeam.standings.lose }} sconfitte su {{ targetTeam.standings.played }} partite giocate</p>
+                <h2 class="pt-4 ps-3 text-primary-emphasis">Statistiche</h2>
+                <ul>
+                    <li>Punti fatti: {{ targetTeam.standings.pointsFor }}</li>
+                    <li>Punti subiti: {{ targetTeam.standings.pointsAgainst }}</li>
+                    <li>Percentuale vittore: {{ targetTeam.standings.percWin }}</li>
+                    <li>Percentuale sconfitte: {{ targetTeam.standings.percLose }}</li>
+                </ul>
+            </div>
+            
+            <div>
+                <h2 class="pt-4 ps-3 text-primary-emphasis">Coppe</h2>
+                <ng-container *ngIf="qualified" class="d-flex flex-row flex-wrap">
+                    <p><i class="bi bi-trophy-fill"></i>Attualmente Champions League</p>
+                </ng-container>
+                <ng-container *ngIf="qualified === false">
+                    <p><i class="bi bi-trophy-fill"></i>Non militante in Champions League</p>
+                </ng-container>
+            </div>
+        </div>
+        <div class="col">
+            <div>
+                <h2 class="pt-4 ps-3 text-primary-emphasis">Giocatori</h2>
+            
+                <div class="d-flex player-card-container pt-2">
+                    <player-card [players]="teamPlayers" class="d-flex flex-row" (cardClick)="passIdPlayer($event)"></player-card>
+                </div>
+            </div>
+        </div>
     </div>
     
 </div>
 <div>
     <div class="col p-0" *ngIf="processedMatches[0]">
-        <h2 class="pt-4 ps-3 text-primary-emphasis">Ultima partite</h2>
+        <h2 class="pt-4 ps-3 text-primary-emphasis">Ultima partita</h2>
         
         <div class="row results-list align-items-center px-3" *ngIf="processedMatches[0]" (click)="passIdGames(processedMatches[0].id_games)">
             <div class="col-3 d-flex flex-column align-items-center">
@@ -65,10 +82,4 @@
         
     </div>
 </div>
-<div>
-    <h2 class="pt-4 ps-3 text-primary-emphasis">Compagni di squadra</h2>
 
-    <div class="d-flex player-card-container pt-2">
-        <player-card [players]="teamPlayers" class="d-flex flex-row" (cardClick)="passIdPlayer($event)"></player-card>
-    </div>
-</div>

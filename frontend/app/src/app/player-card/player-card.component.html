@@ -1,4 +1,12 @@
-<div *ngFor="let player of players" class="px-2 d-flex flex-column align-items-center" (click)="handleCardClick(player.idPlayer)">
+<!-- <div *ngFor="let player of players" class="px-2 d-flex flex-column align-items-center" (click)="handleCardClick(player.idPlayer)">
     <div class="player-card-img"></div>
     <p class="player-card-name text-center">{{ player.name }} {{ player.surname }}</p>
+</div> -->
+<div class="row row-cols-1 row-cols-lg-4 flex-nowrap flex-lg-wrap">
+    <div *ngFor="let player of players" class="px-2 d-flex flex-column align-items-center flex-shrink-1 flex-shrink-lg-0" (click)="handleCardClick(player.idPlayer)">
+        <div class="col d-flex flex-wrap justify-content-center align-items-center">
+            <div class="player-card-img"></div>
+            <p class="player-card-name text-center m-0">{{ player.name }} {{ player.surname }}</p>
+        </div>
+    </div>
 </div>
