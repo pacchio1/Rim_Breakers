@@ -170,7 +170,213 @@ Annotazioni:
 
 ### Standings
 
+Attributi:
+
+    idLeague (Tipo: Long): Rappresenta l'ID della lega associata alla classifica. È parte della chiave primaria dell'entità (@Id e @IdClass).
+
+    season (Tipo: String): Rappresenta la stagione della classifica. È parte della chiave primaria dell'entità (@Id e @IdClass).
+
+    teamId (Tipo: Long): Rappresenta l'ID della squadra associata alla classifica. È parte della chiave primaria dell'entità (@Id e @IdClass).
+
+    position (Tipo: int): Rappresenta la posizione della squadra nella classifica.
+
+    groupName (Tipo: String): Rappresenta il nome del gruppo a cui appartiene la squadra nella classifica.
+
+    played (Tipo: int): Rappresenta il numero di partite giocate dalla squadra.
+
+    win (Tipo: int): Rappresenta il numero di partite vinte dalla squadra.
+
+    percWin (Tipo: float): Rappresenta la percentuale di partite vinte dalla squadra.
+
+    lose (Tipo: int): Rappresenta il numero di partite perse dalla squadra.
+
+    percLose (Tipo: float): Rappresenta la percentuale di partite perse dalla squadra.
+
+    pointsFor (Tipo: int): Rappresenta il numero totale di punti fatti dalla squadra.
+
+    pointsAgainst (Tipo: int): Rappresenta il numero totale di punti subiti dalla squadra.
+
+    description (Tipo: String): Contiene una descrizione associata alla classifica. La colonna è configurata per accettare dati di tipo testo (TEXT).
+
+Annotazioni:
+
+    @Entity: Indica che questa classe è un'entità di persistenza JPA, cioè una classe che rappresenta una tabella nel database.
+
+    @Table(name = "standings"): Specifica il nome della tabella nel database associato a questa entità.
+
+    @IdClass(StandingsId.class): Indica che la classe utilizza una classe ausiliaria (StandingsId) per gestire una chiave primaria composta da più colonne.
+
+    @Getter e @Setter: Sono annotazioni di Lombok che generano automaticamente i metodi getter e setter per tutti gli attributi della classe.
+
+    @EqualsAndHashCode: Genera automaticamente i metodi equals e hashCode sulla base degli attributi della classe.
+
+    @NoArgsConstructor: Genera un costruttore senza argomenti, utile nelle operazioni di creazione di oggetti tramite reflection o framework di persistenza.
+
+### Team
+
+Attributi:
+
+    id (Tipo: Long): Questo è l'identificatore univoco per ogni squadra. È annotato con @Id indicando che è la chiave primaria dell'entità. La generazione del valore dell'ID avviene in modo automatico e incrementale (GenerationType.IDENTITY).
+
+    id_league (Tipo: Long): Rappresenta l'ID della lega associata alla squadra.
+
+    name (Tipo: String): Contiene il nome della squadra.
+
+    logo (Tipo: String): Contiene l'URL o il percorso del logo della squadra. La colonna è configurata per accettare dati di tipo testo (TEXT).
+
+Annotazioni:
+
+    @Entity: Indica che questa classe è un'entità di persistenza JPA, cioè una classe che rappresenta una tabella nel database.
+
+    @Table(name = "team"): Specifica il nome della tabella nel database associato a questa entità.
+
+    @Getter e @Setter: Sono annotazioni di Lombok che generano automaticamente i metodi getter e setter per tutti gli attributi della classe.
+
+    @EqualsAndHashCode: Genera automaticamente i metodi equals e hashCode sulla base degli attributi della classe.
+
+    @NoArgsConstructor: Genera un costruttore senza argomenti, utile nelle operazioni di creazione di oggetti tramite reflection o framework di persistenza.
+
+### User Attributi
+
+    idUser (Tipo: Long): Questo è l'identificatore univoco per ogni utente. È annotato con @Id indicando che è la chiave primaria dell'entità. La generazione del valore dell'ID avviene in modo automatico e incrementale (GenerationType.IDENTITY).
+
+    name (Tipo: String): Contiene il nome dell'utente.
+
+    surname (Tipo: String): Contiene il cognome dell'utente.
+
+    email (Tipo: String): Contiene l'indirizzo email dell'utente. La colonna è configurata come unica (unique = true), assicurando che ogni indirizzo email sia univoco nel database.
+
+    password (Tipo: String): Contiene l'hash della password dell'utente. La colonna è configurata con una lunghezza minima (@Length(min = 6)) per garantire una password di almeno 6 caratteri.
+
+Metodi:
+
+    Costruttore: Il costruttore senza argomenti è generato automaticamente da Lombok (@NoArgsConstructor), mentre il costruttore con argomenti (public User(...)) viene utilizzato per inizializzare gli attributi dell'oggetto.
+
+    encodePassword(String password): Metodo privato che prende in input una password e restituisce l'hash della password con l'aggiunta di un salt casuale. Utilizza l'algoritmo di hashing SHA-256.
+
+    bytesToHex(byte[] bytes): Metodo privato che converte un array di byte in formato esadecimale, utilizzato per convertire l'hash della password in una rappresentazione leggibile.
+
+Annotazioni:
+
+    @Entity: Indica che questa classe è un'entità di persistenza JPA, cioè una classe che rappresenta una tabella nel database.
+
+    @Table(name = "user"): Specifica il nome della tabella nel database associato a questa entità.
+
+    @Getter e @Setter: Sono annotazioni di Lombok che generano automaticamente i metodi getter e setter per tutti gli attributi della classe.
+
+    @EqualsAndHashCode: Genera automaticamente i metodi equals e hashCode sulla base degli attributi della classe.
+
+    @NoArgsConstructor: Genera un costruttore senza argomenti, utile
+
 ## Repositories
+
+### Metodi definiti
+
+    getPostById(Long id_blog): Ottiene un post tramite l'ID del blog.
+
+    getAllPosts(): Ottiene tutti i post.
+
+    getAllPostsWithUsers(): Ottiene tutti i post con informazioni sull'utente associato.
+
+    getPostByCountry(Long id_country): Ottiene i post associati a un determinato paese.
+
+    getPostByLeague(Long id_league): Ottiene i post associati a una determinata lega.
+
+    getPostByTeam(Long id_team): Ottiene i post associati a una determinata squadra.
+
+Note:
+
+    ResponseBlog, ResponseBlogCountry, ResponseBlogLeague, e ResponseBlogTeam sono presunte classi di risposta contenenti i dati necessari per la risposta alle richieste specificate nelle query. Queste classi dovrebbero essere definite nel package rimbreaker.backend.payload.response.
+
+    Le query utilizzano costruttori di proiezione (new) per mappare i risultati della query a oggetti delle classi di risposta specificate.
+
+### Country
+
+Metodi definiti:
+
+    getCountry(Long id): Ottiene il flag e il nome di un paese per un dato ID. La query restituisce una lista di stringhe contenenti il flag e il nome del paese.
+
+    getFlagAndName(): Ottiene l'ID, il flag e il nome di tutti i paesi. La query restituisce una lista di oggetti ResponseCountry, che rappresentano la risposta desiderata.
+
+Note:
+
+    ResponseCountry è presunta essere una classe di risposta contenente l'ID, il flag e il nome di un paese. Questa classe dovrebbe essere definita nel package rimbreaker.backend.payload.response. Assicurati di aver definito
+
+### Games
+
+Metodi definiti:
+
+    getGameByDate(Date date): Ottiene le informazioni delle partite per una data specifica.
+
+    getAllGamesWithTeams(int id_games): Ottiene tutte le informazioni di una partita con i loghi delle squadre.
+
+    getGamesByCountry(Long id_country): Ottiene le informazioni delle partite per un determinato paese.
+
+    getGamesByTeam(String name): Ottiene le informazioni delle partite per una determinata squadra.
+
+    getGamesByLeague(String name): Ottiene le informazioni delle partite per una determinata lega.
+
+Note:
+
+    Le query utilizzano costruttori di proiezione (new) per mappare i risultati della query a oggetti delle classi di risposta specificate. Assicurati di avere definito correttamente le classi di risposta nei package rimbreaker.backend.payload.response.
+
+### League Metodi definiti
+
+    getLeague(Long id): Ottiene una lega per un dato ID.
+
+    getLeagueAll(): Ottiene tutte le leghe.
+
+    getTeamLeague(Long id): Ottiene le informazioni sulla lega e le squadre partecipanti per un dato ID di lega.
+
+    getLeagueByCountry(Long id_country): Ottiene le informazioni sulla lega e il paese associato per un dato ID di paese.
+
+    getCountryByLeague(): Ottiene le informazioni sul paese e la lega associata per tutte le leghe e paesi.
+
+### Player
+
+Metodi definiti:
+
+    getPlayerById(Long id): Ottiene un giocatore per un dato ID.
+
+    getPlayersByTeam(Long id_team): Ottiene i giocatori di una squadra per un dato ID di squadra.
+
+    getAllPlayers(): Ottiene tutti i giocatori.
+
+### Standings
+
+Metodi definiti:
+
+    getSeason(Long idLeague, Long teamId, String season): Ottiene la classifica per una determinata lega, squadra e stagione.
+
+    getSeasonByLeague(Long idLeague, String season): Ottiene la classifica per una determinata lega e stagione con informazioni sulla squadra.
+
+### Team
+
+Metodi definiti:
+
+    getTeam(Long id): Ottiene il nome e il logo di una squadra per un dato ID di squadra.
+
+    getAllByID(Long id): Ottiene tutte le informazioni su una squadra per un dato ID di squadra.
+
+    getAll(): Ottiene tutte le informazioni su tutte le squadre.
+
+### User
+
+Metodi definiti:
+
+    newUser(String name, String surname, String email, String password): Inserisce un nuovo utente nel database.
+
+    all_by_id(Long idUser): Ottiene tutte le informazioni di un utente per un dato ID di utente.
+
+    findByEmail(String email): Trova un utente per un dato indirizzo email.
+
+    updateEmail(String email, Long idUser): Aggiorna l'indirizzo email di un utente per un dato ID di utente.
+
+    updatePassword(String password, Long idUser): Aggiorna la password di un utente per un dato ID di utente.
+
+    deleteUser(Long idUser): Elimina un utente per un dato ID di utente.
+
+    login(String email, String password): Esegue il login, verifica l'indirizzo email e la password restituendo un utente opzionale.
 
 ## Services
 
