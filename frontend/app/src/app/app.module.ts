@@ -28,6 +28,7 @@ import { GamesComponent } from './games/games.component';
 import { GameDetailComponent } from './game-detail/game-detail.component';
 import { TeamsPreviewComponent } from './teams-preview/teams-preview.component';
 import { PickFavouritesComponent } from './pick-favourites/pick-favourites.component';
+import { LoggedHomeComponent } from './logged-home/logged-home.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { PickFavouritesComponent } from './pick-favourites/pick-favourites.compo
     FooterComponent,
     SigninComponent,
     ProfileComponent,
-    PickFavouritesComponent
+    PickFavouritesComponent,
+    LoggedHomeComponent
   ],
   imports: [
     BrowserModule,

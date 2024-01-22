@@ -6,6 +6,7 @@ import { Leagues } from "../_model/leagues.model";
 import { League } from "../_model/league.model";
 import { PlayerDetail } from "../_model/player.model";
 import { ProfileService } from "../_service/profile.service";
+import { FavouriteLeague, FavouritePlayer, FavouriteTeam } from "../_model/favouriteItems.model";
 
 interface DropdownState {
   teams: boolean;
@@ -19,6 +20,8 @@ interface DropdownState {
 })
 export class PickFavouritesComponent implements OnInit {
 
+  email = localStorage.getItem('emailAccount') ?? '';
+  idUser: number = 0; 
   banditLeagues = [120, 143, 194, 197, 242];
   filteredLeagues: League[] = [];
   selectedLeagueTeams: Leagues[] = [];
@@ -30,12 +33,26 @@ export class PickFavouritesComponent implements OnInit {
   favouriteTeams: { [key: number]: boolean } = {};
   favouritePlayers: { [key: number]: boolean } = {};
 
+  favLeagues: number[] = [];
+  favTeams: number[] = [];
+  favPlayers: number[] = [];
+
   constructor(public themeService: ThemeService, private basketService: BasketService, private activatedRoute: ActivatedRoute, private profileService: ProfileService) {}
 
   ngOnInit(): void {
     this.activatedRoute.data.subscribe(({allLeagues}) => {
       this.filteredLeagues = allLeagues.filter((league: League) => !this.banditLeagues.includes(league.id_league));
     });
+
+    this.profileService.getUserByEmail(this.email).subscribe((response) => {
+      this.idUser = response.idUser; 
+
+      console.log(this.idUser);
+
+      this.alreadyFavLeagues(this.idUser);
+      this.alreadyFavTeams(this.idUser);
+      this.alreadyFavPlayers(this.idUser);
+    })
   }
 
   onLeagueClick(idLeague: number): void {
@@ -89,27 +106,86 @@ export class PickFavouritesComponent implements OnInit {
     }
   }
 
+  alreadyFavLeagues(idUser: number) {
+    this.profileService.getAllFavouriteLeagues(idUser).subscribe((response: any) => {
+      this.favLeagues = response.map((item: FavouriteLeague) => item.idLeague);
+
+      for(const id of this.favLeagues) {
+        this.favouriteLeagues[id] = !this.favouriteLeagues[id];
+      }
+
+      console.log(this.favLeagues);
+      
+
+    })
+  }
+
+  alreadyFavTeams(idUser: number) {
+    this.profileService.getAllFavouriteTeams(idUser).subscribe((response: any) => {
+      this.favTeams = response.map((item: FavouriteTeam) => item.idTeam);
+
+      for(const id of this.favTeams) {
+        this.favouriteTeams[id] = !this.favouriteTeams[id];
+      }
+
+      console.log(this.favTeams);
+
+    })
+  }
+
+  alreadyFavPlayers(idUser: number) {
+    this.profileService.getAllFavouritePlayers(idUser).subscribe((response: any) => {
+      this.favPlayers = response.map((item: FavouritePlayer) => item.idPlayer);
+
+      for(const id of this.favPlayers) {
+        this.favouritePlayers[id] = !this.favouritePlayers[id];
+      }
+
+      console.log(this.favPlayers);
+
+    })
+  }
+
   favouriteLeague(idUser: number, idLeague: number) {
     this.favouriteLeagues[idLeague] = !this.favouriteLeagues[idLeague];
+
     if(this.favouriteLeagues[idLeague]) {
-      this.profileService.getFavouriteLeague(idUser, idLeague);
-      console.log(idLeague);
+      this.profileService.getFavouriteLeague(idUser, idLeague).subscribe((response) => {
+        console.log(response);
+      })
+    }
+    else {
+      this.profileService.getNotFavouriteLeague(idUser, idLeague).subscribe((response) => {
+        console.log(response);
+      })
     }
   }
 
   favouriteTeam(idUser: number, idTeam: number) {
     this.favouriteTeams[idTeam] = !this.favouriteTeams[idTeam];
     if(this.favouriteTeams[idTeam]) {
-      this.profileService.getFavouriteTeam(idUser, idTeam); 
-      console.log(idTeam);
+      this.profileService.getFavouriteTeam(idUser, idTeam).subscribe((response) => {
+        console.log(response);
+      }); 
+    }
+    else {
+      this.profileService.getNotFavouriteTeam(idUser, idTeam).subscribe((response) => {
+        console.log(response);
+      })
     }
   }
 
   favouritePlayer(idUser: number, idPlayer: number) {
     this.favouritePlayers[idPlayer] = !this.favouritePlayers[idPlayer];
     if(this.favouritePlayers[idPlayer]) {
-      this.profileService.getFavouritePlayer(idUser, idPlayer); 
-      console.log(idPlayer);
+      this.profileService.getFavouritePlayer(idUser, idPlayer).subscribe((response) => {
+        console.log(response);        
+      }); 
+    }
+    else {
+      this.profileService.getNotFavouritePlayer(idUser, idPlayer).subscribe((response) => {
+        console.log(response);
+      })
     }
   }
 

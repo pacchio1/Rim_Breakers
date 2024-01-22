@@ -18,6 +18,8 @@ import { GamesComponent } from './games/games.component';
 import { GameDetailComponent } from './game-detail/game-detail.component';
 import { TeamsPreviewComponent } from './teams-preview/teams-preview.component';
 import { PickFavouritesComponent } from './pick-favourites/pick-favourites.component';
+import { LoggedHomeComponent } from './logged-home/logged-home.component';
+import { ProfileService } from './_service/profile.service';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -84,6 +86,15 @@ const routes: Routes = [
       allLeagues: () => {
         return inject(BasketService).getAllLeague()
       }, 
+    }
+  },
+  { path: 'logged-home',
+    component: LoggedHomeComponent,
+    resolve: {
+      account: () => {
+        const email = localStorage.getItem('emailAccount') ?? '';
+        return inject(ProfileService).getUserByEmail(email);
+      },
     }
   },
   { path: 'profile', component: ProfileComponent },

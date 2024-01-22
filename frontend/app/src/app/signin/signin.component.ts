@@ -31,7 +31,7 @@ export class SigninComponent {
 
                 alert('Iscrizione effettuata con successo!'); 
 
-                this.router.navigateByUrl("/home"); 
+                this.router.navigateByUrl("/logged-home"); 
             }
         })
     }

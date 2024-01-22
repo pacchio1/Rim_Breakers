@@ -378,6 +378,19 @@ $primary-color-dark: #FF8038;
     color: white;
 }
 
+.team-favourite {
+    width: 100%;
+    height: 70px;
+    background-color: lighten(#1b1466, 15%);
+    color: white;
+}
+
+.player-favourite {
+    width: 100%;
+    height: 70px;
+    background-color: lighten(#1b1466, 30%);
+    color: white;
+}
 
 /* PlayerDetail */
 

@@ -1,0 +1,73 @@
+<section class="mt-navbar-text text-center">
+    
+    <h2>Ciao {{ account.name }}!</h2>
+    
+    <ng-container *ngIf="favouriteLeagues.length || favouriteTeams.length || favouritePlayers.length; else noData">
+        <p class="small mt-3">Vuoi modificare la tua selezione dei preferiti?</p>
+    </ng-container>
+    <ng-template #noData>
+        <p class="small">Scegli degli elementi preferiti per migliorare la tua esperienza</p>
+    </ng-template>
+
+    <button routerLink="/pick-favourites" class="btn">Scegli i preferiti</button>
+
+</section>
+
+<section class="container d-flex justify-content-center">
+    
+    <div class="league-title d-flex justify-content-center align-items-center mt-3">
+        <h2>Leghe preferite</h2>
+    </div>
+
+</section>
+<section class="container footer-index pt-3 pb-5 rounded-bottom-5 bg-white">
+    
+    <div *ngFor="let league of favouriteLeagues" class="d-flex justify-content-center pt-3">
+    
+        <button class="league-list d-flex justify-content-start align-items-center ps-5" (click)="passIdLeague(league.id_league)">
+            <img src="{{ league.logo }}" alt="" class="league-logo">
+            <h3>{{ league.name }}</h3>
+        </button>
+    
+    </div>
+
+</section>
+
+<section class="container d-flex justify-content-center">
+    
+    <div class="league-title d-flex justify-content-center align-items-center">
+        <h2>Squadre preferite</h2>
+    </div>
+
+</section>
+<section class="container footer-index pt-3 pb-5 rounded-bottom-5 bg-white">
+    
+    <div *ngFor="let team of favouriteTeams" class="d-flex justify-content-center pt-3">
+    
+        <button class="league-list d-flex justify-content-start align-items-center ps-5" (click)="passIdTeam(team.id)">
+            <img src="{{ team.logo }}" alt="" class="league-logo">
+            <h3>{{ team.name }}</h3>
+        </button>
+    
+    </div>
+
+</section>
+
+<section class="container d-flex justify-content-center">
+    
+    <div class="league-title d-flex justify-content-center align-items-center">
+        <h2>Giocatori preferiti</h2>
+    </div>
+
+</section>
+<section class="container footer-index pt-3 pb-5 rounded-bottom-5 bg-white">
+    
+    <div *ngFor="let player of favouritePlayers" class="d-flex justify-content-center pt-3">
+    
+        <button class="league-list d-flex justify-content-start align-items-center ps-5" (click)="passIdPlayer(player.idPlayer)">
+            <h3>{{ player.name }} {{ player.surname }}</h3>
+        </button>
+    
+    </div>
+
+</section>

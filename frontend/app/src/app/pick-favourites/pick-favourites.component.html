@@ -8,10 +8,10 @@
     <div *ngFor="let league of filteredLeagues" class="league-item">
         <div class="row align-items-center league-favourite mb-3">
             <div class="col-1">
-                <div *ngIf="favouriteLeagues[league.id_league]" (click)="favouriteLeague(3, league.id_league)">
+                <div *ngIf="favouriteLeagues[league.id_league]" (click)="favouriteLeague(idUser, league.id_league)">
                     <i class="bi bi-star-fill"></i>
                 </div>
-                <div *ngIf="!favouriteLeagues[league.id_league]" (click)="favouriteLeague(3, league.id_league)">
+                <div *ngIf="!favouriteLeagues[league.id_league]" (click)="favouriteLeague(idUser, league.id_league)">
                     <i class="bi bi-star"></i>
                 </div>
             </div>
@@ -20,22 +20,22 @@
                     <img [src]="league.logo" alt="{{ league.name }} Logo" class="league-logo">
                 </div>
             </div>
-            <div class="col-8 d-flex align-items-center"> <!-- Aggiunto d-flex align-items-center per centrare orizzontalmente e verticalmente -->
+            <div class="col-8 d-flex align-items-center">
                 <div (click)="onLeagueClick(league.id_league)">
-                    <h3>{{ league.name }}</h3>
+                    <h3 class="m-0">{{ league.name }}</h3>
                 </div>
             </div>
         </div>
 
-        <!-- Dropdown con squadre della lega selezionata -->
-        <div *ngIf="isDropdownOpen(league.id_league, 'teams')">
+        <div *ngIf="isDropdownOpen(league.id_league, 'teams')" class="ms-3">
+            <h2 class="mb-3">Squadre:</h2>
             <div *ngFor="let team of selectedLeagueTeams" class="team-item">
-                <div class="row align-items-center league-favourite mb-3">
+                <div class="row align-items-center team-favourite mb-3">
                     <div class="col-1">
-                        <div *ngIf="favouriteTeams[team.id]" (click)="favouriteTeam(3, team.id)">
+                        <div *ngIf="favouriteTeams[team.id]" (click)="favouriteTeam(idUser, team.id)">
                             <i class="bi bi-star-fill"></i>
                         </div>
-                        <div *ngIf="!favouriteTeams[team.id]" (click)="favouriteTeam(3, team.id)">
+                        <div *ngIf="!favouriteTeams[team.id]" (click)="favouriteTeam(idUser, team.id)">
                             <i class="bi bi-star"></i>
                         </div>
                     </div>
@@ -44,27 +44,27 @@
                             <img [src]="team.logoTeam" alt="{{ team.nameTeam }} Logo" class="league-logo">
                         </div>
                     </div>
-                    <div class="col-8 d-flex align-items-center"> <!-- Aggiunto d-flex align-items-center per centrare orizzontalmente e verticalmente -->
+                    <div class="col-8 d-flex align-items-center">
                         <div (click)="onTeamClick(team.id, $event)">
                             <h4>{{ team.nameTeam }}</h4>
                         </div>
                     </div>
                 </div>
 
-                <!-- Dropdown con giocatori del team -->
-                <div *ngIf="isDropdownOpen(team.id, 'players')">
+                <div *ngIf="isDropdownOpen(team.id, 'players')" class="ms-4">
+                    <h2 class="mb-3">Giocatori:</h2>
                     <div *ngFor="let player of selectedTeamPlayers[team.id]" class="player-item">
-                        <div class="row align-items-center league-favourite mb-3">
+                        <div class="row align-items-center player-favourite mb-3">
                             <div class="col-1">
-                                <div *ngIf="favouritePlayers[player.idPlayer]" (click)="favouritePlayer(3, player.idPlayer)">
+                                <div *ngIf="favouritePlayers[player.idPlayer]" (click)="favouritePlayer(idUser, player.idPlayer)">
                                     <i class="bi bi-star-fill"></i>
                                 </div>
-                                <div *ngIf="!favouritePlayers[player.idPlayer]" (click)="favouritePlayer(3, player.idPlayer)">
+                                <div *ngIf="!favouritePlayers[player.idPlayer]" (click)="favouritePlayer(idUser, player.idPlayer)">
                                     <i class="bi bi-star"></i>
                                 </div>
                             </div>
                             <div class="col-10 d-flex align-items-center">
-                                <p>{{ player.name }} {{ player.surname }}</p>
+                                <p class="m-0">{{ player.name }} {{ player.surname }}</p>
                             </div>
                         </div>
                     </div>
@@ -72,4 +72,5 @@
             </div>
         </div>
     </div>
+    <button class="btn btn-match-input rounded-4 mb-3" routerLink="/logged-home">OK</button>
 </div>

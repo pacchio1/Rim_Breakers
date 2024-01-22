@@ -35,7 +35,7 @@ export class LoginComponent {
 
         alert('Login effettuato con successo!')
 
-        this.router.navigateByUrl("/home");
+        this.router.navigateByUrl("/logged-home");
       }
     })
   }

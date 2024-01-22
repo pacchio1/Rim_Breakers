@@ -279,6 +279,30 @@ export class ApiService {
      * @param idUser @param idLeague 
      * @returns richiesta Api 
      */
+    searchAllFavouriteLeagues(idUser: number) {
+        return this.http.get('http://localhost:8080/favorite/league?userId='+idUser);
+    }
+
+    /**
+     * API LEGA PREFERITA
+     * 
+     * @param idUser @param idLeague 
+     * @returns richiesta Api 
+     */
+    searchNotFavouriteLeague(idUser: number, idLeague: number) {
+        const body = {
+            idUser: idUser, 
+            idLeague: idLeague
+        };
+        return this.http.post('http://localhost:8080/favorite/removeFavLeague?userId='+body.idUser+'&leagueId='+body.idLeague, body);
+    }
+
+    /**
+     * API LEGA PREFERITA
+     * 
+     * @param idUser @param idLeague 
+     * @returns richiesta Api 
+     */
     searchFavouriteTeam(idUser: number, idTeam: number) {
         const body = {
             idUser: idUser, 
@@ -293,11 +317,59 @@ export class ApiService {
      * @param idUser @param idLeague 
      * @returns richiesta Api 
      */
+    searchAllFavouriteTeams(idUser: number) {
+        return this.http.get('http://localhost:8080/favorite/team?userId='+idUser);
+    }
+
+    /**
+     * API LEGA PREFERITA
+     * 
+     * @param idUser @param idLeague 
+     * @returns richiesta Api 
+     */
+    searchNotFavouriteTeam(idUser: number, idTeam: number) {
+        const body = {
+            idUser: idUser, 
+            idTeam: idTeam
+        };
+        return this.http.post('http://localhost:8080/favorite/removeFavTeam?userId='+body.idUser+'&teamId='+body.idTeam, body);
+    }
+
+    /**
+     * API LEGA PREFERITA
+     * 
+     * @param idUser @param idLeague 
+     * @returns richiesta Api 
+     */
     searchFavouritePlayer(idUser: number, idPlayer: number) {
         const body = {
             idUser: idUser, 
             idPlayer: idPlayer
         };
         return this.http.post('http://localhost:8080/favorite/player?userId='+body.idUser+'&playerId='+body.idPlayer, body);
+    }
+
+    /**
+     * API LEGA PREFERITA
+     * 
+     * @param idUser @param idLeague 
+     * @returns richiesta Api 
+     */
+    searchAllFavouritePlayers(idUser: number) {
+        return this.http.get('http://localhost:8080/favorite/player?userId='+idUser);
+    }
+
+    /**
+     * API LEGA PREFERITA
+     * 
+     * @param idUser @param idLeague 
+     * @returns richiesta Api 
+     */
+    searchNotFavouritePlayer(idUser: number, idPlayer: number) {
+        const body = {
+            idUser: idUser, 
+            idPlayer: idPlayer
+        };
+        return this.http.post('http://localhost:8080/favorite/removeFavPlayer?userId='+body.idUser+'&playerId='+body.idPlayer, body);
     }
 }
