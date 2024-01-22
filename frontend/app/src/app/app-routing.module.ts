@@ -16,6 +16,7 @@ import { BasketService } from './_service/basket.service';
 import { SigninComponent } from './signin/signin.component';
 import { GamesComponent } from './games/games.component';
 import { GameDetailComponent } from './game-detail/game-detail.component';
+import { TeamsPreviewComponent } from './teams-preview/teams-preview.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -27,6 +28,13 @@ const routes: Routes = [
       league: (route: ActivatedRouteSnapshot, state: RouterStateSnapshot) => {
         return inject(BasketService).getTeamsLeague(parseInt(route.paramMap.get('id')!))
       }
+    } },
+  { path: 'team', 
+    component: TeamsPreviewComponent,
+    resolve: {
+      allLeagues: () => {
+        return inject(BasketService).getAllLeague()
+      },
     } },
   { path: 'team/:id', 
     component: TeamComponent,

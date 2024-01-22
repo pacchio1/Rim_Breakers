@@ -53,7 +53,7 @@ export class ApiService {
      * @returns richiesta Api 
      */
     searchTeamsLeagueStandings(idLeague: number) {
-        return this.http.get(this.localBaseUrl + 'standings/all_by_league?idLeague=' + idLeague + '&season=2022-2023').pipe(map((response: any) => {
+        return this.http.get(this.localBaseUrl + 'standings/all_by_league?idLeague=' + idLeague + '&season=2023-2024').pipe(map((response: any) => {
             return response as SeasonStandingAll[]
         }))
     }
@@ -162,6 +162,18 @@ export class ApiService {
      */
     searchGamesByLeague(leagueName: string) {
         return this.http.get(this.localBaseUrl + 'games/games_league?name=' + leagueName).pipe(map((response: any) => {
+            return response as any[]
+        }))
+    }
+    
+    /**
+     * API RICERCA GAMES BY TEAM
+     * 
+     * @param idCountry
+     * @returns richiesta Api 
+     */
+    searchGamesByTeam(teamName: string) {
+        return this.http.get(this.localBaseUrl + 'games/games_team?name=' + teamName).pipe(map((response: any) => {
             return response as any[]
         }))
     }

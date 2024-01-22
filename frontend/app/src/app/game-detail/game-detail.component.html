@@ -1,55 +1,104 @@
-<div *ngFor="let match of processedMatches" class="mt-navbar">
-    <div class="container mt-4 p-0">
-        <div class="d-flex align-items-center justify-content-center bg-light">
-            <div class="position-absolute overflow-hidden">
-                <div class="row text-center team-name-2 align-items-end">
-                    <p class="m-0">{{ match.teamHome }}</p>
-                </div>
-                <div class="row text-center team-name-2">
-                    <p class="m-0">{{ match.teamAway }}</p>
-                </div>
+<div class="container mt-navbar p-0">
+    <div class="d-flex align-items-center justify-content-center bg-light">
+        <div class="position-absolute overflow-hidden">
+            <div class="row text-center team-name-2 align-items-end vw-100">
+                <p class="m-0">{{ processedMatches.teamHome }}</p>
             </div>
-            <div class="row position-relative">
-                <div class="col prova-img p-0">
-                    <img src="../../assets/imgX/logo-broom.png" alt="" class="x">
-                </div>
-                <div class="col prova-img p-0"></div>
+            <div class="row text-center team-name-2 vw-100">
+                <p class="m-0">{{ processedMatches.teamAway }}</p>
             </div>
         </div>
-        
-        <div class="container result-game">
-            <div class="row row-cols-2">
-                <div class="col d-flex justify-content-end p-0">
-                    <div class="">
-                        <h4>{{ match.scoreHomeFinal }}</h4>
-                    </div>
-                </div>
-                <div class="col d-flex">
-                    <div class="">
-                        <h4>{{ match.scoreAwayFinal }}</h4>
-                    </div>
+        <div class="row position-relative">
+            <div class="col prova-img p-0">
+                <img src="../../assets/imgX/logo-broom.png" alt="" class="x">
+            </div>
+            <div class="col prova-img p-0"></div>
+        </div>
+    </div>
+    
+    <div class="container result-game">
+        <div class="row row-cols-2">
+            <div class="col d-flex justify-content-end">
+                <div class="game-score">
+                    <h4>{{ processedMatches.scoreHomeFinal }}</h4>
                 </div>
             </div>
-            <div class="row">
-                <div class="col text-center">
-                    {{ match.date }}
+            <div class="col d-flex">
+                <div class="game-score">
+                    <h4>{{ processedMatches.scoreAwayFinal }}</h4>
                 </div>
             </div>
-            <div class="row row-cols-3">
-                <div class="col-5 text-center">
-                    <div class="">
-                        <h4>{{ match.teamHome }}</h4>
-                    </div>
+        </div>
+        <div class="row">
+            <div class="col text-center">
+                {{ processedMatches.date }}
+            </div>
+        </div>
+        <div class="row row-cols-3 mt-3">
+            <div class="col-5 text-center">
+                <div class="logo-game-container" (click)="passIdTeam(processedMatches.homeId)">
+                    <img src="{{ processedMatches.logoHome }}" alt="{{ processedMatches.teamHome }} logo" class="logo-game">
                 </div>
-                <div class="col-2 text-center">
-                    <p>VS</p>
-                </div>
-                <div class="col-5 text-center">
-                    <div class="">
-                        <h4>{{ match.teamAway }}</h4>
-                    </div>
-                </div>
+                <h4>{{ processedMatches.teamHome }}</h4>
+            </div>
+            <div class="col-2 text-center">
+                <p>VS</p>
+            </div>
+            <div class="col-5 text-center" (click)="passIdTeam(processedMatches.awayId)">
+                <img src="{{ processedMatches.logoAway }}" alt="{{ processedMatches.teamAway }} logo" class="logo-game">
+                <h4>{{ processedMatches.teamAway }}</h4>
             </div>
         </div>
     </div>
 </div>
+
+<div class="container">
+    <div class="row text-center">
+        <h2>Statistiche</h2>
+    </div>
+    <div class="row row-cols-3">
+        <div class="col-3 ps-4">
+            <p>{{ statHome.point2 }}</p>
+            <p>{{ statHome.point3 }}</p>
+            <p>{{ statHome.freeThrowsPoint }}</p>
+            <p>{{ statHome.shot2 }}</p>
+            <p>{{ statHome.shot3 }}</p>
+            <p>{{ statHome.temptedShot2 }}</p>
+            <p>{{ statHome.temptedShot3 }}</p>
+            <p>{{ statHome.percentageShot2 }}</p>
+            <p>{{ statHome.percentageShot3 }}</p>
+            <p>{{ statHome.bounce }}</p>
+            <p>{{ statHome.assist }}</p>
+            <p>{{ statHome.foul }}</p>
+        </div>
+        <div class="col-6 text-center">
+            <p>Punti da 2</p>
+            <p>Punti da 3</p>
+            <p>Tiri liberi</p>
+            <p>Tiri da 2</p>
+            <p>Tiri da 3</p>
+            <p>Tiri tentati 2</p>
+            <p>Tiri tentati 3</p>
+            <p>Percentuale tiri 2 (%)</p>
+            <p>Percentuale tiri 3 (%)</p>
+            <p>Rimbalzi</p>
+            <p>Assist</p>
+            <p>Falli</p>
+        </div>
+        <div class="col-3 text-end">
+            <p>{{ statAway.point2 }}</p>
+            <p>{{ statAway.point3 }}</p>
+            <p>{{ statAway.freeThrowsPoint }}</p>
+            <p>{{ statAway.shot2 }}</p>
+            <p>{{ statAway.shot3 }}</p>
+            <p>{{ statAway.temptedShot2 }}</p>
+            <p>{{ statAway.temptedShot3 }}</p>
+            <p>{{ statAway.percentageShot2 }}</p>
+            <p>{{ statAway.percentageShot3 }}</p>
+            <p>{{ statAway.bounce }}</p>
+            <p>{{ statAway.assist }}</p>
+            <p>{{ statAway.foul }}</p>
+        </div>
+    </div>
+</div>
+

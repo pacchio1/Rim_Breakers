@@ -6,10 +6,26 @@
     </div>
 </div>
 
-<div>
-    <h2 class="pt-4 ps-3 text-primary-emphasis">Coppe</h2>
+<div class="container">
+    <div *ngIf="targetTeam">
+        <p>La squadra {{ targetTeam.teamName }} nella stagione {{ targetTeam.standings.season }} si è posizionata {{ targetTeam.standings.position }}</p>
+        <p>In questa stagione ha accumulato un totale di {{ targetTeam.standings.win }} vittorie e {{ targetTeam.standings.lose }} sconfitte su {{ targetTeam.standings.played }} partite giocate</p>
+        <h2>Statistiche</h2>
+        <ul>
+            <li>Punti fatti: {{ targetTeam.standings.pointsFor }}</li>
+            <li>Punti subiti: {{ targetTeam.standings.pointsAgainst }}</li>
+            <li>Percentuale vittore: {{ targetTeam.standings.percWin }}</li>
+            <li>Percentuale sconfitte: {{ targetTeam.standings.percLose }}</li>
+        </ul>
+    </div>
+    
+    <div>
+        <h2 class="pt-4 ps-3 text-primary-emphasis">Coppe</h2>
+        <p *ngIf="qualified"><i class="bi bi-trophy-fill"></i>Attualmente Champions League</p>
+        <p *ngIf="qualified === false"><i class="bi bi-trophy-fill"></i>Non militante in Champions League</p>
+    </div>
+    
 </div>
-
 <div>
     <h2 class="pt-4 ps-3 text-primary-emphasis">Compagni di squadra</h2>
 

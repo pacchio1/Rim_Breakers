@@ -130,9 +130,19 @@ export class BasketService {
     }
     
     /**
+     * API RICERCA GAMES BY TEAM
+     * 
+     * @param teamName
+     * @returns richiesta Api 
+     */
+    getGamesByTeam(teamName: string) {
+        return this.apiService.searchGamesByTeam(teamName); 
+    }
+    
+    /**
      * API RICERCA GAMES
      * 
-     * @param leagueName
+     * @param idLeague
      * @returns richiesta Api 
      */
     getGame(idLeague: number) {
