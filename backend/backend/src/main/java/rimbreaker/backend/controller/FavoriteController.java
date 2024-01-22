@@ -9,6 +9,7 @@ import rimbreaker.backend.entity.TeamFollowed;
 import rimbreaker.backend.entity.LeagueFollowed;
 
 import java.util.List;
+import java.util.Map;
 
 @CrossOrigin(origins = "*")
 @RestController
@@ -22,7 +23,9 @@ public class FavoriteController {
     @PostMapping("/player")
     public ResponseEntity<?> saveFavoritePlayer(@RequestParam Long userId, @RequestParam Long playerId) {
         favoriteService.saveFavoritePlayer(userId, playerId);
-        return ResponseEntity.ok().build();
+        return ResponseEntity.ok(Map.of(
+                "message", "Aggiunto ai fovoriti!"
+        ));
     }
 
     // Ottieni tutti i giocatori preferiti di un utente
@@ -36,7 +39,9 @@ public class FavoriteController {
     @PostMapping("/team")
     public ResponseEntity<?> saveFavoriteTeam(@RequestParam Long userId, @RequestParam Long teamId) {
         favoriteService.saveFavoriteTeam(userId, teamId);
-        return ResponseEntity.ok().build();
+        return ResponseEntity.ok(Map.of(
+                "message", "Aggiunto ai fovoriti!"
+        ));
     }
 
     // Ottieni tutte le squadre preferite di un utente
@@ -50,7 +55,9 @@ public class FavoriteController {
     @PostMapping("/league")
     public ResponseEntity<?> saveFavoriteLeague(@RequestParam Long userId, @RequestParam Long leagueId) {
         favoriteService.saveFavoriteLeague(userId, leagueId);
-        return ResponseEntity.ok().build();
+        return ResponseEntity.ok(Map.of(
+                "message", "Aggiunto ai fovoriti!"
+        ));
     }
 
     // Ottieni tutte le leghe preferite di un utente
