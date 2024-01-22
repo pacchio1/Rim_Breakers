@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
 .name {
-    width: 100px;
+    width: 125px;
 }
 
 .prova-img {
@@ -285,6 +285,11 @@ $primary-color-dark: #FF8038;
     background-color: #2f23b1;
 }
 
+.country-logo {
+    width: 50px;
+    height: 40px;
+}
+
 /* Leagues */
 
 .league-title {
@@ -339,6 +344,32 @@ $primary-color-dark: #FF8038;
 .score {
     width: 40px;
     height: 40px;
+}
+
+/* Ranking */
+
+.tag-list {
+    width: 377px;
+    height: 53px;
+    border-radius: 70px;
+    background-color: #3226bb;
+    color: white;
+}
+
+.position-tag {
+    width: 90px;
+}
+
+.name-tag {
+    width: 209px;
+}
+
+.pt-tag {
+    width: 42px;
+}
+
+.match-tag {
+    width: 25px;
 }
 
 /* Team */
