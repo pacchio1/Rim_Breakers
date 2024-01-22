@@ -16,37 +16,45 @@ import java.util.List;
 public class FavoriteService {
 
     private final FavoritePlayerRepository favoritePlayerRepository;
+
     private final FavoriteTeamRepository favoriteTeamRepository;
+
     private final FavoriteLeagueRepository favoriteLeagueRepository;
 
-
-
     public void saveFavoritePlayer(Long userId, Long playerId) {
+
         favoritePlayerRepository.saveFavoritePlayer(userId, playerId);
+
     }
 
     public List<PlayerFollowed> getAllFavoritePlayersByUserId(Long userId) {
+
         return favoritePlayerRepository.getAllFavoritesByUserId(userId);
+
     }
 
-
-
     public void saveFavoriteTeam(Long userId, Long teamId) {
+
         favoriteTeamRepository.saveFavoriteTeam(userId, teamId);
+
     }
 
     public List<TeamFollowed> getAllFavoriteTeamsByUserId(Long userId) {
+
         return favoriteTeamRepository.getAllFavoritesByUserId(userId);
+
     }
 
-
-
     public void saveFavoriteLeague(Long userId, Long leagueId) {
+
         favoriteLeagueRepository.saveFavoriteLeague(userId, leagueId);
+
     }
 
     public List<LeagueFollowed> getAllFavoriteLeaguesByUserId(Long userId) {
+
         return favoriteLeagueRepository.getAllFavoritesByUserId(userId);
+
     }
     
 }
