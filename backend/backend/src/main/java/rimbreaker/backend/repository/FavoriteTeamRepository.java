@@ -18,5 +18,10 @@ public interface FavoriteTeamRepository extends JpaRepository<TeamFollowed, Long
 
     @Query("SELECT tf FROM TeamFollowed tf WHERE tf.idUser = :idUser")
     List<TeamFollowed> getAllFavoritesByUserId(@Param("idUser") Long idUser);
-    
+    @Modifying
+    @Transactional
+    @Query("DELETE FROM TeamFollowed tf WHERE tf.idUser = :idUser AND tf.idTeam = :idTeam")
+    void removeFavoriteTeam(@Param("idUser") Long userId, @Param("idTeam") Long idTeam);
+
+
 }

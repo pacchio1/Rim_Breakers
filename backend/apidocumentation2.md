@@ -153,6 +153,87 @@ Endpoint: Get Games by League
 Commented-out Endpoints:
 
     There are commented-out endpoints (/dates, /status, /score_home, /score_away, /team_playing) that seem to be placeholders for additional functionality. If needed, these endpoints can be uncommented and implemented in the future.
+Endpoint: /removeFavLeague
+
+Descrizione:
+Questo endpoint consente di rimuovere una lega dai favoriti di un utente.
+
+Parametri:
+
+    userId (obbligatorio): Identificativo univoco dell'utente.
+    leagueId (obbligatorio): Identificativo univoco della lega.
+
+Metodo: GET
+
+Esempio di Utilizzo:
+
+http
+
+GET /removeFavLeague?userId=123&leagueId=456
+
+Risposta di Esempio:
+
+json
+
+{
+    "message": "rimosso dai favoriti!"
+}
+
+Rimuovi un Giocatore dai Favoriti
+
+Endpoint: /removeFavPlayer
+
+Descrizione:
+Questo endpoint consente di rimuovere un giocatore dai favoriti di un utente.
+
+Parametri:
+
+    userId (obbligatorio): Identificativo univoco dell'utente.
+    playerId (obbligatorio): Identificativo univoco del giocatore.
+
+Metodo: GET
+
+Esempio di Utilizzo:
+
+http
+
+GET /removeFavPlayer?userId=123&playerId=789
+
+Risposta di Esempio:
+
+json
+
+{
+    "message": "rimosso dai favoriti!"
+}
+
+Rimuovi una Squadra dai Favoriti
+
+Endpoint: /removeFavTeam
+
+Descrizione:
+Questo endpoint consente di rimuovere una squadra dai favoriti di un utente.
+
+Parametri:
+
+    userId (obbligatorio): Identificativo univoco dell'utente.
+    teamId (obbligatorio): Identificativo univoco della squadra.
+
+Metodo: GET
+
+Esempio di Utilizzo:
+
+http
+
+GET /removeFavTeam?userId=123&teamId=987
+
+Risposta di Esempio:
+
+json
+
+{
+    "message": "rimosso dai favoriti!"
+}
 
 ## Request Mapping
 
