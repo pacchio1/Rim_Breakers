@@ -16,6 +16,7 @@ import { BasketService } from './_service/basket.service';
 import { SigninComponent } from './signin/signin.component';
 import { GamesComponent } from './games/games.component';
 import { GameDetailComponent } from './game-detail/game-detail.component';
+import { PickFavouritesComponent } from './pick-favourites/pick-favourites.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -66,6 +67,14 @@ const routes: Routes = [
     resolve: {
       matchDetail: (route: ActivatedRouteSnapshot) => {
         return inject(BasketService).getGame(parseInt(route.paramMap.get('id')!))
+      }, 
+    }
+  },
+  { path: 'pick-favourites',
+    component: PickFavouritesComponent,
+    resolve: {
+      allLeagues: () => {
+        return inject(BasketService).getAllLeague()
       }, 
     }
   },

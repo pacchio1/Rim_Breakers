@@ -26,6 +26,7 @@ import { AssistComponent } from './assist/assist.component';
 import { LeagueMatchComponent } from './league-match/league-match.component';
 import { GamesComponent } from './games/games.component';
 import { GameDetailComponent } from './game-detail/game-detail.component';
+import { PickFavouritesComponent } from './pick-favourites/pick-favourites.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { GameDetailComponent } from './game-detail/game-detail.component';
     GameDetailComponent,
     FooterComponent,
     SigninComponent,
-    ProfileComponent
+    ProfileComponent,
+    PickFavouritesComponent
   ],
   imports: [
     BrowserModule,
