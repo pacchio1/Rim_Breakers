@@ -258,4 +258,46 @@ export class ApiService {
         };
         return this.http.post('http://localhost:8080/user/delete?id='+body.idUser, body);
     }
+
+    /**
+     * API LEGA PREFERITA
+     * 
+     * @param idUser @param idLeague 
+     * @returns richiesta Api 
+     */
+    searchFavouriteLeague(idUser: number, idLeague: number) {
+        const body = {
+            idUser: idUser, 
+            idLeague: idLeague
+        };
+        return this.http.post('http://localhost:8080/favorite/league?userId='+body.idUser+'&leagueId='+body.idLeague, body);
+    }
+
+    /**
+     * API LEGA PREFERITA
+     * 
+     * @param idUser @param idLeague 
+     * @returns richiesta Api 
+     */
+    searchFavouriteTeam(idUser: number, idTeam: number) {
+        const body = {
+            idUser: idUser, 
+            idTeam: idTeam
+        };
+        return this.http.post('http://localhost:8080/favorite/team?userId='+body.idUser+'&teamId='+body.idTeam, body);
+    }
+
+    /**
+     * API LEGA PREFERITA
+     * 
+     * @param idUser @param idLeague 
+     * @returns richiesta Api 
+     */
+    searchFavouritePlayer(idUser: number, idPlayer: number) {
+        const body = {
+            idUser: idUser, 
+            idPlayer: idPlayer
+        };
+        return this.http.post('http://localhost:8080/favorite/player?userId='+body.idUser+'&playerId='+body.idPlayer, body);
+    }
 }

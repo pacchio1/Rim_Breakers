@@ -4,23 +4,69 @@
     </div>
 </section>
 
-<div class="container mt-3">
-    <div *ngFor="let league of filteredLeagues" class="league-item" (click)="onLeagueClick(league.id_league)">
-        <img [src]="league.logo" alt="{{ league.name }} Logo" class="league-logo">
-        <h3>{{ league.name }}</h3>
+<div class="container mt-4">
+    <div *ngFor="let league of filteredLeagues" class="league-item">
+        <div class="row align-items-center league-favourite mb-3">
+            <div class="col-1">
+                <div *ngIf="favouriteLeagues[league.id_league]" (click)="favouriteLeague(3, league.id_league)">
+                    <i class="bi bi-star-fill"></i>
+                </div>
+                <div *ngIf="!favouriteLeagues[league.id_league]" (click)="favouriteLeague(3, league.id_league)">
+                    <i class="bi bi-star"></i>
+                </div>
+            </div>
+            <div class="col-2">
+                <div (click)="onLeagueClick(league.id_league)">
+                    <img [src]="league.logo" alt="{{ league.name }} Logo" class="league-logo">
+                </div>
+            </div>
+            <div class="col-8 d-flex align-items-center"> <!-- Aggiunto d-flex align-items-center per centrare orizzontalmente e verticalmente -->
+                <div (click)="onLeagueClick(league.id_league)">
+                    <h3>{{ league.name }}</h3>
+                </div>
+            </div>
+        </div>
 
         <!-- Dropdown con squadre della lega selezionata -->
         <div *ngIf="isDropdownOpen(league.id_league, 'teams')">
-            <h4>Squadre della lega selezionata:</h4>
-            <div *ngFor="let team of selectedLeagueTeams" class="team-item" (click)="onTeamClick(team.id)">
-                <img [src]="team.logoTeam" alt="{{ team.nameTeam }} Logo" class="team-logo">
-                <p>{{ team.nameTeam }}</p>
+            <div *ngFor="let team of selectedLeagueTeams" class="team-item">
+                <div class="row align-items-center league-favourite mb-3">
+                    <div class="col-1">
+                        <div *ngIf="favouriteTeams[team.id]" (click)="favouriteTeam(3, team.id)">
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <div *ngIf="!favouriteTeams[team.id]" (click)="favouriteTeam(3, team.id)">
+                            <i class="bi bi-star"></i>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div (click)="onTeamClick(team.id, $event)">
+                            <img [src]="team.logoTeam" alt="{{ team.nameTeam }} Logo" class="league-logo">
+                        </div>
+                    </div>
+                    <div class="col-8 d-flex align-items-center"> <!-- Aggiunto d-flex align-items-center per centrare orizzontalmente e verticalmente -->
+                        <div (click)="onTeamClick(team.id, $event)">
+                            <h4>{{ team.nameTeam }}</h4>
+                        </div>
+                    </div>
+                </div>
 
                 <!-- Dropdown con giocatori del team -->
                 <div *ngIf="isDropdownOpen(team.id, 'players')">
-                    <h5>Giocatori del team:</h5>
                     <div *ngFor="let player of selectedTeamPlayers[team.id]" class="player-item">
-                        <p>{{ player.name }}</p>
+                        <div class="row align-items-center league-favourite mb-3">
+                            <div class="col-1">
+                                <div *ngIf="favouritePlayers[player.idPlayer]" (click)="favouritePlayer(3, player.idPlayer)">
+                                    <i class="bi bi-star-fill"></i>
+                                </div>
+                                <div *ngIf="!favouritePlayers[player.idPlayer]" (click)="favouritePlayer(3, player.idPlayer)">
+                                    <i class="bi bi-star"></i>
+                                </div>
+                            </div>
+                            <div class="col-10 d-flex align-items-center">
+                                <p>{{ player.name }} {{ player.surname }}</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
