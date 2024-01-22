@@ -4,7 +4,6 @@ import { Profile } from '../_model/profile.model';
 import { ProfileService } from '../_service/profile.service';
 import { Router } from '@angular/router';
 import { LocalStorageService } from '../_service/localStorage.service';
-import { response } from 'express';
 
 @Component({
   selector: 'app-profile',
