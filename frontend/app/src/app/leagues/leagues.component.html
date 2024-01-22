@@ -6,25 +6,27 @@
 
 </section>
 
-<div class="d-flex flex-row justify-content-center mt-3">
-    <button class="tab p-2 me-1 rounded-3" [class.active]="selectedButton === 'A'" (click)="showComponent('A')">Classifica</button>
-    <button class="tab p-2 me-1 rounded-3" [class.active]="selectedButton === 'B'" (click)="showComponent('B')">Marcatori</button>
-    <button class="tab p-2 me-1 rounded-3" [class.active]="selectedButton === 'C'" (click)="showComponent('C')">Assist</button>
-    <button class="tab p-2 me-1 rounded-3" [class.active]="selectedButton === 'D'" (click)="showComponent('D')">Risultati</button>
-</div>
+<div class="container">
+    <div class="d-flex flex-row justify-content-center mt-3">
+        <button class="tab p-2 me-1 rounded-3" [class.active]="selectedButton === 'A'" (click)="showComponent('A')">Classifica</button>
+        <button class="tab p-2 me-1 rounded-3" [class.active]="selectedButton === 'B'" (click)="showComponent('B')">Marcatori</button>
+        <button class="tab p-2 me-1 rounded-3" [class.active]="selectedButton === 'C'" (click)="showComponent('C')">Assist</button>
+        <button class="tab p-2 me-1 rounded-3" [class.active]="selectedButton === 'D'" (click)="showComponent('D')">Risultati</button>
+    </div>
 
 
-<div *ngIf="componentSelected === 'A'" class="container footer-index pt-3 pb-5 rounded-bottom-5 bg-white">
-    <app-ranking *ngIf="league" [teamsData]="leaguesData" [leagueName]="league.name"></app-ranking>
-</div>
-<div *ngIf="componentSelected === 'B'">
-    <app-scorer [teamsData]="leaguesData"></app-scorer>
-</div>
-<div *ngIf="componentSelected === 'C'">
-    <app-assist [teamsData]="leaguesData"></app-assist>
-</div>
-<div *ngIf="componentSelected === 'D'">
-    <app-league-match [leagueName]="league.name"></app-league-match>
+    <div *ngIf="componentSelected === 'A'" class="container footer-index pt-3 pb-5 rounded-bottom-5 bg-white">
+        <app-ranking *ngIf="league" [teamsData]="leaguesData" [leagueName]="league.name"></app-ranking>
+    </div>
+    <div *ngIf="componentSelected === 'B'">
+        <app-scorer [teamsData]="leaguesData"></app-scorer>
+    </div>
+    <div *ngIf="componentSelected === 'C'">
+        <app-assist [teamsData]="leaguesData"></app-assist>
+    </div>
+    <div *ngIf="componentSelected === 'D'">
+        <app-league-match [leagueName]="league.name"></app-league-match>
+    </div>
 </div>
 
 <!-- <section class="container footer-index pt-3 pb-5 rounded-bottom-5 bg-white">  

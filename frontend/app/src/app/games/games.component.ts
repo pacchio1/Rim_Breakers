@@ -13,6 +13,7 @@ export class GamesComponent implements OnInit {
     leagues: any[] = [];
     leagues2: any[] = [];
     processedMatches: any[] = [];
+    desiredLeagueName = ['LNB', 'BBL', 'Basket League', 'Lega A', 'ACB', 'Super Ligi', 'Champions Leagu'];
 
     constructor(private basketService: BasketService, private activatedRoute: ActivatedRoute, private router: Router) {}
 
@@ -20,12 +21,19 @@ export class GamesComponent implements OnInit {
         this.activatedRoute.data.subscribe(({allLeagues}) => {
             this.leagues = allLeagues;
             console.log('gamesByLeague', this.leagues)
-            this.leagues.forEach(league => {
-                this.basketService.getGamesByLeague(league.name).subscribe((response: any) => {
+            // this.leagues.forEach(league => {
+            //     this.basketService.getGamesByLeague(league.name).subscribe((response: any) => {
+            //         const processedLeagueMatches = response.map((game: any) => this.processGame(game));
+            //         this.processedMatches.push(...processedLeagueMatches);
+            //         console.log('processedMatches', this.processedMatches);
+            //     })
+            // });
+            this.desiredLeagueName.forEach(league => {
+                this.basketService.getGamesByLeague(league).subscribe((response: any) => {
                     const processedLeagueMatches = response.map((game: any) => this.processGame(game));
                     this.processedMatches.push(...processedLeagueMatches);
                     console.log('processedMatches', this.processedMatches);
-                })
+                });
             });
         });
     }

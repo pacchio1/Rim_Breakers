@@ -38,9 +38,6 @@
     <div class="container d-flex justify-content-center">
 
         <div class="tag-list row align-items-center">
-            <!-- <div class="position-tag">
-                <p class="m-0">Posiz.</p>
-            </div> -->
             <div class="name-tag ps-5">
                 <p class="m-0">Squadra</p>
             </div>
@@ -64,21 +61,21 @@
     
     <div class="container d-flex flex-wrap justify-content-center">
         <div class="row">
-        <div *ngFor="let leagueObj of teamsStandingData" class="m-1 d-flex justify-content-center col-12">
-            <div class="league-list d-flex justify-content-start align-items-center px-3" (click)="passIdTeam(leagueObj.standings.teamId)">
-                <p class="m-0 px-1">{{ leagueObj.standings.position }}^</p>
-                <img src="{{ leagueObj.logo }}" alt="" class="league-logo">
-                <p *ngIf="leagueObj.teamName" class="ps-3 m-0 name">{{ leagueObj.teamName }}</p>
-                <p *ngIf="!leagueObj.teamName" class="ps-3 m-0 text-warning">NOME NON DISPONIBILE</p>
-                <div class="d-flex ms-2">
-                    <p class="m-0 px-1">{{ leagueObj.standings.pointsAgainst }}</p>
-                    <p class="m-0 px-1">{{ leagueObj.standings.pointsFor }}</p>
-                    <p class="m-0 px-1">{{ leagueObj.standings.played }}</p>
-                    <p class="m-0 px-1">{{ leagueObj.standings.win }}</p>
-                    <p class="m-0 px-1">{{ leagueObj.standings.lose }}</p>
+            <div *ngFor="let leagueObj of teamsStandingData" class="m-1 d-flex justify-content-center col-12">
+                <div class="league-list d-flex justify-content-start align-items-center px-3" (click)="passIdTeam(leagueObj.standings.teamId)">
+                    <p class="m-0 px-1">{{ leagueObj.standings.position }}^</p>
+                    <img src="{{ leagueObj.logo }}" alt="" class="league-logo">
+                    <p *ngIf="leagueObj.teamName" class="ps-3 m-0 name">{{ leagueObj.teamName }}</p>
+                    <p *ngIf="!leagueObj.teamName" class="ps-3 m-0 text-warning">NOME NON DISPONIBILE</p>
+                    <div class="d-flex ms-2">
+                        <p class="m-0 px-1">{{ leagueObj.standings.pointsAgainst }}</p>
+                        <p class="m-0 px-1">{{ leagueObj.standings.pointsFor }}</p>
+                        <p class="m-0 px-1">{{ leagueObj.standings.played }}</p>
+                        <p class="m-0 px-1">{{ leagueObj.standings.win }}</p>
+                        <p class="m-0 px-1">{{ leagueObj.standings.lose }}</p>
+                    </div>
                 </div>
             </div>
-        </div>
         </div>
     </div>
 </ng-template>

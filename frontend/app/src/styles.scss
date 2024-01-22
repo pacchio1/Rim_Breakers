@@ -40,6 +40,11 @@
     box-shadow: 0 0 8px rgba(0, 1, 1, 0.677);
 }
 
+.team-logo {
+    width: 65px;
+    max-height: 80px;
+}
+
 /* Global */
 
 $primary-color: #1b1466;
@@ -301,7 +306,8 @@ $primary-color-dark: #FF8038;
 }
 
 .league-list {
-    width: 100%;
+    // width: 100%;
+    width: 377px;
     height: 53px;
     border-radius: 70px;
     background-color: $primary-color;
@@ -585,6 +591,10 @@ footer {
     .player-info {
         width: 700px;
         height: 443px;
+    }
+
+    .player-card-container {
+        overflow-x: unset;
     }
 
 }
