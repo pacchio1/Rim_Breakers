@@ -18,4 +18,10 @@ public interface FavoriteLeagueRepository extends JpaRepository<LeagueFollowed, 
 
     @Query("SELECT lf FROM LeagueFollowed lf WHERE lf.idUser = :idUser")
     List<LeagueFollowed> getAllFavoritesByUserId(@Param("idUser") Long idUser);
+    @Modifying
+    @Transactional
+    @Query("DELETE FROM LeagueFollowed lf WHERE lf.idUser = :idUser AND lf.idLeague = :idLeague")
+    void removeFavoriteLeague(@Param("idUser") Long userId, @Param("idLeague") Long leagueId);
+
+
 }

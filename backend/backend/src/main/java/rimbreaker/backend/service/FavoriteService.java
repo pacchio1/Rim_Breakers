@@ -1,5 +1,6 @@
 package rimbreaker.backend.service;
 
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import rimbreaker.backend.entity.PlayerFollowed;
@@ -56,5 +57,24 @@ public class FavoriteService {
         return favoriteLeagueRepository.getAllFavoritesByUserId(userId);
 
     }
+    @Transactional
+    public void removeFavoriteLeague(Long idUser, Long leagueId) {
+
+        favoriteLeagueRepository.removeFavoriteLeague(idUser, leagueId);
+
+    }
+    @Transactional
+    public void removeFavoriteTeam(Long idUser, Long teamId) {
+
+        favoriteTeamRepository.removeFavoriteTeam(idUser, teamId);
+
+    }
+    @Transactional
+    public void removeFavoritePlayer(Long idUser, Long playerId) {
+
+        favoritePlayerRepository.removeFavoritePlayer(idUser, playerId);
+
+    }
+
     
 }

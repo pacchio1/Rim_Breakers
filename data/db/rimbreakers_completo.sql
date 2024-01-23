@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 20, 2024 at 01:58 AM
+-- Generation Time: Jan 22, 2024 at 09:41 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -5864,6 +5864,24 @@ INSERT INTO `standings` (`ID_league`, `season`, `position`, `group_name`, `ID_te
 (2, '2022-2023', 18, 'Regular Season', 110, 33, 10, 0.303, 23, 0.697, 2521, 2730, 'Relegation - Pro B'),
 (2, '2022-2023', 17, 'Regular Season', 3007, 33, 11, 0.333, 22, 0.667, 2588, 2739, 'Relegation - Pro B'),
 (2, '2022-2023', 2, 'Regular Season', 5235, 33, 22, 0.667, 11, 0.333, 2827, 2727, 'Promotion - LNB (Play Offs: Quarter-finals)'),
+(2, '2023-2024', 10, 'Regular Season', 10, 19, 9, 0.474, 10, 0.526, 1495, 1418, 'None'),
+(2, '2023-2024', 11, 'Regular Season', 11, 19, 9, 0.474, 10, 0.526, 1473, 1602, 'None'),
+(2, '2023-2024', 1, 'Regular Season', 16, 18, 17, 0.944, 1, 0.056, 1577, 1339, 'Promotion - LNB (Play Offs: Quarter-finals)'),
+(2, '2023-2024', 17, 'Regular Season', 17, 17, 4, 0.235, 13, 0.765, 1267, 1366, 'Relegation - Pro B'),
+(2, '2023-2024', 9, 'Regular Season', 18, 19, 9, 0.474, 10, 0.526, 1493, 1517, 'None'),
+(2, '2023-2024', 16, 'Regular Season', 19, 18, 6, 0.333, 12, 0.667, 1468, 1560, 'Relegation - Pro B'),
+(2, '2023-2024', 13, 'Regular Season', 20, 19, 8, 0.421, 11, 0.579, 1512, 1560, 'None'),
+(2, '2023-2024', 5, 'Regular Season', 21, 19, 12, 0.632, 7, 0.368, 1522, 1536, 'Promotion - LNB (Play Offs: Quarter-finals)'),
+(2, '2023-2024', 6, 'Regular Season', 23, 19, 9, 0.474, 10, 0.526, 1554, 1568, 'Promotion - LNB (Play Offs: Quarter-finals)'),
+(2, '2023-2024', 2, 'Regular Season', 24, 19, 14, 0.737, 5, 0.263, 1606, 1416, 'Promotion - LNB (Play Offs: Quarter-finals)'),
+(2, '2023-2024', 14, 'Regular Season', 25, 19, 8, 0.421, 11, 0.579, 1452, 1484, 'None'),
+(2, '2023-2024', 3, 'Regular Season', 26, 18, 13, 0.722, 5, 0.278, 1525, 1410, 'Promotion - LNB (Play Offs: Quarter-finals)'),
+(2, '2023-2024', 12, 'Regular Season', 27, 19, 7, 0.368, 12, 0.632, 1446, 1460, 'None'),
+(2, '2023-2024', 15, 'Regular Season', 95, 19, 7, 0.368, 12, 0.632, 1553, 1631, 'None'),
+(2, '2023-2024', 8, 'Regular Season', 100, 19, 9, 0.474, 10, 0.526, 1525, 1578, 'Promotion - LNB (Play Offs: Quarter-finals)'),
+(2, '2023-2024', 7, 'Regular Season', 106, 19, 9, 0.474, 10, 0.526, 1416, 1389, 'Promotion - LNB (Play Offs: Quarter-finals)'),
+(2, '2023-2024', 4, 'Regular Season', 108, 18, 12, 0.667, 6, 0.333, 1517, 1367, 'Promotion - LNB (Play Offs: Quarter-finals)'),
+(2, '2023-2024', 18, 'Regular Season', 5235, 19, 3, 0.158, 16, 0.842, 1447, 1647, 'Relegation - Pro B'),
 (40, '2022-2023', 11, 'Regular Season', 0, 34, 15, 0.441, 19, 0.559, 2752, 2839, 'None'),
 (40, '2022-2023', 2, 'Regular Season', 519, 34, 31, 0.912, 3, 0.088, 3002, 2615, 'Promotion - BBL (Play Offs: )'),
 (40, '2022-2023', 10, 'Regular Season', 520, 34, 15, 0.441, 19, 0.559, 2996, 3021, 'None'),
@@ -5882,6 +5900,24 @@ INSERT INTO `standings` (`ID_league`, `season`, `position`, `group_name`, `ID_te
 (40, '2022-2023', 12, 'Regular Season', 552, 34, 15, 0.441, 19, 0.559, 2976, 3046, 'None'),
 (40, '2022-2023', 9, 'Regular Season', 561, 34, 16, 0.471, 18, 0.529, 2857, 3021, 'None'),
 (40, '2022-2023', 16, 'Regular Season', 2263, 34, 11, 0.324, 23, 0.676, 2881, 3041, 'None'),
+(40, '2023-2024', 6, 'Regular Season', 0, 15, 10, 0.667, 5, 0.333, 1259, 1179, 'Promotion - BBL (Play Offs: Quarter-finals)'),
+(40, '2023-2024', 4, 'Regular Season', 519, 13, 9, 0.692, 4, 0.308, 1201, 1107, 'Promotion - BBL (Play Offs: Quarter-finals)'),
+(40, '2023-2024', 12, 'Regular Season', 520, 17, 6, 0.353, 11, 0.647, 1477, 1536, 'None'),
+(40, '2023-2024', 13, 'Regular Season', 521, 17, 6, 0.353, 11, 0.647, 1408, 1485, 'None'),
+(40, '2023-2024', 2, 'Regular Season', 522, 14, 11, 0.786, 3, 0.214, 1234, 1070, 'Promotion - BBL (Play Offs: Quarter-finals)'),
+(40, '2023-2024', 9, 'Regular Season', 524, 17, 10, 0.588, 7, 0.412, 1533, 1438, 'None'),
+(40, '2023-2024', 18, 'Regular Season', 525, 16, 3, 0.188, 13, 0.812, 1255, 1515, 'Relegation - Pro A'),
+(40, '2023-2024', 16, 'Regular Season', 528, 14, 3, 0.214, 11, 0.786, 1250, 1416, 'None'),
+(40, '2023-2024', 7, 'Regular Season', 529, 15, 10, 0.667, 5, 0.333, 1334, 1334, 'None'),
+(40, '2023-2024', 8, 'Regular Season', 530, 16, 10, 0.625, 6, 0.375, 1430, 1276, 'None'),
+(40, '2023-2024', 10, 'Regular Season', 532, 16, 7, 0.438, 9, 0.562, 1364, 1372, 'None'),
+(40, '2023-2024', 3, 'Regular Season', 533, 17, 13, 0.765, 4, 0.235, 1588, 1496, 'Promotion - BBL (Play Offs: Quarter-finals)'),
+(40, '2023-2024', 5, 'Regular Season', 534, 16, 11, 0.688, 5, 0.312, 1457, 1300, 'Promotion - BBL (Play Offs: Quarter-finals)'),
+(40, '2023-2024', 1, 'Regular Season', 550, 16, 14, 0.875, 2, 0.125, 1396, 1194, 'Promotion - BBL (Play Offs: Quarter-finals)'),
+(40, '2023-2024', 17, 'Regular Season', 552, 16, 3, 0.188, 13, 0.812, 1306, 1508, 'Relegation - Pro A'),
+(40, '2023-2024', 11, 'Regular Season', 561, 15, 6, 0.4, 9, 0.6, 1382, 1404, 'None'),
+(40, '2023-2024', 15, 'Regular Season', 564, 16, 4, 0.25, 12, 0.75, 1381, 1548, 'None'),
+(40, '2023-2024', 14, 'Regular Season', 2263, 16, 5, 0.313, 11, 0.687, 1334, 1411, 'None'),
 (45, '2022-2023', 10, 'Regular Season', 590, 22, 5, 0.227, 17, 0.773, 1584, 1800, 'None'),
 (45, '2022-2023', 11, 'Regular Season', 594, 22, 5, 0.227, 17, 0.773, 1530, 1745, 'None'),
 (45, '2022-2023', 6, 'Regular Season', 605, 22, 12, 0.545, 10, 0.455, 1668, 1686, 'Promotion - Basket League (Play Offs: Quarter-finals)'),
@@ -5894,6 +5930,18 @@ INSERT INTO `standings` (`ID_league`, `season`, `position`, `group_name`, `ID_te
 (45, '2022-2023', 3, 'Regular Season', 616, 22, 14, 0.636, 8, 0.364, 1852, 1731, 'Promotion - Basket League (Play Offs: Quarter-finals)'),
 (45, '2022-2023', 5, 'Regular Season', 617, 22, 12, 0.545, 10, 0.455, 1687, 1708, 'Promotion - Basket League (Play Offs: Quarter-finals)'),
 (45, '2022-2023', 1, 'Regular Season', 1542, 22, 22, 1, 0, 0, 2029, 1567, 'Promotion - Basket League (Play Offs: Quarter-finals)'),
+(45, '2023-2024', 10, 'Regular Season', 590, 14, 4, 0.286, 10, 0.714, 1015, 1092, 'Basket League (Losers stage: )'),
+(45, '2023-2024', 12, 'Regular Season', 594, 14, 3, 0.214, 11, 0.786, 945, 1156, 'Basket League (Losers stage: )'),
+(45, '2023-2024', 6, 'Regular Season', 605, 14, 6, 0.429, 8, 0.571, 1208, 1168, 'Promotion - Basket League (Winners stage: )'),
+(45, '2023-2024', 5, 'Regular Season', 606, 14, 7, 0.5, 7, 0.5, 1069, 1064, 'Promotion - Basket League (Winners stage: )'),
+(45, '2023-2024', 9, 'Regular Season', 610, 14, 5, 0.357, 9, 0.643, 1115, 1192, 'Basket League (Losers stage: )'),
+(45, '2023-2024', 11, 'Regular Season', 612, 14, 4, 0.286, 10, 0.714, 1083, 1245, 'Basket League (Losers stage: )'),
+(45, '2023-2024', 7, 'Regular Season', 613, 14, 6, 0.429, 8, 0.571, 1024, 1100, 'Basket League (Losers stage: )'),
+(45, '2023-2024', 1, 'Regular Season', 614, 14, 14, 1, 0, 0, 1196, 974, 'Promotion - Basket League (Winners stage: )'),
+(45, '2023-2024', 4, 'Regular Season', 616, 14, 8, 0.571, 6, 0.429, 1127, 1024, 'Promotion - Basket League (Winners stage: )'),
+(45, '2023-2024', 3, 'Regular Season', 617, 14, 9, 0.643, 5, 0.357, 1232, 1151, 'Promotion - Basket League (Winners stage: )'),
+(45, '2023-2024', 8, 'Regular Season', 1529, 14, 5, 0.357, 9, 0.643, 1149, 1252, 'Basket League (Losers stage: )'),
+(45, '2023-2024', 2, 'Regular Season', 1542, 14, 13, 0.929, 1, 0.071, 1194, 939, 'Promotion - Basket League (Winners stage: )'),
 (52, '2022-2023', 12, 'Regular Season', 690, 30, 12, 0.4, 18, 0.6, 2379, 2515, 'None'),
 (52, '2022-2023', 10, 'Regular Season', 699, 30, 12, 0.4, 18, 0.6, 2378, 2414, 'None'),
 (52, '2022-2023', 3, 'Regular Season', 700, 30, 18, 0.6, 12, 0.4, 2407, 2337, 'Promotion - Lega A (Play Offs: )'),
@@ -5910,6 +5958,22 @@ INSERT INTO `standings` (`ID_league`, `season`, `position`, `group_name`, `ID_te
 (52, '2022-2023', 13, 'Regular Season', 730, 30, 17, 0.567, 13, 0.433, 2726, 2722, 'None'),
 (52, '2022-2023', 4, 'Regular Season', 731, 30, 17, 0.567, 13, 0.433, 2510, 2402, 'Promotion - Lega A (Play Offs: )'),
 (52, '2022-2023', 2, 'Regular Season', 732, 30, 23, 0.767, 7, 0.233, 2542, 2334, 'Promotion - Lega A (Play Offs: )'),
+(52, '2023-2024', 4, 'Regular Season', 690, 16, 10, 0.625, 6, 0.375, 1382, 1310, 'Promotion - Lega A (Play Offs: Quarter-finals)'),
+(52, '2023-2024', 9, 'Regular Season', 699, 16, 8, 0.5, 8, 0.5, 1364, 1378, 'None'),
+(52, '2023-2024', 12, 'Regular Season', 700, 16, 6, 0.375, 10, 0.625, 1251, 1295, 'None'),
+(52, '2023-2024', 2, 'Regular Season', 717, 16, 12, 0.75, 4, 0.25, 1375, 1201, 'Promotion - Lega A (Play Offs: Quarter-finals)'),
+(52, '2023-2024', 16, 'Regular Season', 718, 16, 3, 0.188, 13, 0.812, 1171, 1338, 'Relegation'),
+(52, '2023-2024', 8, 'Regular Season', 720, 16, 8, 0.5, 8, 0.5, 1306, 1254, 'Promotion - Lega A (Play Offs: Quarter-finals)'),
+(52, '2023-2024', 5, 'Regular Season', 722, 16, 10, 0.625, 6, 0.375, 1264, 1200, 'Promotion - Lega A (Play Offs: Quarter-finals)'),
+(52, '2023-2024', 14, 'Regular Season', 723, 16, 5, 0.313, 11, 0.687, 1261, 1379, 'None'),
+(52, '2023-2024', 10, 'Regular Season', 724, 16, 8, 0.5, 8, 0.5, 1249, 1309, 'None'),
+(52, '2023-2024', 7, 'Regular Season', 725, 16, 9, 0.563, 7, 0.437, 1333, 1328, 'Promotion - Lega A (Play Offs: Quarter-finals)'),
+(52, '2023-2024', 11, 'Regular Season', 726, 16, 7, 0.438, 9, 0.562, 1230, 1316, 'None'),
+(52, '2023-2024', 6, 'Regular Season', 727, 16, 9, 0.563, 7, 0.437, 1339, 1321, 'Promotion - Lega A (Play Offs: Quarter-finals)'),
+(52, '2023-2024', 15, 'Regular Season', 728, 16, 4, 0.25, 12, 0.75, 1282, 1353, 'Relegation'),
+(52, '2023-2024', 13, 'Regular Season', 730, 16, 6, 0.375, 10, 0.625, 1386, 1457, 'None'),
+(52, '2023-2024', 1, 'Regular Season', 731, 16, 12, 0.75, 4, 0.25, 1323, 1249, 'Promotion - Lega A (Play Offs: Quarter-finals)'),
+(52, '2023-2024', 3, 'Regular Season', 732, 16, 11, 0.688, 5, 0.312, 1397, 1225, 'Promotion - Lega A (Play Offs: Quarter-finals)'),
 (104, '2022-2023', 3, 'Regular Season', 1263, 30, 22, 0.733, 8, 0.267, 2653, 2395, 'Promotion - Super Lig (Play Offs: Quarter-finals)'),
 (104, '2022-2023', 9, 'Regular Season', 1264, 30, 13, 0.433, 17, 0.567, 2324, 2384, 'None'),
 (104, '2022-2023', 14, 'Regular Season', 1266, 30, 10, 0.333, 20, 0.667, 2457, 2477, 'None'),
@@ -5926,6 +5990,22 @@ INSERT INTO `standings` (`ID_league`, `season`, `position`, `group_name`, `ID_te
 (104, '2022-2023', 11, 'Regular Season', 1304, 30, 12, 0.4, 18, 0.6, 2345, 2491, 'None'),
 (104, '2022-2023', 13, 'Regular Season', 1305, 30, 11, 0.367, 19, 0.633, 2385, 2545, 'None'),
 (104, '2022-2023', 12, 'Regular Season', 2264, 30, 12, 0.4, 18, 0.6, 2375, 2542, 'None'),
+(104, '2023-2024', 14, 'Regular Season', 0, 16, 5, 0.313, 11, 0.687, 1233, 1334, 'None'),
+(104, '2023-2024', 1, 'Regular Season', 1263, 16, 14, 0.875, 2, 0.125, 1373, 1251, 'Promotion - Super Lig (Play Offs: Quarter-finals)'),
+(104, '2023-2024', 7, 'Regular Season', 1264, 16, 7, 0.438, 9, 0.562, 1426, 1414, 'Promotion - Super Lig (Play Offs: Quarter-finals)'),
+(104, '2023-2024', 3, 'Regular Season', 1266, 16, 12, 0.75, 4, 0.25, 1260, 1171, 'Promotion - Super Lig (Play Offs: Quarter-finals)'),
+(104, '2023-2024', 11, 'Regular Season', 1267, 16, 7, 0.438, 9, 0.562, 1301, 1339, 'None'),
+(104, '2023-2024', 13, 'Regular Season', 1268, 16, 6, 0.375, 10, 0.625, 1251, 1312, 'None'),
+(104, '2023-2024', 12, 'Regular Season', 1269, 16, 7, 0.438, 9, 0.562, 1248, 1345, 'None'),
+(104, '2023-2024', 2, 'Regular Season', 1270, 16, 13, 0.813, 3, 0.187, 1427, 1175, 'Promotion - Super Lig (Play Offs: Quarter-finals)'),
+(104, '2023-2024', 8, 'Regular Season', 1271, 16, 7, 0.438, 9, 0.562, 1288, 1286, 'Promotion - Super Lig (Play Offs: Quarter-finals)'),
+(104, '2023-2024', 4, 'Regular Season', 1274, 16, 11, 0.688, 5, 0.312, 1430, 1325, 'Promotion - Super Lig (Play Offs: Quarter-finals)'),
+(104, '2023-2024', 10, 'Regular Season', 1276, 16, 7, 0.438, 9, 0.562, 1350, 1384, 'None'),
+(104, '2023-2024', 9, 'Regular Season', 1277, 16, 7, 0.438, 9, 0.562, 1280, 1281, 'None'),
+(104, '2023-2024', 5, 'Regular Season', 1304, 16, 9, 0.563, 7, 0.437, 1319, 1333, 'Promotion - Super Lig (Play Offs: Quarter-finals)'),
+(104, '2023-2024', 15, 'Regular Season', 1305, 16, 5, 0.313, 11, 0.687, 1275, 1398, 'Relegation - TBL'),
+(104, '2023-2024', 6, 'Regular Season', 2264, 16, 8, 0.5, 8, 0.5, 1347, 1301, 'Promotion - Super Lig (Play Offs: Quarter-finals)'),
+(104, '2023-2024', 16, 'Regular Season', 3009, 16, 3, 0.188, 13, 0.812, 1198, 1357, 'Relegation - TBL'),
 (117, '2022-2023', 10, 'Regular Season', 1120, 34, 14, 0.412, 20, 0.588, 2620, 2716, 'None'),
 (117, '2022-2023', 16, 'Regular Season', 1125, 34, 11, 0.324, 23, 0.676, 2604, 2913, 'None'),
 (117, '2022-2023', 15, 'Regular Season', 1139, 34, 11, 0.324, 23, 0.676, 2604, 2773, 'None'),
@@ -5944,6 +6024,24 @@ INSERT INTO `standings` (`ID_league`, `season`, `position`, `group_name`, `ID_te
 (117, '2022-2023', 4, 'Regular Season', 2339, 34, 24, 0.706, 10, 0.294, 2834, 2517, 'Promotion - ACB (Play Offs: Quarter-finals)'),
 (117, '2022-2023', 5, 'Regular Season', 2340, 34, 24, 0.706, 10, 0.294, 2969, 2638, 'Promotion - ACB (Play Offs: Quarter-finals)'),
 (117, '2022-2023', 8, 'Regular Season', 2341, 34, 17, 0.5, 17, 0.5, 2842, 2826, 'Promotion - ACB (Play Offs: Quarter-finals)'),
+(117, '2023-2024', 17, 'Regular Season', 1120, 18, 5, 0.278, 13, 0.722, 1336, 1455, 'Relegation - LEB Oro'),
+(117, '2023-2024', 15, 'Regular Season', 1125, 18, 6, 0.333, 12, 0.667, 1497, 1544, 'None'),
+(117, '2023-2024', 18, 'Regular Season', 1132, 18, 3, 0.167, 15, 0.833, 1369, 1554, 'Relegation - LEB Oro'),
+(117, '2023-2024', 14, 'Regular Season', 1139, 18, 7, 0.389, 11, 0.611, 1481, 1556, 'None'),
+(117, '2023-2024', 13, 'Regular Season', 1695, 18, 7, 0.389, 11, 0.611, 1391, 1431, 'None'),
+(117, '2023-2024', 9, 'Regular Season', 1698, 18, 9, 0.5, 9, 0.5, 1509, 1522, 'None'),
+(117, '2023-2024', 3, 'Regular Season', 2329, 18, 12, 0.667, 6, 0.333, 1541, 1443, 'Promotion - ACB (Play Offs: Quarter-finals)'),
+(117, '2023-2024', 11, 'Regular Season', 2330, 18, 8, 0.444, 10, 0.556, 1475, 1486, 'None'),
+(117, '2023-2024', 7, 'Regular Season', 2331, 18, 10, 0.556, 8, 0.444, 1531, 1541, 'Promotion - ACB (Play Offs: Quarter-finals)'),
+(117, '2023-2024', 6, 'Regular Season', 2333, 18, 11, 0.611, 7, 0.389, 1502, 1476, 'Promotion - ACB (Play Offs: Quarter-finals)'),
+(117, '2023-2024', 10, 'Regular Season', 2334, 18, 9, 0.5, 9, 0.5, 1462, 1568, 'None'),
+(117, '2023-2024', 12, 'Regular Season', 2335, 18, 7, 0.389, 11, 0.611, 1489, 1508, 'None'),
+(117, '2023-2024', 4, 'Regular Season', 2336, 18, 11, 0.611, 7, 0.389, 1487, 1432, 'Promotion - ACB (Play Offs: Quarter-finals)'),
+(117, '2023-2024', 16, 'Regular Season', 2337, 18, 6, 0.333, 12, 0.667, 1457, 1503, 'None'),
+(117, '2023-2024', 1, 'Regular Season', 2338, 18, 16, 0.889, 2, 0.111, 1618, 1390, 'Promotion - ACB (Play Offs: Quarter-finals)'),
+(117, '2023-2024', 8, 'Regular Season', 2339, 18, 9, 0.5, 9, 0.5, 1483, 1454, 'Promotion - ACB (Play Offs: Quarter-finals)'),
+(117, '2023-2024', 2, 'Regular Season', 2340, 18, 15, 0.833, 3, 0.167, 1578, 1379, 'Promotion - ACB (Play Offs: Quarter-finals)'),
+(117, '2023-2024', 5, 'Regular Season', 2341, 18, 11, 0.611, 7, 0.389, 1455, 1419, 'Promotion - ACB (Play Offs: Quarter-finals)'),
 (120, '2023', 7, 'Regular Season', 16, 15, 8, 0.533, 7, 0.467, 1187, 1179, 'Promotion - Euroleague (Promotion - Play Offs: )'),
 (120, '2023', 18, 'Regular Season', 26, 15, 2, 0.133, 13, 0.867, 1158, 1303, 'None'),
 (120, '2023', 17, 'Regular Season', 519, 15, 3, 0.2, 12, 0.8, 1142, 1281, 'None'),
@@ -5965,6 +6063,9 @@ INSERT INTO `standings` (`ID_league`, `season`, `position`, `group_name`, `ID_te
 (142, '2022-2023', 1, 'Group A', 0, 4, 4, 1, 0, 0, 329, 281, 'Promotion - Lega A - Super Cup (Play Offs)'),
 (142, '2022-2023', 1, 'Group D', 700, 4, 4, 1, 0, 0, 336, 285, 'Promotion - Lega A - Super Cup (Play Offs)'),
 (142, '2022-2023', 1, 'Group B', 726, 4, 4, 1, 0, 0, 350, 304, 'Promotion - Lega A - Super Cup (Play Offs)'),
+(142, '2023-2024', 1, 'Group A', 0, 4, 4, 1, 0, 0, 329, 281, 'Promotion - Lega A - Super Cup (Play Offs)'),
+(142, '2023-2024', 1, 'Group D', 700, 4, 4, 1, 0, 0, 336, 285, 'Promotion - Lega A - Super Cup (Play Offs)'),
+(142, '2023-2024', 3, 'Group C', 717, 4, 1, 0.25, 3, 0.75, 322, 335, 'None'),
 (194, '2023', 2, 'Group B', 24, 12, 10, 0.833, 2, 0.167, 1007, 926, 'Promotion - Eurocup (Play Offs: Quarter-finals)'),
 (194, '2023', 1, 'Group A', 108, 12, 11, 0.917, 1, 0.083, 1160, 946, 'Promotion - Eurocup (Play Offs: Quarter-finals)'),
 (194, '2023', 9, 'Group A', 529, 12, 2, 0.167, 10, 0.833, 957, 1170, 'None'),
@@ -6036,7 +6137,30 @@ INSERT INTO `standings` (`ID_league`, `season`, `position`, `group_name`, `ID_te
 (242, '2022-2023', 21, 'Regular Season', 3764, 8, 5, 0.625, 3, 0.375, 591, 591, 'Serie A2 (Play Out: )'),
 (242, '2022-2023', 24, 'Regular Season', 3768, 8, 3, 0.375, 5, 0.625, 647, 643, 'Serie A2 (Play Out: )'),
 (242, '2022-2023', 19, 'Regular Season', 3770, 7, 5, 0.714, 2, 0.286, 606, 557, 'None'),
-(242, '2022-2023', 20, 'Regular Season', 5008, 8, 5, 0.625, 3, 0.375, 603, 581, 'None');
+(242, '2022-2023', 20, 'Regular Season', 5008, 8, 5, 0.625, 3, 0.375, 603, 581, 'None'),
+(242, '2023-2024', 8, 'Red Group', 0, 19, 7, 0.368, 12, 0.632, 1395, 1494, 'Promotion - Serie A2 (Play Offs: )'),
+(242, '2023-2024', 10, 'Green Group', 689, 19, 5, 0.263, 14, 0.737, 1440, 1543, 'Serie A2 (Play Out: )'),
+(242, '2023-2024', 3, 'Green Group', 691, 20, 13, 0.65, 7, 0.35, 1696, 1631, 'Promotion - Serie A2 (Play Offs: )'),
+(242, '2023-2024', 12, 'Green Group', 696, 19, 3, 0.158, 16, 0.842, 1486, 1674, 'Relegation'),
+(242, '2023-2024', 1, 'Green Group', 701, 20, 19, 0.95, 1, 0.05, 1847, 1540, 'Promotion - Serie A2 (Play Offs: )'),
+(242, '2023-2024', 7, 'Green Group', 702, 19, 10, 0.526, 9, 0.474, 1557, 1558, 'Promotion - Serie A2 (Play Offs: )'),
+(242, '2023-2024', 6, 'Red Group', 703, 19, 9, 0.474, 10, 0.526, 1463, 1425, 'Promotion - Serie A2 (Play Offs: )'),
+(242, '2023-2024', 2, 'Red Group', 706, 19, 15, 0.789, 4, 0.211, 1509, 1411, 'Promotion - Serie A2 (Play Offs: )'),
+(242, '2023-2024', 11, 'Red Group', 709, 19, 4, 0.211, 15, 0.789, 1352, 1444, 'Serie A2 (Play Out: )'),
+(242, '2023-2024', 3, 'Red Group', 714, 19, 14, 0.737, 5, 0.263, 1520, 1309, 'Promotion - Serie A2 (Play Offs: )'),
+(242, '2023-2024', 6, 'Green Group', 715, 19, 11, 0.579, 8, 0.421, 1586, 1593, 'Promotion - Serie A2 (Play Offs: )'),
+(242, '2023-2024', 5, 'Red Group', 716, 19, 12, 0.632, 7, 0.368, 1458, 1389, 'Promotion - Serie A2 (Play Offs: )'),
+(242, '2023-2024', 2, 'Green Group', 719, 19, 14, 0.737, 5, 0.263, 1672, 1533, 'Promotion - Serie A2 (Play Offs: )'),
+(242, '2023-2024', 1, 'Red Group', 721, 19, 16, 0.842, 3, 0.158, 1465, 1351, 'Promotion - Serie A2 (Play Offs: )'),
+(242, '2023-2024', 4, 'Red Group', 729, 19, 13, 0.684, 6, 0.316, 1513, 1443, 'Promotion - Serie A2 (Play Offs: )'),
+(242, '2023-2024', 12, 'Red Group', 3765, 18, 3, 0.167, 15, 0.833, 1128, 1330, 'Relegation'),
+(242, '2023-2024', 11, 'Green Group', 3768, 19, 4, 0.211, 15, 0.789, 1503, 1598, 'Serie A2 (Play Out: )'),
+(242, '2023-2024', 7, 'Red Group', 3769, 19, 8, 0.421, 11, 0.579, 1481, 1593, 'Promotion - Serie A2 (Play Offs: )'),
+(242, '2023-2024', 9, 'Red Group', 5007, 20, 7, 0.35, 13, 0.65, 1468, 1532, 'Serie A2 (Play Out: )'),
+(242, '2023-2024', 5, 'Green Group', 5008, 19, 11, 0.579, 8, 0.421, 1668, 1621, 'Promotion - Serie A2 (Play Offs: )'),
+(242, '2023-2024', 10, 'Red Group', 5009, 19, 6, 0.316, 13, 0.684, 1445, 1476, 'Serie A2 (Play Out: )'),
+(242, '2023-2024', 9, 'Green Group', 6043, 19, 6, 0.316, 13, 0.684, 1507, 1660, 'Serie A2 (Play Out: )'),
+(242, '2023-2024', 8, 'Green Group', 6044, 19, 7, 0.368, 12, 0.632, 1506, 1577, 'Promotion - Serie A2 (Play Offs: )');
 
 -- --------------------------------------------------------
 
@@ -6280,18 +6404,11 @@ INSERT INTO `teamfollowed` (`ID_user`, `ID_team`) VALUES
 
 CREATE TABLE `user` (
   `ID_user` int(11) NOT NULL,
-  `name` varchar(11) NOT NULL,
-  `surname` varchar(11) NOT NULL,
+  `name` varchar(69) NOT NULL,
+  `surname` varchar(69) NOT NULL,
   `email` varchar(90) NOT NULL,
   `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Dumping data for table `user`
---
-
-INSERT INTO `user` (`ID_user`, `name`, `surname`, `email`, `password`) VALUES
-(3, 'mark', 'past', 'mark.pas@gm.com', 'd6ffafea824fb6aa81283f690b524a58');
 
 --
 -- Indexes for dumped tables
@@ -6343,7 +6460,8 @@ ALTER TABLE `team`
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`ID_user`);
+  ADD PRIMARY KEY (`ID_user`),
+  ADD UNIQUE KEY `email` (`email`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -6359,7 +6477,7 @@ ALTER TABLE `players`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `ID_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ID_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
