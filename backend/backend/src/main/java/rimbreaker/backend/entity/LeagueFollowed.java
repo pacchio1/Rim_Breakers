@@ -14,11 +14,11 @@ import lombok.Setter;
 @NoArgsConstructor
 public class LeagueFollowed {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     @Column(name = "ID_user")
     private Long idUser;
 
+    @Id
     @Column(name = "id_league")
     private Long idLeague;
     
