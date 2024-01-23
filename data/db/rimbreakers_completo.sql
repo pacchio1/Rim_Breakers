@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 22, 2024 at 09:41 PM
+-- Generation Time: Jan 23, 2024 at 08:04 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -2758,8 +2758,8 @@ CREATE TABLE `leaguefollowed` (
 --
 
 INSERT INTO `leaguefollowed` (`ID_user`, `ID_league`) VALUES
-(1, 13),
-(1, 44);
+(1, 44),
+(3, 2);
 
 -- --------------------------------------------------------
 
@@ -2777,7 +2777,6 @@ CREATE TABLE `playerfollowed` (
 --
 
 INSERT INTO `playerfollowed` (`ID_user`, `ID_player`) VALUES
-(1, 23),
 (1, 44);
 
 -- --------------------------------------------------------
@@ -6393,7 +6392,6 @@ CREATE TABLE `teamfollowed` (
 --
 
 INSERT INTO `teamfollowed` (`ID_user`, `ID_team`) VALUES
-(1, 13),
 (1, 44);
 
 -- --------------------------------------------------------
@@ -6439,6 +6437,18 @@ ALTER TABLE `league`
   ADD PRIMARY KEY (`ID_league`);
 
 --
+-- Indexes for table `leaguefollowed`
+--
+ALTER TABLE `leaguefollowed`
+  ADD PRIMARY KEY (`ID_user`,`ID_league`);
+
+--
+-- Indexes for table `playerfollowed`
+--
+ALTER TABLE `playerfollowed`
+  ADD PRIMARY KEY (`ID_user`,`ID_player`);
+
+--
 -- Indexes for table `players`
 --
 ALTER TABLE `players`
@@ -6455,6 +6465,12 @@ ALTER TABLE `standings`
 --
 ALTER TABLE `team`
   ADD PRIMARY KEY (`ID_team`);
+
+--
+-- Indexes for table `teamfollowed`
+--
+ALTER TABLE `teamfollowed`
+  ADD PRIMARY KEY (`ID_user`,`ID_team`);
 
 --
 -- Indexes for table `user`
