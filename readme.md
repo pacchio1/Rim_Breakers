@@ -12,7 +12,7 @@ Readme frontend:
 
 ## DIGITAL STRATEGIST
 
-![DIGITAL_STRATEGIST_readme](https://www.figma.com/file/ZF6uYcpQPrggnhsNxkDoTZ/Proposte-interfacce?type=design&mode=design)
+![digital_readme](https://www.figma.com/file/ZF6uYcpQPrggnhsNxkDoTZ/Rim-Breakers---B-Room?type=design&node-id=0%3A1&mode=design&t=u68Tr6hL2DhpSbYQ-1)
 
 ## USER MANUAL
 
