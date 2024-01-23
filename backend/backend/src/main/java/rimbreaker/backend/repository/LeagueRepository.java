@@ -17,6 +17,7 @@ public interface LeagueRepository extends JpaRepository<League, Integer> {
 
     @Query("SELECT l FROM League l")
     List<League> getLeagueAll();
+
     @Query("SELECT new rimbreaker.backend.payload.response.ResponseLeague(" +
             "t.id, " +
             "l.id_league, " +
@@ -45,7 +46,8 @@ public interface LeagueRepository extends JpaRepository<League, Integer> {
             "l.name AS name_league, " +
             "c.flag, " +
             "l.logo" +
-            ") FROM League l JOIN Country c on l.id_league = c.id_league")
+            ") FROM League l " +
+            "JOIN Country c on l.id_league = c.id_league")
     List<ResponseCountryLeague> getCountryByLeague();
 
 }

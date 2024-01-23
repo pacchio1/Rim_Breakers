@@ -4,7 +4,7 @@
 
 ### Blog
 
-    Attributi:
+Attributi:
 
     id_blog (Tipo: Long): Questo è l'identificatore univoco per ogni blog. È annotato con @Id indicando che è la chiave primaria dell'entità. La generazione del valore dell'ID avviene in modo automatico e incrementale (GenerationType.IDENTITY).
 
@@ -236,7 +236,9 @@ Annotazioni:
 
     @NoArgsConstructor: Genera un costruttore senza argomenti, utile nelle operazioni di creazione di oggetti tramite reflection o framework di persistenza.
 
-### User Attributi
+### User 
+
+Attributi
 
     idUser (Tipo: Long): Questo è l'identificatore univoco per ogni utente. È annotato con @Id indicando che è la chiave primaria dell'entità. La generazione del valore dell'ID avviene in modo automatico e incrementale (GenerationType.IDENTITY).
 
@@ -268,9 +270,13 @@ Annotazioni:
 
     @NoArgsConstructor: Genera un costruttore senza argomenti, utile
 
+---
+
 ## Repositories
 
-### Metodi definiti
+### Blog 
+
+Metodi definiti
 
     getPostById(Long id_blog): Ottiene un post tramite l'ID del blog.
 
@@ -300,7 +306,7 @@ Metodi definiti:
 
 Note:
 
-    ResponseCountry è presunta essere una classe di risposta contenente l'ID, il flag e il nome di un paese. Questa classe dovrebbe essere definita nel package rimbreaker.backend.payload.response. Assicurati di aver definito
+    ResponseCountry è presunta essere una classe di risposta contenente l'ID, il flag e il nome di un paese. Questa classe dovrebbe essere definita nel package rimbreaker.backend.payload.response.
 
 ### Games
 
@@ -320,7 +326,9 @@ Note:
 
     Le query utilizzano costruttori di proiezione (new) per mappare i risultati della query a oggetti delle classi di risposta specificate. Assicurati di avere definito correttamente le classi di risposta nei package rimbreaker.backend.payload.response.
 
-### League Metodi definiti
+### League 
+
+Metodi definiti
 
     getLeague(Long id): Ottiene una lega per un dato ID.
 
@@ -378,6 +386,131 @@ Metodi definiti:
 
     login(String email, String password): Esegue il login, verifica l'indirizzo email e la password restituendo un utente opzionale.
 
+---
+
 ## Services
 
+### Blog
+
+Servizi definiti:
+
+    getPostById(Long id_post): crea una ResponseEntity richiamando da blogRepository la funzione getPostsById() con conseguente controllo per la corretta uscita di dati (HttpStatus.OK / HttpStatus.BAD_REQUEST)
+    
+    getAllPosts(): crea una ResponseEntity richiamando da blogRepository la funzione getAllPosts() con conseguente controllo per la corretta uscita di dati (HttpStatus.OK / HttpStatus.BAD_REQUEST)
+
+    getAllPostsWithUsers(): crea una ResponseEntity richiamando da blogRepository la funzione getAllPostsWithUsers() con conseguente controllo per la corretta uscita di dati (HttpStatus.OK / HttpStatus.BAD_REQUEST)
+
+    getPostByCountry(Long id): crea una ResponseEntity richiamando da blogRepository la funzione getPostsByCountry() con conseguente controllo per la corretta uscita di dati (HttpStatus.OK / HttpStatus.BAD_REQUEST)
+
+    getPostByLeague(Long id): crea una ResponseEntity richiamando da blogRepository la funzione getPostsByLeague() con conseguente controllo per la corretta uscita di dati (HttpStatus.OK / HttpStatus.BAD_REQUEST)
+
+    getPostByTeam(Long id): crea una ResponseEntity richiamando da blogRepository la funzione getPostsByTeam() con conseguente controllo per la corretta uscita di dati (HttpStatus.OK / HttpStatus.BAD_REQUEST)
+
+### Country
+
+Servizi definiti:
+
+    getCountry(Long id): crea una ResponseEntity richiamando da countryRepository la funzione getCountry() con conseguente controllo per la corretta uscita di dati (HttpStatus.OK / HttpStatus.BAD_REQUEST)
+    
+    getFlagAndName():crea una ResponseEntity richiamando da countryRepository la funzione getFlagAndName() con conseguente controllo per la corretta uscita di dati (HttpStatus.OK / HttpStatus.BAD_REQUEST)
+
+
+### Favorite
+
+Servizi definiti:
+
+    saveFavoritePlayer(Long userId, Long playerId): richiama da favoritePlayerRepository la funzione saveFavoritePlayer(), salvando i dati sul database
+    
+    saveFavoriteTeam(Long userId, Long teamId): richiama da favoriteTeamRepository la funzione saveFavoriteTeam(), salvando i dati sul database
+
+    saveFavoriteLeague(LOng userId, Long leagueId): richiama da favoriteLeagueRepository la funzione saveFavoriteLeague(), salvando i dati sul database
+
+    getAllFavoritePlayersByUserId(Long userId): richiama da favoritePlayerRepository la funzione getAllFavoritePlayersByUserId(), riorganizzando i dati in una lista di oggetti
+
+    getAllFavoriteTeamsByUserId(Long userId): richiama da favoriteTeamRepository la funzione getAllFavoriteTeamsByUserId(), riorganizzando i dati in una lista di oggetti
+
+    getAllFavoriteLeaguesByUserId(Long userId): richiama da favoriteLeagueRepository la funzione getAllFavoriteLeaguesByUserId(), riorganizzando i dati in una lista di oggetti
+
+### Games
+
+Servizi definiti:
+
+    getAllGamesWithTeam(int id_games): crea una ResponseEntity richiamando da gameRepository la funzione getAllGamesWithTeams() con conseguente controllo per la corretta uscita di dati (HttpStatus.OK / HttpStatus.BAD_REQUEST)
+    
+    getGamesByDate(String date): crea una ResponseEntity richiamando da gameRepository la funzione getGamesByDate() con conseguente controllo per la corretta uscita di dati (HttpStatus.OK / HttpStatus.BAD_REQUEST)
+
+    getGamesByCountry(Long id): crea una ResponseEntity richiamando da gameRepository la funzione getGamesByCountry() con conseguente controllo per la corretta uscita di dati (HttpStatus.OK / HttpStatus.BAD_REQUEST)
+
+    getGamesByTeam(String name): crea una ResponseEntity richiamando da gameRepository la funzione getGamesByTeam() con conseguente controllo per la corretta uscita di dati (HttpStatus.OK / HttpStatus.BAD_REQUEST)
+
+    getGamesByLeague(String name): crea una ResponseEntity richiamando da gameRepository la funzione getGamesByLeague() con conseguente controllo per la corretta uscita di dati (HttpStatus.OK / HttpStatus.BAD_REQUEST)
+
+
+### League
+
+Servizi definiti:
+
+    getLeague(Long id): crea una ResponseEntity richiamando da leagueRepository la funzione getLeague() con conseguente controllo per la corretta uscita di dati (HttpStatus.OK / HttpStatus.BAD_REQUEST)
+    
+    getLeagueAll(): crea una ResponseEntity richiamando da leagueRepository la funzione getLeagueAll() con conseguente controllo per la corretta uscita di dati (HttpStatus.OK / HttpStatus.BAD_REQUEST)
+
+    getTeamLeague(Long id): crea una ResponseEntity richiamando da leagueRepository la funzione getTeamLeague() con conseguente controllo per la corretta uscita di dati (HttpStatus.OK / HttpStatus.BAD_REQUEST)
+
+    getLeagueByCountry(Long id): crea una ResponseEntity richiamando da leagueRepository la funzione getLeagueByCountry() con conseguente controllo per la corretta uscita di dati (HttpStatus.OK / HttpStatus.BAD_REQUEST)
+
+    getCountryByLeague(): crea una ResponseEntity richiamando da leagueRepository la funzione getCountryByLeague() con conseguente controllo per la corretta uscita di dati (HttpStatus.OK / HttpStatus.BAD_REQUEST)
+
+
+### Player
+
+Servizi definiti:
+
+    getPlayerById(Long id):  crea una ResponseEntity richiamando da playerRepository la funzione getPlayerById() con conseguente controllo per la corretta uscita di dati (HttpStatus.OK / HttpStatus.BAD_REQUEST)
+    
+    getPlayerByTeam(Long id_team):  crea una ResponseEntity richiamando da playerRepository la funzione getPlayerByTeam() con conseguente controllo per la corretta uscita di dati (HttpStatus.OK / HttpStatus.BAD_REQUEST)
+
+    getAllPlayers():  crea una ResponseEntity richiamando da playerRepository la funzione getAllPlayers() con conseguente controllo per la corretta uscita di dati (HttpStatus.OK / HttpStatus.BAD_REQUEST)
+
+### Standings
+
+Servizi definiti:
+
+    getSeason(Long idLeague, Long teamId, String season):  crea una ResponseEntity richiamando da standingsRepository la funzione getSeason() con conseguente controllo per la corretta uscita di dati (HttpStatus.OK / HttpStatus.BAD_REQUEST)
+    
+    getSeasonByLeague(Long idLeague, String season):  crea una ResponseEntity richiamando da standingsRepository la funzione getSeasonByLeague() con conseguente controllo per la corretta uscita di dati (HttpStatus.OK / HttpStatus.BAD_REQUEST)
+
+
+### Team
+
+Servizi definiti:
+
+    getTeam(Long id):  crea una ResponseEntity richiamando da teamRepository la funzione getTeam() con conseguente controllo per la corretta uscita di dati (HttpStatus.OK / HttpStatus.BAD_REQUEST)
+    
+    getAllByID(Long id):  crea una ResponseEntity richiamando da teamRepository la funzione getAllByID() con conseguente controllo per la corretta uscita di dati (HttpStatus.OK / HttpStatus.BAD_REQUEST)
+
+    getAll():  crea una ResponseEntity richiamando da teamRepository la funzione getAll() con conseguente controllo per la corretta uscita di dati (HttpStatus.OK / HttpStatus.BAD_REQUEST)
+
+
+### User
+
+Servizi definiti:
+
+    createUser(String name, String surname, String email, String password): richiama da userRepository la funzione newUser() e crea un nuovo oggetto User con incluso nome, cognome, email e password criptata
+    
+    getUserById(Long idUser): richiama da userRepository la funzione all_by_id() e ritorna l'oggetto User con l'id richiesto
+
+    getUserByEmail(String email): richiama da userRepository la funzione updateEmail() e ritorna l'oggetto User con l'email specificata
+
+    updateEmail(String email, Long idUser): richiama da userRepository la funzione updateEmail() e aggiorna l'email dell'oggetto User all'interno del database
+
+    updatePassword(String password, Long idUser): richiama da userRepository la funzione updatePassword() e aggiorna la password dell'oggetto User all'interno del database
+
+    deleteUser(Long idUser): richiama da userRepository la funzione deleteUser() ed elimina l'oggetto User dal database
+
+    login(String email, String password): richiama da userRepository la funzione login() e conferma se le informazioni date sono uguali all'oggetto User all'interno del database per fa accedere l'utente alla pagina web
+
+---
+
 ## Controllers
+
+![Funzione Controller](apidocumentation.md)

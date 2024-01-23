@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 10, 2024 at 07:35 PM
+-- Generation Time: Jan 23, 2024 at 08:05 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -30,10 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `blog` (
   `ID_blog` int(11) NOT NULL,
   `ID_user` int(11) NOT NULL,
-  `ID_country` int(11) NOT NULL,
-  `ID_league` int(11) NOT NULL,
-  `ID_team` int(11) NOT NULL,
-  `text` longtext DEFAULT NULL
+  `testo` longtext DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -186,10 +183,10 @@ CREATE TABLE `teamfollowed` (
 
 CREATE TABLE `user` (
   `ID_user` int(11) NOT NULL,
-  `name` varchar(11) NOT NULL,
-  `surname` varchar(11) NOT NULL,
-  `email` varchar(11) NOT NULL,
-  `password` text NOT NULL
+  `name` varchar(69) NOT NULL,
+  `surname` varchar(69) NOT NULL,
+  `email` varchar(90) NOT NULL,
+  `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -221,6 +218,18 @@ ALTER TABLE `league`
   ADD PRIMARY KEY (`ID_league`);
 
 --
+-- Indexes for table `leaguefollowed`
+--
+ALTER TABLE `leaguefollowed`
+  ADD PRIMARY KEY (`ID_user`,`ID_league`);
+
+--
+-- Indexes for table `playerfollowed`
+--
+ALTER TABLE `playerfollowed`
+  ADD PRIMARY KEY (`ID_user`,`ID_player`);
+
+--
 -- Indexes for table `players`
 --
 ALTER TABLE `players`
@@ -239,10 +248,17 @@ ALTER TABLE `team`
   ADD PRIMARY KEY (`ID_team`);
 
 --
+-- Indexes for table `teamfollowed`
+--
+ALTER TABLE `teamfollowed`
+  ADD PRIMARY KEY (`ID_user`,`ID_team`);
+
+--
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`ID_user`);
+  ADD PRIMARY KEY (`ID_user`),
+  ADD UNIQUE KEY `email` (`email`);
 
 --
 -- AUTO_INCREMENT for dumped tables

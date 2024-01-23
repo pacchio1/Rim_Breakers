@@ -30,9 +30,13 @@ public class UserService {
 
             // Convert the byte array to a hexadecimal string
             StringBuilder hexStringBuilder = new StringBuilder();
+
             for (byte b : md5Hash) {
+
                 hexStringBuilder.append(String.format("%02x", b));
+
             }
+
             // Print the MD5 hash
             password= hexStringBuilder.toString();
 
@@ -78,6 +82,7 @@ public class UserService {
     }
 
     public Optional<User> login(String email, String password) {
+
         try {
 
             // Create MessageDigest instance for MD5

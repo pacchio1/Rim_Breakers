@@ -81,7 +81,7 @@ public class LeagueService {
         }
         catch (Exception e) {
 
-            return new ResponseEntity<>("not found! : " + e.getMessage(), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>("Something went wrong! : " + e.getMessage(), HttpStatus.BAD_REQUEST);
 
         }
 
