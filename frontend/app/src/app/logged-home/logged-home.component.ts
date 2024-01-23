@@ -6,6 +6,7 @@ import { FavouriteLeague, FavouritePlayer, FavouriteTeam } from '../_model/favou
 import { League } from '../_model/league.model';
 import { Team } from '../_model/team.model';
 import { PlayerDetail } from '../_model/player.model';
+import { Match } from '../_model/match.model';
 
 @Component({
   selector: 'app-logged-home',
@@ -21,6 +22,8 @@ export class LoggedHomeComponent implements OnInit{
   favouriteLeagues: League[] = []; 
   favouriteTeams: Team[] = []; 
   favouritePlayers: PlayerDetail[] = []; 
+
+  lastLeagueMatch: any;  
 
   constructor(private route: ActivatedRoute, private profileService: ProfileService, private basketService: BasketService, private router: Router) {}
 
@@ -66,6 +69,28 @@ export class LoggedHomeComponent implements OnInit{
     }
   }
 
+  // lastLeagueGame(leagueName: string) {
+  //   this.basketService.getGamesByLeague(leagueName).subscribe((response) => {
+
+  //     this.lastLeagueMatch = response;
+  //     console.log(this.lastLeagueMatch);
+
+  //     return this.lastLeagueMatch; 
+  //   })
+  // }
+
+  // lastTeamGame(leagueName: string) {
+  //   this.basketService.getGamesByLeague(leagueName).subscribe((response) => {
+  //     console.log(response);
+  //   })
+  // }
+
+  // lastPlayerGame(leagueName: string) {
+  //   this.basketService.getGamesByLeague(leagueName).subscribe((response) => {
+  //     console.log(response);
+  //   })
+  // }
+
   passIdLeague(idLeague: number) {
     this.router.navigate(['/leagues', idLeague])
   }
@@ -80,7 +105,10 @@ export class LoggedHomeComponent implements OnInit{
 
   favouriteLeague(idLeague: number) {
     this.basketService.getLeague(idLeague).subscribe((response: League) => {
-      this.favouriteLeagues.push(response); 
+      this.favouriteLeagues.push(response);
+      const league = this.favouriteLeagues[(this.favouriteLeagues.length - 1)]; 
+      
+      // this.lastLeagueGame(league.name); 
     })
   }
 
