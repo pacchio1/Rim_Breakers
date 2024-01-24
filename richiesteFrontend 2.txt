@@ -1,0 +1,402 @@
+(get) http://localhost:8080/favorite/player?userId=1
+[
+    {
+        "idUser": 1,
+        "idPlayer": 23
+    }
+]
+--------------------------------------------------
+(post) http://localhost:8080/favorite/player?userId=1&playerId=44
+X aggiungere il player 44 ai prefe del user 1
+--------------------------------------------------
+(post)http://localhost:8080/favorite/team?userId=1&teamId=44
+X aggiungere il team 44 ai prefe del user 1
+--------------------------------------------------
+(post)http://localhost:8080/favorite/league?userId=1&leagueId=44
+X aggiungere il campionato 44 ai prefe del user 1
+--------------------------------------------------
+(get)http://localhost:8080/favorite/league?userId=1
+[
+    {
+        "idUser": 1,
+        "idLeague": 13
+    },
+    {
+        "idUser": 1,
+        "idLeague": 13
+    }
+]
+--------------------------------------------------
+(get)http://localhost:8080/favorite/team?userId=1
+[
+    {
+        "idUser": 1,
+        "idTeam": 13
+    },
+    {
+        "idUser": 1,
+        "idTeam": 13
+    }
+]
+--------------------------------------------------
+(post)http://localhost:8080/user/create?name=mario&surname=rossi&email=marior@g.go&password=%23adsfhkj231231!
+creazione user
+risposta:User created successfully
+--------------------------------------------------
+(get)http://localhost:8080/user/get/1
+(dove 1 è l' id_user)
+{
+    "name": "test",
+    "surname": "icolo",
+    "email": "o@o.coom"
+}
+--------------------------------------------------
+(get)http://localhost:8080/user/getByEmail?email=marior@g.go
+{
+    "name": "mario",
+    "surname": "rossi",
+    "email": "marior@g.go"
+}
+--------------------------------------------------
+(get)http://localhost:8080/player/number?id=501
+{
+    "idPlayer": 501,
+    "season": "2024-2025",
+    "name": "Brian",
+    "surname": "Moreno",
+    "weight": 106,
+    "height": 206,
+    "idCountry": 48,
+    "meshNumber": 4,
+    "age": 23,
+    "playedMin": 41,
+    "pointScored": 1,
+    "assist": 0,
+    "idTeam": 718,
+    "shots": 18,
+    "shots2": 0,
+    "shots3": 1,
+    "freeThrows": 0,
+    "ballHoldingTime": 81
+}
+--------------------------------------------------
+(get)http://localhost:8080/player/all
+[
+    {
+        "idPlayer": 501,
+        "season": "2024-2025",
+        "name": "Brian",
+        "surname": "Moreno",
+        "weight": 106,
+        "height": 206,
+        "idCountry": 48,
+        "meshNumber": 4,
+        "age": 23,
+        "playedMin": 41,
+        "pointScored": 1,
+        "assist": 0,
+        "idTeam": 718,
+        "shots": 18,
+        "shots2": 0,
+        "shots3": 1,
+        "freeThrows": 0,
+        "ballHoldingTime": 81
+    },...
+--------------------------------------------------
+(get)http://localhost:8080/player/team?id_team=718
+[
+    {
+        "id": 718,
+        "idPlayer": 501,
+        "season": "2024-2025",
+        "name": "Brian",
+        "surname": "Moreno"
+    },
+    {
+        "id": 718,
+        "idPlayer": 704,
+        "season": "2024-2025",
+        "name": "David",
+        "surname": "Young"
+    },
+    {
+        "id": 718,
+        "idPlayer": 775,
+        "season": "2023-2024",
+        "name": "Daniel",
+        "surname": "Parks"
+    },
+    {
+        "id": 718,
+        "idPlayer": 921,
+        "season": "2023-2024",
+        "name": "James",
+        "surname": "Williams"
+    },
+    {
+        "id": 718,
+        "idPlayer": 1003,
+        "season": "2023-2024",
+        "name": "Steven",
+        "surname": "Sullivan"
+    },
+    {
+        "id": 718,
+        "idPlayer": 1197,
+        "season": "2024",
+        "name": "Eric",
+        "surname": "Kelly"
+    },
+    {
+        "id": 718,
+        "idPlayer": 1403,
+        "season": "2023",
+        "name": "Aaron",
+        "surname": "Bennett"
+    },
+    {
+        "id": 718,
+        "idPlayer": 1627,
+        "season": "2023",
+        "name": "Nathan",
+        "surname": "Simon"
+    },
+    {
+        "id": 718,
+        "idPlayer": 1802,
+        "season": "2023-2024",
+        "name": "Eric",
+        "surname": "Jackson"
+    },
+    {
+        "id": 718,
+        "idPlayer": 1819,
+        "season": "2024-2025",
+        "name": "Wesley",
+        "surname": "Romero"
+    },
+    {
+        "id": 718,
+        "idPlayer": 1831,
+        "season": "2024",
+        "name": "Sean",
+        "surname": "Ortega"
+    },
+    {
+        "id": 718,
+        "idPlayer": 1847,
+        "season": "2023-2024",
+        "name": "Peter",
+        "surname": "Brown"
+    },
+    {
+        "id": 718,
+        "idPlayer": 1884,
+        "season": "2023",
+        "name": "Brandon",
+        "surname": "Schmidt"
+    },
+    {
+        "id": 718,
+        "idPlayer": 1905,
+        "season": "2024-2025",
+        "name": "Charles",
+        "surname": "Romero"
+    },
+    {
+        "id": 718,
+        "idPlayer": 2151,
+        "season": "2024",
+        "name": "Matthew",
+        "surname": "Figueroa"
+    },
+    {
+        "id": 718,
+        "idPlayer": 2595,
+        "season": "2023",
+        "name": "David",
+        "surname": "Waters"
+    },
+    {
+        "id": 718,
+        "idPlayer": 2736,
+        "season": "2023",
+        "name": "Jason",
+        "surname": "Berry"
+    },
+    {
+        "id": 718,
+        "idPlayer": 2776,
+        "season": "2023",
+        "name": "Joseph",
+        "surname": "Harding"
+    },
+    {
+        "id": 718,
+        "idPlayer": 2945,
+        "season": "2023",
+        "name": "Tony",
+        "surname": "Wilson"
+    },
+    {
+        "id": 718,
+        "idPlayer": 3114,
+        "season": "2024-2025",
+        "name": "Stephen",
+        "surname": "Boyd"
+    },
+    {
+        "id": 718,
+        "idPlayer": 3117,
+        "season": "2023-2024",
+        "name": "Carlos",
+        "surname": "Nguyen"
+    },
+    {
+        "id": 718,
+        "idPlayer": 3124,
+        "season": "2023",
+        "name": "Charles",
+        "surname": "Clark"
+    },
+    {
+        "id": 718,
+        "idPlayer": 3333,
+        "season": "2023-2024",
+        "name": "Vernon",
+        "surname": "Smith"
+    },
+    {
+        "id": 718,
+        "idPlayer": 3358,
+        "season": "2023",
+        "name": "James",
+        "surname": "Rangel"
+    },
+    {
+        "id": 718,
+        "idPlayer": 3441,
+        "season": "2024-2025",
+        "name": "Adam",
+        "surname": "Reid"
+    },
+    {
+        "id": 718,
+        "idPlayer": 3668,
+        "season": "2023",
+        "name": "Michael",
+        "surname": "Williamson"
+    },
+    {
+        "id": 718,
+        "idPlayer": 3693,
+        "season": "2024",
+        "name": "Brian",
+        "surname": "Hughes"
+    },
+    {
+        "id": 718,
+        "idPlayer": 4014,
+        "season": "2024",
+        "name": "James",
+        "surname": "Harris"
+    },
+    {
+        "id": 718,
+        "idPlayer": 4022,
+        "season": "2023-2024",
+        "name": "Scott",
+        "surname": "Blake"
+    },
+    {
+        "id": 718,
+        "idPlayer": 4068,
+        "season": "2024-2025",
+        "name": "Richard",
+        "surname": "Armstrong"
+    },
+    {
+        "id": 718,
+        "idPlayer": 4420,
+        "season": "2023-2024",
+        "name": "Randall",
+        "surname": "Gray"
+    },
+    {
+        "id": 718,
+        "idPlayer": 4547,
+        "season": "2023-2024",
+        "name": "Jason",
+        "surname": "Williams"
+    },
+    {
+        "id": 718,
+        "idPlayer": 4678,
+        "season": "2023",
+        "name": "Christopher",
+        "surname": "Smith"
+    },
+    {
+        "id": 718,
+        "idPlayer": 4808,
+        "season": "2023-2024",
+        "name": "Michael",
+        "surname": "Miller"
+    },
+    {
+        "id": 718,
+        "idPlayer": 5046,
+        "season": "2024",
+        "name": "Charles",
+        "surname": "Bishop"
+    },
+    {
+        "id": 718,
+        "idPlayer": 5422,
+        "season": "2023",
+        "name": "William",
+        "surname": "Roman"
+    },
+    {
+        "id": 718,
+        "idPlayer": 5462,
+        "season": "2024-2025",
+        "name": "David",
+        "surname": "Mcbride"
+    },
+    {
+        "id": 718,
+        "idPlayer": 5549,
+        "season": "2023-2024",
+        "name": "Ryan",
+        "surname": "Knight"
+    },
+    {
+        "id": 718,
+        "idPlayer": 5574,
+        "season": "2023",
+        "name": "Brian",
+        "surname": "Hall"
+    },
+    {
+        "id": 718,
+        "idPlayer": 5585,
+        "season": "2024-2025",
+        "name": "Bobby",
+        "surname": "Velez"
+    },
+    {
+        "id": 718,
+        "idPlayer": 5589,
+        "season": "2024-2025",
+        "name": "James",
+        "surname": "Peterson"
+    },
+    {
+        "id": 718,
+        "idPlayer": 5945,
+        "season": "2023",
+        "name": "Randall",
+        "surname": "Flores"
+    }
+]

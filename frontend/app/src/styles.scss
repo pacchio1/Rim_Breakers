@@ -1,0 +1,1058 @@
+/* You can add global styles to this file, and also import other style files */
+
+.name {
+    width: 125px;
+}
+
+.prova-img {
+    width: 50vw;
+    height: 300px;
+}
+
+.game-home {
+    width: 366px;
+    height: 300px;
+    transform: translate(-133px, 14px);
+}
+
+.game-away {
+    width: 291px;
+    height: 412px;
+    transform: translate(-18px, -40px);
+    rotate: -20deg;
+}
+
+.team-name-2 {
+    color: #ffffff;
+    font-size: 96px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.result-game {
+    transform: translateY(-40px);
+}
+
+.logo-game {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(0, 1, 1, 0.677);
+}
+
+.team-logo {
+    width: 65px;
+    max-height: 80px;
+}
+
+/* Global */
+
+$primary-color: #1b1466;
+$primary-color-dark: #FF8038;
+
+.icon-flag {
+    width: 20px;
+    height: 20px;
+}
+
+.mt-navbar {
+    margin-top: 80px;
+}
+
+.mt-navbar-text {
+    margin-top: 90px;
+}
+
+.section-bg-dark {
+    background-color: #242424;
+}
+
+// check
+.text-dark-1 {
+    color: black;
+}
+
+.text-light-1 {
+    color: white;
+}
+
+.text-dark-or {
+    color: $primary-color-dark;
+}
+
+/* Navbar */
+
+.navbar {
+    height: 80px;
+}
+
+.navbar-bg {
+    background-color: $primary-color;
+}
+
+.navbar-bg-dark {
+    background-color: #FF8038;
+}
+
+.offcanvas-bg-dark {
+    background-color: #242424;
+}
+
+// #navbar-a, #navbar-a1, #navbar-a2, #navbar-a3, #navbar-a4, #navbar-a5 {
+//     color: rgb(216, 33, 33);
+// }
+
+.logo {
+    width: 113px;
+    height: 127px;
+}
+
+.navbar-search {
+    width: 168px;
+    height: 34px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+}
+
+.navbar-search-bg {
+    background-color: white;
+}
+
+.navbar-search-bg-dark {
+    background-color: black;
+}
+
+// .white-bg .navbar-search {
+//     background-color: #EDEDED;
+// }
+
+.navbar-input {
+    width: 140px;
+    outline: none;
+    border: none;
+    background: transparent;
+}
+
+// .bi {
+//     color: white;
+// }
+
+// .white-bg .bi {
+//     color: #1b1466;
+// }
+
+/* Home */
+
+.footer-index {
+    position: relative;
+    z-index: 1;
+}
+
+.prova-section-home {
+    width: 100vw;
+    height: 300px;
+}
+
+.prova-home-header {
+    width: 100vw;
+    height: 250px;
+    background-color: #1b1466;
+    overflow: hidden;
+    position: relative;
+}
+
+.prova-home-title {
+    width: 50%;
+    height: 100%;
+    padding-top: 45px;
+    padding-left: 30px;
+}
+
+.prova-home-title-en {
+    width: 50%;
+    height: 100%;
+    padding-top: 45px;
+    padding-left: 30px;
+}
+
+.prova-home-img {
+    width: 10%;
+    position: absolute;
+    z-index: 1;
+}
+
+.prova-img-h {
+    width: 250px;
+    height: 270px;
+    transform: translate(186px, -4px);
+}
+
+.home-header {
+    // margin-top: 80px;
+    width: 100vw;
+    height: 250px;
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+.home-header-bg {
+    background-color: $primary-color;
+}
+
+.home-header-bg-dark {
+    background-color: #FF8038;
+}
+
+.div1 {
+    width: 215px;
+    height: 190px;
+    grid-area: 1 / 1 / 2 / 3;
+    padding-left: 20px;
+    z-index: 1;
+}
+
+.div1-h2 {
+    font-size: 30px;
+}
+
+.div2 {
+    width: 257px;
+    height: 260px;
+    grid-area: 1 / 2 / 2 / 4;
+}
+
+.home-description {
+    width: 100vw;
+    height: auto;
+}
+
+/* Home card */
+
+.home-card {
+    width: 321px;
+    height: 214px;
+}
+
+.home-card-img {
+    width: 321px;
+    height: 213px;
+    border-radius: 30px;
+}
+
+.home-card-title {
+    width: 321px;
+    height: 214px;
+    color: white;
+    border-radius: 0 0 30px 30px;
+    transform: translateY(60px);
+}
+
+.home-card-title-bg {
+    background-color: $primary-color;
+}
+
+.home-card-title-bg-dark {
+    background-color: #FF8038;
+}
+
+.home-card-container {
+    width: 100vw;
+}
+
+/* Card Blog */
+
+.blog-card {
+    width: 324px;
+    height: 164px;
+    border-radius: 20px;
+    background-color: #EDEDED;
+}
+
+.blog-card-a {
+    text-decoration: none;
+    color: #242424;
+}
+
+.blog-card-img {
+    width: 149px;
+    height: 164px;
+    border-radius: 20px;
+}
+
+.blog-card-body {
+    // font-size: 14px;
+    font-size: 14px;
+    font-style: normal;
+    line-height: 22px;
+    letter-spacing: -0.21px;
+}
+
+/* Blog Detail */
+
+.blog-detail-header {
+    width: 312px;
+    height: 104px;
+    border-radius: 20px;
+    overflow: hidden;
+    color: $primary-color;
+}
+
+.blog-detail-img {
+    width: 400px;
+    height: auto;
+    opacity: 0.2;
+}
+
+// .c {
+//     background: transparent;
+// }
+
+/* Contact */
+
+.contact-img {
+    width: 320px;
+    height: auto;
+    opacity: 0.1;
+}
+
+.contact-profile {
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+    // background-color: red;
+}
+
+.c {
+    width: 100vw;
+}
+
+/* Country */
+
+.dropdown-menu {
+    width: 300px;
+    border-radius: 20px;
+    background-color: #2f23b1;
+}
+
+.country-logo {
+    width: 50px;
+    height: 40px;
+}
+
+/* Leagues */
+
+.league-title {
+    width: 338px;
+    height: 98px;
+    // background-color: $primary-color;
+    border-radius: 20px;
+}
+
+.league-list {
+    // width: 100%;
+    width: 377px;
+    height: 53px;
+    border-radius: 70px;
+    // background-color: $primary-color;
+    // color: white;
+}
+
+.league-list-cup {
+    // width: 100%;
+    width: 342px;
+    height: 53px;
+    border-radius: 70px;
+    // background-color: $primary-color;
+    // color: white;
+}
+
+.league-results-list {
+    width: 620px;
+    height: 110px;
+    border-radius: 20px;
+    // background-color: $primary-color;
+    // color: white;
+}
+
+.team-results-list {
+    width: 412px;
+    height: 110px;
+    border-radius: 20px;
+    // background-color: $primary-color;
+    // color: white;
+}
+
+.games-results-list {
+    width: 100%;
+    height: 110px;
+    border-radius: 20px;
+    // background-color: $primary-color;
+    // color: white;
+}
+
+.results-list {
+    width: 100%;
+    height: 110px;
+    border-radius: 20px;
+    // background-color: $primary-color;
+    // color: white;
+}
+
+.league-logo {
+    width: 30px;
+    height: auto;
+}
+
+.toggle-password-icon {
+    width: 20px;
+    /* Regola la larghezza in base alle tue esigenze */
+    height: auto;
+    /* Mantieni il rapporto d'aspetto */
+    cursor: pointer;
+}
+
+.tab {
+    width: 100px;
+    height: auto;
+    // background-color: #1b1466;
+    // color: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    &:hover {
+        background-color: darken(#1b1466, 5%);
+    }
+
+    &.active {
+        background-color: lighten(#1b1466, 20%);
+    }
+}
+
+.score {
+    width: 40px;
+    height: 40px;
+}
+
+/* Ranking */
+
+.tag-list {
+    width: 377px;
+    height: 53px;
+    border-radius: 70px;
+}
+
+.position-tag {
+    width: 90px;
+}
+
+.name-tag {
+    width: 209px;
+}
+
+.pt-tag {
+    width: 42px;
+}
+
+.match-tag {
+    width: 25px;
+}
+
+/* Team */
+
+.team-detail-header {
+    width: 312px;
+    height: 104px;
+    border-radius: 20px;
+    overflow: hidden;
+    color: $primary-color;
+}
+
+.team-detail-img {
+    width: 338px;
+    height: 120px;
+    border-radius: 20px;
+    // opacity: 0.2;
+}
+
+.team-detail-img-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(85, 85, 158, 0.5), rgba(85, 85, 158, 0.5));
+    z-index: 1;
+    /* Assicura che l'overlay sia sopra l'immagine */
+}
+
+/* Logged-home */
+
+.player-stats {
+    width: 100%;
+    height: 200px;
+    border-radius: 20px;
+    // background-color: $primary-color;
+    color: white;
+}
+
+.league-list-player {
+    // width: 100%;
+    width: 377px;
+    height: 90px;
+    border-radius: 70px;
+    // background-color: $primary-color;
+    // color: white;
+}
+
+/* Favourites */
+
+.league-favourite {
+    width: 100%;
+    height: 70px;
+    // background-color: $primary-color;
+    color: white;
+}
+
+.team-favourite {
+    width: 100%;
+    height: 70px;
+    background-color: lighten(#1b1466, 15%);
+    color: white;
+}
+
+.player-favourite {
+    width: 100%;
+    height: 70px;
+    background-color: lighten(#1b1466, 30%);
+    color: white;
+}
+
+.position-relative {
+    position: relative;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.position-absolute {
+    position: absolute;
+}
+
+.top-50 {
+    top: 50%;
+}
+
+.start-50 {
+    left: 50%;
+}
+
+.translate-middle {
+    transform: translate(-50%, -50%);
+}
+
+.jersey-logo {
+    width: 40px;
+    height: auto;
+}
+
+/* PlayerDetail */
+
+.player-info {
+    width: 301px;
+    height: auto;
+    // background-color: #1b1466;
+    // color: white;
+    border-radius: 0 20px 20px 0;
+}
+
+.player-img {
+    width: 145px;
+    height: 150px;
+    border-radius: 33px;
+    background-color: #ebebeb;
+}
+
+.player-card-container {
+    overflow-x: auto;
+    scrollbar-width: thin;
+    /* Per Firefox */
+    scrollbar-color: transparent transparent;
+    /* Per Firefox */
+}
+
+/* Stile barra di scorrimento per browser basati su WebKit (Chrome, Safari) */
+.player-card-container::-webkit-scrollbar {
+    height: 12px;
+}
+
+.player-card-container::-webkit-scrollbar-thumb {
+    background-color: transparent;
+}
+
+.player-card-container::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.player-results-list {
+    width: 385px;
+    height: 110px;
+    border-radius: 20px;
+    // background-color: $primary-color;
+    // color: white;
+}
+
+/* PlayerCard */
+
+.player-card-img {
+    width: 67px;
+    height: 83px;
+    border-radius: 20px;
+    background-color: #ebebeb;
+}
+
+.player-card-name {
+    width: 90px;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px;
+    /* 200% */
+    letter-spacing: -0.15px;
+}
+
+/* Profile */
+
+.profile-pic {
+    width: 107px;
+    height: 107px;
+}
+
+/* Login */
+
+.btn-match-input {
+    width: 100%;
+}
+
+.btn-google-access {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border: 1px solid #ccc;
+}
+
+.google-logo {
+    width: 13px;
+}
+
+/* Footer */
+
+footer {
+    font-size: xx-small;
+    margin-top: -30px;
+    position: relative;
+    z-index: 0;
+}
+
+.footer-bg {
+    background-color: $primary-color;
+}
+
+.footer-bg-dark {
+    background-color: $primary-color-dark;
+}
+
+.footer-logo {
+    width: 42px;
+    height: 50px;
+}
+
+.social-logo {
+    width: 23.5px;
+    height: 23.5px;
+}
+
+/* Extra small devices (xs) - Phones (≥576px) */
+@media screen and (min-width: 576px) {}
+
+/* Small devices (sm) - Tablets (≥768px) */
+@media screen and (min-width: 768px) {
+
+    .contact-header {
+        width: 400px;
+    }
+
+    .prova-section-home {
+        height: 400px;
+        padding-top: 60px;
+    }
+
+    .prova-home-header {
+        width: 450px;
+        height: 270px;
+        border-radius: 20px 0 0 20px;
+        margin: 0 0 30px 100px;
+        overflow: visible;
+    }
+
+    .prova-home-title h2 {
+        font-size: 30px;
+    }
+
+    .prova-img-h {
+        width: 300px;
+        height: 305px;
+        transform: translate(312px, -19px);
+    }
+
+    /* Game */
+
+    .game-home {
+        width: 406px;
+        height: 325px;
+        transform: translate(-97px, 7px);
+    }
+
+    .game-away {
+        width: 323px;
+        height: 444px;
+        transform: translate(133px, 30px);
+        rotate: -25deg;
+    }
+
+    // .prova-home-header {
+    //     width: 560px;
+    //     height: 250px;
+    //     border-radius: 20px 0 0 20px;
+    //     margin-left: 30px;
+    //     margin-top: 20px;
+    //     position: unset;
+    // }
+
+    // .prova-img-h {
+    //     width: 250px;
+    //     height: 270px;
+    //     transform: translateX(460px);
+    //     position: unset;
+    // }
+
+    /* Leagues */
+
+    // .league-list {
+    //     width: 377px;
+    //     height: 53px;
+    // }
+
+    .league-list-cup {
+        width: 310px;
+        height: 53px;
+    }
+
+    /* Player */
+
+    .container-player {
+        width: 100%;
+        height: 200px;
+        overflow: visible;
+    }
+
+    .player-info {
+        width: 700px;
+        height: 350px;
+    }
+
+    .player-img {
+        width: 190px;
+        height: 180px;
+    }
+
+    .player-results-list {
+        width: 520px;
+        height: 110px;
+    }
+
+    /* Games preview */
+
+    .games-results-list {
+        width: 600px;
+        height: 110px;
+        border-radius: 20px;
+        // background-color: $primary-color;
+        // color: white;
+    }
+
+}
+
+/* Medium devices (md) - Desktops (≥992px) */
+@media screen and (min-width: 992px) {
+
+    .prova-section-home {
+        height: 400px;
+        padding-top: 60px;
+    }
+
+    .prova-home-header {
+        width: 640px;
+        height: 300px;
+        border-radius: 20px 0 0 20px;
+        // margin-left: 30px;
+        // margin-top: 20px;
+        margin: 0 0 30px 100px;
+        overflow: visible;
+    }
+
+    .prova-home-title {
+        padding-top: 44px;
+        padding-left: 66px;
+    }
+
+    .prova-home-title h2 {
+        font-size: 40px;
+    }
+    
+    .prova-home-title-en {
+        width: 60%;
+        padding-top: 44px;
+        padding-left: 66px;
+    }
+
+    .prova-home-title-en h2 {
+        font-size: 40px;
+    }
+
+    .prova-img-h {
+        width: 350px;
+        height: 330px;
+        transform: translate(491px, -15px);
+    }
+
+    .logo {
+        width: 70px;
+        height: auto;
+    }
+
+    .navbar-bg {
+        background-color: white;
+    }
+
+    #navbar-a,
+    #navbar-a1,
+    #navbar-a2,
+    #navbar-a3,
+    #navbar-a4,
+    #navbar-a5 {
+        color: white;
+    }
+
+    .offcanvas {
+        max-width: 60%;
+    }
+
+    // check
+    .text-light-1 {
+        color: black;
+    }
+
+    .navbar-search {
+        border: 1px solid black;
+    }
+
+    .offcanvas-bg-dark {
+        background-color: transparent;
+    }
+
+    /* Home */
+
+    .home-header {
+        height: 260px;
+    }
+
+    .contact-header {
+        width: 600px;
+    }
+
+    /* Game */
+
+    .game-home {
+        width: 406px;
+        height: 325px;
+        transform: translate(-91px, 37px);
+    }
+
+    .game-away {
+        width: 323px;
+        height: 444px;
+        transform: translate(238px, 88px);
+        rotate: -25deg;
+    }
+
+    /* Team */
+
+    .team-detail-header {
+        width: 720px;
+        height: 163px;
+        border-radius: 20px;
+        overflow: hidden;
+        color: $primary-color;
+    }
+
+    .team-detail-img {
+        width: 720px;
+        height: 190px;
+        border-radius: 20px;
+        // opacity: 0.2;
+    }
+
+    .team-results-list {
+        width: 515px;
+        height: 110px;
+    }
+
+    /* Player */
+
+    .container-player {
+        width: 100%;
+        height: 200px;
+        overflow: visible;
+    }
+
+    .player-info {
+        width: 555px;
+        height: 443px;
+    }
+
+    .player-img {
+        width: 310px;
+        height: 300px;
+        border-radius: 65px;
+    }
+
+    .player-card-container-unset {
+        overflow-x: unset;
+    }
+
+    .player-results-list {
+        width: 520px;
+        height: 110px;
+        // border-radius: 20px;
+        // background-color: $primary-color;
+        // color: white;
+    }
+
+}
+
+/* Large devices (lg) - Desktops (≥1200px) */
+@media screen and (min-width: 1200px) {
+
+    .prova-section-home {
+        height: 500px;
+        padding-top: 60px;
+    }
+
+    .prova-home-header {
+        width: 900px;
+        height: 400px;
+        border-radius: 20px 0 0 20px;
+        margin: 0 0 30px 100px;
+        overflow: visible;
+    }
+
+    .prova-home-title {
+        padding-top: 70px;
+        padding-left: 85px;
+    }
+
+    .prova-home-title h2 {
+        font-size: 60px;
+    }
+
+    .prova-home-title-en {
+        padding-top: 70px;
+        padding-left: 85px;
+    }
+
+    .prova-home-title-en h2 {
+        font-size: 60px;
+    }
+
+    .prova-img-h {
+        width: 450px;
+        height: 430px;
+        transform: translate(715px, -11px);
+    }
+
+    /* Game */
+
+    .game-home {
+        width: 406px;
+        height: 325px;
+        transform: translate(-32px, 9px);
+    }
+
+    .game-away {
+        width: 323px;
+        height: 444px;
+        transform: translate(335px, 117px);
+        rotate: -25deg;
+    }
+
+    /* Player */
+
+    .container-player {
+        width: 100vw;
+        height: 200px;
+        overflow: visible;
+    }
+
+    .player-info {
+        width: 700px;
+        height: 443px;
+    }
+
+    .player-img {
+        width: 350px;
+        height: 330px;
+    }
+
+    .player-match {
+        margin-top: 192px;
+    }
+
+    .player-results-list {
+        width: 600px;
+        height: 110px;
+        // border-radius: 20px;
+        // background-color: $primary-color;
+        // color: white;
+    }
+
+    /* Team */
+
+    .team-results-list {
+        width: 630px;
+        height: 110px;
+    }
+
+    /* Games preview */
+
+    .games-results-list {
+        width: 700px;
+        height: 110px;
+        border-radius: 20px;
+        // background-color: $primary-color;
+        // color: white;
+    }
+
+}
+
+/* Extra large devices (xl) - Large Desktops (≥1400px) */
+@media screen and (min-width: 1400px) {}
