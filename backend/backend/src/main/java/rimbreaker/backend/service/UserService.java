@@ -70,7 +70,34 @@ public class UserService {
     }
 
     public void updatePassword(String password, Long idUser) {
+        try {
 
+            // Create MessageDigest instance for MD5
+            MessageDigest md = MessageDigest.getInstance("MD5");
+
+            // Update the message digest with the input data
+            md.update(password.getBytes());
+
+            // Get the MD5 hash
+            byte[] md5Hash = md.digest();
+
+            // Convert the byte array to a hexadecimal string
+            StringBuilder hexStringBuilder = new StringBuilder();
+
+            for (byte b : md5Hash) {
+
+                hexStringBuilder.append(String.format("%02x", b));
+
+            }
+
+            // Print the MD5 hash
+            password= hexStringBuilder.toString();
+
+        } catch (NoSuchAlgorithmException e) {
+
+            e.printStackTrace();
+
+        }
         userRepository.updatePassword(password, idUser);
 
     }
