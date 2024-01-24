@@ -503,6 +503,15 @@ $primary-color-dark: #FF8038;
     color: white;
 }
 
+.league-list-player {
+    // width: 100%;
+    width: 377px;
+    height: 90px;
+    border-radius: 70px;
+    // background-color: $primary-color;
+    // color: white;
+}
+
 /* Favourites */
 
 .league-favourite {
@@ -712,7 +721,7 @@ footer {
         height: 325px;
         transform: translate(-97px, 7px);
     }
-    
+
     .game-away {
         width: 323px;
         height: 444px;
@@ -878,7 +887,7 @@ footer {
         height: 325px;
         transform: translate(-91px, 37px);
     }
-    
+
     .game-away {
         width: 323px;
         height: 444px;
@@ -988,7 +997,7 @@ footer {
         height: 325px;
         transform: translate(-32px, 9px);
     }
-    
+
     .game-away {
         width: 323px;
         height: 444px;
@@ -1008,7 +1017,7 @@ footer {
         width: 700px;
         height: 443px;
     }
-    
+
     .player-img {
         width: 350px;
         height: 330px;

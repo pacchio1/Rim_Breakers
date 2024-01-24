@@ -51,6 +51,9 @@ export class LoginComponent {
 
         this.router.navigateByUrl("/logged-home");
       }
+      else {
+        alert('Errore nel login, riprova!'); 
+      }
     })
   }
 }

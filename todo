@@ -1,0 +1,42 @@
+---| FATTO | ---
+
+- aggiungere parte preferiti [X]
+- aggiungere repository per User --> createAccount, loginAccount, updateEmail/Password, deleteAccount, saveAccount [X]
+- league by country [X]
+- league -> object instead of String [X]
+- standings by team [X]
+- games by country [X]
+- games by league [X]
+- games by team [X]
+- tutte con un limit by 6 [X]
+- get blog by id [X]
+- creare response [X]
+- blog by country [X]
+- blog by league [X]
+- blog by team [X]
+- player by game [X]
+- getByEmail aggiungere id user [X]
+- forse *aggiungere 1 colonna con codici (da aspettare) in player [X]
+- all_by_id games aggiungere id squadra away e home [X]
+- team_league aggiungere id team [X]
+- country by league [X] --> http://localhost:8080/league/country_by_league
+- country -> aggiungere id country [X]
+- league -> aggiungere filtro delle leghe [X]
+- aggiungere filtro lega singola aggiungere id sia ad all ed all_by_id [X]
+- scrivere documentazione(java docs) [X]
+- creare mvc di blog [X]
+- games by league [X] (filtro per data)
+- aggiungere controller e servizi appena confermate opzioni su repo di User [X]
+- endpoint per eseguire script [X]
+
+
+---| DA RIVEDERE / CONTINUARE | ---
+
+
+
+---| DA FARE |---
+
+- fare manuale utente [da fare]
+- mettere in readme []
+
+
