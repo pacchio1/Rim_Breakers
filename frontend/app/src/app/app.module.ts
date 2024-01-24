@@ -15,6 +15,20 @@ import { ProfileComponent } from './profile/profile.component';
 import { LoginComponent } from './login/login.component';
 import { FooterComponent } from './footer/footer.component';
 import { ContactComponent } from './contact/contact.component';
+import { PlayerDetailComponent } from './player-detail/player-detail.component';
+import { TeamComponent } from './team/team.component';
+import { PlayerCardComponent } from './player-card/player-card.component';
+import { CountriesComponent } from './countries/countries.component';
+import { RankingComponent } from './ranking/ranking.component';
+import { SigninComponent } from './signin/signin.component';
+import { ScorerComponent } from './scorer/scorer.component';
+import { AssistComponent } from './assist/assist.component';
+import { LeagueMatchComponent } from './league-match/league-match.component';
+import { GamesComponent } from './games/games.component';
+import { GameDetailComponent } from './game-detail/game-detail.component';
+import { TeamsPreviewComponent } from './teams-preview/teams-preview.component';
+import { PickFavouritesComponent } from './pick-favourites/pick-favourites.component';
+import { LoggedHomeComponent } from './logged-home/logged-home.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +42,22 @@ import { ContactComponent } from './contact/contact.component';
     LoginComponent,
     ContactComponent,
     LeaguesComponent,
+    RankingComponent,
+    ScorerComponent,
+    AssistComponent,
+    LeagueMatchComponent,
+    TeamComponent,
+    PlayerCardComponent,
+    PlayerDetailComponent,
+    CountriesComponent,
+    TeamsPreviewComponent,
+    GamesComponent,
+    GameDetailComponent,
     FooterComponent,
+    SigninComponent,
+    ProfileComponent,
+    PickFavouritesComponent,
+    LoggedHomeComponent
   ],
   imports: [
     BrowserModule,

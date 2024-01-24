@@ -1,0 +1,195 @@
+<section class="mt-navbar text-center"
+[ngClass]="{ 'section-bg-dark text-light': themeService.isDarkMode, 'bg-white text-dark': !themeService.isDarkMode}">
+    
+    <h2 class="pt-4">Ciao {{ account.name }}!</h2>
+    
+    <ng-container *ngIf="favouriteLeagues.length || favouriteTeams.length || favouritePlayers.length; else noData">
+        <p class="small mt-3">Vuoi modificare la tua selezione dei preferiti?</p>
+    </ng-container>
+    <ng-template #noData>
+        <p class="small">Scegli degli elementi preferiti per migliorare la tua esperienza</p>
+    </ng-template>
+
+    <button routerLink="/pick-favourites" class="btn" 
+    [ngClass]="{ 'home-header-bg-dark text-dark': themeService.isDarkMode, 'home-header-bg text-light': !themeService.isDarkMode}">
+        Scegli i preferiti
+    </button>
+
+</section>
+
+<section class="container-fluid d-flex justify-content-center"
+[ngClass]="{ 'section-bg-dark text-light': themeService.isDarkMode, 'bg-white text-dark': !themeService.isDarkMode}">
+
+    <div class="team-detail-header mt-3 mt-lg-5 d-flex align-items-center justify-content-center position-relative"
+    [ngClass]="{ 'section-bg-dark text-light': themeService.isDarkMode, 'bg-white text-dark': !themeService.isDarkMode}">
+        <h2 class="position-absolute text-center text-light z-2">Leghe preferite</h2>
+        <div class="team-detail-img-overlay z-1"></div>
+        <img class="team-detail-img" src="https://images.unsplash.com/flagged/photo-1580051706353-f037886dedac?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGdpb2NhdG9yaSUyMGJhc2tldHxlbnwwfHwwfHx8MA%3D%3D" alt="">
+    </div>
+
+</section>
+<section class="container-fluid pt-3 pb-3 bg-white"
+[ngClass]="{ 'section-bg-dark text-light': themeService.isDarkMode, 'bg-white text-dark': !themeService.isDarkMode}">
+    
+    <div *ngFor="let league of favouriteLeagues" class="pt-3">
+
+        <div class="d-flex justify-content-center mb-4">
+            <button class="league-list d-flex justify-content-start align-items-center ps-5" (click)="passIdLeague(league.id_league)" 
+            [ngClass]="{ 'home-header-bg-dark text-dark': themeService.isDarkMode, 'home-header-bg text-light': !themeService.isDarkMode}">
+                <img src="{{ league.logo }}" alt="" class="league-logo">
+                <h3 class="mx-3">{{ league.name }}</h3>
+            </button>
+        </div>
+
+        <div class="d-flex flex-wrap justify-content-center">
+            <div class="row games-results-list align-items-center px-3 m-1" *ngFor="let match of getProcessedMatchesByLeague(league.name)" (click)="passIdGames(match.id_games)"
+            [ngClass]="{ 'home-header-bg-dark text-dark': themeService.isDarkMode, 'home-header-bg text-light': !themeService.isDarkMode}">
+              <div class="col-3 d-flex flex-column align-items-center">
+                  <img src="{{ match.logoHome }}" alt="" class="league-logo">
+                  <p class="m-0 text-center">{{ match.teamHome }}</p>
+              </div>
+              <div class="col-2 d-flex flex-column align-items-center justify-content-center text-center">
+                  <div *ngIf="match.scoreHomeFinal !== null" [ngStyle]="{'background-color': match.scoreHomeFinal > match.scoreAwayFinal ? '#73c973' : '#de5e5e'}" class="score d-flex flex-column align-items-center justify-content-center">
+                      <p class="m-0 text-white">{{ match.scoreHomeFinal }}</p>
+                  </div>
+                  <div *ngIf="match.scoreHomeFinal == null" class="bg-white score d-flex flex-column align-items-center justify-content-center">
+                      <p class="text-black m-0">X</p>
+                  </div>
+              </div>
+          
+              <div class="col-2 d-flex flex-column align-items-center justify-content-center text-center">
+                  <p class="m-0">VS</p>
+              </div>
+          
+              <div class="col-2 d-flex flex-column align-items-center justify-content-center text-center">
+                  <div *ngIf="match.scoreAwayFinal !== null" [ngStyle]="{'background-color': match.scoreAwayFinal > match.scoreHomeFinal ? '#73c973' : '#de5e5e'}" class="score d-flex flex-column align-items-center justify-content-center">
+                      <p class="m-0 text-white">{{ match.scoreAwayFinal }}</p>
+                  </div>
+                  <div *ngIf="match.scoreAwayFinal == null" class="bg-white score d-flex flex-column align-items-center justify-content-center">
+                      <p class="text-black m-0">X</p>
+                  </div>
+              </div>
+          
+              <div class="col-3 d-flex flex-column align-items-center">
+                  <img src="{{ match.logoAway }}" alt="" class="league-logo">
+                  <p class="m-0">{{ match.teamAway }}</p>
+              </div>
+            </div>
+          </div>
+
+    </div>
+</section>
+
+<section class="container-fluid d-flex justify-content-center"
+[ngClass]="{ 'section-bg-dark text-light': themeService.isDarkMode, 'bg-white text-dark': !themeService.isDarkMode}">
+    
+    <div class="team-detail-header mt-lg-5 d-flex align-items-center justify-content-center position-relative"
+    [ngClass]="{ 'section-bg-dark text-light': themeService.isDarkMode, 'bg-white text-dark': !themeService.isDarkMode}">
+        <h2 class="position-absolute text-center text-light z-2">Squadre preferiti</h2>
+        <div class="team-detail-img-overlay z-1"></div>
+        <img class="team-detail-img" src="https://images.unsplash.com/flagged/photo-1580051706353-f037886dedac?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGdpb2NhdG9yaSUyMGJhc2tldHxlbnwwfHwwfHx8MA%3D%3D" alt="">
+    </div>
+
+</section>
+<section class="container-fluid pt-3 pb-3 bg-white"
+[ngClass]="{ 'section-bg-dark text-light': themeService.isDarkMode, 'bg-white text-dark': !themeService.isDarkMode}">
+    
+    <div *ngFor="let team of favouriteTeams" class="pt-3">
+    
+        <div class="d-flex justify-content-center mb-4">
+            <button class="league-list d-flex justify-content-start align-items-center ps-5" (click)="passIdTeam(team.id)"
+            [ngClass]="{ 'home-header-bg-dark text-dark': themeService.isDarkMode, 'home-header-bg text-light': !themeService.isDarkMode}">
+                <img src="{{ team.logo }}" alt="" class="league-logo">
+                <h3 class="mx-3">{{ team.name }}</h3>
+            </button>
+        </div>
+
+        <div class="d-flex flex-wrap justify-content-center">
+            <div class="row games-results-list align-items-center px-3 m-1" *ngFor="let match of getProcessedMatchesByTeam(team.name)" (click)="passIdGames(match.id_games)"
+            [ngClass]="{ 'home-header-bg-dark text-dark': themeService.isDarkMode, 'home-header-bg text-light': !themeService.isDarkMode}">
+              <div class="col-3 d-flex flex-column align-items-center">
+                  <img src="{{ match.logoHome }}" alt="" class="league-logo">
+                  <p class="m-0 text-center">{{ match.teamHome }}</p>
+              </div>
+              <div class="col-2 d-flex flex-column align-items-center justify-content-center text-center">
+                  <div *ngIf="match.scoreHomeFinal !== null" [ngStyle]="{'background-color': match.scoreHomeFinal > match.scoreAwayFinal ? '#73c973' : '#de5e5e'}" class="score d-flex flex-column align-items-center justify-content-center">
+                      <p class="m-0 text-white">{{ match.scoreHomeFinal }}</p>
+                  </div>
+                  <div *ngIf="match.scoreHomeFinal == null" class="bg-white score d-flex flex-column align-items-center justify-content-center">
+                      <p class="text-black m-0">X</p>
+                  </div>
+              </div>
+          
+              <div class="col-2 d-flex flex-column align-items-center justify-content-center text-center">
+                  <p class="m-0">VS</p>
+              </div>
+          
+              <div class="col-2 d-flex flex-column align-items-center justify-content-center text-center">
+                  <div *ngIf="match.scoreAwayFinal !== null" [ngStyle]="{'background-color': match.scoreAwayFinal > match.scoreHomeFinal ? '#73c973' : '#de5e5e'}" class="score d-flex flex-column align-items-center justify-content-center">
+                      <p class="m-0 text-white">{{ match.scoreAwayFinal }}</p>
+                  </div>
+                  <div *ngIf="match.scoreAwayFinal == null" class="bg-white score d-flex flex-column align-items-center justify-content-center">
+                      <p class="text-black m-0">X</p>
+                  </div>
+              </div>
+          
+              <div class="col-3 d-flex flex-column align-items-center">
+                  <img src="{{ match.logoAway }}" alt="" class="league-logo">
+                  <p class="m-0">{{ match.teamAway }}</p>
+              </div>
+            </div>
+          </div>
+
+    </div>
+
+</section>
+
+<section class="container-fluid d-flex justify-content-center"
+[ngClass]="{ 'section-bg-dark text-light': themeService.isDarkMode, 'bg-white text-dark': !themeService.isDarkMode}">
+    
+    <div class="team-detail-header mt-lg-5 d-flex align-items-center justify-content-center position-relative"
+    [ngClass]="{ 'section-bg-dark text-light': themeService.isDarkMode, 'bg-white text-dark': !themeService.isDarkMode}">
+        <h2 class="position-absolute text-center text-light z-2">Giocatori preferiti</h2>
+        <div class="team-detail-img-overlay z-1"></div>
+        <img class="team-detail-img" src="https://images.unsplash.com/flagged/photo-1580051706353-f037886dedac?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGdpb2NhdG9yaSUyMGJhc2tldHxlbnwwfHwwfHx8MA%3D%3D" alt="">
+    </div>
+
+</section>
+<section class="container-fluid footer-index pt-3 pb-5 rounded-bottom-5 bg-white"
+         [ngClass]="{ 'section-bg-dark text-light': themeService.isDarkMode, 'bg-white text-dark': !themeService.isDarkMode}">
+    
+    <div class="row">
+        <div *ngFor="let player of favouritePlayers; let i = index" class="col-lg-6 pt-3">
+        
+            <div class="d-flex justify-content-center mb-4">
+                <button class="league-list-player d-flex justify-content-start align-items-center ps-5"
+                        (click)="passIdPlayer(player.idPlayer)"
+                        [ngClass]="{ 'home-header-bg-dark text-dark': themeService.isDarkMode, 'home-header-bg text-light': !themeService.isDarkMode}">
+                    
+                    <h3 class="mx-2 text-center">{{ player.name }} {{ player.surname }}</h3>
+        
+                    <div class="position-relative text-center mx-2">
+                        <img src="../../assets/imgX/jersey.png" alt="" class="jersey-logo bg-white rounded-3">
+                        <span class="position-absolute top-50 start-50 translate-middle text-black mt-1">{{ player.meshNumber }}</span>
+                    </div>
+        
+                    <img src="{{ player.teamLogo }}" alt="" class="league-logo mx-2">
+                </button>
+            </div>
+        
+            <div class="player-stats d-flex flex-column align-items-center justify-content-center text-center"
+                 [ngClass]="{ 'home-header-bg-dark text-dark': themeService.isDarkMode, 'home-header-bg text-light': !themeService.isDarkMode}">
+                <p class="mb-1">Gioca in: {{ player.teamName }}</p>
+                <p class="mb-1">Età: {{ player.age }}</p>
+                <p class="mb-1">Media minuti: {{ player.playedMin }}</p>
+                <p class="mb-1">Media punti: {{ player.pointScored }}</p>
+                <p class="mb-1">Media assist: {{ player.assist }}</p>
+                <p class="mb-1">Media tiri liberi: {{ player.freeThrows }}</p>
+            </div>
+        
+        </div>
+    </div>
+</section>
+
+
+

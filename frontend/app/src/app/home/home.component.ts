@@ -1,6 +1,8 @@
 import { Component } from "@angular/core";
 import { ThemeService } from "../_service/dark-mode.service";
 import { BasketService } from "../_service/basket.service";
+import { ActivatedRoute } from "@angular/router";
+import { LanguageService } from "../_service/english-mode.service";
 
 @Component ({
     selector: 'app-home',
@@ -9,23 +11,40 @@ import { BasketService } from "../_service/basket.service";
 
 export class HomeComponent {
 
-    playerDetails: [] = []; 
     isDarkMode: boolean = false;
+    isEnglishMode: boolean = false;
+    players: [] = [];
+    loggedIn: boolean = false; 
+    emailAccount: string | null = '';
 
-    constructor(public themeService: ThemeService, private basketService: BasketService) {}
+    constructor(public themeService: ThemeService, private basketService: BasketService, private route: ActivatedRoute, public languageService: LanguageService) {}
 
     ngOnInit(): void {
-        this.printPlayers(); 
-    }
+        // this.printPlayer();
+        this.emailAccount = localStorage.getItem('emailAccount');
+        console.log(this.emailAccount);
 
-    printPlayers() {
-        this.basketService.getCountry().subscribe((response: any) => {
-            this.playerDetails = response;
-            console.log(this.playerDetails);
-        })
+        if(this.emailAccount !== null) {
+            this.loggedIn = true;
+        }
+        console.log(this.loggedIn);
     }
 
     toggleTheme(): void {
         this.themeService.toggleTheme();
     }
+
+    toggleLanguage(): void {
+        this.languageService.toggleLanguage();
+        console.log('english', this.languageService.isEnglishMode)
+    }
+
+    // printPlayer() {
+    //     this.basketService.getPlayer().subscribe((response: any) => {
+    //         this.players = response
+    //         console.log(this.players);
+            
+    //     })
+    // }
+
 }

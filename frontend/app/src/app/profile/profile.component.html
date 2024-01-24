@@ -1,14 +1,16 @@
-<section class="mt-navbar d-flex flex-column align-items-center">
+<section class="mt-navbar d-flex flex-column align-items-center"
+[ngClass]="{ 'section-bg-dark text-light': themeService.isDarkMode, 'bg-white text-dark': !themeService.isDarkMode}">
   <div class="profile-pic mt-5">
     <img src="../../assets/imgX/profile-pic.png" alt="" class="img-fluid" />
   </div>
   <div class="profile-name mt-3">
-    <b>Giulia Lombardi</b>
+    <b>{{ profile?.name }}</b>
   </div>
 </section>
 
-<section class="mt-5 m-4">
-  <div class="row mb-3">
+<section class="pt-5 p-4 footer-index rounded-bottom-5"
+[ngClass]="{ 'section-bg-dark text-light': themeService.isDarkMode, 'bg-white text-dark': !themeService.isDarkMode}">
+  <div class="row mb-4 mt-4" (click)="toggleDropdown('informazioni')">
     <div class="col-2 text-center">
       <i class="bi bi-info-circle"></i>
     </div>
@@ -19,7 +21,17 @@
       <p>></p>
     </div>
   </div>
-  <div class="row mb-3">
+
+  <div class="row mb-4" *ngIf="dropdown === 'informazioni'" class="dropdown">
+    <div class="text-center border rounded-4 p-3">
+      <p>Nome: {{ profile?.name }}</p>
+      <p>Cognome: {{ profile?.surname }}</p>
+      <p>Email: {{ profile?.email }}</p>
+      <p>Id: {{ profile?.idUser }}</p>
+    </div>
+  </div>
+
+  <div class="row mb-4 mt-4" (click)="toggleDropdown('cambiaPassword')">
     <div class="col-2 text-center">
       <i class="bi bi-info-circle"></i>
     </div>
@@ -30,7 +42,56 @@
       <p>></p>
     </div>
   </div>
-  <div class="row mb-3">
+
+  <div class="row mb-4" *ngIf="dropdown === 'cambiaPassword'" class="dropdown">
+    <div class="text-center border rounded-4 p-3">
+      <form (ngSubmit)="onSubmit()">
+        <label for="newPassword" class="form-label">Nuova password</label>
+        <div class="mb-3 input-group">
+          <input
+            #passwordInputNew
+            [type]="mostraPasswordNew ? 'text' : 'password'"
+            class="form-control rounded-4"
+            id="newPassword"
+            placeholder="*****"
+            [(ngModel)]="newPassword" name="newPassword"/>
+          <button
+            type="button"
+            class="btn btn-outline-secondary rounded-end"
+            (click)="toggleMostraPassword('new')">
+            <img
+              src="../../assets/imgX/{{ mostraPasswordNew ? 'eye.png' : 'view.png' }}"
+              alt="Toggle Password"
+              class="toggle-password-icon" />
+          </button>
+        </div>
+        <label for="confirmPassword" class="form-label">Conferma password</label>
+        <div class="mb-3 input-group">
+          <input
+            #passwordInputConfirm
+            [type]="mostraPasswordConfirm ? 'text' : 'password'"
+            class="form-control rounded-4"
+            id="confirmPassword"
+            placeholder="*****"
+            [(ngModel)]="confirmPassword" name="confirmPassword"/>
+          <button
+            type="button"
+            class="btn btn-outline-secondary rounded-end"
+            (click)="toggleMostraPassword('confirm')">
+            <img
+              src="../../assets/imgX/{{ mostraPasswordConfirm ? 'eye.png' : 'view.png' }}"
+              alt="Toggle Password"
+              class="toggle-password-icon" />
+          </button>
+        </div>
+        <button type="submit" class="btn btn-match-input rounded-4 mb-3">
+          Invia
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <div class="row mb-4 mt-4" (click)="toggleDropdown('eliminaAccount')">
     <div class="col-2 text-center">
       <i class="bi bi-info-circle"></i>
     </div>
@@ -41,7 +102,20 @@
       <p>></p>
     </div>
   </div>
-  <div class="row text-danger">
+
+  <div class="row mb-4" *ngIf="dropdown === 'eliminaAccount'" class="dropdown">
+    <div class="text-center border rounded-4 p-3">
+      <p>Vuoi davvero eliminare l'account?</p>
+      <button type="button" class="btn btn-danger me-3" style="width: 60px;" (click)="userDelete()">
+        Si
+      </button>
+      <button type="button" class="btn btn-light" style="width: 60px;">
+        No
+      </button>
+    </div>
+  </div>
+
+  <div class="row mb-4 mt-4 text-danger" (click)="toggleDropdown('esci')">
     <div class="col-2 text-center">
       <i class="bi bi-info-circle"></i>
     </div>
@@ -50,6 +124,18 @@
     </div>
     <div class="col-2">
       <p>></p>
+    </div>
+  </div>
+
+  <div class="row mb-4" *ngIf="dropdown === 'esci'" class="dropdown">
+    <div class="text-center border rounded-4 p-3">
+      <p>Vuoi davvero effettuare il Log Out?</p>
+      <button type="button" class="btn btn-danger me-3" style="width: 60px;" (click)="userExit()">
+        Si
+      </button>
+      <button type="button" class="btn btn-light" style="width: 60px;">
+        No
+      </button>
     </div>
   </div>
 </section>

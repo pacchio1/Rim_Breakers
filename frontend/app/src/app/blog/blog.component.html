@@ -1,4 +1,4 @@
-<div class="mt-navbar d-flex flex-wrap justify-content-center">
+<!-- <div class="mt-navbar d-flex flex-wrap justify-content-center">
 
     <h2 class="text-center p-4">Blog</h2>
 
@@ -27,4 +27,48 @@
 
     </div>
 
-</div>
+</div> -->
+
+<section
+  class="footer-index pt-5 pb-5 rounded-bottom-5 mt-navbar"
+  [ngClass]="{ 'section-bg-dark text-light': themeService.isDarkMode, 'bg-white text-dark': !themeService.isDarkMode}"
+>
+  <h2 class="text-center">Blog</h2>
+
+  <div class="d-flex justify-content-center">
+    <div class="row row-cols-1 row-cols-md-2 home-card-container justify-content-center">
+      <div class="col d-flex flex-wrap justify-content-center align-items-center px-0" >
+        <a href="http://rimbreakers.ddns.net/wordpress/index.php/2024/01/23/stelle-scintillanti-i-migliori-giocatori-della-stagione-del-basket-europeo-2022/" class="text-decoration-none" target="_blank">
+          <blog-card
+          class="mt-5"
+          [imageUrl]="'../../assets/imgX/primo-blog.jpg'"
+          [topic]="'Riguardiamo I Migliori Giocatori della Stagione 2022'"
+          [date]="'20/01/2024'"
+        ></blog-card>
+        </a>
+      </div>
+
+      <div class="col d-flex flex-wrap justify-content-center px-0 m-3 m-md-0">
+        <a href="http://rimbreakers.ddns.net/wordpress/index.php/2024/01/23/passo-sicuro-le-migliori-scarpe-da-basket/" class="text-decoration-none" target="_blank">
+          <blog-card
+          class="mt-5"
+          [imageUrl]="'../../assets/imgX/secondo-blog.jpg'"
+          [topic]="'Passo sicuro! Le Migliori Scarpe da Basket'"
+          [date]="'13/01/2024'"
+          ></blog-card>
+        </a>
+      </div>
+
+      <div class="col d-flex flex-wrap justify-content-center px-0 m-md-5">
+        <a href="http://rimbreakers.ddns.net/wordpress/index.php/2024/01/23/tra-le-quinte-delleccellenza-un-viaggio-nellanima-di-dennis-schroeder-un-giocatore-di-prima-categoria/" class="text-decoration-none" target="_blank">
+          <blog-card
+            class="mt-5"
+            [imageUrl]="'../../assets/imgX/terzo-blog.jpg'"
+            [topic]="'Dietro le Quinte con un Giocatore di Prima Categoria'"
+            [date]="'06/01/2024'"
+          ></blog-card>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

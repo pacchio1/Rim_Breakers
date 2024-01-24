@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { ThemeService } from '../_service/dark-mode.service';
-import { LoginUser } from '../_model/login.model';
-import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ProfileService } from '../_service/profile.service';
+import { LocalStorageService } from '../_service/localStorage.service';
 
 @Component({
   selector: 'app-login',
@@ -11,49 +11,49 @@ import { Router } from '@angular/router';
 
 export class LoginComponent {
 
-  // loginData!: LoginUser;
-  users: LoginUser[] = [];
-
   email: string = '';
   password: string = '';
+  emailAccount: string = ''; 
 
-  constructor(public themeService: ThemeService, private router: Router) {}
+  mostraPassword: boolean = false;
 
-  ngOnInit(): void {
-    this.simulateAPIResponseLogin();
+  @ViewChild("passwordInput", { static: false }) passwordInput?: ElementRef;
+
+  toggleMostraPassword(): void {
+    this.mostraPassword = !this.mostraPassword;
+
+    // Verifica se l'elemento è stato inizializzato prima di accedere a nativeElement
+    if (this.passwordInput) {
+      const inputElement = this.passwordInput.nativeElement as HTMLInputElement;
+      inputElement.type = this.mostraPassword ? "text" : "password";
+    }
   }
+
+  constructor(public themeService: ThemeService, private profileService: ProfileService, private router: Router, private localStorageService: LocalStorageService) {}
 
   toggleTheme(): void {
     this.themeService.toggleTheme();
   }
 
-  simulateAPIResponseLogin(): void {
-    // Assegnazione dei valori della risposta simulata
-    const simulationLogin: LoginUser = {
-      email: 'giulia@gmail.com',
-      password: '1234'
-    }
-    // this.loginData = simulationLogin;
-    this.users = [simulationLogin];
-    // console.log(this.loginData.password)
-  }
-
   onSubmit() {
-    // Logica per gestire la sottomissione del modulo
-    this.checkCredentials();
+    this.checkCredentials(); 
   }
 
   checkCredentials() {
+    this.profileService.getUserLogin(this.email, this.password).subscribe((response: any) => {
+      
+      if(response.message === 'success') {
+        this.emailAccount = response.email
+        localStorage.setItem('emailAccount', this.emailAccount); 
+        this.localStorageService.triggerStorageChange();
 
-    const foundUser = this.users.find(user => user.email === this.email && user.password === this.password);
+        alert('Login effettuato con successo!')
 
-    if (foundUser) {
-      console.log('Credenziali corrette');
-      this.router.navigate(['/profile']);
-    } else {
-      console.error('Credenziali errate');
-    }
-    
-  }
-
+        this.router.navigateByUrl("/logged-home");
+      }
+      else {
+        alert('Errore nel login, riprova!'); 
+      }
+    })
+  }
 }

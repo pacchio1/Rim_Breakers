@@ -1,18 +1,58 @@
-<section class="mt-navbar-text container d-flex justify-content-center">
+<section class="mt-navbar container-fluid d-flex justify-content-center"
+[ngClass]="{ 'section-bg-dark text-light': themeService.isDarkMode, 'bg-white text-dark': !themeService.isDarkMode}">
 
-    <div class="league-title d-flex justify-content-center align-items-center">
-        <h2>{{ leaguesData[0].nameLeague }}</h2>
+    <div class="league-title d-flex justify-content-center align-items-center mt-5"
+    [ngClass]="{ 'home-header-bg-dark text-dark': themeService.isDarkMode, 'home-header-bg text-light': !themeService.isDarkMode}">
+        <h2 *ngIf="league">{{ league.name }}</h2>
     </div>
 
 </section>
 
-<section class="mt-3 container">
-    
-    <div *ngFor="let league of leaguesData" class="d-flex justify-content-center pt-3">
-        <div class="league-list d-flex justify-content-start align-items-center ps-5">
+<div class="container-fluid footer-index pt-5 pb-5 rounded-bottom-5"
+[ngClass]="{ 'section-bg-dark text-light': themeService.isDarkMode, 'bg-white text-dark': !themeService.isDarkMode}">
+    <div class="d-flex flex-row justify-content-center mt-3">
+        <button class="tab p-2 me-1 rounded-3" 
+        [class.active]="selectedButton === 'A'" 
+        (click)="showComponent('A')"
+        [ngClass]="{ 'home-header-bg-dark text-dark': themeService.isDarkMode, 'home-header-bg text-light': !themeService.isDarkMode}">Classifica</button>
+        <button class="tab p-2 me-1 rounded-3" [class.active]="selectedButton === 'B'" (click)="showComponent('B')"
+        [ngClass]="{ 'home-header-bg-dark text-dark': themeService.isDarkMode, 'home-header-bg text-light': !themeService.isDarkMode}">Marcatori</button>
+        <button class="tab p-2 me-1 rounded-3" [class.active]="selectedButton === 'C'" (click)="showComponent('C')"
+        [ngClass]="{ 'home-header-bg-dark text-dark': themeService.isDarkMode, 'home-header-bg text-light': !themeService.isDarkMode}">Assist</button>
+        <button class="tab p-2 me-1 rounded-3" [class.active]="selectedButton === 'D'" (click)="showComponent('D')"
+        [ngClass]="{ 'home-header-bg-dark text-dark': themeService.isDarkMode, 'home-header-bg text-light': !themeService.isDarkMode}">Risultati</button>
+    </div>
+
+
+    <div *ngIf="componentSelected === 'A'" class="pt-3">
+        <app-ranking *ngIf="league" [teamsData]="leaguesData" [leagueName]="league.name"></app-ranking>
+    </div>
+    <div *ngIf="componentSelected === 'B'">
+        <app-scorer [teamsData]="leaguesData"></app-scorer>
+    </div>
+    <div *ngIf="componentSelected === 'C'">
+        <app-assist [teamsData]="leaguesData"></app-assist>
+    </div>
+    <div *ngIf="componentSelected === 'D'">
+        <app-league-match [leagueName]="league.name"></app-league-match>
+    </div>
+</div>
+
+<!-- <section class="container footer-index pt-3 pb-5 rounded-bottom-5 bg-white">  
+    <div *ngFor="let leagueObj of leaguesData" class="d-flex justify-content-center pt-3" (click)="passIdTeam(leagueObj.teamId)">
+        <div class="league-list d-flex justify-content-start align-items-center ps-5" *ngIf="leagueObj">
+            <p class="mb-0 pe-2">{{ leagueObj.position }}^</p>
+            <img src="{{ leagueObj.teamLogo }}" alt="" class="league-logo">
+            <p class="ps-3 m-0" *ngIf="leagueObj">{{ leagueObj.teamName }}</p>
+        </div>
+    </div>
+</section> -->
+
+<!-- <section class="container footer-index pt-3 pb-5 rounded-bottom-5 bg-white">  
+    <div *ngFor="let league of leaguesData" class="d-flex justify-content-center pt-3" (click)="passIdTeam(league.id)">
+        <div class="league-list d-flex justify-content-start align-items-center ps-5" *ngIf="league">
             <img src="{{ league.logoTeam }}" alt="" class="league-logo">
             <p class="ps-3 m-0">{{ league.nameTeam }}</p>
         </div>
     </div>
-
-</section>
+</section> -->
