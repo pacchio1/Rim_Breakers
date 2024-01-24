@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ThemeService } from '../_service/dark-mode.service';
 import { LocalStorageService } from '../_service/localStorage.service';
+import { LanguageService } from '../_service/english-mode.service';
 
 @Component({
   selector: 'top-bar',
@@ -12,10 +13,11 @@ export class TopBarComponent implements OnInit {
   parsedValue: boolean = false;
   loggedIn: boolean = false;
 
-  constructor(public themeService: ThemeService, private localStorageService: LocalStorageService) {}
+  constructor(public themeService: ThemeService, private localStorageService: LocalStorageService, public languageService: LanguageService) {}
 
   ngOnInit(): void {
     this.themeService.themeSettled();
+    this.languageService.themeSettled();
 
     if (localStorage.getItem('emailAccount')) {
       this.setLoggedInState();
@@ -35,4 +37,8 @@ export class TopBarComponent implements OnInit {
   toggleTheme(): void {
     this.themeService.toggleTheme();
   }
+
+  toggleLanguage(): void {
+    this.languageService.toggleLanguage();
+}
 }

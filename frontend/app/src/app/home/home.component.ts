@@ -2,6 +2,7 @@ import { Component } from "@angular/core";
 import { ThemeService } from "../_service/dark-mode.service";
 import { BasketService } from "../_service/basket.service";
 import { ActivatedRoute } from "@angular/router";
+import { LanguageService } from "../_service/english-mode.service";
 
 @Component ({
     selector: 'app-home',
@@ -11,11 +12,12 @@ import { ActivatedRoute } from "@angular/router";
 export class HomeComponent {
 
     isDarkMode: boolean = false;
+    isEnglishMode: boolean = false;
     players: [] = [];
     loggedIn: boolean = false; 
     emailAccount: string | null = '';
 
-    constructor(public themeService: ThemeService, private basketService: BasketService, private route: ActivatedRoute) {}
+    constructor(public themeService: ThemeService, private basketService: BasketService, private route: ActivatedRoute, public languageService: LanguageService) {}
 
     ngOnInit(): void {
         // this.printPlayer();
@@ -30,6 +32,11 @@ export class HomeComponent {
 
     toggleTheme(): void {
         this.themeService.toggleTheme();
+    }
+
+    toggleLanguage(): void {
+        this.languageService.toggleLanguage();
+        console.log('english', this.languageService.isEnglishMode)
     }
 
     // printPlayer() {

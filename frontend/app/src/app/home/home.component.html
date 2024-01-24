@@ -29,15 +29,28 @@
   <section class="mt-navbar prova-section-home"
   [ngClass]="{'bg-dark': themeService.isDarkMode, 'bg-white': !themeService.isDarkMode}">
     <div class="prova-home-header d-flex" [ngClass]="{'home-header-bg-dark': themeService.isDarkMode, 'home-header-bg text-light': !themeService.isDarkMode}">
-      <div class="prova-home-title">
-        <h2>Tutto il <span class="text-warning"> basket Europeo</span> in un unico posto</h2>
-        <button
-          class="btn"
-          [ngClass]="{ 'btn-warning': themeService.isDarkMode, 'btn-light': !themeService.isDarkMode }"
-          [routerLink]="['/countries']">
-            Scopri
-        </button>
-      </div>
+      <ng-container  *ngIf="!languageService.isEnglishMode">
+        <div class="prova-home-title">
+          <h2>Tutto il <span class="text-warning"> basket Europeo</span> in un unico posto</h2>
+          <button
+            class="btn"
+            [ngClass]="{ 'btn-warning': themeService.isDarkMode, 'btn-light': !themeService.isDarkMode }"
+            [routerLink]="['/contact']">
+              Scopri
+          </button>
+        </div>
+      </ng-container>
+      <ng-container  *ngIf="languageService.isEnglishMode">
+        <div class="prova-home-title-en">
+          <h2>All the <span class="text-warning"> European basket</span> in one place</h2>
+          <button
+            class="btn"
+            [ngClass]="{ 'btn-warning': themeService.isDarkMode, 'btn-light': !themeService.isDarkMode }"
+            [routerLink]="['/contact']">
+              More
+          </button>
+        </div>
+      </ng-container>
       <div class="prova-home-img">
         <img
           src="../../assets/imgX/basketball-home.png"
@@ -55,12 +68,20 @@
   class="home-description text-center pb-5"
   [ngClass]="{ 'section-bg-dark text-light': themeService.isDarkMode }"
 >
-  <h2>Chi è B-Room?</h2>
-  <p class="p-2">
-    L'esperienza analitica sul basketball che rompe le barriere e coinvolge la
-    quarta dimensione. Un viaggio emozionante nel mondo della pallacanestro
-    europea, <span class="fw-bold">progettato per te.</span>
-  </p>
+  <ng-container *ngIf="!languageService.isEnglishMode">
+    <h2>Chi è B-Room?</h2>
+    <p class="p-2">
+      L'esperienza analitica sul basketball che rompe le barriere e coinvolge la
+      quarta dimensione. Un viaggio emozionante nel mondo della pallacanestro
+      europea, <span class="fw-bold">progettato per te.</span>
+    </p>
+  </ng-container>
+  <ng-container *ngIf="languageService.isEnglishMode">
+    <h2>Who is B-Room?</h2>
+    <p class="p-2">
+      The analytical basketball experience that breaks barriers and involves the fourth dimension. An exciting journey into the world of European basketball, <span class="fw-bold"> designed for you.</span>
+    </p>
+  </ng-container>
 </section>
 
 <section
@@ -79,7 +100,13 @@
           'home-card-title-bg': !themeService.isDarkMode
         }"
       >
-        <h2 class="pb-2">Squadre</h2>
+        
+        <ng-container *ngIf="!languageService.isEnglishMode">
+          <h2 class="pb-2">Squadre</h2>
+        </ng-container>
+        <ng-container *ngIf="languageService.isEnglishMode">
+          <h2 class="pb-2">Teams</h2>
+        </ng-container>
       </div>
       <div class="home-card position-relative">
         <img
@@ -99,7 +126,12 @@
           'home-card-title-bg': !themeService.isDarkMode
         }"
       >
-        <h2 class="pb-2">Ultime Partite</h2>
+        <ng-container *ngIf="!languageService.isEnglishMode">
+          <h2 class="pb-2">Ultime Partite</h2>
+        </ng-container>
+        <ng-container *ngIf="languageService.isEnglishMode">
+          <h2 class="pb-2">Last Matches</h2>
+        </ng-container>
       </div>
       <div class="home-card position-relative">
         <img
@@ -119,7 +151,12 @@
           'home-card-title-bg': !themeService.isDarkMode
         }"
       >
-        <h2 class="pb-2">Campionati</h2>
+        <ng-container *ngIf="!languageService.isEnglishMode">
+          <h2 class="pb-2">Campionati</h2>
+        </ng-container>
+        <ng-container *ngIf="languageService.isEnglishMode">
+          <h2 class="pb-2">Championships</h2>
+        </ng-container>
       </div>
       <div class="home-card position-relative">
         <img
@@ -138,36 +175,78 @@
 >
   <h2 class="text-center">Blog</h2>
 
-  <div class="d-flex justify-content-center">
-    <div class="row row-cols-1 row-cols-md-2 home-card-container">
-      <div class="col d-flex flex-wrap justify-content-center px-0">
-        <blog-card
-          class="mt-5"
-          [imageUrl]="'../../assets/imgX/primo-blog.jpg'"
-          [topic]="'Riguardiamo I Migliori Giocatori della Stagione 2022'"
-          [date]="'20/01/2024'"
-        ></blog-card>
-      </div>
-
-      <div class="col d-flex flex-wrap justify-content-center px-0">
-        <blog-card
-          class="mt-5"
-          [imageUrl]="'../../assets/imgX/secondo-blog.jpg'"
-          [topic]="'Passo Sicuro! Le Migliori Scarpe da Basket'"
-          [date]="'13/01/2024'"
-        ></blog-card>
-      </div>
-
-      <div class="col d-flex flex-wrap justify-content-center px-0">
-        <blog-card
-          class="mt-5"
-          [imageUrl]="'../../assets/imgX/terzo-blog.jpg'"
-          [topic]="'Dietro le Quinte con un Giocatore di Prima Categoria'"
-          [date]="'06/01/2024'"
-        ></blog-card>
+  <ng-container *ngIf="!languageService.isEnglishMode">
+    
+    <div class="d-flex justify-content-center">
+      <div class="row row-cols-1 row-cols-md-2 home-card-container justify-content-center">
+        <div class="col d-flex flex-wrap justify-content-center px-0 my-4">
+          <a href="http://rimbreakers.ddns.net/wordpress/index.php/2024/01/23/stelle-scintillanti-i-migliori-giocatori-della-stagione-del-basket-europeo-2022/" class="text-decoration-none" target="_blank">
+            <blog-card
+              class="mt-5"
+              [imageUrl]="'../../assets/imgX/primo-blog.jpg'"
+              [topic]="'Riguardiamo I Migliori Giocatori della Stagione 2022'"
+              [date]="'20/01/2024'"
+            ></blog-card>
+          </a>
+        </div>
+  
+        <div class="col d-flex flex-wrap justify-content-center px-0 my-4">
+          <a href="http://rimbreakers.ddns.net/wordpress/index.php/2024/01/23/passo-sicuro-le-migliori-scarpe-da-basket/" class="text-decoration-none" target="_blank">
+            <blog-card
+              class="mt-5"
+              [imageUrl]="'../../assets/imgX/secondo-blog.jpg'"
+              [topic]="'Passo Sicuro! Le Migliori Scarpe da Basket'"
+              [date]="'13/01/2024'"
+            ></blog-card>
+          </a>
+        </div>
+  
+        <div class="col d-flex flex-wrap justify-content-center px-0 my-4">
+          <a href="http://rimbreakers.ddns.net/wordpress/index.php/2024/01/23/tra-le-quinte-delleccellenza-un-viaggio-nellanima-di-dennis-schroeder-un-giocatore-di-prima-categoria/" class="text-decoration-none" target="_blank">
+            <blog-card
+              class="mt-5"
+              [imageUrl]="'../../assets/imgX/terzo-blog.jpg'"
+              [topic]="'Dietro le Quinte con un Giocatore di Prima Categoria'"
+              [date]="'06/01/2024'"
+            ></blog-card>
+          </a>
+        </div>
       </div>
     </div>
-  </div>
+  </ng-container>
+  <ng-container *ngIf="languageService.isEnglishMode">
+    <div class="d-flex justify-content-center">
+      <div class="row row-cols-1 row-cols-md-2 home-card-container justify-content-center">
+        <div class="col d-flex flex-wrap justify-content-center px-0">
+          <blog-card
+            class="mt-5"
+            [imageUrl]="'../../assets/imgX/primo-blog.jpg'"
+            [topic]="'Let’s see The Best Basketball Players of 2022 Season'"
+            [date]="'20/01/2024'"
+          ></blog-card>
+        </div>
+  
+        <div class="col d-flex flex-wrap justify-content-center px-0">
+          <blog-card
+            class="mt-5"
+            [imageUrl]="'../../assets/imgX/secondo-blog.jpg'"
+            [topic]="'Safe passage! The Best Shoes from Basketbal'"
+            [date]="'13/01/2024'"
+          ></blog-card>
+        </div>
+  
+        <div class="col d-flex flex-wrap justify-content-center px-0">
+          <blog-card
+            class="mt-5"
+            [imageUrl]="'../../assets/imgX/terzo-blog.jpg'"
+            [topic]="'Behind the Scenes with a First Category Player'"
+            [date]="'06/01/2024'"
+          ></blog-card>
+        </div>
+      </div>
+    </div>    
+  </ng-container>
+
 </section>
 
 <!-- <app-footer></app-footer> -->

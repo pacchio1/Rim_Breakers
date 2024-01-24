@@ -7,8 +7,6 @@
 .prova-img {
     width: 50vw;
     height: 300px;
-    // background-color: #FF8038;
-
 }
 
 .game-home {
@@ -26,10 +24,6 @@
 
 .team-name-2 {
     color: #ffffff;
-    // color: #e5e1e1;
-    // font-size: 5px;
-    // text-align: center;
-    // font-family: Inter;
     font-size: 96px;
     font-style: normal;
     font-weight: 700;
@@ -56,6 +50,11 @@
 
 $primary-color: #1b1466;
 $primary-color-dark: #FF8038;
+
+.icon-flag {
+    width: 20px;
+    height: 20px;
+}
 
 .mt-navbar {
     margin-top: 80px;
@@ -166,6 +165,13 @@ $primary-color-dark: #FF8038;
 }
 
 .prova-home-title {
+    width: 50%;
+    height: 100%;
+    padding-top: 45px;
+    padding-left: 30px;
+}
+
+.prova-home-title-en {
     width: 50%;
     height: 100%;
     padding-top: 45px;
@@ -803,6 +809,16 @@ footer {
     .prova-home-title h2 {
         font-size: 40px;
     }
+    
+    .prova-home-title-en {
+        width: 60%;
+        padding-top: 44px;
+        padding-left: 66px;
+    }
+
+    .prova-home-title-en h2 {
+        font-size: 40px;
+    }
 
     .prova-img-h {
         width: 350px;
@@ -947,6 +963,15 @@ footer {
     }
 
     .prova-home-title h2 {
+        font-size: 60px;
+    }
+
+    .prova-home-title-en {
+        padding-top: 70px;
+        padding-left: 85px;
+    }
+
+    .prova-home-title-en h2 {
         font-size: 60px;
     }
 
