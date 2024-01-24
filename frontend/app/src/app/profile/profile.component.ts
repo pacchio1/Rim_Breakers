@@ -35,7 +35,6 @@ export class ProfileComponent implements OnInit {
   }
 
   private updateInputType(inputElement: ElementRef | undefined, mostraPassword: boolean): void {
-    // Verifica se l'elemento è stato inizializzato prima di accedere a nativeElement
     if (inputElement) {
       const input = inputElement.nativeElement as HTMLInputElement;
       input.type = mostraPassword ? "text" : "password";

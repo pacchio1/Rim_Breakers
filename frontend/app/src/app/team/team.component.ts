@@ -83,10 +83,6 @@ export class TeamComponent implements OnInit {
         this.router.navigate(['/game', idGames])
     }
 
-    // passIdTeam(idTeam: number) {
-    //     this.router.navigate(['/team', idTeam])
-    // }
-
     private processGame(game: any): any {
         function parseScore(scoreString: string): (number | null)[] {
             return scoreString.split(',').map(value => (value === 'None' ? null : parseInt(value, 10)));

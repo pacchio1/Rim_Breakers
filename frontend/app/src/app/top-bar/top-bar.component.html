@@ -6,7 +6,6 @@
   }"
 >
   <div class="container-fluid">
-    <!-- <a class="navbar-brand" href="#">Offcanvas navbar</a> -->
     <button
       class="navbar-toggler"
       type="button"
@@ -42,7 +41,6 @@
           <ul
             class="navbar-nav justify-content-lg-between align-items-lg-center flex-grow-1"
           >
-            <!-- <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Logo</h5> -->
             <ng-container *ngIf="!themeService.isDarkMode">
               <div class="d-flex justify-content-center">
                 <img
@@ -163,7 +161,6 @@
           <ul
             class="navbar-nav justify-content-lg-between align-items-lg-center flex-grow-1"
           >
-            <!-- <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Logo</h5> -->
             <ng-container *ngIf="!themeService.isDarkMode">
               <div class="d-flex justify-content-center">
                 <img
@@ -282,11 +279,7 @@
         </ng-container>
       </div>
     </div>
-    <!-- <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">O</button>
-        </form> -->
-    <!-- <div class="d-flex c"> -->
+
     <div class="d-flex flex-row justify-content-between justify-content-md-evenly align-items-center flex-grow-1 px-3">
       <div
         class="flex-nowrap navbar-search"
@@ -326,14 +319,7 @@
         }"
         [routerLink]="loggedIn ? '/profile' : '/login'"
       ></i>
-      <!-- <i
-        class="bi bi-flag"
-        (click)="toggleLanguage()"
-        [ngClass]="{
-          'text-dark-1': themeService.isDarkMode,
-          'text-light-1': !themeService.isDarkMode
-        }"
-      ></i> -->
+
       <ng-container *ngIf="languageService.isEnglishMode">
         <img src="../../assets/imgX/italy.png" alt="" class="icon-flag" (click)="toggleLanguage()">
       </ng-container>
@@ -342,6 +328,5 @@
       </ng-container>
     </div>
 
-    <!-- </div> -->
   </div>
 </nav>
