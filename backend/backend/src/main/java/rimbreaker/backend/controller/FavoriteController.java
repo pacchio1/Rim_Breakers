@@ -66,21 +66,21 @@ public class FavoriteController {
         List<LeagueFollowed> favoriteLeagues = favoriteService.getAllFavoriteLeaguesByUserId(userId);
         return ResponseEntity.ok(favoriteLeagues);
     }
-    @GetMapping("/removeFavLeague")
+    @PostMapping("/removeFavLeague")
     public ResponseEntity<?> removeFavoriteLeague(@RequestParam Long userId, @RequestParam Long leagueId) {
         favoriteService.removeFavoriteLeague(userId,leagueId);
         return ResponseEntity.ok(Map.of(
                 "message", "rimosso dai fovoriti!"
         ));
     }
-    @GetMapping("/removeFavPlayer")
+    @PostMapping("/removeFavPlayer")
     public ResponseEntity<?> removeFavoritePlayer(@RequestParam Long userId, @RequestParam Long playerId) {
         favoriteService.removeFavoritePlayer(userId,playerId);
         return ResponseEntity.ok(Map.of(
                 "message", "rimosso dai fovoriti!"
         ));
     }
-    @GetMapping("/removeFavTeam")
+    @PostMapping("/removeFavTeam")
     public ResponseEntity<?> removeFavoriteTeam(@RequestParam Long userId, @RequestParam Long teamId) {
         favoriteService.removeFavoriteTeam(userId,teamId);
         return ResponseEntity.ok(Map.of(
