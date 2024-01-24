@@ -390,6 +390,14 @@ $primary-color-dark: #FF8038;
     height: auto;
 }
 
+.toggle-password-icon {
+    width: 20px;
+    /* Regola la larghezza in base alle tue esigenze */
+    height: auto;
+    /* Mantieni il rapporto d'aspetto */
+    cursor: pointer;
+}
+
 .tab {
     width: 100px;
     height: auto;
@@ -398,7 +406,6 @@ $primary-color-dark: #FF8038;
     border: none;
     outline: none;
     cursor: pointer;
-    transition: background-color 0.1s ease;
 
     &:hover {
         background-color: darken(#1b1466, 5%);
@@ -420,8 +427,6 @@ $primary-color-dark: #FF8038;
     width: 377px;
     height: 53px;
     border-radius: 70px;
-    background-color: #3226bb;
-    color: white;
 }
 
 .position-tag {
@@ -605,8 +610,6 @@ $primary-color-dark: #FF8038;
 
 .btn-match-input {
     width: 100%;
-    background-color: $primary-color;
-    color: white;
 }
 
 .btn-google-access {

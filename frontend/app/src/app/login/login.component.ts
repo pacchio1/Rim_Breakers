@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { ThemeService } from '../_service/dark-mode.service';
 import { Router } from '@angular/router';
 import { ProfileService } from '../_service/profile.service';
@@ -14,6 +14,20 @@ export class LoginComponent {
   email: string = '';
   password: string = '';
   emailAccount: string = ''; 
+
+  mostraPassword: boolean = false;
+
+  @ViewChild("passwordInput", { static: false }) passwordInput?: ElementRef;
+
+  toggleMostraPassword(): void {
+    this.mostraPassword = !this.mostraPassword;
+
+    // Verifica se l'elemento è stato inizializzato prima di accedere a nativeElement
+    if (this.passwordInput) {
+      const inputElement = this.passwordInput.nativeElement as HTMLInputElement;
+      inputElement.type = this.mostraPassword ? "text" : "password";
+    }
+  }
 
   constructor(public themeService: ThemeService, private profileService: ProfileService, private router: Router, private localStorageService: LocalStorageService) {}
 

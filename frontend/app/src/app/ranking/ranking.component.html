@@ -45,7 +45,8 @@
     </div> -->
     <div class="container d-flex justify-content-center">
 
-        <div class="tag-list row align-items-center">
+        <div class="tag-list row align-items-center my-3"
+        [ngClass]="{ 'home-header-bg-dark text-dark': themeService.isDarkMode, 'home-header-bg text-light': !themeService.isDarkMode}">
             <div class="col col-sm-5 name-tag ps-2 ps-sm-5">
                 <p class="m-0">Squadra</p>
             </div>

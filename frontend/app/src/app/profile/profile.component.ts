@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ThemeService } from '../_service/dark-mode.service';
 import { Profile } from '../_model/profile.model';
 import { ProfileService } from '../_service/profile.service';
@@ -17,6 +17,30 @@ export class ProfileComponent implements OnInit {
   emailAccount: string | null = '';
   profile: Profile | null = null;
   dropdown: string | null = null;
+
+  mostraPasswordNew: boolean = false;
+  mostraPasswordConfirm: boolean = false;
+
+  @ViewChild("passwordInputNew", { static: false }) passwordInputNew?: ElementRef;
+  @ViewChild("passwordInputConfirm", { static: false }) passwordInputConfirm?: ElementRef;
+
+  toggleMostraPassword(input: 'new' | 'confirm'): void {
+    if (input === 'new') {
+      this.mostraPasswordNew = !this.mostraPasswordNew;
+      this.updateInputType(this.passwordInputNew, this.mostraPasswordNew);
+    } else if (input === 'confirm') {
+      this.mostraPasswordConfirm = !this.mostraPasswordConfirm;
+      this.updateInputType(this.passwordInputConfirm, this.mostraPasswordConfirm);
+    }
+  }
+
+  private updateInputType(inputElement: ElementRef | undefined, mostraPassword: boolean): void {
+    // Verifica se l'elemento è stato inizializzato prima di accedere a nativeElement
+    if (inputElement) {
+      const input = inputElement.nativeElement as HTMLInputElement;
+      input.type = mostraPassword ? "text" : "password";
+    }
+  }
 
   constructor(public themeService: ThemeService, private profileService: ProfileService, private router: Router, private localStorageService: LocalStorageService) {}
 
@@ -61,9 +85,9 @@ export class ProfileComponent implements OnInit {
       this.profileService.getDeleteUser(this.profile?.idUser).subscribe(
         (response: any) => {
           console.log('User deleted successfully:', response);
-          // localStorage.removeItem('emailAccount');
-          // this.localStorageService.triggerStorageChange();
-          // this.router.navigateByUrl('/home');
+          localStorage.removeItem('emailAccount');
+          this.localStorageService.triggerStorageChange();
+          this.router.navigateByUrl('/home');
         },
         (error: any) => {
           console.error('Error deleting user:', error);
