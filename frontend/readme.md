@@ -32,11 +32,6 @@ Per installare il progetto, seguire i passaggi seguenti:
 Scarica il progetto da:
 https://github.com/pacchio1/Rim_Breakers/branches
 
-```bash
-cd B-ROOM
-npm install
-```
-
 ## utilizzo
 
 Per avviare l'applicazione, bisogna eseguire il seguente comando:
