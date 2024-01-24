@@ -18,4 +18,6 @@ export type PlayerDetail = {
     freeThrows: number;
     ballHoldingTime: number;
     nationality: string;
+    teamLogo?: string;
+    teamName?: string;
 }

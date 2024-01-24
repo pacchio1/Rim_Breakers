@@ -332,7 +332,6 @@ $primary-color-dark: #FF8038;
     width: 338px;
     height: 98px;
     // background-color: $primary-color;
-    color: white;
     border-radius: 20px;
 }
 
@@ -469,12 +468,22 @@ $primary-color-dark: #FF8038;
     /* Assicura che l'overlay sia sopra l'immagine */
 }
 
+/* Logged-home */
+
+.player-stats {
+    width: 100%;
+    height: 200px;
+    border-radius: 20px;
+    // background-color: $primary-color;
+    color: white;
+}
+
 /* Favourites */
 
 .league-favourite {
     width: 100%;
     height: 70px;
-    background-color: $primary-color;
+    // background-color: $primary-color;
     color: white;
 }
 

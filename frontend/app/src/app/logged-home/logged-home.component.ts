@@ -7,6 +7,7 @@ import { League } from '../_model/league.model';
 import { Team } from '../_model/team.model';
 import { PlayerDetail } from '../_model/player.model';
 import { Match } from '../_model/match.model';
+import { ThemeService } from '../_service/dark-mode.service';
 
 @Component({
   selector: 'app-logged-home',
@@ -15,6 +16,7 @@ import { Match } from '../_model/match.model';
 export class LoggedHomeComponent implements OnInit{
 
   account: any; 
+
   favLeagues: number[] = [];
   favTeams: number[] = [];
   favPlayers: number[] = [];
@@ -23,9 +25,13 @@ export class LoggedHomeComponent implements OnInit{
   favouriteTeams: Team[] = []; 
   favouritePlayers: PlayerDetail[] = []; 
 
-  lastLeagueMatch: any;  
+  lastLeagueMatches: Match[] = []; 
+  processedMatchesLeague: any[] = []; 
 
-  constructor(private route: ActivatedRoute, private profileService: ProfileService, private basketService: BasketService, private router: Router) {}
+  lastTeamMatches: Match[] = []; 
+  processedMatchesTeam: any[] = []; 
+
+  constructor(public themeService: ThemeService, private route: ActivatedRoute, private profileService: ProfileService, private basketService: BasketService, private router: Router) {}
 
   ngOnInit(): void {
     this.account = this.route.snapshot.data['account']; 
@@ -69,27 +75,29 @@ export class LoggedHomeComponent implements OnInit{
     }
   }
 
-  // lastLeagueGame(leagueName: string) {
-  //   this.basketService.getGamesByLeague(leagueName).subscribe((response) => {
+  lastLeagueGames(leagueName: string) {
+    this.basketService.getGamesByLeague(leagueName).subscribe((response) => {
+      this.lastLeagueMatches = response;
 
-  //     this.lastLeagueMatch = response;
-  //     console.log(this.lastLeagueMatch);
+      const processedLeagueMatches = response.map((game: any) => this.processGame(game));
+      this.processedMatchesLeague.push(...processedLeagueMatches);
+      
+      console.log(this.lastLeagueMatches);
+    })
+  }
 
-  //     return this.lastLeagueMatch; 
-  //   })
-  // }
+  lastTeamGames(teamName: string) {
+    this.basketService.getGamesByTeam(teamName).subscribe((response) => {
+      this.lastTeamMatches = response; 
 
-  // lastTeamGame(leagueName: string) {
-  //   this.basketService.getGamesByLeague(leagueName).subscribe((response) => {
-  //     console.log(response);
-  //   })
-  // }
-
-  // lastPlayerGame(leagueName: string) {
-  //   this.basketService.getGamesByLeague(leagueName).subscribe((response) => {
-  //     console.log(response);
-  //   })
-  // }
+      const processedTeamMatches = response.map((game: any) => this.processGame(game));
+      this.processedMatchesTeam.push(...processedTeamMatches);
+      
+      console.log(this.processedMatchesTeam);
+      
+      console.log(this.lastTeamMatches);
+    })
+  }
 
   passIdLeague(idLeague: number) {
     this.router.navigate(['/leagues', idLeague])
@@ -108,19 +116,85 @@ export class LoggedHomeComponent implements OnInit{
       this.favouriteLeagues.push(response);
       const league = this.favouriteLeagues[(this.favouriteLeagues.length - 1)]; 
       
-      // this.lastLeagueGame(league.name); 
+      this.lastLeagueGames(league.name); 
     })
   }
 
   favouriteTeam(idTeam: number) {
     this.basketService.getTeam(idTeam).subscribe((response: Team) => {
       this.favouriteTeams.push(response); 
+
+      const team = this.favouriteTeams[(this.favouriteTeams.length - 1)]; 
+      
+      this.lastTeamGames(team.name);
     })
   }
 
   favouritePLayer(idPlayer: number) {
     this.basketService.getSinglePlayer(idPlayer).subscribe((response: PlayerDetail) => {
       this.favouritePlayers.push(response); 
+      
+      this.basketService.getTeam(response.idTeam).subscribe((teamDetails: Team) => {
+        // Aggiungi il logo della squadra ai dettagli del giocatore
+        response.teamLogo = teamDetails.logo;
+        response.teamName = teamDetails.name; 
+      });
     })
   }
+
+  getProcessedMatchesByLeague(leagueName: string): any[] {
+    return this.processedMatchesLeague.filter(game => game.nameLeague === leagueName);
+  }
+
+  getProcessedMatchesByTeam(teamName: string): any[] {
+    return this.processedMatchesTeam.filter(game => {
+        if (this.favouriteTeams.find(team => team.name === teamName && team.id === game.homeId)) {
+            // Squadra corrispondente alla squadra di casa
+            return game.teamHome === teamName;
+        } else if (this.favouriteTeams.find(team => team.name === teamName && team.id === game.awayId)) {
+            // Squadra corrispondente alla squadra in trasferta
+            return game.teamAway === teamName;
+        }
+        return false; // Nessuna corrispondenza per la squadra
+    });
+}
+
+
+  passIdGames(idGames: number) {
+      this.router.navigate(['/game', idGames])
+  }
+
+  private processGame(game: any): any {
+    function parseScore(scoreString: string): (number | null)[] {
+        return scoreString.split(',').map(value => (value === 'None' ? null : parseInt(value, 10)));
+    }
+
+    const scoreAwayArray = parseScore(game.scoreAway);
+    const scoreHomeArray = parseScore(game.scoreHome);
+
+    const processedGame = {
+        ...game,
+        firstQuarterAway: scoreAwayArray[0],
+        secondQuarterAway: scoreAwayArray[1],
+        thirdQuarterAway: scoreAwayArray[2],
+        fourthQuarterAway: scoreAwayArray[3],
+        fifthQuarterAway: scoreAwayArray[4],
+        scoreAwayFinal: scoreAwayArray[5],
+        scoreAway: scoreAwayArray,
+        
+        firstQuarterHome: scoreHomeArray[0],
+        secondQuarterHome: scoreHomeArray[1],
+        thirdQuarterHome: scoreHomeArray[2],
+        fourthQuarterHome: scoreHomeArray[3],
+        fifthQuarterHome: scoreHomeArray[4],
+        scoreHomeFinal: scoreHomeArray[5],
+        scoreHome: scoreHomeArray,
+    };
+    
+    return processedGame;
+  }
+
+  toggleTheme(): void {
+    this.themeService.toggleTheme();
+}
 }
