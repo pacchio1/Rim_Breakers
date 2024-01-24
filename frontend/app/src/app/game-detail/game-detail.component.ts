@@ -38,15 +38,15 @@ export class GameDetailComponent implements OnInit {
 
     ngOnInit(): void {
         this.activatedRoute.data.subscribe(({matchDetail}) => {
-            console.log('matchDetail', matchDetail)
+            // console.log('matchDetail', matchDetail)
             this.matchData = matchDetail      
             // this.processedMatches = this.matchData.map(game => this.processGame(game));
             this.processedMatches = this.processGame(this.matchData)
             // console.log(this.processedMatches.scoreHomeFinal, this.processedMatches.scoreAwayFinal)
             this.statHome = this.printStat(this.processedMatches.scoreHomeFinal)
             this.statAway = this.printStat(this.processedMatches.scoreAwayFinal)
-            console.log('statHome', this.statHome)
-            console.log('statAway', this.statAway)
+            // console.log('statHome', this.statHome)
+            // console.log('statAway', this.statAway)
         });   
     }
 
@@ -79,14 +79,14 @@ export class GameDetailComponent implements OnInit {
 
         processedGame.date = this.datePipe.transform(processedGame.date, 'dd/MM/yyyy') || '';
 
-        console.log('processedGame', processedGame);
+        // console.log('processedGame', processedGame);
         
         return processedGame;
     }
 
     printStat(maxPoints: number) {
         
-        console.log('point', maxPoints)
+        // console.log('point', maxPoints)
         
         do {
             this.fieldGoals2 = faker.number.int({ min: maxPoints / 2, max: maxPoints * 0.7 })

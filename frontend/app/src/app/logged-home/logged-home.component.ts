@@ -49,7 +49,7 @@ export class LoggedHomeComponent implements OnInit{
           this.favouriteLeague(leagueId);
         }
 
-        console.log(this.favouriteLeagues);
+        // console.log(this.favouriteLeagues);
 
         this.profileService.getAllFavouriteTeams(this.account.idUser).subscribe((response: any) => {
           this.favTeams = response.map((item: FavouriteTeam) => item.idTeam);
@@ -58,7 +58,7 @@ export class LoggedHomeComponent implements OnInit{
             this.favouriteTeam(teamId);
           }
   
-          console.log(this.favouriteTeams);
+          // console.log(this.favouriteTeams);
   
           this.profileService.getAllFavouritePlayers(this.account.idUser).subscribe((response: any) => {
             this.favPlayers = response.map((item: FavouritePlayer) => item.idPlayer);
@@ -67,7 +67,7 @@ export class LoggedHomeComponent implements OnInit{
               this.favouritePLayer(playerId);
             }
     
-            console.log(this.favouritePlayers);
+            // console.log(this.favouritePlayers);
 
           });
         });
@@ -82,7 +82,7 @@ export class LoggedHomeComponent implements OnInit{
       const processedLeagueMatches = response.map((game: any) => this.processGame(game));
       this.processedMatchesLeague.push(...processedLeagueMatches);
       
-      console.log(this.lastLeagueMatches);
+      // console.log(this.lastLeagueMatches);
     })
   }
 
@@ -93,9 +93,9 @@ export class LoggedHomeComponent implements OnInit{
       const processedTeamMatches = response.map((game: any) => this.processGame(game));
       this.processedMatchesTeam.push(...processedTeamMatches);
       
-      console.log(this.processedMatchesTeam);
+      // console.log(this.processedMatchesTeam);
       
-      console.log(this.lastTeamMatches);
+      // console.log(this.lastTeamMatches);
     })
   }
 
@@ -196,5 +196,5 @@ export class LoggedHomeComponent implements OnInit{
 
   toggleTheme(): void {
     this.themeService.toggleTheme();
-}
+  }
 }

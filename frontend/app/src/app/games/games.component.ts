@@ -21,19 +21,12 @@ export class GamesComponent implements OnInit {
     ngOnInit(): void {
         this.activatedRoute.data.subscribe(({allLeagues}) => {
             this.leagues = allLeagues;
-            console.log('gamesByLeague', this.leagues)
-            // this.leagues.forEach(league => {
-            //     this.basketService.getGamesByLeague(league.name).subscribe((response: any) => {
-            //         const processedLeagueMatches = response.map((game: any) => this.processGame(game));
-            //         this.processedMatches.push(...processedLeagueMatches);
-            //         console.log('processedMatches', this.processedMatches);
-            //     })
-            // });
+            // console.log('gamesByLeague', this.leagues)
             this.desiredLeagueName.forEach(league => {
                 this.basketService.getGamesByLeague(league).subscribe((response: any) => {
                     const processedLeagueMatches = response.map((game: any) => this.processGame(game));
                     this.processedMatches.push(...processedLeagueMatches);
-                    console.log('processedMatches', this.processedMatches);
+                    // console.log('processedMatches', this.processedMatches);
                 });
             });
         });
@@ -78,7 +71,7 @@ export class GamesComponent implements OnInit {
             scoreHome: scoreHomeArray,
         };
 
-        console.log(processedGame);
+        // console.log(processedGame);
         
         return processedGame;
     }

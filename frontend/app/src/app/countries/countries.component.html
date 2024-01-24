@@ -8,23 +8,6 @@
 
 </section>
 
-<!-- <section class="container footer-index pt-3 pb-5 rounded-bottom-5 bg-white">
-    
-    <div *ngFor="let country of leaguesByCountry2" class="dropdown d-flex justify-content-center pt-3">
-        <button class="league-list d-flex justify-content-start align-items-center ps-5 dropdown-toggle" (click)="toggleDropdown()" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="{{ country.flag }}" alt="" class="league-logo">
-            <p class="ps-3 m-0">{{ country.name }}</p>        
-        </button>
-        <ul class="dropdown-menu" *ngFor="let league of country.leagues">
-            <li class="dropdown-item text-light d-flex flex-row align-items-center" (click)="passIdLeague(league.id_league)">
-                <img src="{{ league.logo }}" alt="" class="country-logo ps-3">
-                <p class="m-0 ps-2">{{ league.nameLeague }}</p>
-            </li>
-        </ul>
-    </div>
-
-</section> -->
-
 <section class="container-fluid m-0 footer-index pt-3 pb-5 rounded-bottom-5 bg-white"
 [ngClass]="{ 'section-bg-dark': themeService.isDarkMode, 'bg-white': !themeService.isDarkMode}">
     <div class="row row-cols-lg-2 row-cols-xl-3 justify-content-xl-center">

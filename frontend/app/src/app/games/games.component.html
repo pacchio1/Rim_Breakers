@@ -1,22 +1,3 @@
-<!-- <div class="mt-navbar-text">
-    <div *ngFor="let league of leagues" class="my-2">
-        <h2>{{ league.name }}</h2>
-        <div *ngFor="let game of getProcessedMatchesByLeague(league.name)">
-          <div (click)="passIdGames(game.id_games)">
-            {{ game.teamHome }} vs {{ game.teamAway }} - {{ game.scoreHomeFinal }}-{{ game.scoreAwayFinal }}
-          </div>
-        </div>
-      </div>
-</div> -->
-  
-<!-- <div class="container mt-navbar-text">
-  <div *ngFor="let league of desiredLeagueName">
-    <h2>{{ league }}</h2>
-    <div *ngFor="let match of getProcessedMatchesByLeague(league)" (click)="passIdGames(match.id_games)">
-      <p>{{ match.teamHome }} vs {{ match.teamAway }} - {{ match.scoreHomeFinal }}-{{ match.scoreAwayFinal }}</p>
-    </div>
-  </div>
-</div> -->
 <div class="container-fluid mt-navbar footer-index pt-5 pb-5 rounded-bottom-5"
 [ngClass]="{ 'section-bg-dark text-light': themeService.isDarkMode, 'bg-white text-dark': !themeService.isDarkMode}">
 
