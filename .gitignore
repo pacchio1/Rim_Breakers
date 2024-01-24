@@ -1,5 +1,9 @@
-
+/data/*.json
+.vscode
+.idea
+*.txt
 backend/backend/.idea/misc.xml
 backend/backend/.idea/workspace.xml
 backend/backend/.idea/workspace.xml
 backend/backend/.idea/workspace.xml
+
