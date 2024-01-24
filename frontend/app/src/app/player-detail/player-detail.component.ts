@@ -93,6 +93,14 @@ export class PlayerDetailComponent implements OnInit {
         this.router.navigate(['/player', idPlayer])
     }
 
+    passIdTeam(idTeam: number) {
+        this.router.navigate(['/team', idTeam])
+    }
+
+    passIdLeague(idLeague: number) {
+        this.router.navigate(['/leagues', idLeague])
+    }
+
     toggleTheme(): void {
         this.themeService.toggleTheme();
     }

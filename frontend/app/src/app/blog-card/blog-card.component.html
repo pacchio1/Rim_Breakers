@@ -1,12 +1,12 @@
-<a href="" class="blog-card-a" routerLink="/blogDetail/:id">
+<!-- <a href="" class="blog-card-a"> -->
   <div class="blog-card d-flex flex-nowrap">
     <div class="">
         <img [src]="imageUrl" class="blog-card-img" alt="Card image">
     </div>  
     <div class="blog-card-body p-3">
-      <h5 class="blog-card-title" [ngClass]="{ 'text-warning': themeService.isDarkMode }">{{ topic }}</h5>
-      <p class="blog-card-text m-0" [ngClass]="{ 'text-dark': themeService.isDarkMode }">{{ date }}</p>
+      <h5 class="blog-card-title" [ngClass]="{ 'text-warning': themeService.isDarkMode, 'text-dark': !themeService.isDarkMode }">{{ topic }}</h5>
+      <p class="blog-card-text m-0" [ngClass]="{ 'text-dark': themeService.isDarkMode, 'text-secondary': !themeService.isDarkMode }">{{ date }}</p>
       <i class="bi-chat-left-fill text-body-secondary d-flex justify-content-end align-items-end"></i>
     </div>
   </div>
-</a>
+<!-- </a> -->

@@ -50,6 +50,10 @@ export class TeamsPreviewComponent implements OnInit {
         this.router.navigate(['/team', idTeam])
     }
 
+    passIdLeague(idLeague: number) {
+        this.router.navigate(['/leagues', idLeague])
+    }
+
     toggleTheme(): void {
         this.themeService.toggleTheme();
     }

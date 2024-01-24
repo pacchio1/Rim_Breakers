@@ -4,12 +4,20 @@
         <div class="col">
             <h2 [ngClass]="{ 'text-dark-or': themeService.isDarkMode, 'text-primary-emphasis': !themeService.isDarkMode}">{{ singlePlayer.name }} {{ singlePlayer.surname }}</h2>
             <h5 [ngClass]="{ 'text-dark-or': themeService.isDarkMode, 'text-primary-emphasis': !themeService.isDarkMode}">INFO</h5>
-            <p class="mb-0" *ngIf="league"><span class="fw-bolder" [ngClass]="{ 'text-dark-or': themeService.isDarkMode, 'text-primary-emphasis': !themeService.isDarkMode}">LEGA:</span> {{ league.name }}</p>
-            <p class="mb-0" *ngIf="playerTeam"><span class="fw-bolder" [ngClass]="{ 'text-dark-or': themeService.isDarkMode, 'text-primary-emphasis': !themeService.isDarkMode}">TEAM:</span> {{ playerTeam.name }}</p>
+            <p class="mb-0" *ngIf="league" (click)="passIdLeague(league.id_league)"><span class="fw-bolder" [ngClass]="{ 'text-dark-or': themeService.isDarkMode, 'text-primary-emphasis': !themeService.isDarkMode}">LEGA:</span> {{ league.name }}</p>
+            <p class="mb-0" *ngIf="playerTeam" (click)="passIdTeam(playerTeam.id)"><span class="fw-bolder" [ngClass]="{ 'text-dark-or': themeService.isDarkMode, 'text-primary-emphasis': !themeService.isDarkMode}">TEAM:</span> {{ playerTeam.name }}</p>
         </div>
         <div class="col d-flex justify-content-center">
-            <img class="player-img" src="" alt="">
-        </div>
+            <ng-container *ngIf="singlePlayer.nationality === 'us-s' || singlePlayer.nationality === 'af'">
+                <img class="player-img" src="../../assets/imgX/pic-player-1.png" alt="{{ singlePlayer.name }} {{ singlePlayer.surname }} foto">
+            </ng-container>
+            <ng-container *ngIf="singlePlayer.nationality === 'us-n' || singlePlayer.nationality === 'eu'">
+                <img class="player-img" src="../../assets/imgX/pic-player-3.png" alt="{{ singlePlayer.name }} {{ singlePlayer.surname }} foto">
+            </ng-container>
+            <ng-container *ngIf="singlePlayer.nationality === 'as' ">
+                <img class="player-img" src="../../assets/imgX/pic-player-2.png" alt="{{ singlePlayer.name }} {{ singlePlayer.surname }} foto">
+            </ng-container>
+        </div> 
     </div>
 </div>
 
