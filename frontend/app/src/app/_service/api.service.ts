@@ -243,7 +243,7 @@ export class ApiService {
             password: password, 
             idUser: idUser
         };
-        return this.http.post('http://localhost:8080/user/updatePassword?password='+body.password+'&id='+body.idUser, body);
+        return this.http.post('http://localhost:8080/user/updatePassword?password='+body.password+'&idUser='+body.idUser, body);
     }
 
     /**
@@ -256,7 +256,7 @@ export class ApiService {
         const body = {
             idUser: idUser
         };
-        return this.http.post('http://localhost:8080/user/delete?id='+body.idUser, body);
+        return this.http.post('http://localhost:8080/user/delete?idUser='+body.idUser, body);
     }
 
     /**

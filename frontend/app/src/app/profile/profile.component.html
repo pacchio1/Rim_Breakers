@@ -46,23 +46,43 @@
   <div class="row mb-4" *ngIf="dropdown === 'cambiaPassword'" class="dropdown">
     <div class="text-center border rounded-4 p-3">
       <form (ngSubmit)="onSubmit()">
-        <div class="mb-3">
-          <label for="newPassword" class="form-label">Nuova password</label>
+        <label for="newPassword" class="form-label">Nuova password</label>
+        <div class="mb-3 input-group">
           <input
-            type="password"
+            #passwordInputNew
+            [type]="mostraPasswordNew ? 'text' : 'password'"
             class="form-control rounded-4"
             id="newPassword"
             placeholder="*****"
             [(ngModel)]="newPassword" name="newPassword"/>
+          <button
+            type="button"
+            class="btn btn-outline-secondary rounded-end"
+            (click)="toggleMostraPassword('new')">
+            <img
+              src="../../assets/imgX/{{ mostraPasswordNew ? 'eye.png' : 'view.png' }}"
+              alt="Toggle Password"
+              class="toggle-password-icon" />
+          </button>
         </div>
-        <div class="mb-3">
-          <label for="confirmPassword" class="form-label">Conferma password</label>
+        <label for="confirmPassword" class="form-label">Conferma password</label>
+        <div class="mb-3 input-group">
           <input
-            type="password"
+            #passwordInputConfirm
+            [type]="mostraPasswordConfirm ? 'text' : 'password'"
             class="form-control rounded-4"
             id="confirmPassword"
             placeholder="*****"
             [(ngModel)]="confirmPassword" name="confirmPassword"/>
+          <button
+            type="button"
+            class="btn btn-outline-secondary rounded-end"
+            (click)="toggleMostraPassword('confirm')">
+            <img
+              src="../../assets/imgX/{{ mostraPasswordConfirm ? 'eye.png' : 'view.png' }}"
+              alt="Toggle Password"
+              class="toggle-password-icon" />
+          </button>
         </div>
         <button type="submit" class="btn btn-match-input rounded-4 mb-3">
           Invia

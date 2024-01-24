@@ -1,12 +1,14 @@
-<section class="mt-navbar d-flex flex-column align-items-center">
+<section class="mt-navbar d-flex flex-column align-items-center"
+[ngClass]="{ 'section-bg-dark text-light': themeService.isDarkMode, 'bg-white text-dark': !themeService.isDarkMode}">
     <div class="logo mt-4">
-      <img src="../../assets/imgX/logo-broom.png" alt="" class="img-fluid" />
+      <img [src]="themeService.isDarkMode ? '../../assets/imgX/logo-broom-white.png' : '../../assets/imgX/logo-broom.png'" alt="" class="img-fluid" />
     </div>
     <h2 class="mt-3">Iscriviti</h2>
     <p class="small">Se non hai ancora un account iscriviti!</p>
 </section>
   
-<section class="mt-2 m-5">
+<section class="pt-2 p-5 footer-index rounded-bottom-5"
+[ngClass]="{ 'section-bg-dark text-light': themeService.isDarkMode, 'bg-white text-dark': !themeService.isDarkMode}">
 <form (ngSubmit)="onSubmit()">
 
     <div class="mb-3">
@@ -42,18 +44,28 @@
         />
     </div>
 
-    <div class="mb-3">
-        <label for="inputPassword" class="form-label">Password</label>
-        <input
-            type="password"
-            class="form-control rounded-4"
-            id="inputPassword"
-            placeholder="*****"
-            [(ngModel)]="password" name="password"
-        />
+    <label for="inputPassword" class="form-label">Password</label>
+    <div class="mb-3 input-group">
+      <input
+        #passwordInput
+        [type]="mostraPassword ? 'text' : 'password'"
+        class="form-control rounded-4"
+        id="inputPassword"
+        placeholder="*****"
+        [(ngModel)]="password" name="password"/>
+      <button
+        type="button"
+        class="btn btn-outline-secondary rounded-end"
+        (click)="toggleMostraPassword()">
+        <img
+          src="../../assets/imgX/{{ mostraPassword ? 'eye.png' : 'view.png' }}"
+          alt="Toggle Password"
+          class="toggle-password-icon" />
+      </button>
     </div>
 
-    <button type="submit" class="btn btn-match-input rounded-4 mb-3">
+    <button type="submit" class="btn btn-match-input rounded-4 my-3"
+    [ngClass]="{ 'home-header-bg-dark text-dark': themeService.isDarkMode, 'home-header-bg text-light': !themeService.isDarkMode}">
     Iscriviti
     </button>
 </form>

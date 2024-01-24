@@ -11,7 +11,9 @@
 <div class="container-fluid footer-index pt-5 pb-5 rounded-bottom-5"
 [ngClass]="{ 'section-bg-dark text-light': themeService.isDarkMode, 'bg-white text-dark': !themeService.isDarkMode}">
     <div class="d-flex flex-row justify-content-center mt-3">
-        <button class="tab p-2 me-1 rounded-3" [class.active]="selectedButton === 'A'" (click)="showComponent('A')"
+        <button class="tab p-2 me-1 rounded-3" 
+        [class.active]="selectedButton === 'A'" 
+        (click)="showComponent('A')"
         [ngClass]="{ 'home-header-bg-dark text-dark': themeService.isDarkMode, 'home-header-bg text-light': !themeService.isDarkMode}">Classifica</button>
         <button class="tab p-2 me-1 rounded-3" [class.active]="selectedButton === 'B'" (click)="showComponent('B')"
         [ngClass]="{ 'home-header-bg-dark text-dark': themeService.isDarkMode, 'home-header-bg text-light': !themeService.isDarkMode}">Marcatori</button>
