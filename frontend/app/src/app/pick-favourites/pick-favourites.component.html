@@ -1,11 +1,11 @@
-<section class="mt-navbar container d-flex justify-content-center"
+<section class="mt-navbar container-fluid d-flex justify-content-center"
 [ngClass]="{ 'section-bg-dark text-light': themeService.isDarkMode, 'bg-white text-dark': !themeService.isDarkMode}">
     <div class="league-title d-flex justify-content-center align-items-center mt-3">
         <h2>Scelta dei preferiti</h2>
     </div>
 </section>
 
-<div class="container pt-4 footer-index rounded-bottom-5"
+<div class="container-fluid pt-4 footer-index rounded-bottom-5"
 [ngClass]="{ 'section-bg-dark text-light': themeService.isDarkMode, 'bg-white text-dark': !themeService.isDarkMode}">
     <div *ngFor="let league of filteredLeagues" class="league-item">
         <div class="row align-items-center league-favourite mb-3"

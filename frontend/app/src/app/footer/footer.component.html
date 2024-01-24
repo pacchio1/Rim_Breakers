@@ -29,14 +29,21 @@
     <div class="row">
       <div class="col-3 mb-2">
         <b>Navigazione</b>
-        <p class="mt-3 mb-1">Home</p>
-        <p class="mb-1">Squadre</p>
-        <p>Campionati</p>
+        <p class="mt-3 mb-1"
+        [routerLink]="loggedIn ? 'logged-home' : 'home'"
+          >Home
+        </p>
+        <p class="mb-1"
+        routerLink="team"
+        >Squadre</p>
+        <p
+        routerLink="countries"
+        >Campionati</p>
       </div>
       <div class="col-3 mb-2">
         <b>Informazioni</b>
         <p class="mt-3 mb-1" routerLink="/contact">Chi siamo</p>
-        <p>Blog</p>
+        <p routerLink="blog">Blog</p>
       </div>
       <div class="col-6 mb-2">
         <b>Contatti</b>
