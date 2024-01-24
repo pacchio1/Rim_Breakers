@@ -3,6 +3,7 @@ import { Leagues } from "../_model/leagues.model";
 import { BasketService } from "../_service/basket.service";
 import { SeasonStandingAll, SeasonStandingAllUpdate } from "../_model/seasonStanding.model";
 import { Router } from "@angular/router";
+import { ThemeService } from "../_service/dark-mode.service";
 
 @Component ({
     selector: 'app-ranking',
@@ -15,12 +16,14 @@ export class RankingComponent {
     @Input() leagueName: string = '';
 
     teamsStandingData: SeasonStandingAll[] = [];
+    firstHalf: SeasonStandingAll[] = [];
+    secondHalf: SeasonStandingAll[] = [];
     groups: any = {};
     result: any = {};
     groupedTeams: any[] = [];
     teamLogoX: string = '';
 
-    constructor(private basketService: BasketService, private router: Router) {}
+    constructor(private basketService: BasketService, private router: Router, public themeService: ThemeService) {}
 
     ngOnInit(): void {
 
@@ -32,40 +35,40 @@ export class RankingComponent {
         
             if(teamId) {
                 this.basketService.getTeamsLeagueStandingsEcception(teamId).subscribe((response: any) => {
-                    this.teamsStandingData = response
-                    console.log('teamsStandingData', response)
-                    const sortedData = this.teamsStandingData.sort((a, b) => a.standings.position - b.standings.position);
+                  this.teamsStandingData = response
+                  console.log('teamsStandingData', response)
+                  const sortedData = this.teamsStandingData.sort((a, b) => a.standings.position - b.standings.position);
 
-                    sortedData.forEach(team => {
-                      const groupName = team.standings.groupName;
+                  sortedData.forEach(team => {
+                    const groupName = team.standings.groupName;
 
-                      this.basketService.getTeam(team.standings.teamId).subscribe((response: any) => {
-                        this.teamLogoX = response.logo
-                      })
-                  
-                      if (!this.groups[groupName]) {
-                        this.groups[groupName] = {
-                          groupName: groupName,
-                          teams: []
-                        };
-                      }
-                  
-                      const teamInfo = {
-                        teamName: team.teamName,
-                        position: team.standings.position,
-                        teamLogo: team.logo
-                        // Aggiungi altri campi se necessario
+                    this.basketService.getTeam(team.standings.teamId).subscribe((response: any) => {
+                      this.teamLogoX = response.logo
+                    })
+                
+                    if (!this.groups[groupName]) {
+                      this.groups[groupName] = {
+                        groupName: groupName,
+                        teams: []
                       };
-                  
-                      this.groups[groupName].teams.push(teamInfo);
-                    });
+                    }
+                
+                    const teamInfo = {
+                      teamName: team.teamName,
+                      position: team.standings.position,
+                      teamLogo: team.logo
+                      // Aggiungi altri campi se necessario
+                    };
+                
+                    this.groups[groupName].teams.push(teamInfo);
+                  });
                   console.log('groups', this.groups)
-                    // Trasforma l'oggetto in un array ordinato
-                    this.groupedTeams = Object.values(this.groups).sort((a: any, b: any) => {
-                        // Ordina in base al nome del gruppo
-                        const groupOrder = ['Group A', 'Group B', 'Group C', 'Group D', 'Group E', 'Group F', 'Group G', 'Group H'];
-                        return groupOrder.indexOf(a.groupName) - groupOrder.indexOf(b.groupName);
-                      });
+                  // Trasforma l'oggetto in un array ordinato
+                  this.groupedTeams = Object.values(this.groups).sort((a: any, b: any) => {
+                      // Ordina in base al nome del gruppo
+                      const groupOrder = ['Group A', 'Group B', 'Group C', 'Group D', 'Group E', 'Group F', 'Group G', 'Group H'];
+                      return groupOrder.indexOf(a.groupName) - groupOrder.indexOf(b.groupName);
+                  });
                 })
                     // this.groupedAndSortedData = this.teamsStandingData.reduce((acc: any, obj: any) => {
   
@@ -91,7 +94,13 @@ export class RankingComponent {
                 this.basketService.getTeamsLeagueStandings(teamId).subscribe((response: any) => {
                     this.teamsStandingData = response
                     this.teamsStandingData.sort((a, b) => a.standings.position - b.standings.position);
-                    // console.log('teamsStandingData', this.teamsStandingData)
+                    console.log('teamsStandingData', this.teamsStandingData)
+                    const middleIndex = Math.ceil(this.teamsStandingData.length / 2)
+
+                    this.firstHalf = this.teamsStandingData.slice(0, middleIndex)
+                    console.log('firstHalf', this.firstHalf)
+                    this.secondHalf = this.teamsStandingData.slice(middleIndex)
+                    console.log('secondHalf', this.secondHalf)
                     // this.teamsStandingData.forEach((leagueObj: any) => {
                     //     console.log('leagueObj', leagueObj)
                     //     this.basketService.getTeam(leagueObj.standings.teamId).subscribe((teamInfo: any) => {
@@ -108,5 +117,9 @@ export class RankingComponent {
     passIdTeam(idTeam: number) {
         this.router.navigate(['/team', idTeam])
     }
+
+    toggleTheme(): void {
+      this.themeService.toggleTheme();
+  }
 
 }

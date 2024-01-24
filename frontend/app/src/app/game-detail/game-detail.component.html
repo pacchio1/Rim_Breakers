@@ -1,4 +1,5 @@
-<div class="container mt-navbar p-0">
+<div class="container-fluid mt-navbar p-0"
+[ngClass]="{ 'section-bg-dark text-light': themeService.isDarkMode, 'bg-white text-dark': !themeService.isDarkMode}">
     <div class="d-flex align-items-center justify-content-center bg-light">
         <div class="position-absolute overflow-hidden">
             <div class="row text-center team-name-2 align-items-end vw-100">
@@ -52,12 +53,13 @@
     </div>
 </div>
 
-<div class="container">
+<div class="container-fluid footer-index pt-5 pb-5 rounded-bottom-5"
+[ngClass]="{ 'section-bg-dark text-light': themeService.isDarkMode, 'bg-white text-dark': !themeService.isDarkMode}">
     <div class="row text-center">
         <h2>Statistiche</h2>
     </div>
     <div class="row row-cols-3">
-        <div class="col-3 ps-4">
+        <div class="col-3 ps-4 text-md-center">
             <p>{{ statHome.point2 }}</p>
             <p>{{ statHome.point3 }}</p>
             <p>{{ statHome.freeThrowsPoint }}</p>
@@ -85,7 +87,7 @@
             <p>Assist</p>
             <p>Falli</p>
         </div>
-        <div class="col-3 text-end">
+        <div class="col-3 text-end text-md-center">
             <p>{{ statAway.point2 }}</p>
             <p>{{ statAway.point3 }}</p>
             <p>{{ statAway.freeThrowsPoint }}</p>

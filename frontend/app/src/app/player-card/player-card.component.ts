@@ -10,6 +10,7 @@ import { PlayerDetail } from "../_model/player.model";
 export class PlayerCardComponent {
 
     @Input() players: PlayerDetail[] = [];
+    @Input()  column: boolean = false
     @Output() cardClick: EventEmitter<number> = new EventEmitter<number>();
 
     constructor(public themeService: ThemeService) {}

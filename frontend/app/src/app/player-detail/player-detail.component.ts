@@ -5,6 +5,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { Team } from "../_model/team.model";
 import { League } from "../_model/league.model";
 import { Match } from "../_model/match.model";
+import { ThemeService } from "../_service/dark-mode.service";
 
 @Component ({
     selector: 'app-player-detail',
@@ -21,7 +22,7 @@ export class PlayerDetailComponent implements OnInit {
     playerTeammates: PlayerDetail[] = []
     processedMatches: any[] = [];
 
-    constructor(private basketService: BasketService, private activatedRoute: ActivatedRoute, private router: Router) {}
+    constructor(private basketService: BasketService, private activatedRoute: ActivatedRoute, private router: Router, public themeService: ThemeService) {}
 
     ngOnInit(): void {
         // this.printSinglePlayer()
@@ -90,6 +91,10 @@ export class PlayerDetailComponent implements OnInit {
 
     passIdPlayer(idPlayer: number) {
         this.router.navigate(['/player', idPlayer])
+    }
+
+    toggleTheme(): void {
+        this.themeService.toggleTheme();
     }
 
     private processGame(game: any): any {

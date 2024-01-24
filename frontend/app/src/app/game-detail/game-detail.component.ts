@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { Match } from "../_model/match.model";
 import { DatePipe } from "@angular/common";
 import { faker } from '@faker-js/faker';
+import { ThemeService } from "../_service/dark-mode.service";
 
 @Component ({
     selector: 'app-game-detail',
@@ -33,7 +34,7 @@ export class GameDetailComponent implements OnInit {
     assistTotal: number = 0;
     fouls: number = 0;
     
-    constructor(private basketService: BasketService, private activatedRoute: ActivatedRoute, private datePipe: DatePipe, private router: Router) {}
+    constructor(private basketService: BasketService, private activatedRoute: ActivatedRoute, private datePipe: DatePipe, private router: Router, public themeService: ThemeService) {}
 
     ngOnInit(): void {
         this.activatedRoute.data.subscribe(({matchDetail}) => {
@@ -133,6 +134,10 @@ export class GameDetailComponent implements OnInit {
 
     passIdTeam(idTeam: number) {
         this.router.navigate(['/team', idTeam])
+    }
+
+    toggleTheme(): void {
+        this.themeService.toggleTheme();
     }
 
 }

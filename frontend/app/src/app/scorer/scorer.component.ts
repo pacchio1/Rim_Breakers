@@ -2,6 +2,7 @@ import { Component, Input } from "@angular/core";
 import { Leagues } from "../_model/leagues.model";
 import { BasketService } from "../_service/basket.service";
 import { Router } from "@angular/router";
+import { ThemeService } from "../_service/dark-mode.service";
 
 @Component ({
     selector: 'app-scorer',
@@ -14,7 +15,7 @@ export class ScorerComponent {
     
     leaderboard: any[] = []
 
-    constructor(private basketService: BasketService, private router: Router) {}
+    constructor(private basketService: BasketService, private router: Router, public themeService: ThemeService) {}
 
     ngOnInit(): void {
         this.teamsData.forEach(team => {
@@ -51,6 +52,10 @@ export class ScorerComponent {
 
     passIdPlayer(idPlayer: number) {
         this.router.navigate(['/player', idPlayer])
+    }
+
+    toggleTheme(): void {
+        this.themeService.toggleTheme();
     }
 
 }

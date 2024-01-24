@@ -30,7 +30,7 @@
 }
 
 .result-game {
-    transform: translateY(-45px);
+    transform: translateY(-40px);
 }
 
 .logo-game {
@@ -69,6 +69,10 @@ $primary-color-dark: #FF8038;
 
 .text-light-1 {
     color: white;
+}
+
+.text-dark-or {
+    color: $primary-color-dark;
 }
 
 /* Navbar */
@@ -140,6 +144,33 @@ $primary-color-dark: #FF8038;
     position: relative;
     z-index: 1;
 }
+
+// .prova-home-header {
+//     width: 100vw;
+//     height: 250px;
+//     background-color: #1b1466;
+//     overflow: auto;
+//     position: relative;
+// }
+
+// .prova-home-title {
+//     width: 50%;
+//     height: 100%;
+//     padding-top: 45px;
+//     padding-left: 30px;
+// }
+
+// .prova-home-img {
+//     width: 50%;
+//     position: absolute;
+//     z-index: 1;
+// }
+
+// .prova-img-h {
+//     width: 250px;
+//     height: 270px;
+//     transform: translateX(171px);
+// }
 
 .home-header {
     // margin-top: 80px;
@@ -300,7 +331,7 @@ $primary-color-dark: #FF8038;
 .league-title {
     width: 338px;
     height: 98px;
-    background-color: $primary-color;
+    // background-color: $primary-color;
     color: white;
     border-radius: 20px;
 }
@@ -310,18 +341,50 @@ $primary-color-dark: #FF8038;
     width: 377px;
     height: 53px;
     border-radius: 70px;
-    background-color: $primary-color;
-    color: white;
+    // background-color: $primary-color;
+    // color: white;
+}
+
+.league-list-cup {
+    // width: 100%;
+    width: 342px;
+    height: 53px;
+    border-radius: 70px;
+    // background-color: $primary-color;
+    // color: white;
+}
+
+.league-results-list {
+    width: 620px;
+    height: 110px;
+    border-radius: 20px;
+    // background-color: $primary-color;
+    // color: white;
+}
+
+.team-results-list {
+    width: 412px;
+    height: 110px;
+    border-radius: 20px;
+    // background-color: $primary-color;
+    // color: white;
+}
+
+.games-results-list {
+    width: 100%;
+    height: 110px;
+    border-radius: 20px;
+    // background-color: $primary-color;
+    // color: white;
 }
 
 .results-list {
     width: 100%;
     height: 110px;
     border-radius: 20px;
-    background-color: $primary-color;
-    color: white;
+    // background-color: $primary-color;
+    // color: white;
 }
-
 
 .league-logo {
     width: 30px;
@@ -331,8 +394,8 @@ $primary-color-dark: #FF8038;
 .tab {
     width: 100px;
     height: auto;
-    background-color: #1b1466;
-    color: white;
+    // background-color: #1b1466;
+    // color: white;
     border: none;
     outline: none;
     cursor: pointer;
@@ -434,8 +497,8 @@ $primary-color-dark: #FF8038;
 .player-info {
     width: 301px;
     height: auto;
-    background-color: #1b1466;
-    color: white;
+    // background-color: #1b1466;
+    // color: white;
     border-radius: 0 20px 20px 0;
 }
 
@@ -464,6 +527,14 @@ $primary-color-dark: #FF8038;
 
 .player-card-container::-webkit-scrollbar-track {
     background-color: transparent;
+}
+
+.player-results-list {
+    width: 385px;
+    height: 110px;
+    border-radius: 20px;
+    // background-color: $primary-color;
+    // color: white;
 }
 
 /* PlayerCard */
@@ -549,10 +620,82 @@ footer {
         width: 400px;
     }
 
+    // .prova-home-header {
+    //     width: 560px;
+    //     height: 250px;
+    //     border-radius: 20px 0 0 20px;
+    //     margin-left: 30px;
+    //     margin-top: 20px;
+    //     position: unset;
+    // }
+
+    // .prova-img-h {
+    //     width: 250px;
+    //     height: 270px;
+    //     transform: translateX(460px);
+    //     position: unset;
+    // }
+
+    /* Leagues */
+
+    // .league-list {
+    //     width: 377px;
+    //     height: 53px;
+    // }
+
+    .league-list-cup {
+        width: 310px;
+        height: 53px;
+    }
+
+    /* Player */
+
+    .container-player {
+        width: 100%;
+        height: 200px;
+        overflow: visible;
+    }
+
+    .player-info {
+        width: 700px;
+        height: 350px;
+    }
+
+    .player-img {
+        width: 190px;
+        height: 180px;
+    }
+
+    .player-results-list {
+        width: 520px;
+        height: 110px;
+    }
+
+    /* Games preview */
+
+    .games-results-list {
+        width: 600px;
+        height: 110px;
+        border-radius: 20px;
+        // background-color: $primary-color;
+        // color: white;
+    }
+
 }
 
 /* Medium devices (md) - Desktops (≥992px) */
 @media screen and (min-width: 992px) {
+
+    // .prova-home-header {
+    //     width: 560px;
+    //     height: 250px;
+    //     margin-left: 30px;
+    //     margin-top: 20px;
+    // }
+
+    // .prova-img-h {
+    //     transform: translateX(460px);
+    // }
 
     .logo {
         width: 70px;
@@ -599,21 +742,111 @@ footer {
         width: 600px;
     }
 
+    /* Team */
+
+    .team-detail-header {
+        width: 720px;
+        height: 163px;
+        border-radius: 20px;
+        overflow: hidden;
+        color: $primary-color;
+    }
+
+    .team-detail-img {
+        width: 720px;
+        height: 190px;
+        border-radius: 20px;
+        // opacity: 0.2;
+    }
+
+    .team-results-list {
+        width: 515px;
+        height: 110px;
+    }
+
     /* Player */
+
+    .container-player {
+        width: 100%;
+        height: 200px;
+        overflow: visible;
+    }
+
+    .player-info {
+        width: 555px;
+        height: 443px;
+    }
+
+    .player-img {
+        width: 310px;
+        height: 300px;
+    }
+
+    .player-card-container-unset {
+        overflow-x: unset;
+    }
+
+    .player-results-list {
+        width: 520px;
+        height: 110px;
+        // border-radius: 20px;
+        // background-color: $primary-color;
+        // color: white;
+    }
+
+}
+
+/* Large devices (lg) - Desktops (≥1200px) */
+@media screen and (min-width: 1200px) {
+
+    /* Player */
+
+    .container-player {
+        width: 100vw;
+        height: 200px;
+        overflow: visible;
+    }
 
     .player-info {
         width: 700px;
         height: 443px;
     }
 
-    .player-card-container {
-        overflow-x: unset;
+    .player-img {
+        width: 350px;
+        height: 330px;
+    }
+
+    .player-match {
+        margin-top: 192px;
+    }
+
+    .player-results-list {
+        width: 600px;
+        height: 110px;
+        // border-radius: 20px;
+        // background-color: $primary-color;
+        // color: white;
+    }
+
+    /* Team */
+
+    .team-results-list {
+        width: 630px;
+        height: 110px;
+    }
+
+    /* Games preview */
+
+    .games-results-list {
+        width: 700px;
+        height: 110px;
+        border-radius: 20px;
+        // background-color: $primary-color;
+        // color: white;
     }
 
 }
-
-/* Large devices (lg) - Desktops (≥1200px) */
-@media screen and (min-width: 1200px) {}
 
 /* Extra large devices (xl) - Large Desktops (≥1400px) */
 @media screen and (min-width: 1400px) {}

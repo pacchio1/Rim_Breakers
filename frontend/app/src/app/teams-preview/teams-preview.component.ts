@@ -3,6 +3,7 @@ import { BasketService } from "../_service/basket.service";
 import { ActivatedRoute, Router } from "@angular/router";
 import { League } from "../_model/league.model";
 import { forkJoin, map } from "rxjs";
+import { ThemeService } from "../_service/dark-mode.service";
 
 @Component ({
     selector: 'app-teams-prev',
@@ -15,7 +16,7 @@ export class TeamsPreviewComponent implements OnInit {
     teamsByLeague: any = {};
     desiredLeagueIds = [2, 40, 45, 52, 117, 104, 202];
 
-    constructor(private basketService: BasketService, private activatedRoute: ActivatedRoute, private router: Router) {}
+    constructor(private basketService: BasketService, private activatedRoute: ActivatedRoute, private router: Router, public themeService: ThemeService) {}
 
     ngOnInit(): void {
         this.activatedRoute.data.subscribe(({allLeagues}) => {
@@ -47,6 +48,10 @@ export class TeamsPreviewComponent implements OnInit {
 
     passIdTeam(idTeam: number) {
         this.router.navigate(['/team', idTeam])
+    }
+
+    toggleTheme(): void {
+        this.themeService.toggleTheme();
     }
 
 }

@@ -3,8 +3,7 @@
   [ngClass]="{'home-header-bg-dark': themeService.isDarkMode, 'home-header-bg': !themeService.isDarkMode}">
   <div class="div1">
     <h2 class="div1-h2">
-      Tutto il <span class="text-warning"> basket Europeo</span> in un unico
-      posto
+      Tutto il <span class="text-warning"> basket Europeo</span> in un unico posto
     </h2>
     <button
       class="btn"
@@ -25,6 +24,34 @@
     />
   </div>
 </section>
+
+<!-- <section class="mt-navbar container-fluid p-0"
+[ngClass]="{'bg-dark': themeService.isDarkMode, 'bg-white': !themeService.isDarkMode}">
+  <div class="prova-home-header d-flex" [ngClass]="{'home-header-bg-dark': themeService.isDarkMode, 'home-header-bg text-light': !themeService.isDarkMode}">
+    <div class="prova-home-title">
+        <h2>Tutto il <span class="text-warning"> basket Europeo</span> in un unico posto</h2>
+        <button
+            class="btn"
+            [ngClass]="{
+              'btn-warning': themeService.isDarkMode,
+              'btn-light': !themeService.isDarkMode
+            }"
+          >
+            Scopri
+
+          </button>
+    </div>
+    <div class="prova-home-img">
+      <img
+        src="../../assets/imgX/basketball-home.png"
+        alt=""
+        width="400px"
+        height="500px"
+        class="prova-img-h"
+      />
+    </div>
+  </div>
+</section> -->
 
 <section
   class="home-description text-center py-5"

@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { BasketService } from "../_service/basket.service";
 import { ActivatedRoute, Router } from "@angular/router";
 import { League } from "../_model/league.model";
+import { ThemeService } from "../_service/dark-mode.service";
 
 @Component ({
     selector: 'app-games',
@@ -15,7 +16,7 @@ export class GamesComponent implements OnInit {
     processedMatches: any[] = [];
     desiredLeagueName = ['LNB', 'BBL', 'Basket League', 'Lega A', 'ACB', 'Super Ligi', 'Champions Leagu'];
 
-    constructor(private basketService: BasketService, private activatedRoute: ActivatedRoute, private router: Router) {}
+    constructor(private basketService: BasketService, private activatedRoute: ActivatedRoute, private router: Router, public themeService: ThemeService) {}
 
     ngOnInit(): void {
         this.activatedRoute.data.subscribe(({allLeagues}) => {
@@ -44,6 +45,10 @@ export class GamesComponent implements OnInit {
 
     passIdGames(idGames: number) {
         this.router.navigate(['/game', idGames])
+    }
+
+    toggleTheme(): void {
+        this.themeService.toggleTheme();
     }
 
     private processGame(game: any): any {
