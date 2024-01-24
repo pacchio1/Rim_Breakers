@@ -25,7 +25,6 @@ export class CountriesComponent implements OnInit {
     ngOnInit(): void {
 
         this.activatedRoute.data.subscribe(({allCountries}) => {
-            // this.countries = allCountries
             // console.log(this.countries)
             this.leaguesByCountry2 = allCountries.map((country: CountriesWithLeagues) => {
                 console.log(country)
