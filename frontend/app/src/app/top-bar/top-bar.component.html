@@ -1,0 +1,347 @@
+<nav
+  class="navbar navbar-dark navbar-expand-lg fixed-top"
+  [ngClass]="{
+    'navbar-bg-dark': themeService.isDarkMode,
+    'navbar-bg': !themeService.isDarkMode
+  }"
+>
+  <div class="container-fluid">
+    <!-- <a class="navbar-brand" href="#">Offcanvas navbar</a> -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="offcanvas"
+      data-bs-target="#offcanvasNavbar"
+      aria-controls="offcanvasNavbar"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div
+      class="offcanvas offcanvas-start"
+      tabindex="-1"
+      id="offcanvasNavbar"
+      aria-labelledby="offcanvasNavbarLabel"
+    >
+      <div
+        class="offcanvas-header justify-content-end"
+        [ngClass]="{ 'offcanvas-bg-dark': themeService.isDarkMode }"
+      >
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div
+        class="offcanvas-body text-center"
+        [ngClass]="{ 'offcanvas-bg-dark': themeService.isDarkMode }"
+      >
+        <ng-container *ngIf="!languageService.isEnglishMode">
+          <ul
+            class="navbar-nav justify-content-lg-between align-items-lg-center flex-grow-1"
+          >
+            <!-- <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Logo</h5> -->
+            <ng-container *ngIf="!themeService.isDarkMode">
+              <div class="d-flex justify-content-center">
+                <img
+                  src="../../assets/imgX/logo-broom.png"
+                  alt=""
+                  width="213px"
+                  height="230px"
+                  class="logo"
+                  [routerLink]="loggedIn ? 'logged-home' : 'home'"
+                />
+              </div>
+            </ng-container>
+            <ng-container *ngIf="themeService.isDarkMode">
+              <div class="d-flex justify-content-center">
+                <img
+                  src="../../assets/imgX/logo-broom-white.png"
+                  alt=""
+                  width="213px"
+                  height="230px"
+                  class="logo"
+                  [routerLink]="loggedIn ? 'logged-home' : 'home'"
+                />
+              </div>
+            </ng-container>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="#"
+                id="navbar-a"
+                [ngClass]="{
+                  'text-light': themeService.isDarkMode,
+                  'text-dark': !themeService.isDarkMode
+                }"
+                data-bs-dismiss="offcanvas" aria-label="Close"
+                [routerLink]="loggedIn ? 'logged-home' : 'home'"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="#"
+                id="navbar-a1"
+                [ngClass]="{
+                  'text-light': themeService.isDarkMode,
+                  'text-dark': !themeService.isDarkMode
+                }"
+                data-bs-dismiss="offcanvas" aria-label="Close"
+                routerLink="team"
+                >Squadre</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="#"
+                id="navbar-a2"
+                [ngClass]="{
+                  'text-light': themeService.isDarkMode,
+                  'text-dark': !themeService.isDarkMode
+                }"
+                data-bs-dismiss="offcanvas" aria-label="Close"
+                routerLink="countries"
+                >Campionati</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="#"
+                id="navbar-a3"
+                [ngClass]="{
+                  'text-light': themeService.isDarkMode,
+                  'text-dark': !themeService.isDarkMode
+                }"
+                data-bs-dismiss="offcanvas" aria-label="Close"
+                routerLink="games"
+                >Partite</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="#"
+                routerLink="/blog"
+                id="navbar-a4"
+                [ngClass]="{
+                  'text-light': themeService.isDarkMode,
+                  'text-dark': !themeService.isDarkMode
+                }"
+                data-bs-dismiss="offcanvas" aria-label="Close"
+                >Blog</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="#"
+                id="navbar-a5"
+                [ngClass]="{
+                  'text-light': themeService.isDarkMode,
+                  'text-dark': !themeService.isDarkMode
+                }"
+                data-bs-dismiss="offcanvas" aria-label="Close"
+                [routerLink]="loggedIn ? 'pick-favourites' : 'login'"
+                >Preferiti</a
+              >
+            </li>
+          </ul>
+        </ng-container>
+        <ng-container *ngIf="languageService.isEnglishMode">
+          <ul
+            class="navbar-nav justify-content-lg-between align-items-lg-center flex-grow-1"
+          >
+            <!-- <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Logo</h5> -->
+            <ng-container *ngIf="!themeService.isDarkMode">
+              <div class="d-flex justify-content-center">
+                <img
+                  src="../../assets/imgX/logo-broom.png"
+                  alt=""
+                  width="213px"
+                  height="230px"
+                  class="logo"
+                  [routerLink]="loggedIn ? 'logged-home' : 'home'"
+                />
+              </div>
+            </ng-container>
+            <ng-container *ngIf="themeService.isDarkMode">
+              <div class="d-flex justify-content-center">
+                <img
+                  src="../../assets/imgX/logo-broom-white.png"
+                  alt=""
+                  width="213px"
+                  height="230px"
+                  class="logo"
+                  [routerLink]="loggedIn ? 'logged-home' : 'home'"
+                />
+              </div>
+            </ng-container>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="#"
+                id="navbar-a"
+                [ngClass]="{
+                  'text-light': themeService.isDarkMode,
+                  'text-dark': !themeService.isDarkMode
+                }"
+                data-bs-dismiss="offcanvas" aria-label="Close"
+                [routerLink]="loggedIn ? 'logged-home' : 'home'"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="#"
+                id="navbar-a1"
+                [ngClass]="{
+                  'text-light': themeService.isDarkMode,
+                  'text-dark': !themeService.isDarkMode
+                }"
+                data-bs-dismiss="offcanvas" aria-label="Close"
+                routerLink="team"
+                >Teams</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="#"
+                id="navbar-a2"
+                [ngClass]="{
+                  'text-light': themeService.isDarkMode,
+                  'text-dark': !themeService.isDarkMode
+                }"
+                data-bs-dismiss="offcanvas" aria-label="Close"
+                routerLink="countries"
+                >Championships</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="#"
+                id="navbar-a3"
+                [ngClass]="{
+                  'text-light': themeService.isDarkMode,
+                  'text-dark': !themeService.isDarkMode
+                }"
+                data-bs-dismiss="offcanvas" aria-label="Close"
+                routerLink="games"
+                >Matches</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="#"
+                routerLink="/blog"
+                id="navbar-a4"
+                [ngClass]="{
+                  'text-light': themeService.isDarkMode,
+                  'text-dark': !themeService.isDarkMode
+                }"
+                data-bs-dismiss="offcanvas" aria-label="Close"
+                >Blog</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="#"
+                id="navbar-a5"
+                [ngClass]="{
+                  'text-light': themeService.isDarkMode,
+                  'text-dark': !themeService.isDarkMode
+                }"
+                data-bs-dismiss="offcanvas" aria-label="Close"
+                [routerLink]="loggedIn ? 'pick-favourites' : 'login'"
+                >Favorites</a
+              >
+            </li>
+          </ul>
+        </ng-container>
+      </div>
+    </div>
+    <!-- <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">O</button>
+        </form> -->
+    <!-- <div class="d-flex c"> -->
+    <div class="d-flex flex-row justify-content-between justify-content-md-evenly align-items-center flex-grow-1 px-3">
+      <div
+        class="flex-nowrap navbar-search"
+        [ngClass]="{
+          'navbar-search-bg-dark': themeService.isDarkMode,
+          'navbar-search-bg': !themeService.isDarkMode
+        }"
+      >
+        <span class="" id="addon-wrapping">🔎</span>
+        <input
+          type="text"
+          class="navbar-input ps-2"
+          placeholder="Search"
+          aria-label="Username"
+          aria-describedby="addon-wrapping"
+        />
+      </div>
+      <ng-container *ngIf="!themeService.isDarkMode">
+        <i
+          class="bi bi-moon"
+          (click)="toggleTheme()"
+          [ngClass]="{ 'text-light-1': !themeService.isDarkMode }"
+        ></i>
+      </ng-container>
+      <ng-container *ngIf="themeService.isDarkMode">
+        <i
+          class="bi bi-sun"
+          (click)="toggleTheme()"
+          [ngClass]="{ 'text-dark-1': themeService.isDarkMode }"
+        ></i>
+      </ng-container>
+      <i
+        class="bi bi-person-circle"
+        [ngClass]="{
+          'text-dark-1': themeService.isDarkMode,
+          'text-light-1': !themeService.isDarkMode
+        }"
+        [routerLink]="loggedIn ? '/profile' : '/login'"
+      ></i>
+      <!-- <i
+        class="bi bi-flag"
+        (click)="toggleLanguage()"
+        [ngClass]="{
+          'text-dark-1': themeService.isDarkMode,
+          'text-light-1': !themeService.isDarkMode
+        }"
+      ></i> -->
+      <ng-container *ngIf="languageService.isEnglishMode">
+        <img src="../../assets/imgX/italy.png" alt="" class="icon-flag" (click)="toggleLanguage()">
+      </ng-container>
+      <ng-container *ngIf="!languageService.isEnglishMode">
+        <img src="../../assets/imgX/united-kingdom.png" alt="" class="icon-flag" (click)="toggleLanguage()">
+      </ng-container>
+    </div>
+
+    <!-- </div> -->
+  </div>
+</nav>
