@@ -5,24 +5,15 @@
             <div class="d-flex flex-row my-5 align-items-center ms-3 ms-md-4 ms-lg-5" (click)="passIdLeague(league.id_league)">
                 <img src="{{ league.logo }}" alt="" class="team-logo">
                 <h2 class="ps-3 m-0" [ngClass]="{ 'text-light': themeService.isDarkMode, 'text-primary-emphasis': !themeService.isDarkMode}">{{ league.name }}</h2> 
-                <!-- <p>{{ league.id_league }}</p> -->
             </div>
-            <!-- <ul *ngFor="let team of teamsByLeague[league.id_league]">
-                <li>
-                    {{ team.nameTeam }}
-                </li>
-                <li>
-                    <img src="{{ team.logoTeam }}" alt="">
-                </li>
-            </ul> -->
+
             <div class="container" >
                 <div class="row row-cols-1 row-cols-lg-2 justify-content-center">
                     <ng-container *ngFor="let team of teamsByLeague[league.id_league]">
                         <div class=" d-flex flex-row justify-content-start align-items-center league-list m-2 ps-2" (click)="passIdTeam(team.id)"
                         [ngClass]="{ 'home-header-bg-dark text-dark': themeService.isDarkMode, 'home-header-bg text-light': !themeService.isDarkMode}">
                             <img src="{{ team.logoTeam }}" alt="" class="league-logo ms-4">
-                        <!-- </div>
-                        <div class="col"> -->
+
                             <p class="m-0 ps-3 flex-grow-1">{{ team.nameTeam }}</p>
                         </div>
                     </ng-container>

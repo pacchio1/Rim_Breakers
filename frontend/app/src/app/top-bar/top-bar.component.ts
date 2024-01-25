@@ -23,7 +23,6 @@ export class TopBarComponent implements OnInit {
       this.setLoggedInState();
     }
 
-    // Sottoscrivi all'observable per i cambiamenti nel localStorage
     this.localStorageService.getStorageChangeObservable().subscribe(() => {
       this.setLoggedInState();
     });

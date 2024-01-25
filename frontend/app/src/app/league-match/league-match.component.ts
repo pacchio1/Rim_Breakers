@@ -20,13 +20,9 @@ export class LeagueMatchComponent {
     ngOnInit(): void {
         if(this.leagueName !== '') {
             this.basketService.getGamesByLeague(this.leagueName).subscribe((response: any[]) => {
-                console.log('gamesByLeague', response);
+                // console.log('gamesByLeague', response);
                 this.gamesByLeague = response
                 this.processedMatches = this.gamesByLeague.map(game => this.processGame(game));
-                // this.processedMatches.forEach(game => {
-                //     console.log('Score Home Final:', game.scoreHomeFinal);
-                //     console.log('Score Away Final:', game.scoreAwayFinal);
-                // });
             })
         }
     }
@@ -66,7 +62,7 @@ export class LeagueMatchComponent {
             scoreHome: scoreHomeArray,
         };
 
-        console.log(processedGame);
+        // console.log(processedGame);
         
         return processedGame;
     }

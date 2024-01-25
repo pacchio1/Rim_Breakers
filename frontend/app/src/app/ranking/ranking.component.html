@@ -16,33 +16,7 @@
     </div>
 </ng-container>
 <ng-template #otherContent>
-    <!-- <div class="league-list d-flex justify-content-start align-items-center ps-3">
-        <p class="m-0">Posiz.</p>
-        <p class="ps-1 m-0 border-start">Logo</p>
-        <p class="ps-2 m-0 name border-start">Name</p>
-        <div class="d-flex">
-            <p class="m-0 ps-1 pe-2 border-start">Pt.H</p>
-            <p class="m-0 ps-2 pe-1 border-start">Pt.A</p>
-            <p class="m-0 px-2 border-start">G</p>
-            <p class="m-0 px-2 border-start">V</p>
-            <p class="m-0 px-2 border-start">S</p>
-        </div>
-    </div>
-    <div *ngFor="let leagueObj of teamsStandingData" class="m-1 d-flex justify-content-center">
-        <div class="league-list d-flex justify-content-start align-items-center px-3" (click)="passIdTeam(leagueObj.standings.teamId)">
-            <p class="m-0 px-1">{{ leagueObj.standings.position }}^</p>
-            <img src="{{ leagueObj.logo }}" alt="" class="league-logo">
-            <p *ngIf="leagueObj.teamName" class="ps-3 m-0 name">{{ leagueObj.teamName }}</p>
-            <p *ngIf="!leagueObj.teamName" class="ps-3 m-0 text-warning">NOME NON DISPONIBILE</p>
-            <div class="d-flex ms-2">
-                <p class="m-0 px-1">{{ leagueObj.standings.pointsAgainst }}</p>
-                <p class="m-0 px-1">{{ leagueObj.standings.pointsFor }}</p>
-                <p class="m-0 px-1">{{ leagueObj.standings.played }}</p>
-                <p class="m-0 px-1">{{ leagueObj.standings.win }}</p>
-                <p class="m-0 px-1">{{ leagueObj.standings.lose }}</p>
-            </div>
-        </div>
-    </div> -->
+
     <div class="container d-flex justify-content-center">
 
         <div class="tag-list row align-items-center my-3"
@@ -67,28 +41,7 @@
             </div>
         </div>
     </div>
-    
-    <!-- <div class="container d-flex flex-wrap justify-content-center">
-        <div class="row row-cols-lg-2">
-            <div *ngFor="let leagueObj of teamsStandingData" class="">
-                <div class="col m-1 d-flex justify-content-center">
-                    <div class="league-list d-flex justify-content-start align-items-center px-3" (click)="passIdTeam(leagueObj.standings.teamId)">
-                        <p class="m-0 px-1">{{ leagueObj.standings.position }}^</p>
-                        <img src="{{ leagueObj.logo }}" alt="" class="league-logo">
-                        <p *ngIf="leagueObj.teamName" class="ps-3 m-0 name">{{ leagueObj.teamName }}</p>
-                        <p *ngIf="!leagueObj.teamName" class="ps-3 m-0 text-warning">NOME NON DISPONIBILE</p>
-                        <div class="d-flex ms-2">
-                            <p class="m-0 px-1">{{ leagueObj.standings.pointsAgainst }}</p>
-                            <p class="m-0 px-1">{{ leagueObj.standings.pointsFor }}</p>
-                            <p class="m-0 px-1">{{ leagueObj.standings.played }}</p>
-                            <p class="m-0 px-1">{{ leagueObj.standings.win }}</p>
-                            <p class="m-0 px-1">{{ leagueObj.standings.lose }}</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
+
     <div class="container">
         <div class="row row-cols-1 row-cols-lg-2">
             <div class="col d-flex flex-wrap justify-content-center">

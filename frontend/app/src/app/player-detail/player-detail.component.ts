@@ -25,7 +25,6 @@ export class PlayerDetailComponent implements OnInit {
     constructor(private basketService: BasketService, private activatedRoute: ActivatedRoute, private router: Router, public themeService: ThemeService) {}
 
     ngOnInit(): void {
-        // this.printSinglePlayer()
         this.activatedRoute.data.subscribe(({playerDetail}) => {
             console.log('playerDetail', playerDetail)
             this.singlePlayer = playerDetail  
@@ -44,16 +43,13 @@ export class PlayerDetailComponent implements OnInit {
     }
 
     printPlayerTeam() {
-        // if(this.singlePlayer && this.singlePlayer.idTeam) {
         this.basketService.getTeam(this.singlePlayer.idTeam).subscribe((response: Team) => {
             this.playerTeam = response;
             console.log('playerTeam', this.playerTeam)
-            // this.printPlayerLeague();
             this.printLeague();
             this.printLastGame(this.playerTeam.name)
         })
         
-        // }   
     }
 
     printLeague() {
@@ -70,14 +66,6 @@ export class PlayerDetailComponent implements OnInit {
             console.log('lastGame', this.processedMatches[0])
         })
     }
-
-    // printPlayerLeague() {
-    //     this.basketService.getLeague(this.playerTeam.id_league).subscribe((response: any) => {
-    //         this.playerLeague = response[1]
-    //         console.log('playerLeague', this.playerLeague)
-    //         this.printPlayerTeammates()
-    //     })
-    // }
 
     printPlayerTeammates() {
         this.basketService.getTeamPlayers(this.singlePlayer.idTeam).subscribe((response: PlayerDetail[]) => {
@@ -136,12 +124,4 @@ export class PlayerDetailComponent implements OnInit {
         
         return processedGame;
     }
-
-    // printSinglePlayer() {
-    //     this.basketService.getSinglePlayer().subscribe((response: any) => {
-    //         this.singlePlayer = response
-    //         console.log(this.singlePlayer)
-    //     })
-    // }
-
 }

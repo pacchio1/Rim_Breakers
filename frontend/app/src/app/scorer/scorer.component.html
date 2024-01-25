@@ -1,16 +1,7 @@
-<!-- <div *ngFor="let player of leaderboard" class="m-1 d-flex justify-content-center">
-  <div class="league-list d-flex justify-content-start align-items-center px-5" (click)="passIdPlayer(player.idPlayer)">
-      <img src="{{ player.logoTeam }}" alt="" class="league-logo">
-      <p class="m-0 ps-4 name">{{ player.surname }}</p>
-      <p class="ps-3 m-0 name">{{ player.name }}</p>
-      <p class="ps-3 m-0 name text-end">{{ player.pointsScored }}</p>
-  </div>
-</div> -->
-
-<div class="row row-cols-md-2 justify-content-center">
+<div class="row row-cols-md-2 justify-content-center mt-3">
   <div *ngFor="let player of leaderboard">
       <div class="col m-1 d-flex justify-content-center">
-          <div class="league-list d-flex justify-content-start align-items-center px-5" (click)="passIdPlayer(player.idPlayer)"
+          <div class="league-list d-flex justify-content-start align-items-center px-5 m-1" (click)="passIdPlayer(player.idPlayer)"
           [ngClass]="{ 'home-header-bg-dark text-dark': themeService.isDarkMode, 'home-header-bg text-light': !themeService.isDarkMode}">
               <img src="{{ player.logoTeam }}" alt="" class="league-logo">
               <p class="m-0 ps-4 name">{{ player.surname }}</p>

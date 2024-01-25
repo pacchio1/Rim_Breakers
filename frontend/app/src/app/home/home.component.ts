@@ -22,12 +22,12 @@ export class HomeComponent {
     ngOnInit(): void {
         // this.printPlayer();
         this.emailAccount = localStorage.getItem('emailAccount');
-        console.log(this.emailAccount);
+        // console.log(this.emailAccount);
 
         if(this.emailAccount !== null) {
             this.loggedIn = true;
         }
-        console.log(this.loggedIn);
+        // console.log(this.loggedIn);
     }
 
     toggleTheme(): void {
@@ -36,15 +36,6 @@ export class HomeComponent {
 
     toggleLanguage(): void {
         this.languageService.toggleLanguage();
-        console.log('english', this.languageService.isEnglishMode)
     }
-
-    // printPlayer() {
-    //     this.basketService.getPlayer().subscribe((response: any) => {
-    //         this.players = response
-    //         console.log(this.players);
-            
-    //     })
-    // }
 
 }

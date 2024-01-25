@@ -57,7 +57,6 @@ export class RankingComponent {
                       teamName: team.teamName,
                       position: team.standings.position,
                       teamLogo: team.logo
-                      // Aggiungi altri campi se necessario
                     };
                 
                     this.groups[groupName].teams.push(teamInfo);
@@ -65,23 +64,11 @@ export class RankingComponent {
                   console.log('groups', this.groups)
                   // Trasforma l'oggetto in un array ordinato
                   this.groupedTeams = Object.values(this.groups).sort((a: any, b: any) => {
-                      // Ordina in base al nome del gruppo
-                      const groupOrder = ['Group A', 'Group B', 'Group C', 'Group D', 'Group E', 'Group F', 'Group G', 'Group H'];
+
+                    const groupOrder = ['Group A', 'Group B', 'Group C', 'Group D', 'Group E', 'Group F', 'Group G', 'Group H'];
                       return groupOrder.indexOf(a.groupName) - groupOrder.indexOf(b.groupName);
                   });
                 })
-                    // this.groupedAndSortedData = this.teamsStandingData.reduce((acc: any, obj: any) => {
-  
-                    //     const key = obj.standings.groupName;
-                    
-                    //     acc[key] = acc[key] || [];
-                    
-                    //     acc[key].push(obj);
-
-                    //     acc[key].sort((a: any, b: any) => a.standings.position - b.standings.position);
-
-                    //     return acc;
-                    // }, {});
                     // console.log(this.groupedAndSortedData)
                 
                 
@@ -101,12 +88,6 @@ export class RankingComponent {
                     console.log('firstHalf', this.firstHalf)
                     this.secondHalf = this.teamsStandingData.slice(middleIndex)
                     console.log('secondHalf', this.secondHalf)
-                    // this.teamsStandingData.forEach((leagueObj: any) => {
-                    //     console.log('leagueObj', leagueObj)
-                    //     this.basketService.getTeam(leagueObj.standings.teamId).subscribe((teamInfo: any) => {
-                    //         leagueObj.teamLogo = teamInfo.logo;
-                    //     })
-                    // })
                 })
             }
 
