@@ -1,1 +1,0 @@
-# dati del api da elaborare in mysql
