@@ -11,7 +11,7 @@ with open("resource/checkpoint_yoinc.txt", "r") as checkpoint_r:
     d = int(ck[2])
 
 conn = http.client.HTTPSConnection("v1.basketball.api-sports.io")
-apikey = ["0b54a917c3c10455f93a3a5c857ea313"]
+apikey = ["dajeroma"]
 headers = {
     'x-rapidapi-host': "v1.basketball.api-sports.io",
     'x-rapidapi-key': apikey[0]
