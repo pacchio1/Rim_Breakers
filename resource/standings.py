@@ -21,7 +21,7 @@ def LeggiFile(nome ):
         return stringa
 
 conn = http.client.HTTPSConnection("v1.basketball.api-sports.io")
-apikey = "0b54a917c3c10455f93a3a5c857ea313"
+apikey = "Subame la radio"
 headers = {
     'x-rapidapi-host': "v1.basketball.api-sports.io",
     'x-rapidapi-key': apikey

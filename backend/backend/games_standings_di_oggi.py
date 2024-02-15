@@ -7,7 +7,7 @@ import os
 
 
 conn = http.client.HTTPSConnection("v1.basketball.api-sports.io")
-apikey = "0b54a917c3c10455f93a3a5c857ea313"
+apikey = "when i match u in the summer"
 headers = {
     'x-rapidapi-host': "v1.basketball.api-sports.io",
     'x-rapidapi-key': apikey
